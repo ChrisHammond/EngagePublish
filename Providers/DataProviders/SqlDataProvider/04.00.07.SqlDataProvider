@@ -1,6 +1,0 @@
-﻿update {databaseOwner}[{objectQualifier}desktopmodules]
-set BusinessControllerClass = 'Engage.Dnn.Publish.Search.SearchProvider',
-FolderName ='EngagePublish',
-ModuleName = 'Engage: Publish'
-where FriendlyName = 'Engage: Publish'
-GO
