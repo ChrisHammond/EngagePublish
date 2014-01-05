@@ -730,7 +730,7 @@
     <Content Include="ItemPreview.ascx" />
     <Content Include="Module.css" />
     <Content Include="PrinterFriendly.aspx" />
-    <Content Include="ReadMe.txt" />
+    <None Include="ReadMe.Md" />
     <Content Include="Rss.aspx" />
     <Content Include="Services\PublishServices.asmx" />
     <Content Include="Tags\Module.css" />

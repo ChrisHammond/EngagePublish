@@ -769,8 +769,11 @@ namespace Engage.Dnn.Publish.ArticleControls
 
                 DateTime lastUpdated = Convert.ToDateTime(article.LastUpdated, CultureInfo.InvariantCulture);
 
-                lblLastUpdated.Text = Localization.GetString("LastUpdated", LocalResourceFile) + " " + lastUpdated.ToString(LastUpdatedFormat, CultureInfo.CurrentCulture);
+                DateTime dateCreated = Convert.ToDateTime(article.CreatedDate, CultureInfo.InvariantCulture);
 
+                lblLastUpdated.Text = String.Format(Localization.GetString("LastUpdated", LocalResourceFile),lastUpdated.ToString(LastUpdatedFormat, CultureInfo.CurrentCulture));
+
+                lblDateCreated.Text = String.Format(Localization.GetString("DateCreated", LocalResourceFile), dateCreated.ToShortDateString());
                 //get the pnlAuthor setting
                 ItemVersionSetting auSetting = ItemVersionSetting.GetItemVersionSetting(article.ItemVersionId, "pnlAuthor", "Visible", PortalId);
                 if (auSetting != null)

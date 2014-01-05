@@ -10,24 +10,27 @@
     </div>
 
     <div class="dnnClear">
-        <asp:Panel ID="pnlEmailAFriend" runat="server" CssClass="dnnLeft">
-            <asp:PlaceHolder ID="phEmailAFriend" runat="server"></asp:PlaceHolder>
-        </asp:Panel>
+        <div class="dnnLeft">
+            <asp:Panel ID="pnlAuthor" runat="server" Visible="false" CssClass="dnnLeft">
+                <asp:Label ID="lblAuthorInfo" runat="server" resourcekey="lblAuthorInfo"></asp:Label>
+                <asp:Literal ID="lblAuthor" runat="server"></asp:Literal>
 
+            </asp:Panel>
+
+            <asp:Panel ID="pnlPrinterFriendly" runat="server" CssClass="dnnLeft dnnClear">
+                <asp:PlaceHolder ID="phPrinterFriendly" runat="server"></asp:PlaceHolder>
+            </asp:Panel>
+            <asp:Panel ID="pnlEmailAFriend" runat="server" CssClass="dnnLeft dnnClear">
+                <asp:PlaceHolder ID="phEmailAFriend" runat="server"></asp:PlaceHolder>
+            </asp:Panel>
+        </div>
         <div id="divLastUpdated" class="divLastUpdated dnnRight" runat="server" visible="false">
+            <asp:Literal ID="lblDateCreated" runat="server"></asp:Literal><br />
             <asp:Literal ID="lblLastUpdated" runat="server"></asp:Literal>
         </div>
     </div>
 
     <div class="dnnClear">
-        <asp:Panel ID="pnlAuthor" runat="server" Visible="false" CssClass="dnnLeft">
-            <asp:Label ID="lblAuthorInfo" runat="server" resourcekey="lblAuthorInfo"></asp:Label>
-            <asp:Literal ID="lblAuthor" runat="server"></asp:Literal>
-        </asp:Panel>
-
-        <asp:Panel ID="pnlPrinterFriendly" runat="server" CssClass="dnnRight">
-            <asp:PlaceHolder ID="phPrinterFriendly" runat="server"></asp:PlaceHolder>
-        </asp:Panel>
     </div>
 
 
@@ -67,7 +70,7 @@
             <div id="divRating" class="divRatingBefore">
                 <asp:Label ID="lblRatingMessage" runat="server" resourcekey="lblRatingMessage"></asp:Label>
                 <%
-                    /*<ajaxToolkit:Rating ID="ajaxRating"
+    /*<ajaxToolkit:Rating ID="ajaxRating"
                     runat="server" MaxRating="5"
                     StarCssClass="ratingStar"
                     WaitingStarCssClass="savedRatingStar"
@@ -77,7 +80,7 @@
                     Visible="true"
                     AutoPostBack="true" />
                     */
-                    %>
+                %>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

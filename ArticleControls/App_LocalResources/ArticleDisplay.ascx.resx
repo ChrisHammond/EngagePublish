@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="LastUpdated.Text" xml:space="preserve">
-    <value>Last Updated</value>
+    <value>Last Updated {0}</value>
   </data>
   <data name="NoDataToDisplay.Text" xml:space="preserve">
     <value>There are no Categories or Articles defined in your database. To begin entering data click on the Module's Action Menu and select Manage Content. From here you can create your Categories and Articles. &lt;br /&gt;&lt;br /&gt;</value>
@@ -266,5 +266,8 @@ Body: {5}</value>
   </data>
   <data name="lblUrlComment.Help" xml:space="preserve">
     <value>Enter the URL to your website. URLs may be removed from comments.</value>
+  </data>
+  <data name="DateCreated.Text" xml:space="preserve">
+    <value>Published Date {0}</value>
   </data>
 </root>

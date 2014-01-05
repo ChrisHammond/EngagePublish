@@ -1,5 +1,9 @@
 ﻿Release notes
 
+5.9.2
+-adjusted article display header area
+-added "date created" to article display in addition to last updated.
+
 5.9.1
 -removed ajax control toolkit
 -removed thumbnail/photo gallery from article display
