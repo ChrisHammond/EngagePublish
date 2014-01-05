@@ -1,0 +1,5 @@
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Item To Featured Item')
+insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+(relationshipname)
+values ('Item To Featured Item')
+GO

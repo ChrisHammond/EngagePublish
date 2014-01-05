@@ -1,0 +1,112 @@
+﻿declare @id int
+declare @identifier UniqueIdentifier
+DECLARE statements CURSOR LOCAL FAST_FORWARD FOR 
+	select Count(*), ItemIdentifier
+	From {databaseOwner}[{objectQualifier}publish_Item]
+	where ItemId > 5
+	Group by ItemIdentifier
+	Having COunt(*) > 1
+OPEN statements
+
+FETCH NEXT FROM statements INTO @id, @identifier
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	Update {databaseOwner}[{objectQualifier}Publish_Item]
+	set ItemIdentifier = NEWID()
+	where ItemIdentifier = @identifier
+	
+	FETCH NEXT FROM statements INTO  @id, @identifier
+	SET NOCOUNT ON
+END
+
+CLOSE statements
+DEALLOCATE statements
+GO
+
+declare @id int
+declare @identifier UniqueIdentifier
+DECLARE statements CURSOR LOCAL FAST_FORWARD FOR 
+	select Count(*), ItemVersionIdentifier
+	From {databaseOwner}[{objectQualifier}publish_ItemVersion]
+	where ItemId > 5
+	Group by ItemVersionIdentifier
+	Having COunt(*) > 1
+OPEN statements
+
+FETCH NEXT FROM statements INTO @id, @identifier
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	Update {databaseOwner}[{objectQualifier}Publish_ItemVersion]
+	set ItemVersionIdentifier = NEWID()
+	where ItemVersionIdentifier = @identifier
+	
+	FETCH NEXT FROM statements INTO  @id, @identifier
+	SET NOCOUNT ON
+END
+
+CLOSE statements
+DEALLOCATE statements
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysindexes WHERE id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}Publish_Item]') AND name = N'{objectQualifier}IX_Item_ItemIdentifier')
+BEGIN
+	DROP INDEX  {databaseOwner}[{objectQualifier}Publish_Item].[{objectQualifier}IX_Item_ItemIdentifier]
+	CREATE UNIQUE NONCLUSTERED INDEX [{objectQualifier}IX_Item_ItemIdentifier] ON {databaseOwner}[{objectQualifier}Publish_Item] 
+	(
+		[ItemIdentifier] ASC
+	) ON [PRIMARY]
+END
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysindexes WHERE id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}Publish_ItemVersion]') AND name = N'{objectQualifier}IX_ItemVersion_ItemVersionIdentifier')
+BEGIN
+	DROP INDEX  {databaseOwner}[{objectQualifier}Publish_ItemVersion].[{objectQualifier}IX_ItemVersion_ItemVersionIdentifier]
+	CREATE UNIQUE NONCLUSTERED INDEX [{objectQualifier}IX_ItemVersion_ItemVersionIdentifier] ON {databaseOwner}[{objectQualifier}Publish_ItemVersion] 
+	(
+		[ItemVersionIdentifier] ASC
+	) ON [PRIMARY]
+END
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}Publish_spAddComment]') AND OBJECTPROPERTY(id,N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[{objectQualifier}Publish_spAddComment]
+GO
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Publish_spAddComment]
+	@itemVersionId int,
+	@userId int,
+	@commentText ntext,
+	@approvalStatusId int,
+	@ratingId int,
+	@firstName nvarchar(50),
+	@lastName nvarchar(50),
+	@emailAddress nvarchar(256),
+	@URL nvarchar(255)
+AS
+BEGIN
+	INSERT INTO [{objectQualifier}Publish_Comment] (ItemVersionId, UserId, RatingId, CommentText, CreatedDate, LastUpdated, ApprovalStatusId, FirstName, LastName, EmailAddress, URL)
+	VALUES (@itemVersionId, @userId, @ratingId, @commentText, getdate(), getdate(), @approvalStatusId, @firstName, @lastName, @emailAddress, @URL)
+
+	select SCOPE_IDENTITY()
+	return SCOPE_IDENTITY()
+END
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}Publish_spAddRating]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}[{objectQualifier}Publish_spAddRating]
+GO
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Publish_spAddRating]
+	@itemVersionId int, 
+	@userId int, 
+	@rating int = 0
+AS
+BEGIN
+	INSERT INTO [{objectQualifier}Publish_Rating] (ItemVersionId, UserId, Rating, CreatedDate, LastUpdated)
+	VALUES (@itemVersionId, @userId, @rating, getdate(), getdate())
+
+	select SCOPE_IDENTITY()
+	return SCOPE_IDENTITY()
+END
+GO
+
+
+

@@ -1,0 +1,15 @@
+C:\websites\dnndev\bin\EngagePublish.dll
+C:\websites\dnndev\bin\EngagePublish.pdb
+C:\websites\dnndev\DesktopModules\EngagePublish\obj\Release\ResolveAssemblyReference.cache
+C:\websites\dnndev\DesktopModules\EngagePublish\obj\Release\EngagePublish.dll
+C:\websites\dnndev\DesktopModules\EngagePublish\obj\Release\EngagePublish.pdb
+F:\websites\dnndev\bin\EngagePublish.dll
+F:\websites\dnndev\bin\EngagePublish.pdb
+F:\websites\dnndev\DesktopModules\EngagePublish\obj\Release\EngagePublish.dll
+F:\websites\dnndev\DesktopModules\EngagePublish\obj\Release\EngagePublish.pdb
+F:\websites\dnndev\DesktopModules\EngagePublish\obj\Release\EngagePublish.csprojResolveAssemblyReference.cache
+F:\websites\dnndev.me\bin\EngagePublish.dll
+F:\websites\dnndev.me\bin\EngagePublish.pdb
+F:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.csprojResolveAssemblyReference.cache
+F:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.dll
+F:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.pdb

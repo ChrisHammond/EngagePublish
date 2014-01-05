@@ -1,0 +1,21 @@
+﻿Release notes
+
+5.9.1
+-removed ajax control toolkit
+-removed thumbnail/photo gallery from article display
+-added some bootstrap styling around Tags on article display.
+-added bootstrap styling around ReadMore button on custom display
+
+5.8.5
+-removed ability to send to multiple email addresses for Email A Friend
+
+
+5.8.4
+-Added new Human test for inline article comments
+-Tracking through Google analytic events if someone enters a comment but fails the Human test
+-Fixed bad TagCloudOptions module definition
+-Fixed some depricated align tags using dnnRight
+
+5.8.3
+-Added email to a friend tracking with Google Analytic events
+-Moved email a friend functionality to jquery dialog instead of ACTK modal popup

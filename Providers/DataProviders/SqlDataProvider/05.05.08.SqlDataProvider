@@ -1,0 +1,15 @@
+﻿
+if exists (select * from {databaseOwner}{objectQualifier}ModuleDefinitions where FriendlyName = 'Engage: Publish Tag Cloud')
+begin
+	update {databaseOwner}{objectQualifier}ModuleDefinitions 
+	set DesktopModuleID = (select DesktopModuleID from {databaseOwner}{objectQualifier}ModuleDefinitions where FriendlyName = 'Engage: Publish')
+	where FriendlyName = 'Engage: Publish Tag Cloud'
+end
+
+if exists (select * from {databaseOwner}{objectQualifier}ModuleDefinitions where FriendlyName = 'Engage: Text/HTML')
+begin
+	update {databaseOwner}{objectQualifier}ModuleDefinitions 
+
+	set DesktopModuleID = (select DesktopModuleID from {databaseOwner}{objectQualifier}ModuleDefinitions where FriendlyName = 'Engage: Publish')
+	where FriendlyName = 'Engage: Text/HTML' 
+end

@@ -1,0 +1,17 @@
+C:\websites\dnndev\Bin\EngagePublish.dll
+C:\websites\dnndev\Bin\EngagePublish.pdb
+C:\websites\dnndev\Bin\EngagePublish.dll.CodeAnalysisLog.xml
+C:\websites\dnndev\Bin\EngagePublish.dll.lastcodeanalysissucceeded
+C:\websites\dnndev\DesktopModules\EngagePublish\obj\Debug\ResolveAssemblyReference.cache
+C:\websites\dnndev\DesktopModules\EngagePublish\obj\Debug\EngagePublish.dll
+C:\websites\dnndev\DesktopModules\EngagePublish\obj\Debug\EngagePublish.pdb
+F:\websites\dnndev\Bin\EngagePublish.dll
+F:\websites\dnndev\Bin\EngagePublish.pdb
+F:\websites\dnndev\DesktopModules\EngagePublish\obj\Debug\EngagePublish.dll
+F:\websites\dnndev\DesktopModules\EngagePublish\obj\Debug\EngagePublish.pdb
+F:\websites\dnndev\DesktopModules\EngagePublish\obj\Debug\EngagePublish.csprojResolveAssemblyReference.cache
+F:\websites\dnndev.me\Bin\EngagePublish.dll
+F:\websites\dnndev.me\Bin\EngagePublish.pdb
+F:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.csprojResolveAssemblyReference.cache
+F:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.dll
+F:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.pdb

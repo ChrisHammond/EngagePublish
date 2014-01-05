@@ -1,0 +1,67 @@
+﻿
+if exists(select * from sysobjects so join syscolumns sc on (so.id = sc.id) where so.[Name] = '{objectQualifier}Publish_ItemView' and sc.[Name] = 'UserAgent')
+begin
+	ALTER TABLE {databaseOwner}{objectQualifier}Publish_ItemView
+	DROP COLUMN UserAgent
+end
+GO
+
+if exists(select * from sysobjects so join syscolumns sc on (so.id = sc.id) where so.[Name] = '{objectQualifier}Publish_ItemView' and sc.[Name] = 'HttpReferrer')
+begin
+	ALTER TABLE {databaseOwner}{objectQualifier}Publish_ItemView
+	DROP COLUMN  HttpReferrer
+end
+GO
+
+if exists(select * from sysobjects so join syscolumns sc on (so.id = sc.id) where so.[Name] = '{objectQualifier}Publish_ItemView' and sc.[Name] = 'SiteUrl')
+begin
+	ALTER TABLE {databaseOwner}{objectQualifier}Publish_ItemView
+	DROP COLUMN SiteUrl
+end
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}Publish_spInsertItemView]    Script Date: 11/30/2006 19:34:48 ******/
+IF  EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}Publish_spInsertItemView]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}Publish_spInsertItemView]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Publish_spInsertItemView]
+	(
+		@ItemId [int]
+		, @ItemVersionID [int]
+		, @UserId [int]
+		, @TabId [int]
+		, @IpAddress [varchar] (25)
+
+	)
+	AS 
+	           
+	INSERT INTO {databaseOwner}[{objectQualifier}Publish_ItemView]
+	(
+		[ItemID]
+		, [ItemVersionID]
+		, [UserId]
+		, [TabId]
+		, [UserIpAddress]
+		, [ViewDate]
+		)
+	 
+	VALUES 
+		( 
+		@ItemID
+		, @ItemVersionID
+		, @UserId
+		, @TabId
+		, @IpAddress
+		, GetDate()
+		)
+		
+	update {databaseOwner}[{objectQualifier}Publish_Item]
+	set ViewCount = ViewCount +1
+	where ItemId = @ItemId
+
+GO
+
+
