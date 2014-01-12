@@ -12,3 +12,4 @@ F:\Websites\dnndev.me\bin\EngagePublish.dll
 F:\Websites\dnndev.me\bin\EngagePublish.pdb
 F:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.dll
 F:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.pdb
+F:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.csprojResolveAssemblyReference.cache

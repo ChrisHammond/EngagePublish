@@ -858,7 +858,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                 hl.Text = tag.Name;
                 hl.NavigateUrl = DotNetNuke.Common.Globals.NavigateURL(DefaultTagDisplayTabId, string.Empty, "&tags=" + HttpUtility.UrlEncode(tag.Name));
                 hl.Attributes.Add("rel", "tag");
-                hl.Attributes.Add("class", "btn btn-primary btn-sm active"); //bootstrap button class
+                hl.Attributes.Add("class", "btn btn-info btn-sm active"); //bootstrap button class
                 hl.Attributes.Add("role", "button");
                 var li = new Literal { Text = "&nbsp;" };
 

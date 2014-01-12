@@ -649,7 +649,7 @@ Module CSS
 .Publish_VersionComments
 {
 	padding:5px;
-	border:dashed 1px #000;
+	border:none;
 	clear:right;
 	margin-top:5px;
 	margin-bottom:10px;
