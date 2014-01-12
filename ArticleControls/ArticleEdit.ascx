@@ -3,9 +3,6 @@
 <%@ Register TagPrefix="dnn" TagName="sectionhead" Src="~/controls/sectionheadcontrol.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="URL" Src="~/controls/URLControl.ascx" %>
 
-
-
-
 <div id="ArticleEdit" class="Normal">
     <dnn:sectionhead ID="shPublishInstructions" CssClass="Head" runat="server" Text="Basic Options" Section="publishInstructions" ResourceKey="shPublishInstructions" IsExpanded="False" />
     <hr />
@@ -16,247 +13,121 @@
     <dnn:sectionhead ID="shArticleEdit" CssClass="Head" runat="server" Text="Basic Options" Section="tblArticleEdit" ResourceKey="shArticleEdit" IsExpanded="True" />
     <hr />
     <div id="tblArticleEdit" runat="server">
-        <table class="PublishEditTable Normal">
-            <tr id="trArticleId" runat="server">
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblArticleId" ResourceKey="lblArticleId" runat="server" />
-                </td>
-                <td class="fullWidth">
-                    <asp:Label ID="txtArticleId" runat="server" />
-                </td>
-            </tr>
-        </table>
-        
+        <div class="form-group">
+            <dnn:label ID="lblArticleId" ResourceKey="lblArticleId" runat="server" />
+
+            <asp:TextBox ID="txtArticleId" runat="server" CssClass="form-control" Enabled="false" />
+        </div>
+
         <asp:PlaceHolder ID="phControls" runat="Server" />
-        <table class="PublishEditTable Normal">
-            <tr>
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblArticleText" ResourceKey="ArticleText" runat="server" cssclass="title" />
-                </td>
-                <td class="fullWidth">
-                    <asp:PlaceHolder ID="phArticleText" runat="server" />
-                </td>
-            </tr>
-        </table>
-        <table class="PublishEditTable Normal">
-            <tr>
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblParentCategory" runat="server" ResourceKey="ParentCategory" />
-                </td>
-                <td class="fullWidth">
-                    <asp:UpdatePanel ID="upnlParentCategory" runat="server" UpdateMode="Conditional">
-                        <ContentTemplate>
-                            <asp:PlaceHolder ID="phParentCategory" runat="server" />
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </td>
-            </tr>
-        </table>
+        <div class="form-group dnnClear">
+            <dnn:label ID="lblArticleText" ResourceKey="ArticleText" runat="server" cssclass="title" />
+            <asp:PlaceHolder ID="phArticleText" runat="server" />
+        </div>
+        <div class="form-group dnnClear">
+            <dnn:label ID="lblParentCategory" runat="server" ResourceKey="ParentCategory" />
+        </div>
+        <div class="form-group">
+            <asp:UpdatePanel ID="upnlParentCategory" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:PlaceHolder ID="phParentCategory" runat="server" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <div class="form-group">
+            <asp:UpdatePanel ID="upnlRelatedCategories" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div class="dnnClear">
+                        <dnn:label ID="lblRelatedCategories" runat="server" ResourceKey="RelatedCategories" />
+                    </div>
 
-    <asp:Panel ID="TitlePanel" runat="server" CssClass="collapsePanelHeader"> 
-           <table class="PublishEditTable Normal">
-        <tr>
-            <td class="editTableLabelColumn nowrap">
-                <asp:Label ID="lblArticleEditExtendedHeader" CssClass="SubHead" resourcekey="lblArticleEditExtendedHeader" runat="server" />
-            </td><td class="fullWidth">
-                <asp:image id="imgArticleEditExtendedHeader" runat="server" />
-                &nbsp;
-            </td>
-        </tr>
-    </table>
-           
-           
-    </asp:Panel>
-    
-<asp:Panel ID="pnlArticleEditExtended" runat="server">
+                    <asp:PlaceHolder ID="phRelatedCategories" runat="server" />
 
-        <table class="PublishEditTable Normal">
-            <tr>
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblRelatedCategories" runat="server" ResourceKey="RelatedCategories" />
-                </td>
-                <td class="fullWidth">
-                    <asp:UpdatePanel ID="upnlRelatedCategories" runat="server" UpdateMode="Conditional">
-                        <ContentTemplate>
-                            <asp:PlaceHolder ID="phRelatedCategories" runat="server" />
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </td>
-            </tr>
-        </table>
-        <table class="PublishEditTable Normal">
-            <tr>
-                <td class="editTableLabelColumn nowrap">
-                    <asp:Label ID="lblIncludeRelatedArticles" runat="server" ResourceKey="lblIncludeRelatedArticles" />
-                </td>
-                <td class="fullWidth">
-                    <asp:CheckBox ID="chkIncludeRelatedArticles" runat="server" AutoPostBack="true" OnCheckedChanged="chkIncludeRelatedArticles_CheckedChanged" />
-                    <hr />
-                    <asp:UpdatePanel ID="upnlRelatedArticles" runat="server" UpdateMode="Conditional">
-                        <Triggers>
-                            <asp:AsyncPostBackTrigger ControlID="chkIncludeRelatedArticles" />
-                        </Triggers>
-                        <ContentTemplate>
-                            <asp:PlaceHolder ID="phRelatedArticles" runat="server" Visible="false">
-                                <dnn:label ID="lblRelatedArticles" runat="server" ResourceKey="RelatedArticles" />
-                                <asp:CheckBox ID="chkIncludeOtherArticlesFromSameList" runat="server" Text="Automatically include other articles from the same Article List(s), and/or" ResourceKey="chkIncludeOtherArticlesFromSameList" /><br />
-                            </asp:PlaceHolder>
-                            <asp:PlaceHolder ID="phEmbeddedArticle" runat="server" Visible="false">
-                                <dnn:label ID="lblEmbeddedArticle" runat="server" ResourceKey="EmbeddedArticle" />
-                            </asp:PlaceHolder>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </td>
-            </tr>
-        </table>
-        <table class="PublishEditTable Normal">
-            <tr id="rowPhotoGallery" runat="server" visible="false">
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblPhotoGalleryAlbum" runat="server" cssclass="title" ControlName="ddlPhotoGalleryAlbum" />
-                </td>
-                <td class="fullWidth">
-                    <asp:DropDownList ID="ddlPhotoGalleryAlbum" runat="server" CssClass="NormalTextBox" />
-                    <hr />
-                </td>
-            </tr>
-        </table>
-        <table class="PublishEditTable Normal">
-            <tr>
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblDisplayOptions" ResourceKey="lblDisplayOptions" runat="server" cssclass="title" />
-                </td>
-                <td class="fullWidth">
-                    <asp:CheckBox ID="chkEmailAFriend" runat="server" ResourceKey="chkEmailAFriend" />
-                    <asp:CheckBox ID="chkPrinterFriendly" runat="server" ResourceKey="chkPrinterFriendly" />
-                    <asp:CheckBox ID="chkRatings" runat="server" ResourceKey="chkRatings" />
-                    <asp:CheckBox ID="chkComments" runat="server" ResourceKey="chkComments" />
-                    <asp:CheckBox ID="chkForumComments" runat="server" ResourceKey="chkForumComments" />
-                    <asp:CheckBox ID="chkReturnList" runat="server" ResourceKey="chkReturnList" />
-                    <asp:CheckBox ID="chkShowAuthor" runat="server" ResourceKey="chkShowAuthor" />
-                    <asp:CheckBox ID="chkTags" runat="server" ResourceKey="chkTags" />
-                    <hr />
-                </td>
-            </tr>
-        </table>
-        <table class="PublishEditTable Normal">
-            <tr>
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblArticleAttachment" ResourceKey="lblArticleAttachment" runat="server" cssclass="title" />
-                </td>
-                <td class="fullWidth">
-                    <dnn:URL ID="ctlUrlSelection" runat="server" Width="325"
-                         ShowFiles="true"
-                         ShowUrls="false" 
-                         ShowTabs="false" 
-                         ShowLog="false" 
-                         ShowTrack="false" 
-                         Required="False" 
-                         ShowNewWindow="False"/>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <div class="form-group dnnClear">
+            <dnn:label ID="lblDisplayOptions" ResourceKey="lblDisplayOptions" runat="server" cssclass="title dnnClear" />
+            <div class="dnnClear">
+                <asp:CheckBox ID="chkEmailAFriend" runat="server" ResourceKey="chkEmailAFriend" CssClass="checkbox" />
+                <asp:CheckBox ID="chkPrinterFriendly" runat="server" ResourceKey="chkPrinterFriendly" CssClass="checkbox" />
+                <asp:CheckBox ID="chkRatings" runat="server" ResourceKey="chkRatings" CssClass="checkbox" />
+                <asp:CheckBox ID="chkComments" runat="server" ResourceKey="chkComments" CssClass="checkbox" />
+                <asp:CheckBox ID="chkForumComments" runat="server" ResourceKey="chkForumComments" CssClass="checkbox" />
+                <asp:CheckBox ID="chkReturnList" runat="server" ResourceKey="chkReturnList" CssClass="checkbox" />
+                <asp:CheckBox ID="chkShowAuthor" runat="server" ResourceKey="chkShowAuthor" CssClass="checkbox" />
+                <asp:CheckBox ID="chkTags" runat="server" ResourceKey="chkTags" CssClass="checkbox" />
+            </div>
+        </div>
+        <div class="form-group dnnClear">
+            <div class="dnnClear">
+                <dnn:label ID="lblArticleAttachment" ResourceKey="lblArticleAttachment" runat="server" cssclass="title" />
+            </div>
+            <dnn:URL ID="ctlUrlSelection" runat="server" Width="325"
+                ShowFiles="true"
+                ShowUrls="false"
+                ShowTabs="false"
+                ShowLog="false"
+                ShowTrack="false"
+                Required="False"
+                ShowNewWindow="False" />
 
-                </td>
-            </tr>
-        </table>
+        </div>
+        <div class="form-group">
+            <dnn:label ID="lblVersionNumber" ResourceKey="lblVersionNumber" runat="server" cssclass="title" />
+            <asp:TextBox ID="txtVersionNumber" runat="server" TextMode="SingleLine" CssClass="form-control" />
+        </div>
+        <div class="form-group">
+            <dnn:label ID="lblPreviousVersionDescription" ResourceKey="lblPreviousVersionDescription" runat="server" cssclass="title" />
+            <asp:TextBox ID="txtPreviousVersionDescription" runat="server" TextMode="MultiLine" Columns="50" Rows="3" ReadOnly="true" CssClass="form-control" />
+        </div>
+        <div class="form-group">
+            <dnn:label ID="lblVersionDescription" ResourceKey="lblVersionDescription" runat="server" cssclass="title" />
+            <asp:TextBox ID="txtVersionDescription" runat="server" TextMode="MultiLine" Columns="50" Rows="3" CssClass="form-control" />
+        </div>
+        <div class="form-group">
+            <dnn:label ID="lblDisplayOnCurrentPage" ResourceKey="lblDisplayOnCurrentPage" runat="server" cssclass="title" />
+            <asp:UpdatePanel ID="upnlDisplayLocationOptions" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:RadioButtonList ID="rblDisplayOnCurrentPage" runat="server" CssClass="Normal" Style="display: inline" RepeatDirection="Horizontal" AutoPostBack="true" OnSelectedIndexChanged="rblDisplayOnCurrentPage_SelectedIndexChanged" />
+                    <asp:DropDownList ID="ddlDisplayTabId" BorderWidth="0" DataValueField="TabID" DataTextField="TabName" runat="server" />
+                    <asp:Label ID="lblPublishOverrideable" runat="server" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <div class="form-group">
+            <asp:UpdatePanel ID="upnlForceDisplayTabLabel" runat="server" RenderMode="Inline" UpdateMode="Conditional" ChildrenAsTriggers="false">
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="rblDisplayOnCurrentPage" />
+                </Triggers>
+                <ContentTemplate>
+                    <dnn:label ID="lblForceDisplayTab" runat="server" cssclass="title" Visible="false" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <asp:UpdatePanel ID="upnlForceDisplayTab" runat="server" RenderMode="Inline" UpdateMode="Conditional" ChildrenAsTriggers="false">
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="rblDisplayOnCurrentPage" />
+                </Triggers>
+                <ContentTemplate>
+                    <asp:CheckBox ID="chkForceDisplayTab" runat="server" AutoPostBack="true" Visible="false" CssClass="checkbox" /><%--OnCheckedChanged="chkForceDisplayTab_CheckedChanged"--%>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <div class="form-group">
+            <dnn:label ID="lblApproval" runat="server" ResourceKey="ApprovalStatus" />
+            <asp:UpdatePanel ID="upnlApproval" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:CheckBox ID="chkUseApprovals" runat="server" Text="Use Approvals" ResourceKey="chkUseApprovals" AutoPostBack="true" OnCheckedChanged="chkUseApprovals_CheckedChanged" Visible="false" Checked="true" />
+                    <asp:PlaceHolder ID="phApproval" runat="Server" />
+                    <asp:Label ID="lblNotUsingApprovals" runat="server" Visible="false" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <div class="form-group">
+            <dnn:label ID="lblTagEntry" runat="server" ResourceKey="TagEntry" />
+            <asp:PlaceHolder ID="phTagEntry" runat="server"></asp:PlaceHolder>
+        </div>
 
-        
-        <table class="PublishEditTable Normal">
-            <tr>
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblVersionNumber" ResourceKey="lblVersionNumber" runat="server" cssclass="title" />
-                </td>
-                <td class="fullWidth">
-                    <asp:TextBox ID="txtVersionNumber" runat="server" TextMode="SingleLine" />
-                </td>
-            </tr>
-        </table>
-        <table class="PublishEditTable Normal">
-            <tr>
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblPreviousVersionDescription" ResourceKey="lblPreviousVersionDescription" runat="server" cssclass="title" />
-                </td>
-                <td class="fullWidth">
-                    <asp:TextBox ID="txtPreviousVersionDescription" runat="server" TextMode="MultiLine" Columns="50" Rows="3" ReadOnly="true" />
-                </td>
-            </tr>
-        </table>
-        <table class="PublishEditTable Normal">
-            <tr>
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblVersionDescription" ResourceKey="lblVersionDescription" runat="server" cssclass="title" />
-                </td>
-                <td class="fullWidth">
-                    <asp:TextBox ID="txtVersionDescription" runat="server" TextMode="MultiLine" Columns="50" Rows="3" />
-                    <hr />
-                </td>
-            </tr>
-        </table>
-</asp:Panel>
-        <table class="PublishEditTable Normal">
-            <tr>
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblDisplayOnCurrentPage" ResourceKey="lblDisplayOnCurrentPage" runat="server" cssclass="title" />
-                </td>
-                <td class="fullWidth">
-                    <asp:UpdatePanel ID="upnlDisplayLocationOptions" runat="server" UpdateMode="Conditional">
-                        <ContentTemplate>
-                            <asp:RadioButtonList ID="rblDisplayOnCurrentPage" runat="server" CssClass="Normal" Style="display: inline" RepeatDirection="Horizontal" AutoPostBack="true" OnSelectedIndexChanged="rblDisplayOnCurrentPage_SelectedIndexChanged" />
-                            <asp:DropDownList ID="ddlDisplayTabId" BorderWidth="0" DataValueField="TabID" DataTextField="TabName" runat="server" />
-                            <br /> <asp:Label ID="lblPublishOverrideable" runat="server" />
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </td>
-            </tr>
-        </table>
-        <table class="PublishEditTable Normal">
-            <tr>
-                <td class="editTableLabelColumn nowrap">
-                    <asp:UpdatePanel ID="upnlForceDisplayTabLabel" runat="server" RenderMode="Inline" UpdateMode="Conditional" ChildrenAsTriggers="false">
-                        <Triggers>
-                            <asp:AsyncPostBackTrigger ControlID="rblDisplayOnCurrentPage" />
-                        </Triggers>
-                        <ContentTemplate>
-                            <dnn:label ID="lblForceDisplayTab" runat="server" cssclass="title" Visible="false" />
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </td>
-                <td class="fullWidth">
-                    <asp:UpdatePanel ID="upnlForceDisplayTab" runat="server" RenderMode="Inline" UpdateMode="Conditional" ChildrenAsTriggers="false">
-                        <Triggers>
-                            <asp:AsyncPostBackTrigger ControlID="rblDisplayOnCurrentPage" />
-                        </Triggers>
-                        <ContentTemplate>
-                            <asp:CheckBox ID="chkForceDisplayTab" runat="server" AutoPostBack="true" Visible="false" /><%--OnCheckedChanged="chkForceDisplayTab_CheckedChanged"--%>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                    <hr />
-                </td>
-            </tr>
-        </table>
-        <table class="PublishEditTable Normal">
-            <tr>
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblApproval" runat="server" ResourceKey="ApprovalStatus" />
-                </td>
-                <td class="fullWidth">
-                    <asp:UpdatePanel ID="upnlApproval" runat="server" UpdateMode="Conditional">
-                        <ContentTemplate>
-                            <asp:CheckBox ID="chkUseApprovals" runat="server" Text="Use Approvals" ResourceKey="chkUseApprovals" AutoPostBack="true" OnCheckedChanged="chkUseApprovals_CheckedChanged" Visible="false" Checked="true" />
-                            <asp:PlaceHolder ID="phApproval" runat="Server" />
-                            <asp:Label ID="lblNotUsingApprovals" runat="server" Visible="false" />
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
-                </td>
-            </tr>
-        </table>
-        <table class="PublishEditTable Normal">
-            <tr runat="server" id="rowTagEntry">
-                <td class="editTableLabelColumn nowrap">
-                    <dnn:label ID="lblTagEntry" runat="server" ResourceKey="TagEntry" />
-                </td>
-                <td class="fullWidth">
-                    <asp:PlaceHolder ID="phTagEntry" runat="server"></asp:PlaceHolder>
-                </td>
-            </tr>
-        </table>
     </div>
     <asp:UpdateProgress ID="upPublishRelationshipsProgress" runat="server">
         <ProgressTemplate>
@@ -273,7 +144,7 @@
     <asp:TextBox ID="txtMessage" runat="server" Visible="False" ReadOnly="True" ForeColor="Red" EnableViewState="False" Columns="75" TextMode="MultiLine" Rows="5" /><br />
     <asp:ValidationSummary ID="ValidationSummary1" runat="server"></asp:ValidationSummary>
     <br />
-    <asp:LinkButton ID="cmdUpdate" runat="server" ResourceKey="cmdUpdate"></asp:LinkButton>&nbsp;&nbsp;
-    <asp:LinkButton ID="cmdCancel" runat="server" ResourceKey="cmdCancel" CausesValidation="False"></asp:LinkButton>&nbsp;&nbsp;
-    <asp:LinkButton ID="cmdDelete" runat="server" resourceKey="cmdDelete" CausesValidation="False" Text="Delete" OnClick="cmdDelete_Click"></asp:LinkButton>
+    <asp:LinkButton ID="cmdUpdate" runat="server" ResourceKey="cmdUpdate" CssClass="dnnPrimaryAction"></asp:LinkButton>&nbsp;&nbsp;
+    <asp:LinkButton ID="cmdCancel" runat="server" ResourceKey="cmdCancel" CausesValidation="False" CssClass="dnnSecondaryAction"></asp:LinkButton>&nbsp;&nbsp;
+    <asp:LinkButton ID="cmdDelete" runat="server" resourceKey="cmdDelete" CausesValidation="False" Text="Delete" OnClick="cmdDelete_Click" CssClass="dnnSecondaryAction"></asp:LinkButton>
 </div>

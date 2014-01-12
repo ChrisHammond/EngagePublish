@@ -8,8 +8,7 @@ F:\websites\dnndev\bin\EngagePublish.pdb
 F:\websites\dnndev\DesktopModules\EngagePublish\obj\Release\EngagePublish.dll
 F:\websites\dnndev\DesktopModules\EngagePublish\obj\Release\EngagePublish.pdb
 F:\websites\dnndev\DesktopModules\EngagePublish\obj\Release\EngagePublish.csprojResolveAssemblyReference.cache
-F:\websites\dnndev.me\bin\EngagePublish.dll
-F:\websites\dnndev.me\bin\EngagePublish.pdb
-F:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.csprojResolveAssemblyReference.cache
-F:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.dll
-F:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.pdb
+F:\Websites\dnndev.me\bin\EngagePublish.dll
+F:\Websites\dnndev.me\bin\EngagePublish.pdb
+F:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.dll
+F:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.pdb

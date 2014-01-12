@@ -49,8 +49,7 @@ namespace Engage.Dnn.Publish.Controls
             {
                 ctlUrlSelection.Url = VersionInfoObject.Url;
                 chkNewWindow.Checked    = VersionInfoObject.NewWindow;
-                pnlUrlSelection.Visible = true;
-                chkUrlSelection.Checked = true;
+                
                 UseUrls = true;
             }
 
@@ -118,8 +117,8 @@ namespace Engage.Dnn.Publish.Controls
 
                     if (Utility.HasValue(VersionInfoObject.MetaTitle) || Utility.HasValue(VersionInfoObject.MetaDescription) || Utility.HasValue(VersionInfoObject.MetaKeywords))
                     {
-                        chkSearchEngine.Checked = true;
-                        pnlSearchEngine.Visible = true;
+                        //chkSearchEngine.Checked = true;
+                        //pnlSearchEngine.Visible = true;
                     }
 
                     txtDescription.Text = VersionInfoObject.Description;
@@ -221,19 +220,19 @@ namespace Engage.Dnn.Publish.Controls
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Member", Justification = "Controls use lower case prefix")]
         protected void chkSearchEngine_CheckedChanged(object sender, EventArgs e)
         {
-            pnlSearchEngine.Visible = chkSearchEngine.Checked;
+            //pnlSearchEngine.Visible = chkSearchEngine.Checked;
 
-            if (!chkSearchEngine.Checked)
-            {
-                //Remove SEO Optimization when they check to not Optimize for Search Engines.  BD
-                txtMetaDescription.Text = string.Empty;
-                txtMetaKeywords.Text = string.Empty;
-                txtMetaTitle.Text = string.Empty;
-            }
+            //if (!chkSearchEngine.Checked)
+            //{
+            //    //Remove SEO Optimization when they check to not Optimize for Search Engines.  BD
+            //    txtMetaDescription.Text = string.Empty;
+            //    txtMetaKeywords.Text = string.Empty;
+            //    txtMetaTitle.Text = string.Empty;
+            //}
         }
         protected void chkUrlSelection_CheckedChanged(object sender, EventArgs e)
         {
-            pnlUrlSelection.Visible = chkUrlSelection.Checked;
+            //pnlUrlSelection.Visible = chkUrlSelection.Checked;
             ChangeParentPage();
         }
 

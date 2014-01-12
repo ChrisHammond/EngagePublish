@@ -85,42 +85,6 @@ namespace Engage.Dnn.Publish.Controls {
         protected global::System.Web.UI.WebControls.TextBox txtDescription;
         
         /// <summary>
-        /// TitlePanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel TitlePanel;
-        
-        /// <summary>
-        /// lblItemEditAdvancedHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblItemEditAdvancedHeader;
-        
-        /// <summary>
-        /// imgItemEditAdvancedHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgItemEditAdvancedHeader;
-        
-        /// <summary>
-        /// pnlItemEditAdvanced control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlItemEditAdvanced;
-        
-        /// <summary>
         /// lblAuthor control.
         /// </summary>
         /// <remarks>
@@ -175,15 +139,6 @@ namespace Engage.Dnn.Publish.Controls {
         protected global::Engage.Dnn.Publish.Controls.ThumbnailSelector thumbnailSelector;
         
         /// <summary>
-        /// lblPostingDates control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblPostingDates;
-        
-        /// <summary>
         /// lblStartDate control.
         /// </summary>
         /// <remarks>
@@ -202,15 +157,6 @@ namespace Engage.Dnn.Publish.Controls {
         protected global::System.Web.UI.WebControls.TextBox txtStartDate;
         
         /// <summary>
-        /// imgStartCalendarIcon control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgStartCalendarIcon;
-        
-        /// <summary>
         /// lblEndDate control.
         /// </summary>
         /// <remarks>
@@ -227,51 +173,6 @@ namespace Engage.Dnn.Publish.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEndDate;
-        
-        /// <summary>
-        /// imgEndCalendarIcon control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgEndCalendarIcon;
-        
-        /// <summary>
-        /// lblSearchEngine control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblSearchEngine;
-        
-        /// <summary>
-        /// chkSearchEngine control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkSearchEngine;
-        
-        /// <summary>
-        /// upnlSearchEngine control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upnlSearchEngine;
-        
-        /// <summary>
-        /// pnlSearchEngine control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlSearchEngine;
         
         /// <summary>
         /// lblMetaTitle control.
@@ -335,33 +236,6 @@ namespace Engage.Dnn.Publish.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblChooseUrl;
-        
-        /// <summary>
-        /// chkUrlSelection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkUrlSelection;
-        
-        /// <summary>
-        /// UpdatePanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
-        /// pnlUrlSelection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlUrlSelection;
         
         /// <summary>
         /// ctlUrlSelection control.

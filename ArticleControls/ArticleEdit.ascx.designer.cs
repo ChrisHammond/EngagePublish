@@ -58,15 +58,6 @@ namespace Engage.Dnn.Publish.ArticleControls {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl tblArticleEdit;
         
         /// <summary>
-        /// trArticleId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trArticleId;
-        
-        /// <summary>
         /// lblArticleId control.
         /// </summary>
         /// <remarks>
@@ -82,7 +73,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtArticleId;
+        protected global::System.Web.UI.WebControls.TextBox txtArticleId;
         
         /// <summary>
         /// phControls control.
@@ -139,40 +130,13 @@ namespace Engage.Dnn.Publish.ArticleControls {
         protected global::System.Web.UI.WebControls.PlaceHolder phParentCategory;
         
         /// <summary>
-        /// TitlePanel control.
+        /// upnlRelatedCategories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel TitlePanel;
-        
-        /// <summary>
-        /// lblArticleEditExtendedHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblArticleEditExtendedHeader;
-        
-        /// <summary>
-        /// imgArticleEditExtendedHeader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgArticleEditExtendedHeader;
-        
-        /// <summary>
-        /// pnlArticleEditExtended control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlArticleEditExtended;
+        protected global::System.Web.UI.UpdatePanel upnlRelatedCategories;
         
         /// <summary>
         /// lblRelatedCategories control.
@@ -184,15 +148,6 @@ namespace Engage.Dnn.Publish.ArticleControls {
         protected global::DotNetNuke.UI.UserControls.LabelControl lblRelatedCategories;
         
         /// <summary>
-        /// upnlRelatedCategories control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upnlRelatedCategories;
-        
-        /// <summary>
         /// phRelatedCategories control.
         /// </summary>
         /// <remarks>
@@ -200,105 +155,6 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phRelatedCategories;
-        
-        /// <summary>
-        /// lblIncludeRelatedArticles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIncludeRelatedArticles;
-        
-        /// <summary>
-        /// chkIncludeRelatedArticles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkIncludeRelatedArticles;
-        
-        /// <summary>
-        /// upnlRelatedArticles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upnlRelatedArticles;
-        
-        /// <summary>
-        /// phRelatedArticles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phRelatedArticles;
-        
-        /// <summary>
-        /// lblRelatedArticles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblRelatedArticles;
-        
-        /// <summary>
-        /// chkIncludeOtherArticlesFromSameList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkIncludeOtherArticlesFromSameList;
-        
-        /// <summary>
-        /// phEmbeddedArticle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phEmbeddedArticle;
-        
-        /// <summary>
-        /// lblEmbeddedArticle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblEmbeddedArticle;
-        
-        /// <summary>
-        /// rowPhotoGallery control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow rowPhotoGallery;
-        
-        /// <summary>
-        /// lblPhotoGalleryAlbum control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblPhotoGalleryAlbum;
-        
-        /// <summary>
-        /// ddlPhotoGalleryAlbum control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPhotoGalleryAlbum;
         
         /// <summary>
         /// lblDisplayOptions control.
@@ -578,15 +434,6 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNotUsingApprovals;
-        
-        /// <summary>
-        /// rowTagEntry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow rowTagEntry;
         
         /// <summary>
         /// lblTagEntry control.

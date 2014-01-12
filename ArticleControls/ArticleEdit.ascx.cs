@@ -107,7 +107,7 @@ namespace Engage.Dnn.Publish.ArticleControls
             if (ItemVersionId == -1)
             {
                 BindItemData(true);
-                trArticleId.Visible = false;
+                //trArticleId.Visible = false;
                 cmdDelete.Visible = false;
             }
             else
@@ -129,7 +129,7 @@ namespace Engage.Dnn.Publish.ArticleControls
             TeArticleText = (TextEditor)LoadControl("~/controls/TextEditor.ascx");
             TeArticleText.HtmlEncode = false;
             TeArticleText.TextRenderMode = "Raw";
-            TeArticleText.Width = ArticleEditWidth; //default values for the editor
+            //TeArticleText.Width = ArticleEditWidth; //default values for the editor
             TeArticleText.Height = ArticleEditHeight; //default values for the editor
             TeArticleText.ChooseMode = true;
             phArticleText.Controls.Add(TeArticleText);
@@ -162,35 +162,6 @@ namespace Engage.Dnn.Publish.ArticleControls
             relatedCategoryRelationships.ItemTypeId = ItemType.Category.GetId();
             phRelatedCategories.Controls.Add(relatedCategoryRelationships);
 
-            //Related Articles Relationship
-            relatedArticlesRelationships = (ItemRelationships)LoadControl("../controls/ItemRelationships.ascx");
-            relatedArticlesRelationships.ModuleConfiguration = ModuleConfiguration;
-            relatedArticlesRelationships.VersionInfoObject = VersionInfoObject;
-            relatedArticlesRelationships.LocalResourceFile = ItemrelationshipResourceFile;
-            relatedArticlesRelationships.ListRelationshipTypeId = Util.RelationshipType.ItemToParentCategory.GetId();
-            relatedArticlesRelationships.CreateRelationshipTypeId = Util.RelationshipType.ItemToRelatedArticle.GetId();
-            relatedArticlesRelationships.AvailableSelectionMode = ListSelectionMode.Multiple;
-            relatedArticlesRelationships.FlatView = true;
-            relatedArticlesRelationships.EnableDates = false;
-            relatedArticlesRelationships.AllowSearch = true;
-            relatedArticlesRelationships.EnableSortOrder = true;
-            relatedArticlesRelationships.ItemTypeId = ItemType.Article.GetId();
-            phRelatedArticles.Controls.Add(relatedArticlesRelationships);
-
-            //Embedded Articles Relationship
-            embeddedArticlesRelationships = (ItemRelationships)LoadControl("../controls/ItemRelationships.ascx");
-            embeddedArticlesRelationships.ModuleConfiguration = ModuleConfiguration;
-            embeddedArticlesRelationships.VersionInfoObject = VersionInfoObject;
-            embeddedArticlesRelationships.LocalResourceFile = ItemrelationshipResourceFile;
-            embeddedArticlesRelationships.ListRelationshipTypeId = Util.RelationshipType.ItemToParentCategory.GetId();
-            embeddedArticlesRelationships.CreateRelationshipTypeId = Util.RelationshipType.ItemToArticleLinks.GetId();
-            embeddedArticlesRelationships.AvailableSelectionMode = ListSelectionMode.Single;
-            embeddedArticlesRelationships.FlatView = true;
-            embeddedArticlesRelationships.EnableDates = false;
-            embeddedArticlesRelationships.AllowSearch = true;
-            embeddedArticlesRelationships.EnableSortOrder = false;
-            embeddedArticlesRelationships.ItemTypeId = ItemType.Article.GetId();
-            phEmbeddedArticle.Controls.Add(embeddedArticlesRelationships);
 
             //load approval status
             itemApprovalStatus = (ItemApproval)LoadControl(ApprovalControlToLoad);
@@ -202,7 +173,6 @@ namespace Engage.Dnn.Publish.ArticleControls
 
             if (AllowTags)
             {
-                rowTagEntry.Visible = true;
                 var tagList = new StringBuilder(255);
                 foreach (ItemTag it in VersionInfoObject.Tags)
                 {
@@ -221,19 +191,13 @@ namespace Engage.Dnn.Publish.ArticleControls
             }
             else
             {
-                rowTagEntry.Visible = false;
             }
-
-
         }
-
-
 
         private void Page_Load(object sender, EventArgs e)
         {
             try
             {
-
                 LocalizeCollapsePanels();
 
                 DotNetNuke.UI.Utilities.ClientAPI.AddButtonConfirm(cmdDelete, Localization.GetString("DeleteConfirm", LocalResourceFile));
@@ -250,7 +214,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                         }
                     }
 
-                    trArticleId.Visible = ShowItemIds;
+                    //trArticleId.Visible = ShowItemIds;
 
                     txtArticleId.Text = VersionInfoObject.ItemId.ToString(CultureInfo.CurrentCulture) == "-1" ? Localization.GetString("NewArticle", LocalResourceFile) : VersionInfoObject.ItemId.ToString(CultureInfo.CurrentCulture);
                     txtVersionNumber.Text = av.VersionNumber;
@@ -336,9 +300,6 @@ namespace Engage.Dnn.Publish.ArticleControls
                         chkForumComments.Visible = false;
                     }
 
-                    //chkIncludeRelatedArticles
-                    ItemVersionSetting raSetting = ItemVersionSetting.GetItemVersionSetting(av.ItemVersionId, "ArticleSettings", "IncludeParentCategoryArticles", PortalId);
-                    chkIncludeOtherArticlesFromSameList.Checked = raSetting != null && Convert.ToBoolean(raSetting.PropertyValue, CultureInfo.InvariantCulture);
 
                     //chkShowAuthor
                     ItemVersionSetting auSetting = ItemVersionSetting.GetItemVersionSetting(av.ItemVersionId, "pnlAuthor", "Visible", PortalId);
@@ -420,7 +381,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                     lblNotUsingApprovals.Visible = !chkUseApprovals.Checked || !UseApprovals;
                     lblNotUsingApprovals.Text = Localization.GetString("ApprovalsDisabled", LocalSharedResourceFile);
 
-                    LoadPhotoGalleryDropDown(av);
+                    //LoadPhotoGalleryDropDown(av);
                     LoadDisplayTabDropDown();
 
                     //load the article attachement settings
@@ -453,30 +414,6 @@ namespace Engage.Dnn.Publish.ArticleControls
         private void Page_PreRender(object sender, EventArgs e)
         {
 
-            //the ItemRelationships control doesn't bind until after this Page_Load,
-            //so we need to use the PreRender to see whether there are articles
-            bool thereAreRelatedArticles = relatedArticlesRelationships.GetSelectedItemIds().Length > 0;
-            bool thereIsAnEmbeddedArtice = embeddedArticlesRelationships.GetSelectedItemIds().Length > 0;
-            if (thereAreRelatedArticles || thereIsAnEmbeddedArtice || chkIncludeOtherArticlesFromSameList.Checked)
-            {
-                chkIncludeRelatedArticles.Checked = true;
-                phRelatedArticles.Visible = true;
-                phEmbeddedArticle.Visible = thereIsAnEmbeddedArtice || UseEmbeddedArticles;
-            }
-        }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Member", Justification = "Controls use lower case prefix")]
-        protected void chkIncludeRelatedArticles_CheckedChanged(object sender, EventArgs e)
-        {
-            phRelatedArticles.Visible = chkIncludeRelatedArticles.Checked;
-            phEmbeddedArticle.Visible = chkIncludeRelatedArticles.Checked && UseEmbeddedArticles;
-
-            if (!chkIncludeRelatedArticles.Checked)
-            {
-                //Remove all Related and Embedded Articles if they choose not to include related articles.
-                relatedArticlesRelationships.Clear();
-                embeddedArticlesRelationships.Clear();
-            }
         }
 
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Member", Justification = "Controls use lower case prefix")]
@@ -572,15 +509,12 @@ namespace Engage.Dnn.Publish.ArticleControls
                     txtMessage.Text += Localization.GetString("ErrorDisplayPage.Text", LocalResourceFile);
                 }
 
-
-
-
                 if (error)
                 {
                     txtMessage.Visible = true;
                     return;
                 }
-                
+
                 av.ArticleText = TeArticleText.Text;
                 av.VersionDescription = txtVersionDescription.Text;
                 av.VersionNumber = txtVersionNumber.Text;
@@ -622,26 +556,6 @@ namespace Engage.Dnn.Publish.ArticleControls
                     av.Relationships.Add(irco);
                 }
 
-                foreach (int i in relatedArticlesRelationships.GetSelectedItemIds())
-                {
-                    var irArticleso = new ItemRelationship
-                                          {
-                                              RelationshipTypeId = Util.RelationshipType.ItemToRelatedArticle.GetId(),
-                                              ParentItemId = i
-                                          };
-                    av.Relationships.Add(irArticleso);
-                }
-
-                foreach (int i in embeddedArticlesRelationships.GetSelectedItemIds())
-                {
-                    var irLinksso = new ItemRelationship
-                                        {
-                                            RelationshipTypeId = Util.RelationshipType.ItemToArticleLinks.GetId(),
-                                            ParentItemId = i
-                                        };
-                    av.Relationships.Add(irLinksso);
-                }
-
                 if (AllowTags)
                 {
                     av.Tags.Clear();
@@ -655,8 +569,6 @@ namespace Engage.Dnn.Publish.ArticleControls
                 }
 
 
-
-
                 if (av.Description == string.Empty)
                 {
                     //trim article text to populate description
@@ -668,7 +580,6 @@ namespace Engage.Dnn.Publish.ArticleControls
                             av.Description = Utility.TrimDescription(3997, description) + "...";// description + "...";
                     }
                 }
-
 
                 //auto populate the meta description if it's not populated already
                 if (!Utility.HasValue(av.MetaDescription))
@@ -876,107 +787,6 @@ namespace Engage.Dnn.Publish.ArticleControls
             }
         }
 
-        private void LoadPhotoGalleryDropDown(Article av)
-        {
-            if (AllowSimpleGalleryIntegration || AllowUltraMediaGalleryIntegration)
-            {
-                rowPhotoGallery.Visible = true;
-
-                FillPhotoGalleryDropDown();
-
-                if (ddlPhotoGalleryAlbum.Items.Count > 0)
-                {
-                    ItemVersionSetting simpleGalleryAlbum = ItemVersionSetting.GetItemVersionSetting(av.ItemVersionId, "ddlSimpleGalleryAlbum", "SelectedValue", PortalId);
-                    if (simpleGalleryAlbum != null && Utility.HasValue(simpleGalleryAlbum.PropertyValue))
-                    {
-                        ddlPhotoGalleryAlbum.ClearSelection();
-                        ddlPhotoGalleryAlbum.SelectedValue = "s" + simpleGalleryAlbum.PropertyValue;
-                    }
-                    else
-                    {
-                        ItemVersionSetting ultraMediaGalleryAlbum = ItemVersionSetting.GetItemVersionSetting(av.ItemVersionId, "ddlUltraMediaGalleryAlbum", "SelectedValue", PortalId);
-                        if (ultraMediaGalleryAlbum != null && Utility.HasValue(ultraMediaGalleryAlbum.PropertyValue))
-                        {
-                            ddlPhotoGalleryAlbum.ClearSelection();
-                            ddlPhotoGalleryAlbum.SelectedValue = "u" + ultraMediaGalleryAlbum.PropertyValue;
-                        }
-                    }
-                }
-                else
-                {
-                    rowPhotoGallery.Visible = false;
-                }
-            }
-            ddlPhotoGalleryAlbum.Items.Insert(0, new ListItem(string.Empty));
-        }
-
-        private void FillPhotoGalleryDropDown()
-        {
-            var modules = new ModuleController();
-
-            var simpleGalleryAlbums = new SortedList<string, ListItem>(StringComparer.CurrentCultureIgnoreCase);
-            if (AllowSimpleGalleryIntegration)
-            {
-                foreach (ModuleInfo module in modules.GetModulesByDefinition(PortalId, Utility.SimpleGalleryFriendlyName))
-                {
-                    if (PortalSecurity.IsInRoles(module.AuthorizedEditRoles))
-                    {
-                        IDataReader dr = DataProvider.Instance().GetSimpleGalleryAlbums(module.ModuleID);
-                        while (dr.Read())
-                        {
-                            string caption = dr["Caption"].ToString();
-                            for (int i = 0; simpleGalleryAlbums.ContainsKey(caption); i++)
-                            {
-                                caption += i.ToString(CultureInfo.InvariantCulture);
-                            }
-                            simpleGalleryAlbums.Add(caption, new ListItem(dr["Caption"].ToString(), "s" + dr["AlbumId"]));
-                        }
-                    }
-                }
-            }
-
-            var ultaMediaGalleryAlbums = new SortedList<string, ListItem>(StringComparer.CurrentCultureIgnoreCase);
-            if (AllowUltraMediaGalleryIntegration)
-            {
-                foreach (ModuleInfo module in modules.GetModulesByDefinition(PortalId, Utility.UltraMediaGalleryFriendlyName))
-                {
-                    if (PortalSecurity.IsInRoles(module.AuthorizedEditRoles))
-                    {
-                        IDataReader dr = DataProvider.Instance().GetUltraMediaGalleryAlbums(module.ModuleID);
-                        while (dr.Read())
-                        {
-                            string title = dr["Title"].ToString();
-                            for (int i = 0; ultaMediaGalleryAlbums.ContainsKey(title); i++)
-                            {
-                                title += i.ToString(CultureInfo.InvariantCulture);
-                            }
-                            ultaMediaGalleryAlbums.Add(title, new ListItem(dr["Title"].ToString(), "u" + dr["ItemId"]));
-                        }
-                    }
-                }
-            }
-
-            //label which module it's from if there are some from both.
-            bool labelModuleType = simpleGalleryAlbums.Count > 0 && ultaMediaGalleryAlbums.Count > 0;
-
-            foreach (ListItem li in simpleGalleryAlbums.Values)
-            {
-                if (labelModuleType)
-                {
-                    li.Text += " - " + Localization.GetString("SimpleGallery", LocalResourceFile);
-                }
-                ddlPhotoGalleryAlbum.Items.Add(li);
-            }
-
-            foreach (ListItem li in ultaMediaGalleryAlbums.Values)
-            {
-                if (labelModuleType)
-                {
-                    li.Text += " - " + Localization.GetString("UltraMediaGallery", LocalResourceFile);
-                }
-                ddlPhotoGalleryAlbum.Items.Add(li);
-            }
-        }
 
         private bool TextBoxMaxLengthExceeded(string text, string controlName, int length)
         {
@@ -1051,12 +861,6 @@ namespace Engage.Dnn.Publish.ArticleControls
                 av.VersionSettings.Add(itemVersionSetting);
             }
 
-            //include all articles from the parent category
-            setting = Setting.ArticleSettingIncludeCategories;
-            setting.PropertyValue = chkIncludeOtherArticlesFromSameList.Checked.ToString(CultureInfo.InvariantCulture);
-            itemVersionSetting = new ItemVersionSetting(setting);
-            av.VersionSettings.Add(itemVersionSetting);
-
             //display on current page option
             setting = Setting.ArticleSettingCurrentDisplay;
             setting.PropertyValue = rblDisplayOnCurrentPage.SelectedValue;
@@ -1091,18 +895,6 @@ namespace Engage.Dnn.Publish.ArticleControls
             //use approvals
             setting = Setting.UseApprovals;
             setting.PropertyValue = chkUseApprovals.Checked.ToString(CultureInfo.InvariantCulture);
-            itemVersionSetting = new ItemVersionSetting(setting);
-            av.VersionSettings.Add(itemVersionSetting);
-
-            //simple gallery album
-            setting = Setting.UseSimpleGalleryAlbum;
-            setting.PropertyValue = ddlPhotoGalleryAlbum.SelectedValue.StartsWith("s", StringComparison.Ordinal) ? ddlPhotoGalleryAlbum.SelectedValue.Substring(1) : string.Empty;
-            itemVersionSetting = new ItemVersionSetting(setting);
-            av.VersionSettings.Add(itemVersionSetting);
-
-            //ultra media gallery album
-            setting = Setting.UseUltraMediaGalleryAlbum;
-            setting.PropertyValue = ddlPhotoGalleryAlbum.SelectedValue.StartsWith("u", StringComparison.Ordinal) ? ddlPhotoGalleryAlbum.SelectedValue.Substring(1) : string.Empty;
             itemVersionSetting = new ItemVersionSetting(setting);
             av.VersionSettings.Add(itemVersionSetting);
 

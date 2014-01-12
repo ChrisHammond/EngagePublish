@@ -3,6 +3,8 @@
 5.9.2
 -adjusted article display header area
 -added "date created" to article display in addition to last updated.
+-bootstrapped the Article Edit page
+-modified the Admin menu to display even if not in "edit" mode in DNN.
 
 5.9.1
 -removed ajax control toolkit

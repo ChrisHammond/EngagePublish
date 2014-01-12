@@ -249,14 +249,14 @@ namespace Engage.Dnn.Publish.Admin
             divAdminMenu.Visible = true;
             lnkUpdateStatus.Visible = !isAuthorOnly && UseApprovals;
 
-            // Load stats
-            // TODO: hide this if necessary
-            phStats.Visible = true;
-            const string pathToStatsControl = "QuickStats.ascx";
-            var statsControl = (ModuleBase)LoadControl(pathToStatsControl);
-            statsControl.ModuleConfiguration = ModuleConfiguration;
-            statsControl.ID = System.IO.Path.GetFileNameWithoutExtension(pathToStatsControl);
-            phStats.Controls.Add(statsControl);
+            //// Load stats
+            //// TODO: hide this if necessary
+            //phStats.Visible = true;
+            //const string pathToStatsControl = "QuickStats.ascx";
+            //var statsControl = (ModuleBase)LoadControl(pathToStatsControl);
+            //statsControl.ModuleConfiguration = ModuleConfiguration;
+            //statsControl.ID = System.IO.Path.GetFileNameWithoutExtension(pathToStatsControl);
+            //phStats.Controls.Add(statsControl);
 
             phLink.Visible = true;
 
@@ -305,7 +305,7 @@ namespace Engage.Dnn.Publish.Admin
         {
             phLink.Controls.Add(new LiteralControl("<li>"));
 
-            var menuLink = new HyperLink {NavigateUrl = navigateUrl, Text = text};
+            var menuLink = new HyperLink {NavigateUrl = navigateUrl, Text = text, CssClass="btn btn-primary"};
             phLink.Controls.Add(menuLink);
 
             phLink.Controls.Add(new LiteralControl("</li>"));

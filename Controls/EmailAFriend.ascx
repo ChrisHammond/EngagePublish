@@ -8,26 +8,24 @@
     <asp:Label runat="server" ID="lblConfirmation" CssClass="dnnFormMessage" resourcekey="lblConfirmation" Visible="false"></asp:Label>
 
     <div id="divEmailAFriendForm" class="divEmailAFriendForm" runat="server">
-        <fieldset>
-            <div class="dnnFormItem">
+            <div class="form-group">
                 <dnn:Label ID="lblTo" ResourceKey="lblTo" runat="server"></dnn:Label>
-                <asp:TextBox ID="txtTo" runat="server" TextMode="SingleLine"></asp:TextBox>
+                <asp:TextBox ID="txtTo" runat="server" TextMode="SingleLine" CssClass="form-control"></asp:TextBox>
             </div>
 
-            <div class="dnnFormItem">
+            <div class="form-group">
                 <dnn:Label ID="lblFrom" ResourceKey="lblFrom" runat="server"></dnn:Label>
-                <asp:TextBox ID="txtFrom" runat="server" TextMode="SingleLine"></asp:TextBox>
+                <asp:TextBox ID="txtFrom" runat="server" TextMode="SingleLine" CssClass="form-control"></asp:TextBox>
             </div>
 
-            <div class="dnnFormItem">
+            <div class="form-group">
                 <dnn:Label ID="lblMessage" ResourceKey="lblMessage" runat="server"></dnn:Label>
-                <asp:TextBox runat="server" ID="txtMessage" TextMode="MultiLine" Columns="30" Rows="5"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtMessage" TextMode="MultiLine" Columns="30" Rows="5" CssClass="form-control"></asp:TextBox>
             </div>
 
-            <div class="dnnFormItem">
+            <div class="form-group">
                 <asp:Label ID="lblPrivacy" runat="server" ResourceKey="lblPrivacy"></asp:Label>
             </div>
-        </fieldset>
         <asp:LinkButton ID="btnSend"
             ResourceKey="btnSend"
             runat="server"

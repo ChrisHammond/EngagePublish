@@ -220,7 +220,7 @@ namespace Engage.Dnn.Publish
                 //Don't show the menu if we're in VIEW mode
 
                 //Don't show the menu at the top if the control is not configured to display anything. hk
-                if ((IsAdmin || IsAuthor) && mb.ItemId != -1 && IsEditable)
+                if ((IsAdmin || IsAuthor) && mb.ItemId != -1)
                 {
                     //Don't show the menu if we're on a category search, itemlisting or CategoryNLevels control
                     string displayType = string.Empty;
