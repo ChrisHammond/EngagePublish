@@ -84,5 +84,5 @@
         
     </asp:Panel>
         
-    <asp:HyperLink Runat="server" ID="lnkRss" Visible="False"><img runat="server" id="imgRss" border="0" /></asp:HyperLink>
+    <asp:HyperLink Runat="server" ID="lnkRss" Visible="False"><img runat="server" id="imgRss" /></asp:HyperLink>
 </div>
