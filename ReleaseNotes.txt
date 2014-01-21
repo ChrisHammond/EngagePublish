@@ -1,4 +1,5 @@
-﻿Release notes
+﻿<pre>
+Release notes
 
 5.9.3
 -Added "comment" stats back into the Admin Menu so that you can see if there are comments needing approval.
@@ -29,3 +30,4 @@
 5.8.3
 -Added email to a friend tracking with Google Analytic events
 -Moved email a friend functionality to jquery dialog instead of ACTK modal popup
+</pre>
