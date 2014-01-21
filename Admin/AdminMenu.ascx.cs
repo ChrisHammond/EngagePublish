@@ -76,72 +76,7 @@ namespace Engage.Dnn.Publish.Admin
             }
         }
 
-        //private void LoadToolBar()
-        //{
-        //    //Register the code for the DNNToolBar being used.
-        //    //toolBarActionHandler is a javascript handler, look at the ASCX file for what it currently consists of.
-
-        //    //DNNLabelEdit dle = new DNNLabelEdit();
-
-        //    //if (!ClientAPI.IsClientScriptBlockRegistered(Page, "dnn.controls.dnnlabeledit.js"))
-        //    //{
-        //    //    ClientAPI.RegisterClientScriptBlock(Page, "dnn.controls.dnnlabeledit.js", "<script src=\"" + dle.LabelEditScriptPath + "dnn.controls.dnnlabeledit.js\"></script>");
-        //    //}
-        //    //this.tbEPAdmin.RegisterToolBar(AdminMenuToolBarWrapper, "onmouseover", "onmouseout", "toolBarActionHandler");
-
-        //    if (!Page.IsPostBack)
-        //    {
-        //        if (ItemId > -1)
-        //        {
-        //            string currentItemType = Item.GetItemType(ItemId,PortalId);
-
-        //            //Load the Add new Article Link
-        //            DNNToolBarButton dtbAddArticle = new DNNToolBarButton();
-        //            dtbAddArticle.ControlAction = "navigate";
-        //            dtbAddArticle.ID = "dtbAddArticle";
-        //            dtbAddArticle.CssClass = "tbButton";
-        //            dtbAddArticle.CssClassHover = "tbButtonHover";
-        //            dtbAddArticle.NavigateUrl = BuildAddArticleUrl();
-        //            dtbAddArticle.Text = Localization.GetString("AddNew", LocalResourceFile) + " " + Localization.GetString("Article", LocalResourceFile);
-        //            tbEPAdmin.Buttons.Add(dtbAddArticle);
-
-                    
-
-
-        //            DNNToolBarButton dtbCategoryList = new DNNToolBarButton();
-        //            dtbCategoryList.ControlAction = "navigate";
-        //            dtbCategoryList.ID = "dtbCategoryList";
-        //            dtbCategoryList.CssClass = "tbButton";
-        //            dtbCategoryList.CssClassHover = "tbButtonHover";
-        //            dtbCategoryList.NavigateUrl = BuildCategoryListUrl();
-        //            dtbCategoryList.Text = Localization.GetString("ArticleList", LocalResourceFile);
-        //            tbEPAdmin.Buttons.Add(dtbCategoryList);
-
-
-        //            //Load toolbar button for Edit Item
-        //            DNNToolBarButton dtbEditItem = new DNNToolBarButton();
-        //            dtbEditItem.ControlAction = "navigate";
-        //            dtbEditItem.ID = "dtbEditItem";
-        //            dtbEditItem.CssClass = "tbButton";
-        //            dtbEditItem.CssClassHover = "tbButtonHover";
-        //            dtbEditItem.NavigateUrl = BuildEditUrl();
-        //            dtbEditItem.Text = Localization.GetString("Edit", LocalResourceFile) + " " + Localization.GetString(currentItemType, LocalResourceFile);
-        //            tbEPAdmin.Buttons.Add(dtbEditItem);
-
-        //            DNNToolBarButton dtbItemVersions = new DNNToolBarButton();
-        //            dtbItemVersions.ControlAction = "navigate";
-        //            dtbItemVersions.ID = "dtbItemVersions";
-        //            dtbItemVersions.CssClass = "tbButton";
-        //            dtbItemVersions.CssClassHover = "tbButtonHover";
-        //            dtbItemVersions.NavigateUrl = BuildVersionsUrl();
-        //            dtbItemVersions.Text = Localization.GetString(currentItemType, LocalResourceFile) + " " + Localization.GetString("Versions", LocalResourceFile);
-        //            tbEPAdmin.Buttons.Add(dtbItemVersions);
-
-        //        }
-        //    }
-        //}
-
-        private void FillDropDownList()
+                private void FillDropDownList()
         {
             
             ApprovalStatusDropDownList.DataSource = DataProvider.Instance().GetApprovalStatusTypes(PortalId);
@@ -251,12 +186,12 @@ namespace Engage.Dnn.Publish.Admin
 
             //// Load stats
             //// TODO: hide this if necessary
-            //phStats.Visible = true;
-            //const string pathToStatsControl = "QuickStats.ascx";
-            //var statsControl = (ModuleBase)LoadControl(pathToStatsControl);
-            //statsControl.ModuleConfiguration = ModuleConfiguration;
-            //statsControl.ID = System.IO.Path.GetFileNameWithoutExtension(pathToStatsControl);
-            //phStats.Controls.Add(statsControl);
+            phStats.Visible = true;
+            const string pathToStatsControl = "QuickStats.ascx";
+            var statsControl = (ModuleBase)LoadControl(pathToStatsControl);
+            statsControl.ModuleConfiguration = ModuleConfiguration;
+            statsControl.ID = System.IO.Path.GetFileNameWithoutExtension(pathToStatsControl);
+            phStats.Controls.Add(statsControl);
 
             phLink.Visible = true;
 

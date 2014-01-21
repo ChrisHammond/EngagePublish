@@ -22,6 +22,9 @@ namespace Engage.Dnn.Publish.Controls
     using DotNetNuke.Services.Localization;
     using DotNetNuke.UI.Utilities;
     using Util;
+    using System.Security.Cryptography;
+    using System.Text;
+    using System.Web;
     public partial class CommentDisplay : CommentDisplayBase
     {
         private int _articleId = -1;
@@ -200,6 +203,23 @@ namespace Engage.Dnn.Publish.Controls
                 divPager.Visible = false;
                 lblNoComments.Visible = true;
             }
+        }
+
+        public string BuildCommentAvatar(object emailAddress)
+        {
+            var gravatarString = "http://www.gravatar.com/avatar.php?gravatar_id={0}&rating=G&size=80&d={1}";
+            
+            var badImage = "http://" + PortalSettings.DefaultPortalAlias + "/desktopmodules/engagepublish/images/avatarhead.png";
+
+            badImage = HttpUtility.UrlEncode(badImage);
+
+            MD5 mhasher = MD5.Create();
+            var hashedEmail = new StringBuilder(50);
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(emailAddress.ToString());
+            foreach (Byte b in mhasher.ComputeHash(inputBytes))
+                hashedEmail.Append(b.ToString("x2").ToLower());
+            
+            return String.Format(gravatarString,hashedEmail.ToString(),badImage);
         }
 
         public string BuildCommentNameDate(object firstName, object lastName, object url, object date)

@@ -653,14 +653,13 @@ Module CSS
 	clear:right;
 	margin-top:5px;
 	margin-bottom:10px;
-	width:95%;
+	
 }
 
 #divAdminLinks
 {
 	clear:both;
 	width:100%;
-	padding-bottom:9px;	
 }
 
 #divAdminLinks ul
@@ -680,16 +679,15 @@ Module CSS
 
 #PublishStatsContent
 {
-	text-indent:15px;
+	float:right;
 }
 
 #PublishStatsContent a
 {
-	text-decoration:underline;
-}
+	}
 #PublishStatsLabel
 {
-	font-weight:bold;
+	
 }
 
 .lblApprovalResults
@@ -838,17 +836,18 @@ Module CSS
 .CommentValue
 {
 	margin:1px;
-	width:95%;
+	
 }
 
 #CommentName
 {
-	float:left;
+	/*float:left;*/
 }
 
 .CommentNameDate
 {
-    font-size: .8em;
+    font-size: .9em;
+    float:right;
 }
 #CommentCreatedDate
 {
@@ -856,17 +855,21 @@ Module CSS
 }
 .PublishComment
 {
-	background-color:#f0efef;
-	padding:3px;
-	border:solid 1px #b0b0b0;
+	padding:15px;
+	border:solid 0px #b0b0b0;
 	display:block;
 	margin-bottom:5px;
 }
 
+.CommentAvatar
+{
+    float:left;
+    margin-right:10px;
+}
+
 .PublishCommentWrapper
 {
-	overflow:auto;
-	
+	overflow:auto;	
 }
 
 .PublishNoComments
@@ -876,7 +879,7 @@ Module CSS
 
 .PublishCommentAlternate 
 {
-	background-color:#fcf7f7;
+	
 }
 
 .commentTextbox
@@ -888,7 +891,7 @@ Module CSS
 /* this class controls the comment entry window */
 .commentEntry
 {
-	
+	margin-top:10px;
 }
 
 /* this class controls the comment confirmation window */

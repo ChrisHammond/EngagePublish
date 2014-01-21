@@ -346,6 +346,15 @@ namespace Engage.Dnn.Publish.ArticleControls {
         protected global::System.Web.UI.UpdatePanel upnlComments;
         
         /// <summary>
+        /// lblAddComment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddComment;
+        
+        /// <summary>
         /// pnlCommentEntry control.
         /// </summary>
         /// <remarks>

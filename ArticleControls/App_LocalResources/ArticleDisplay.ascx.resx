@@ -250,7 +250,7 @@ Body: {5}</value>
     <value>Comment</value>
   </data>
   <data name="lblEmailAddressComment.Help" xml:space="preserve">
-    <value>Enter your email address so that we may contact you if necessary.</value>
+    <value>Enter your email address so that we may contact you if necessary. We will also use this for your Gravatar.</value>
   </data>
   <data name="lblFirstNameComment.Help" xml:space="preserve">
     <value>Enter your first name for display with the comment</value>
@@ -269,5 +269,8 @@ Body: {5}</value>
   </data>
   <data name="DateCreated.Text" xml:space="preserve">
     <value>Published Date {0}</value>
+  </data>
+  <data name="lblAddComment.Text" xml:space="preserve">
+    <value>Add Comment</value>
   </data>
 </root>

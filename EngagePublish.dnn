@@ -1,6 +1,6 @@
 <dotnetnuke type="Package" version="5.0">
   <packages>
-    <package name="Engage: Publish" type="Module" version="05.09.02">
+    <package name="Engage: Publish" type="Module" version="05.09.03">
       <friendlyName>Engage: Publish</friendlyName>
       <description>The DotNetNuke Publishing module by Engage Software (www.engagesoftware.com)</description>
       <owner>
@@ -13,7 +13,7 @@
       <releaseNotes src="ReleaseNotes.txt" />
 
       <dependencies>
-        <dependency type="CoreVersion">07.00.02</dependency>
+        <dependency type="CoreVersion">07.01.00</dependency>
       </dependencies>
 
       <components>

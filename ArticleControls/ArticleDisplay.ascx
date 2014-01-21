@@ -94,9 +94,9 @@
 
                 <asp:Panel ID="pnlCommentDisplay" runat="server" Visible="false">
                     <div id="divCommentsDisplay">
-                        <h2 class="Publish_CommentHeading">
+                        <h3 class="Publish_CommentHeading">
                             <asp:Label ID="lblCommentHeading" resourcekey="lblCommentHeading" runat="server" CssClass="Head" />
-                        </h2>
+                        </h3>
                         <asp:PlaceHolder ID="phCommentsDisplay" runat="server" />
                     </div>
                 </asp:Panel>
@@ -111,6 +111,11 @@
 
         <asp:UpdatePanel ID="upnlComments" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
+
+                <h3 class="Publish_CommentHeading">
+                    <asp:Label ID="lblAddComment" resourcekey="lblAddComment" runat="server" CssClass="Head" />
+                </h3>
+
                 <asp:Panel ID="pnlCommentEntry" runat="server" CssClass="commentEntry">
                     <a id="CommentEntry"></a>
                     <div id="commentEntryWrapper">
@@ -119,48 +124,47 @@
                         </div>
 
                         <asp:Panel ID="pnlNameComment" runat="server" CssClass="dnnClear">
-                            <fieldset>
-                                <div class="dnnFormItem">
+                            
+                                <div class="form-group">
                                     <dnn:Label ID="lblFirstNameComment" runat="server" />
-                                    <asp:TextBox ID="txtFirstNameComment" runat="server" EnableViewState="false" CssClass="commentFirstNameTextbox" /><asp:RequiredFieldValidator ID="rfvFirstNameComment" resourcekey="rfvFirstNameComment" runat="server" Display="None" ControlToValidate="txtFirstNameComment" ValidationGroup="commentVal" />
+                                    <asp:TextBox ID="txtFirstNameComment" runat="server" EnableViewState="false" CssClass="form-control" /><asp:RequiredFieldValidator ID="rfvFirstNameComment" resourcekey="rfvFirstNameComment" runat="server" Display="None" ControlToValidate="txtFirstNameComment" ValidationGroup="commentVal" />
                                 </div>
-                                <div class="dnnFormItem">
+                                <div class="form-group">
                                     <dnn:Label ID="lblLastNameComment" runat="server" />
-                                    <asp:TextBox ID="txtLastNameComment" runat="server" EnableViewState="false" CssClass="commentLastNameTextbox" /><asp:RequiredFieldValidator ID="rfvLastNameComment" resourcekey="rfvLastNameComment" runat="server" Display="None" ControlToValidate="txtLastNameComment" ValidationGroup="commentVal" />
+                                    <asp:TextBox ID="txtLastNameComment" runat="server" EnableViewState="false" CssClass="form-control" /><asp:RequiredFieldValidator ID="rfvLastNameComment" resourcekey="rfvLastNameComment" runat="server" Display="None" ControlToValidate="txtLastNameComment" ValidationGroup="commentVal" />
                                 </div>
-                            </fieldset>
+                            
 
                         </asp:Panel>
                         <asp:Panel ID="pnlEmailAddressComment" runat="server">
-                            <fieldset>
-                                <div class="dnnFormItem">
+                            
+                                <div class="form-group">
                                     <dnn:Label ID="lblEmailAddressComment" runat="server" resourcekey="lblEmailAddressComment" />
-                                    <asp:TextBox ID="txtEmailAddressComment" runat="server" EnableViewState="false" CssClass="commentEmailTextbox" /><asp:RequiredFieldValidator ID="rfvEmailAddressComment" resourcekey="rfvEmailAddressComment" runat="server" Display="None" ControlToValidate="txtEmailAddressComment" ValidationGroup="commentVal" />
+                                    <asp:TextBox ID="txtEmailAddressComment" runat="server" EnableViewState="false" CssClass="form-control" /><asp:RequiredFieldValidator ID="rfvEmailAddressComment" resourcekey="rfvEmailAddressComment" runat="server" Display="None" ControlToValidate="txtEmailAddressComment" ValidationGroup="commentVal" />
                                 </div>
-                            </fieldset>
+                            
                         </asp:Panel>
                         <asp:Panel ID="pnlUrlComment" runat="server">
-                            <fieldset>
-                                <div class="dnnFormItem">
+                            
+                                <div class="form-group">
                                     <dnn:Label ID="lblUrlComment" runat="server" resourcekey="lblUrlComment" />
-                                    <asp:TextBox ID="txtUrlComment" runat="server" EnableViewState="false" CssClass="commentUrlTextbox" />
+                                    <asp:TextBox ID="txtUrlComment" runat="server" EnableViewState="false" CssClass="form-control" />
                                 </div>
-                            </fieldset>
+                            
                         </asp:Panel>
 
-                        <fieldset>
-                            <div class="dnnFormItem">
+                        
+                            <div class="form-group">
                                 <dnn:label id="lblComment" runat="server" />
-                                <asp:TextBox TextMode="MultiLine" ID="txtComment" runat="server" EnableViewState="false" CssClass="commentTextbox" /><asp:RequiredFieldValidator ID="rfvCommentText" resourcekey="rfvCommentText" runat="server" Display="None" ControlToValidate="txtComment" ValidationGroup="commentVal" />
+                                <asp:TextBox TextMode="MultiLine" ID="txtComment" runat="server" EnableViewState="false" CssClass="form-control" /><asp:RequiredFieldValidator ID="rfvCommentText" resourcekey="rfvCommentText" runat="server" Display="None" ControlToValidate="txtComment" ValidationGroup="commentVal" />
                             </div>
 
-                            <div class="dnnFormItem">
+                            <div class="form-group">
                                 <dnn:label id="lblHumanTest" runat="server" />
-                                <asp:TextBox runat="server" ID="txtHumanTest" />
+                                <asp:TextBox runat="server" ID="txtHumanTest" CssClass="form-control" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" resourcekey="rfvHumanTest" runat="server" Display="None" ControlToValidate="txtHumanTest" ValidationGroup="commentVal" />
                             </div>
-                        </fieldset>
-
+                        
 
                         <asp:LinkButton ID="btnSubmitComment" runat="server"
                             resourcekey="btnSubmitComment" OnClick="btnSubmitComment_Click" CssClass="dnnPrimaryAction" ValidationGroup="commentVal" />

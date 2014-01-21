@@ -1,5 +1,9 @@
 ﻿Release notes
 
+5.9.3
+-Added "comment" stats back into the Admin Menu so that you can see if there are comments needing approval.
+-Reformat the comment display.
+
 5.9.2
 -adjusted article display header area
 -added "date created" to article display in addition to last updated.

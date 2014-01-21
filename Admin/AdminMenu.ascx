@@ -12,6 +12,12 @@
         </ul>
     </div>
 
+    <div id="PublishAdminStats">
+        <div id="PublishStatsContent">
+            <asp:PlaceHolder ID="phStats" runat="server" Visible="false"></asp:PlaceHolder>
+        </div>
+    </div>
+
     <div id="divApprovalStatus" runat="server" visible="false" class="dnnClear" role="form">
 
         <div id="divVersionComments" class="form-group" runat="server">
