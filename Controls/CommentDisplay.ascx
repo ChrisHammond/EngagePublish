@@ -10,7 +10,8 @@
                 <ItemTemplate>
                     <div class="PublishComment PublishCommentWrapper dnnClear">
                         <div class="CommentAvatar">
-                            <img src="<%# BuildCommentAvatar(Eval("EmailAddress"))%>" /></div>
+                            <img src="<%# BuildCommentAvatar((Eval("EmailAddress") as string) ?? "empty")%>" />
+                        </div>
                         <div class="CommentValue"><%# Eval("CommentText") %></div>
                         <div class="CommentNameDate"><%# BuildCommentNameDate(Eval("FirstName"), Eval("LastName"),Eval("Url"),Eval("CreatedDate")) %></div>
                     </div>
@@ -18,7 +19,8 @@
                 <AlternatingItemTemplate>
                     <div class="PublishComment PublishCommentAlternate dnnClear">
                         <div class="CommentAvatar">
-                            <img src="<%# BuildCommentAvatar(Eval("EmailAddress"))%>" /></div>
+                            <img src="<%# BuildCommentAvatar((Eval("EmailAddress") as string) ?? "empty")%>" />
+                        </div>
                         <div class="CommentValue"><%# Eval("CommentText") %></div>
                         <div class="CommentNameDate"><%# BuildCommentNameDate(Eval("FirstName"), Eval("LastName"),Eval("Url"),Eval("CreatedDate")) %></div>
                     </div>
