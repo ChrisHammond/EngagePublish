@@ -8,6 +8,7 @@
 //CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 //DEALINGS IN THE SOFTWARE.
 
+using System.Web.UI.HtmlControls;
 using DotNetNuke.Entities.Controllers;
 
 namespace Engage.Dnn.Publish
@@ -1069,10 +1070,20 @@ namespace Engage.Dnn.Publish
         public void SetPageTitle()
         {
             //TODO: should we also allow for setting the module title here?
-            if (AllowTitleUpdate)
+            var tp = (CDefault)Page;
+
+
+
+            if (AllowTitleUpdate && (tp.Title != versionInfoObject.MetaTitle && tp.Title!= versionInfoObject.Name))
             {
-                var tp = (CDefault)Page;
+                
                 tp.Title = Utility.HasValue(VersionInfoObject.MetaTitle) ? versionInfoObject.MetaTitle : versionInfoObject.Name;
+                //open graph title
+                var ogTitle = new HtmlGenericControl("meta");
+                ogTitle.Attributes["property"] = "og:title";
+                ogTitle.Attributes["content"] = tp.Title;
+                if (Page.Header.Controls.IndexOf(ogTitle) < 1)
+                    Page.Header.Controls.Add(ogTitle);
 
                 if (LogBreadcrumb)
                 {
@@ -1083,6 +1094,12 @@ namespace Engage.Dnn.Publish
                 if (!String.IsNullOrEmpty(VersionInfoObject.MetaDescription))
                 {
                     tp.Description = VersionInfoObject.MetaDescription;
+                    //open graph description
+                    var ogDescription = new HtmlGenericControl("meta");
+                    ogDescription.Attributes["property"] = "og:description";
+                    ogDescription.Attributes["content"] = VersionInfoObject.MetaDescription;
+                    if (Page.Header.Controls.IndexOf(ogDescription) < 1)
+                        Page.Header.Controls.Add(ogDescription);
                 }
 
                 if (!String.IsNullOrEmpty(VersionInfoObject.MetaKeywords))
@@ -1092,6 +1109,29 @@ namespace Engage.Dnn.Publish
 
                 //tp.SmartNavigation = true;
                 Page.SetFocus(tp.ClientID);
+
+                //open graph image using the engage publish thumbnail
+                var ogImage = new HtmlGenericControl("meta");
+                ogImage.Attributes["property"] = "og:image";
+                ogImage.Attributes["content"] = VersionInfoObject.Thumbnail;
+                if (Page.Header.Controls.IndexOf(ogImage) < 1)
+                    Page.Header.Controls.Add(ogImage);
+                
+                //set the open graph site name
+                var ogSiteName = new HtmlGenericControl("meta");
+                ogSiteName.Attributes["property"] = "og:site_name";
+                ogSiteName.Attributes["content"] = PortalSettings.PortalName;
+                if (Page.Header.Controls.IndexOf(ogSiteName) < 1)
+                    Page.Header.Controls.Add(ogSiteName);
+
+                //TODO: need to have a setting for facebook app id
+                //TODO: set the og url
+                var ogUrl = new HtmlGenericControl("meta");
+                ogUrl.Attributes["property"] = "og:url";
+                ogUrl.Attributes["content"] = GetItemLinkUrl(VersionInfoObject.ItemId);
+                if (Page.Header.Controls.IndexOf(ogUrl) < 1)
+                    Page.Header.Controls.Add(ogUrl);
+                
             }
         }
 
