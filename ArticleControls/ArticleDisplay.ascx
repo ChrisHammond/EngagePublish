@@ -11,20 +11,12 @@
     
 
     <p class="publishMetaData">
-            <asp:Panel ID="pnlAuthor" runat="server" Visible="false" CssClass="dnnLeft">
-                </asp:Panel>
+                <asp:PlaceHolder ID="phPrinterFriendly" runat="server"></asp:PlaceHolder>
+                <asp:PlaceHolder ID="phEmailAFriend" runat="server"></asp:PlaceHolder>
                 <asp:Label ID="lblAuthorInfo" runat="server" resourcekey="lblAuthorInfo"></asp:Label>
                 <asp:Literal ID="lblAuthor" runat="server"></asp:Literal>
                 <asp:Literal ID="lblDateCreated" runat="server"></asp:Literal>
-
-            
-                <asp:PlaceHolder ID="phPrinterFriendly" runat="server"></asp:PlaceHolder>
-            
-                <asp:PlaceHolder ID="phEmailAFriend" runat="server"></asp:PlaceHolder>
-            
-            
-            
-            <asp:Literal ID="lblLastUpdated" runat="server"></asp:Literal>
+                <asp:Literal ID="lblLastUpdated" runat="server"></asp:Literal>
     </p>
             
 

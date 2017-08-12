@@ -31,22 +31,22 @@ namespace Engage.Dnn.Publish.ArticleControls {
         protected global::System.Web.UI.WebControls.Literal lblArticleTitle;
         
         /// <summary>
-        /// lblDateCreated control.
+        /// phPrinterFriendly control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblDateCreated;
+        protected global::System.Web.UI.WebControls.PlaceHolder phPrinterFriendly;
         
         /// <summary>
-        /// lblDateCreated control.
+        /// phEmailAFriend control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblDateCreated;
+        protected global::System.Web.UI.WebControls.PlaceHolder phEmailAFriend;
         
         /// <summary>
         /// lblAuthorInfo control.
@@ -67,22 +67,13 @@ namespace Engage.Dnn.Publish.ArticleControls {
         protected global::System.Web.UI.WebControls.Literal lblAuthor;
         
         /// <summary>
-        /// phPrinterFriendly control.
+        /// lblDateCreated control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phPrinterFriendly;
-        
-        /// <summary>
-        /// phEmailAFriend control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phEmailAFriend;
+        protected global::System.Web.UI.WebControls.Literal lblDateCreated;
         
         /// <summary>
         /// lblLastUpdated control.

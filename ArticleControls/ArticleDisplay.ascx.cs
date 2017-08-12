@@ -771,7 +771,7 @@ namespace Engage.Dnn.Publish.ArticleControls
 
                 DateTime dateCreated = Convert.ToDateTime(article.CreatedDate, CultureInfo.InvariantCulture);
 
-                lblLastUpdated.Text = String.Format(Localization.GetString("LastUpdated", LocalResourceFile),lastUpdated.ToString(LastUpdatedFormat, CultureInfo.CurrentCulture));
+                lblLastUpdated.Text = String.Format(Localization.GetString("LastUpdated", LocalResourceFile),lastUpdated.ToShortDateString());
 
                 lblDateCreated.Text = String.Format(Localization.GetString("DateCreated", LocalResourceFile), dateCreated.ToShortDateString());
                 //get the pnlAuthor setting
@@ -783,7 +783,7 @@ namespace Engage.Dnn.Publish.ArticleControls
 
                 if (ShowAuthor)
                 {
-                    pnlAuthor.Visible = true;
+                    //pnlAuthor.Visible = true;
                     lblAuthor.Text = article.Author;
                     if (lblAuthor.Text.Trim().Length < 1)
                     {
@@ -794,12 +794,12 @@ namespace Engage.Dnn.Publish.ArticleControls
 
                     if (lblAuthor.Text.Trim().Length < 1)
                     {
-                        pnlAuthor.Visible = false;
+                        //pnlAuthor.Visible = false;
                     }
                 }
                 else
                 {
-                    pnlAuthor.Visible = false;
+                    //pnlAuthor.Visible = false;
                 }
 
                 //get the pnlPrinterFriendly setting

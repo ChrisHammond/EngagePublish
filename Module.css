@@ -567,7 +567,7 @@ Module CSS
 
 #divEmailAFriend
 {
-	float:left;
+	float:right;
 }
 #divPrinterFriendly
 {
@@ -1445,4 +1445,8 @@ a.mouseOverImage:hover
 .publishMetaData {
   margin-bottom: 1.25rem;
   color: #999;
+}
+
+#divEmailAFriend .glyphicon,#divPrinterFriendly .glyphicon {
+    padding: 0 0 0 5px;
 }

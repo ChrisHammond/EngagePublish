@@ -1,7 +1,9 @@
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Engage.Dnn.Publish.Controls.EmailAFriend" CodeBehind="EmailAFriend.ascx.cs" %>
 <%@ Register TagPrefix="dnn" TagName="label" Src="~/controls/labelControl.ascx" %>
-<div id="divEmailAFriend">
-    <asp:LinkButton ID="btnEmailAFriend" runat="server" ResourceKey="btnEmailAFriend" CssClass="btnEmailAFriend" CausesValidation="false"></asp:LinkButton>
+<div id="divEmailAFriend" >
+    <asp:LinkButton ID="btnEmailAFriend" runat="server" CssClass="btnEmailAFriend" CausesValidation="false">
+        <span class="glyphicon glyphicon-envelope"></span>
+    </asp:LinkButton>
 </div>
 
 <div id="emailAFriendDialog" style="display: none;" class="modalStyle">
