@@ -1432,3 +1432,17 @@ a.mouseOverImage:hover
 	height:150px;
 }
 
+
+/*Bootstrap overhaul 8/11/2017 */
+
+#articleDisplay {
+  margin-bottom: 4rem;
+}
+.publishTitle {
+  margin-bottom: .25rem;
+  font-size: 2.5rem;
+}
+.publishMetaData {
+  margin-bottom: 1.25rem;
+  color: #999;
+}

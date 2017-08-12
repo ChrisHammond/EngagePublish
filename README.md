@@ -9,6 +9,7 @@ Key differences
 Removed AjaxControlToolkit (haven't replaced all the functionality)
 Added a "Human" check for comment display, basically users have to type the word Human in order to pass verification
 Removed comment functionality from modal popup and displaying inline on the page
+Migrating layout to Bootstrap
 
 //Chris Hammond
 http://www.chrishammond.com/ 

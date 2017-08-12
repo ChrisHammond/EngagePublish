@@ -15,3 +15,8 @@ F:\Websites\dnndev.me\Bin\EngagePublish.pdb
 F:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.csprojResolveAssemblyReference.cache
 F:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.dll
 F:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.pdb
+C:\websites\dnndev.me\Bin\EngagePublish.dll
+C:\websites\dnndev.me\Bin\EngagePublish.pdb
+C:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.csprojResolveAssemblyReference.cache
+C:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.dll
+C:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.pdb

@@ -31,13 +31,22 @@ namespace Engage.Dnn.Publish.ArticleControls {
         protected global::System.Web.UI.WebControls.Literal lblArticleTitle;
         
         /// <summary>
-        /// pnlAuthor control.
+        /// lblDateCreated control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlAuthor;
+        protected global::System.Web.UI.WebControls.Literal lblDateCreated;
+        
+        /// <summary>
+        /// lblDateCreated control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lblDateCreated;
         
         /// <summary>
         /// lblAuthorInfo control.
@@ -58,15 +67,6 @@ namespace Engage.Dnn.Publish.ArticleControls {
         protected global::System.Web.UI.WebControls.Literal lblAuthor;
         
         /// <summary>
-        /// pnlPrinterFriendly control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlPrinterFriendly;
-        
-        /// <summary>
         /// phPrinterFriendly control.
         /// </summary>
         /// <remarks>
@@ -76,15 +76,6 @@ namespace Engage.Dnn.Publish.ArticleControls {
         protected global::System.Web.UI.WebControls.PlaceHolder phPrinterFriendly;
         
         /// <summary>
-        /// pnlEmailAFriend control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlEmailAFriend;
-        
-        /// <summary>
         /// phEmailAFriend control.
         /// </summary>
         /// <remarks>
@@ -92,24 +83,6 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phEmailAFriend;
-        
-        /// <summary>
-        /// divLastUpdated control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divLastUpdated;
-        
-        /// <summary>
-        /// lblDateCreated control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblDateCreated;
         
         /// <summary>
         /// lblLastUpdated control.

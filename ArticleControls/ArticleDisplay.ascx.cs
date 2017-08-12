@@ -748,8 +748,8 @@ namespace Engage.Dnn.Publish.ArticleControls
                 {
                     SetPageTitle();
                     lblArticleTitle.Text = article.Name;
-                    divArticleTitle.Visible = true;
-                    divLastUpdated.Visible = true;
+                    //divArticleTitle.Visible = true;
+                    //divLastUpdated.Visible = true;
                 }
 
                 article.ArticleText = Utility.ReplaceTokens(article.ArticleText);
@@ -806,14 +806,14 @@ namespace Engage.Dnn.Publish.ArticleControls
                 ItemVersionSetting pfSetting = ItemVersionSetting.GetItemVersionSetting(article.ItemVersionId, "pnlPrinterFriendly", "Visible", PortalId);
                 if (pfSetting != null)
                 {
-                    pnlPrinterFriendly.Visible = Convert.ToBoolean(pfSetting.PropertyValue, CultureInfo.InvariantCulture);
+                    phPrinterFriendly.Visible = Convert.ToBoolean(pfSetting.PropertyValue, CultureInfo.InvariantCulture);
                 }
 
                 //get the pnlEmailAFriend setting
                 ItemVersionSetting efSetting = ItemVersionSetting.GetItemVersionSetting(article.ItemVersionId, "pnlEmailAFriend", "Visible", PortalId);
                 if (efSetting != null)
                 {
-                    pnlEmailAFriend.Visible = Convert.ToBoolean(efSetting.PropertyValue, CultureInfo.InvariantCulture);
+                    phEmailAFriend.Visible = Convert.ToBoolean(efSetting.PropertyValue, CultureInfo.InvariantCulture);
                 }
 
                 //get the pnlComments setting

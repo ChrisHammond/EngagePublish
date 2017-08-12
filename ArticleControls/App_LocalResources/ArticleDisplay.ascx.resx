@@ -196,7 +196,7 @@
     <value>Click to view gallery</value>
   </data>
   <data name="lblAuthorInfo.Text" xml:space="preserve">
-    <value>By:</value>
+    <value>By </value>
   </data>
   <data name="lblCommentHeading.Text" xml:space="preserve">
     <value>Recent Comments</value>
@@ -268,7 +268,7 @@ Body: {5}</value>
     <value>Enter the URL to your website. URLs may be removed from comments.</value>
   </data>
   <data name="DateCreated.Text" xml:space="preserve">
-    <value>Published Date {0}</value>
+    <value>{0}</value>
   </data>
   <data name="lblAddComment.Text" xml:space="preserve">
     <value>Add Comment</value>

@@ -4,34 +4,29 @@
 <div id="articleDisplay" class="Normal">
 
     <div id="divArticleTitle" runat="server" visible="false">
+    </div>
         <h1 class="Head" id="publishTitle">
             <asp:Literal ID="lblArticleTitle" runat="server"></asp:Literal>
         </h1>
-    </div>
+    
 
-    <div class="dnnClear">
-        <div class="dnnLeft">
+    <p class="publishMetaData">
             <asp:Panel ID="pnlAuthor" runat="server" Visible="false" CssClass="dnnLeft">
+                </asp:Panel>
                 <asp:Label ID="lblAuthorInfo" runat="server" resourcekey="lblAuthorInfo"></asp:Label>
                 <asp:Literal ID="lblAuthor" runat="server"></asp:Literal>
+                <asp:Literal ID="lblDateCreated" runat="server"></asp:Literal>
 
-            </asp:Panel>
-
-            <asp:Panel ID="pnlPrinterFriendly" runat="server" CssClass="dnnLeft dnnClear">
+            
                 <asp:PlaceHolder ID="phPrinterFriendly" runat="server"></asp:PlaceHolder>
-            </asp:Panel>
-            <asp:Panel ID="pnlEmailAFriend" runat="server" CssClass="dnnLeft dnnClear">
+            
                 <asp:PlaceHolder ID="phEmailAFriend" runat="server"></asp:PlaceHolder>
-            </asp:Panel>
-        </div>
-        <div id="divLastUpdated" class="divLastUpdated dnnRight" runat="server" visible="false">
-            <asp:Literal ID="lblDateCreated" runat="server"></asp:Literal><br />
+            
+            
+            
             <asp:Literal ID="lblLastUpdated" runat="server"></asp:Literal>
-        </div>
-    </div>
-
-    <div class="dnnClear">
-    </div>
+    </p>
+            
 
 
     <div id="divRelatedArticle" runat="server" class="divRelatedArticle dnnClear" visible="false">

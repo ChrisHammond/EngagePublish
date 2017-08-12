@@ -11,6 +11,7 @@
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
   <PropertyGroup>
@@ -359,7 +360,6 @@
     </Compile>
     <Compile Include="CategoryControls\CategorySort.ascx.cs">
       <DependentUpon>CategorySort.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CategoryControls\CategorySort.ascx.designer.cs">
       <DependentUpon>CategorySort.ascx</DependentUpon>
