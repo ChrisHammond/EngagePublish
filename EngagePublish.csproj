@@ -712,6 +712,8 @@
     <Content Include="Controls\SearchRedirector.ascx" />
     <Content Include="Controls\ThumbnailSelector.ascx" />
     <Content Include="EPRss.aspx" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\AvatarHead.png" />
     <Content Include="Images\calendar.png" />
     <Content Include="Images\dn.gif" />
     <Content Include="Images\EmptyStar.png" />
@@ -730,6 +732,7 @@
     <Content Include="ItemPreview.ascx" />
     <Content Include="Module.css" />
     <Content Include="PrinterFriendly.aspx" />
+    <Content Include="Images\AvatarHead.psd" />
     <None Include="ReadMe.Md" />
     <Content Include="Rss.aspx" />
     <Content Include="Services\PublishServices.asmx" />
