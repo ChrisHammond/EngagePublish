@@ -139,9 +139,9 @@
     <value>/images/rss.gif</value>
   </data>
   <data name="CommentStats.Text" xml:space="preserve">
-    <value>Comments: {0}</value>
+    <value>{0} Comments</value>
   </data>
   <data name="ViewStats.Text" xml:space="preserve">
-    <value>Views: {0}</value>
+    <value>{0} Views</value>
   </data>
 </root>

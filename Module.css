@@ -1266,7 +1266,67 @@ a.mouseOverImage, a.mouseOverImage:visited {
     font-size: 1.2em;
 }
 
-
 #divEmailAFriend .glyphicon, #divPrinterFriendly .glyphicon {
     padding: 0 0 0 5px;
+}
+
+.customlist-header {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    position: relative;
+    display: flex;
+}
+
+    .customlist-header time {
+        float: left;
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+
+.cl-time1 {
+    clear: both;
+    color: #000;
+    display: block;
+    font-size: 36px;
+}
+
+
+.cl-time2 {
+    clear: both;
+    color: #000;
+    display: block;
+}
+
+
+.cl-time3 {
+    clear: both;
+    color: #000;
+    display: block;
+}
+
+.customlistTitle {
+    border-left: 1px solid rgba(0,0,0,.1);
+    min-height: 68px;
+    padding: 20px;
+    overflow: hidden;
+    padding-right: 20px;
+}
+
+.itemDescription {
+    padding: 20px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.categoryItemList.Article {
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+}
+
+.itemStats {
+    border-top: 1px solid rgba(0,0,0,.1);
+    font-size: 12px;
+    padding: 10px 20px;
 }
