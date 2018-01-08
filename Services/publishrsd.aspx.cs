@@ -44,7 +44,7 @@ namespace Engage.Dnn.Publish.Services
             {
                 EngineName = "EngagePublish";
                 EngineUrl = "http://www.engagesoftware.com/modules/engagepublish.aspx";
-                ApiLink = "http://" + ps.PortalAlias.HTTPAlias  + ModuleBase.DesktopModuleFolderName + "services/Metaweblog.ashx";
+                ApiLink = "//" + ps.PortalAlias.HTTPAlias  + ModuleBase.DesktopModuleFolderName + "services/Metaweblog.ashx";
                 
                 HomePageUrl = o.ToString();
             }

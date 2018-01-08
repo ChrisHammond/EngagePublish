@@ -1,6 +1,13 @@
 ﻿<pre>
 Release notes
 
+5.9.6
+-Fix for MetaWeblog URL on HTTPS site
+
+5.9.5
+-Style changes to CustomList
+
+
 5.9.4
 -Adding in bootstrap HTML, requires use of a Bootstrap skin
 
