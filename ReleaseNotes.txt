@@ -1,6 +1,10 @@
 ﻿<pre>
 Release notes
 
+
+5.9.8
+-Fix for DNN 9.2 deprecated items
+
 5.9.6
 -Fix for MetaWeblog URL on HTTPS site
 

@@ -311,9 +311,11 @@ namespace Engage.Dnn.Publish
                     {
                         if (attachmentSetting.PropertyValue.Length > 7)
                         {
-                            var fileController = new FileController();
+                            //var fileController = new FileController();
+                            var fileManager = new FileManager();
                             int fileId = Convert.ToInt32(attachmentSetting.PropertyValue.Substring(7));
-                            DotNetNuke.Services.FileSystem.FileInfo fi = fileController.GetFileById(fileId, PortalId);
+                            
+                            var fi = fileManager.GetFile(fileId); //fileController.GetFileById(fileId, PortalId);
                             string fileurl = "http://" + PortalSettings.PortalAlias.HTTPAlias + PortalSettings.HomeDirectory + fi.Folder + fi.FileName;
                             wr.WriteStartElement("enclosure");
                             wr.WriteAttributeString("url", fileurl);

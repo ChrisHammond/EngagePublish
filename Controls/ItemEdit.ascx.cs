@@ -35,12 +35,15 @@ namespace Engage.Dnn.Publish.Controls
 			base.OnInit(e);
 
             //System.InvalidOperationException: The EnableScriptGlobalization property cannot be changed during async postbacks or after the Init event.
-            if (!IsPostBack && DotNetNuke.Framework.AJAX.IsInstalled())
-            {
-                DotNetNuke.Framework.AJAX.RegisterScriptManager();
-                DotNetNuke.Framework.AJAX.SetScriptManagerProperty(Page, "EnableScriptGlobalization", new object[] { true });
-                DotNetNuke.Framework.AJAX.SetScriptManagerProperty(Page, "EnableScriptLocalization", new object[] { true });
-            }
+
+            //TODO: Do we need or care about this?
+
+            //if (!IsPostBack && DotNetNuke.Framework.AJAX.IsInstalled())
+            //{
+            //    DotNetNuke.Framework.AJAX.RegisterScriptManager();
+            //    DotNetNuke.Framework.AJAX.SetScriptManagerProperty(Page, "EnableScriptGlobalization", new object[] { true });
+            //    DotNetNuke.Framework.AJAX.SetScriptManagerProperty(Page, "EnableScriptLocalization", new object[] { true });
+            //}
 
             teDescription.Width = ItemEditDescriptionWidth;
             teDescription.Height = ItemEditDescriptionHeight;
