@@ -15,11 +15,14 @@ namespace Engage.Dnn.Publish.Controls
 {
     using System;
     using System.Collections;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Globalization;
+    using System.Linq;
     using DotNetNuke.Entities.Modules;
     using DotNetNuke.Entities.Modules.Actions;
     using DotNetNuke.Entities.Users;
+    using DotNetNuke.Security.Roles;
     using DotNetNuke.Services.Exceptions;
     using DotNetNuke.Services.Localization;
     using DotNetNuke.Services.Personalization;
@@ -259,17 +262,16 @@ namespace Engage.Dnn.Publish.Controls
         {
             //load authors role
             //load admins role
-            var rc = new DotNetNuke.Security.Roles.RoleController();
-            ArrayList al = rc.GetUserRolesByRoleName(PortalId, HostController.Instance.GetString(Utility.PublishAuthorRole + PortalId));
-            ArrayList alAdmin = rc.GetUserRolesByRoleName(PortalId, HostController.Instance.GetString(Utility.PublishAdminRole + PortalId));
+            var al = RoleController.Instance.GetUsersByRole(PortalId, HostController.Instance.GetString(Utility.PublishAuthorRole + PortalId));
+            var alAdmin = RoleController.Instance.GetUsersByRole(PortalId, HostController.Instance.GetString(Utility.PublishAdminRole + PortalId));
 
             //check to make sure we only add authors who aren't already in the list.
-            foreach (UserRoleInfo uri in alAdmin)
+            foreach (UserInfo uri in alAdmin)
             {
                 bool located = false;
-                foreach (UserRoleInfo ur in al)
+                foreach (UserInfo ur in al)
                 {
-                    if (uri.UserRoleID == ur.UserRoleID)
+                    if (uri.UserID == ur.UserID)
                         located = true;
                         break;
                 }
@@ -280,10 +282,15 @@ namespace Engage.Dnn.Publish.Controls
             }
 
             //sort the author list alphabetically 
-            al.Sort(new UserRoleInfoComparer(true));
-            ddlAuthor.DataTextField = "FullName";
+            //al.Sort(new UserRoleInfoComparer(true));
+            
+            IEnumerable<UserInfo> sortedEnum = al.OrderBy(f => f.FirstName);
+            IList<UserInfo> sortedList = sortedEnum.ToList();
+
+
+            ddlAuthor.DataTextField = "DisplayName";
             ddlAuthor.DataValueField = "UserId";
-            ddlAuthor.DataSource = al;
+            ddlAuthor.DataSource = sortedList;
             ddlAuthor.DataBind();
         }
 
