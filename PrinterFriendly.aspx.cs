@@ -22,6 +22,8 @@ namespace Engage.Dnn.Publish
     using DotNetNuke.Services.Localization;
     using Util;
     using DotNetNuke.Security;
+    using DotNetNuke.Security.Permissions;
+
     public partial class PrinterFriendly : PageBase
     {
         public string CssStyle = "module.css";
@@ -134,12 +136,13 @@ namespace Engage.Dnn.Publish
                 if (module.DesktopModule.FriendlyName.Equals(Utility.DnnFriendlyModuleName))
                 {
                     bool overrideable;
-                    object overrideableObj = modules.GetTabModuleSettings(module.TabModuleID)["Overrideable"];
+                    object overrideableObj = module.TabModuleSettings["Overrideable"];
                     if (overrideableObj != null && bool.TryParse(overrideableObj.ToString(), out overrideable) && overrideable)
                     {
                         //keep checking until there is an overrideable module that the user is authorized to see.  BD
-                        if (PortalSecurity.HasNecessaryPermission(SecurityAccessLevel.View, PortalSettings, module))
-                        {
+                        //if (PortalSecurity.HasNecessaryPermission(SecurityAccessLevel.View, PortalSettings, module))
+                        if (ModulePermissionController.HasModuleAccess(SecurityAccessLevel.View,string.Empty, module))
+                            {
                             return true;
                         }
                     }

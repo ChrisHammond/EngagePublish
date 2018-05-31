@@ -203,7 +203,7 @@ namespace Engage.Dnn.Publish
 
         public static Category Create(int portalId)
         {
-            var i = new Category {PortalId = portalId};
+            var i = new Category { PortalId = portalId };
             return i;
         }
 
@@ -220,14 +220,14 @@ namespace Engage.Dnn.Publish
 
         public static Category Create(string name, string description, int authorUserId, int moduleId, int portalId, int displayTabId)
         {
-            var c = new Category {Name = name, Description = description, AuthorUserId = authorUserId};
+            var c = new Category { Name = name, Description = description, AuthorUserId = authorUserId };
 
             //default to the top level item type of category
             var irel = new ItemRelationship
-                           {
-                                   RelationshipTypeId = Util.RelationshipType.ItemToParentCategory.GetId(),
-                                   ParentItemId = TopLevelCategoryItemType.Category.GetId()
-                           };
+            {
+                RelationshipTypeId = Util.RelationshipType.ItemToParentCategory.GetId(),
+                ParentItemId = TopLevelCategoryItemType.Category.GetId()
+            };
 
             c.Relationships.Add(irel);
             c.StartDate = c.LastUpdated = c.CreatedDate = DateTime.Now.ToString(CultureInfo.InvariantCulture);
@@ -239,7 +239,7 @@ namespace Engage.Dnn.Publish
 
             return c;
         }
-        
+
         /// <summary>
         /// Creates a Category object that you can continue to modify or save back into the database. You should use the Category.Create method instead of this. 
         /// </summary>
@@ -434,7 +434,7 @@ namespace Engage.Dnn.Publish
                 }
                 else
                 {
-                    c = (Category)CBO.FillObject(DataProvider.Instance().GetCategoryVersion(itemVersionId, portalId), typeof(Category));
+                    c = (Category)CBO.FillObject<Category>(DataProvider.Instance().GetCategoryVersion(itemVersionId, portalId));
                     if (c != null)
                     {
                         c.CorrectDates();
@@ -448,7 +448,7 @@ namespace Engage.Dnn.Publish
             }
             else
             {
-                c = (Category)CBO.FillObject(DataProvider.Instance().GetCategoryVersion(itemVersionId, portalId), typeof(Category));
+                c = CBO.FillObject<Category>(DataProvider.Instance().GetCategoryVersion(itemVersionId, portalId));
                 if (c != null)
                 {
                     c.CorrectDates();
@@ -479,7 +479,7 @@ namespace Engage.Dnn.Publish
         public static Category GetCategory(int itemId, bool loadRelationships, bool loadTags, bool loadItemVersionSettings)
         {
             //cache?
-            var c = (Category)CBO.FillObject(DataProvider.Instance().GetCategory(itemId), typeof(Category));
+            var c = CBO.FillObject<Category>(DataProvider.Instance().GetCategory(itemId));
             if (c != null)
             {
                 c.CorrectDates();
@@ -524,9 +524,9 @@ namespace Engage.Dnn.Publish
             //        c.LoadItemVersionSettings();
             //    }
             //}
-            
+
             string cacheKey = Utility.CacheKeyPublishCategory + itemId.ToString(CultureInfo.InvariantCulture)
-                + "loadRelationships" +loadRelationships + "loadTags" + loadTags + "loadItemVersionSettings"+loadItemVersionSettings;
+                + "loadRelationships" + loadRelationships + "loadTags" + loadTags + "loadItemVersionSettings" + loadItemVersionSettings;
             Category c;
             if (ModuleBase.UseCachePortal(portalId))
             {
@@ -537,7 +537,7 @@ namespace Engage.Dnn.Publish
                 }
                 else
                 {
-                    c = (Category)CBO.FillObject(DataProvider.Instance().GetCategory(itemId), typeof(Category));
+                    c = CBO.FillObject<Category>(DataProvider.Instance().GetCategory(itemId));
                     if (c != null)
                     {
                         c.CorrectDates();
@@ -563,7 +563,7 @@ namespace Engage.Dnn.Publish
             }
             else
             {
-                c = (Category)CBO.FillObject(DataProvider.Instance().GetCategory(itemId), typeof(Category));
+                c = CBO.FillObject<Category>(DataProvider.Instance().GetCategory(itemId));
                 if (c != null)
                 {
                     c.CorrectDates();
@@ -601,7 +601,7 @@ namespace Engage.Dnn.Publish
                 }
                 else
                 {
-                    c = (Category)CBO.FillObject(DataProvider.Instance().GetCategory(itemId), typeof(Category));
+                    c = CBO.FillObject< Category>(DataProvider.Instance().GetCategory(itemId));
                     if (c != null)
                     {
                         c.CorrectDates();
@@ -612,7 +612,7 @@ namespace Engage.Dnn.Publish
             }
             else
             {
-                c = (Category)CBO.FillObject(DataProvider.Instance().GetCategory(itemId), typeof(Category));
+                c = CBO.FillObject<Category>(DataProvider.Instance().GetCategory(itemId));
                 if (c != null)
                 {
                     c.CorrectDates();
@@ -627,9 +627,9 @@ namespace Engage.Dnn.Publish
             return DataProvider.Instance().GetCategories(portalId);
         }
 
-        public static DataTable GetCategoriesByModuleId(int moduleId)
+        public static DataTable GetCategoriesByModuleId(int moduleId, int portalId)
         {
-            return DataProvider.Instance().GetCategoriesByModuleId(moduleId);
+            return DataProvider.Instance().GetCategoriesByModuleId(moduleId, portalId);
         }
 
         public static DataTable GetCategoriesByPortalId(int portalId)
@@ -711,10 +711,10 @@ namespace Engage.Dnn.Publish
             // relationships section of the file. Note, the stored procedure verifies the relationship doesn't exist
             // before inserting a new row.
             var relationship = new ItemRelationship
-                                   {
-                                           RelationshipTypeId = Util.RelationshipType.CategoryToTopLevelCategory.GetId(),
-                                           ParentItemId = TopLevelCategoryItemType.Category.GetId()
-                                   };
+            {
+                RelationshipTypeId = Util.RelationshipType.CategoryToTopLevelCategory.GetId(),
+                ParentItemId = TopLevelCategoryItemType.Category.GetId()
+            };
 
             Relationships.Add(relationship);
             bool save = false;

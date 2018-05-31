@@ -136,7 +136,7 @@ namespace Engage.Dnn.Publish
         {
             IDataReader dr = DataProvider.Instance().GetItemVersionSetting(itemVersionId, controlName, propertyName);
 
-            return (ItemVersionSetting)CBO.FillObject(dr, typeof(ItemVersionSetting));
+            return CBO.FillObject< ItemVersionSetting>(dr);
         }
 
         public static ItemVersionSetting GetItemVersionSetting(int itemVersionId, string controlName, string propertyName, int portalId)

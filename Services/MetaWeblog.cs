@@ -376,7 +376,7 @@ namespace Engage.Dnn.Publish.Services
                 var infoList = new List<BlogInfo>();
                 var bi = new BlogInfo {blogid = "0"};
                 var pac = new PortalAliasController();
-                foreach (PortalAliasInfo api in pac.GetPortalAliasArrayByPortalID(PortalId))
+                foreach (PortalAliasInfo api in PortalAliasController.Instance.GetPortalAliasesByPortalId(PortalId))
                 {
                     bi.url = "http://" + api.HTTPAlias;
                     break;
@@ -481,7 +481,8 @@ namespace Engage.Dnn.Publish.Services
             string domainName = DotNetNuke.Common.Globals.GetDomainName(request, true);
 
             string portalAlias = domainName;
-            PortalAliasInfo pai = PortalAliasController.GetPortalAliasInfo(portalAlias);
+            //            PortalAliasInfo pai = PortalAliasController.GetPortalAliasInfo(portalAlias);
+            PortalAliasInfo pai = PortalAliasController.Instance.GetPortalAlias(portalAlias);
             if (pai != null)
             {
                 PortalId = pai.PortalID;

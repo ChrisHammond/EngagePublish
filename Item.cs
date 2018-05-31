@@ -29,6 +29,7 @@ namespace Engage.Dnn.Publish
     using Data;
     using Portability;
     using Util;
+    using DotNetNuke.Entities.Portals;
 
     /// <summary>
     /// Summary description for ItemInfo.
@@ -408,14 +409,14 @@ namespace Engage.Dnn.Publish
                 }
             }
 
-            UserInfo ui = UserController.GetCurrentUserInfo();
+            UserInfo ui = UserController.Instance.GetCurrentUserInfo();
             if (ui.Username != null)
             {
                 var rc = new RoleController();
 
-                ArrayList users = rc.GetUsersByRoleName(ui.PortalID, HostController.Instance.GetString(Utility.PublishEmailNotificationRole + PortalId));
+                var users = RoleController.Instance.GetUsersByRole(ui.PortalID, HostController.Instance.GetString(Utility.PublishEmailNotificationRole + PortalId));
 
-                DotNetNuke.Entities.Portals.PortalSettings ps = DotNetNuke.Entities.Portals.PortalController.GetCurrentPortalSettings();
+                PortalSettings ps = PortalController.Instance.GetCurrentPortalSettings();
                 string linkUrl = Globals.NavigateURL(DisplayTabId, "", "VersionId=" + ItemVersionId.ToString(CultureInfo.InvariantCulture) + "&modid=" + _moduleId);
                 string linksUrl = Globals.NavigateURL(edittabid, "", "&ctl=" + Utility.AdminContainer + "&mid=" + editModuleId.ToString(CultureInfo.InvariantCulture) + "&adminType=" + "VersionsList&_itemId=" + ItemId);
 
@@ -456,15 +457,15 @@ namespace Engage.Dnn.Publish
             }
 
 
-            UserInfo ui = UserController.GetCurrentUserInfo();
+            UserInfo ui = UserController.Instance.GetCurrentUserInfo();
             if (ui.Username != null)
             {
-                UserInfo versionAuthor = UserController.GetUserById(PortalId, _authorUserId);
+                UserInfo versionAuthor = UserController.Instance.GetUserById(PortalId, _authorUserId);
 
                 //if this is the same user, don't email them notification.
                 if (versionAuthor != null && versionAuthor.Email != ui.Email)
                 {
-                    DotNetNuke.Entities.Portals.PortalSettings ps = DotNetNuke.Entities.Portals.PortalController.GetCurrentPortalSettings();
+                    DotNetNuke.Entities.Portals.PortalSettings ps = PortalController.Instance.GetCurrentPortalSettings();
                     //string linkUrl = Globals.NavigateURL(this.DisplayTabId, "", "VersionId=" + this.ItemVersionId.ToString(CultureInfo.InvariantCulture));
                     string linkUrl = Globals.NavigateURL(DisplayTabId, "", "VersionId=" + ItemVersionId.ToString(CultureInfo.InvariantCulture) + "&modid=" + ModuleId);
                     //href = Globals.NavigateURL(_displayTabId, "", "VersionId=" + _itemVersionId.ToString(CultureInfo.InvariantCulture) + "&modid=" + version.ModuleId.ToString());
@@ -682,7 +683,7 @@ namespace Engage.Dnn.Publish
         //    {
         //        if (HttpContext.Current.Request.IsAuthenticated)
         //        {
-        //            return UserController.GetCurrentUserInfo().UserID;
+        //            return UserController.Instance.GetCurrentUserInfo().UserID;
         //        }
 
         //        return -1;
@@ -992,7 +993,7 @@ namespace Engage.Dnn.Publish
                     IDataReader dr = DataProvider.Instance().GetItem(itemId, portalId, isCurrent);
                     ItemType it = ItemType.GetFromId(itemTypeId, typeof(ItemType));
 
-                    i = (Item)CBO.FillObject(dr, it.GetItemType);
+                    i = CBO.FillObject<Item>(dr);
 
                     // ReSharper disable ConditionIsAlwaysTrueOrFalse
                     if (i != null)
@@ -1337,15 +1338,15 @@ namespace Engage.Dnn.Publish
             if (string.IsNullOrEmpty(StartDate)) StartDate = DateTime.Now.ToString(CultureInfo.InvariantCulture);
 
             UserInfo user = UserController.GetUserByName(_portalId, Author);
-            _authorUserId = user != null ? user.UserID : UserController.GetCurrentUserInfo().UserID;
+            _authorUserId = user != null ? user.UserID : UserController.Instance.GetCurrentUserInfo().UserID;
 
             //Revising user.
             user = UserController.GetUserByName(_portalId, RevisingUser);
-            _revisingUserId = user != null ? user.UserID : UserController.GetCurrentUserInfo().UserID;
+            _revisingUserId = user != null ? user.UserID : UserController.Instance.GetCurrentUserInfo().UserID;
 
             //Approving user.
             user = UserController.GetUserByName(_portalId, ApprovalUser);
-            _approvalUserId = user != null ? user.UserID : UserController.GetCurrentUserInfo().UserID;
+            _approvalUserId = user != null ? user.UserID : UserController.Instance.GetCurrentUserInfo().UserID;
 
             bool found = false;
             //display tab - try and resolve from name in XML file.

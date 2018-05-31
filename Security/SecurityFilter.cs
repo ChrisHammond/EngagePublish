@@ -33,8 +33,8 @@ namespace Engage.Dnn.Publish.Security
 		private const string SecuritySettingName = "EnablePermissionsForPortal";
 
 
-		public abstract void FilterCategories(DataTable data);
-		public abstract void FilterArticles(SearchResultsInfoCollection data);
+		public abstract void FilterCategories(DataTable data, int portalId);
+		public abstract void FilterArticles(SearchResultsInfoCollection data, int portalId);
 
         //TODO: should this still exist?
 		private static bool IsAdmin
@@ -43,7 +43,7 @@ namespace Engage.Dnn.Publish.Security
 			{
 			    if (HttpContext.Current.Request.IsAuthenticated)
 				{
-					return (UserController.GetCurrentUserInfo().IsSuperUser || IsUserInRole("Administrators"));
+					return (UserController.Instance.GetCurrentUserInfo().IsSuperUser || IsUserInRole("Administrators"));
 				}
 			    return false;
 			}
@@ -51,7 +51,7 @@ namespace Engage.Dnn.Publish.Security
 
 		private static bool IsUserInRole(string roleName)
 		{
-			UserInfo ui = UserController.GetCurrentUserInfo();
+			UserInfo ui = UserController.Instance.GetCurrentUserInfo();
             //var rc = new RoleController();
             //string[] roles = rc.GetRolesByUser(ui.UserID, ui.PortalID);
 
@@ -69,7 +69,7 @@ namespace Engage.Dnn.Publish.Security
 			if (HttpContext.Current == null) return false;
 
 			//check the portal setting
-			int portalId = PortalController.GetCurrentPortalSettings().PortalId;
+			int portalId = PortalController.Instance.GetCurrentPortalSettings().PortalId;
             string s = HostController.Instance.GetString(SecuritySettingName + portalId);
             if (Utility.HasValue(s))
             {

@@ -14,6 +14,7 @@ namespace Engage.Dnn.Publish.Admin
 {
     using System;
     using System.Collections;
+    using System.Collections.Generic;
     using System.Data;
     using System.Globalization;
     using System.Web.UI.WebControls;
@@ -370,11 +371,11 @@ namespace Engage.Dnn.Publish.Admin
         private void FillListControls()
         {
             //Load the roles for admin/author dropdowns
-            ArrayList portalRoles = (new RoleController()).GetPortalRoles(PortalId);
+            var portalRoles = (new RoleController()).GetRoles(PortalId);
             //load the display dropdown list
             LoadAdminRolesDropDown(portalRoles);
-            LoadNotificationRolesDropDown(new RoleController().GetPortalRoles(PortalId));
-            LoadAuthorRoleDropDown(new RoleController().GetPortalRoles(PortalId));
+            LoadNotificationRolesDropDown(portalRoles);
+            LoadAuthorRoleDropDown(portalRoles);
             LoadDisplayTabDropDown();
             LoadTagDropDown();
             LoadCommentTypesDropDown();
@@ -384,19 +385,19 @@ namespace Engage.Dnn.Publish.Admin
             LoadDefaultCategoryDropDown();
         }
 
-        private void LoadAdminRolesDropDown(ArrayList portalRoles)
+        private void LoadAdminRolesDropDown(IList<RoleInfo> portalRoles)
         {
             ddlRoles.DataSource = portalRoles;
             ddlRoles.DataBind();
         }
 
-        private void LoadNotificationRolesDropDown(ArrayList portalRoles)
+        private void LoadNotificationRolesDropDown(IList<RoleInfo> portalRoles)
         {
             ddlEmailRoles.DataSource = portalRoles;
             ddlEmailRoles.DataBind();
         }
 
-        private void LoadAuthorRoleDropDown(ArrayList portalRoles)
+        private void LoadAuthorRoleDropDown(IList<RoleInfo> portalRoles)
         {
             ddlAuthor.DataSource = portalRoles;
             ddlAuthor.DataBind();

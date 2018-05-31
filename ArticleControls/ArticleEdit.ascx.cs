@@ -45,8 +45,8 @@ namespace Engage.Dnn.Publish.ArticleControls
         protected TextEditor TeArticleText;
         private ItemRelationships parentCategoryRelationship; // item parent category
         private ItemRelationships relatedCategoryRelationships; // item related categories
-        private ItemRelationships relatedArticlesRelationships; //related articles 
-        private ItemRelationships embeddedArticlesRelationships; //article links
+        //private ItemRelationships relatedArticlesRelationships; //related articles // CJH 5/30/2018 removed for non-use
+        //private ItemRelationships embeddedArticlesRelationships; //article links // CJH 5/30/2018 removed for non-use
         private ItemApproval itemApprovalStatus; //item approval status
         private ItemEdit itemEditControl; //item edit control
         private TagEntry tagEntryControl; //tag entry control
@@ -633,7 +633,7 @@ namespace Engage.Dnn.Publish.ArticleControls
 
                     foreach (ModuleInfo module in modules)
                     {
-                        Hashtable settings = mc.GetTabModuleSettings(module.TabModuleID);
+                        Hashtable settings = module.TabModuleSettings;
 
                         if (settings.ContainsKey("DisplayType") && settings["DisplayType"].ToString() == "ArticleDisplay")
                         {

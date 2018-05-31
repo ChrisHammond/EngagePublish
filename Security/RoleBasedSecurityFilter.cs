@@ -35,14 +35,14 @@ namespace Engage.Dnn.Publish.Security
 		}
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Using Asset")]
-        public override void FilterCategories(DataTable data)
+        public override void FilterCategories(DataTable data, int portalId)
 		{
 			Debug.Assert(data != null, "data must not be null");
 
 			//some conditions that we don't need to bother
 			if (data.Rows.Count == 0) return;
 
-			IDictionary d = DataProvider.Instance().GetViewableCategoryIds(PermissionType.View.GetId());
+			IDictionary d = DataProvider.Instance().GetViewableCategoryIds(PermissionType.View.GetId(), portalId);
 
 			var al = new ArrayList();
 			foreach (DataRow r in data.Rows)
@@ -62,14 +62,14 @@ namespace Engage.Dnn.Publish.Security
 		}
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:ValidateArgumentsOfPublicMethods", Justification = "Using assert")]
-        public override void FilterArticles(SearchResultsInfoCollection data)
+        public override void FilterArticles(SearchResultsInfoCollection data, int portalId)
 		{
 			Debug.Assert(data != null, "data must not be null");
 
 			//some conditions that we don't need to bother
 			if (data.Count == 0) return;
 
-			IDictionary viewableIds = DataProvider.Instance().GetViewableArticleIds(PermissionType.View.GetId());
+			IDictionary viewableIds = DataProvider.Instance().GetViewableArticleIds(PermissionType.View.GetId(), portalId);
 
 			var al = new ArrayList();
 			foreach (SearchResultsInfo result in data)

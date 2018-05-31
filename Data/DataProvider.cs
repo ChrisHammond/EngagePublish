@@ -82,7 +82,7 @@ namespace Engage.Dnn.Publish.Data
 
         //public abstract DataTable GetCategoriesDt(int portalId);
         public abstract DataTable GetCategories(int portalId);
-        public abstract DataTable GetCategoriesByModuleId(int moduleId);
+        public abstract DataTable GetCategoriesByModuleId(int moduleId, int portalId);
         public abstract DataTable GetCategoriesByPortalId(int portalId);
         public abstract DataTable GetCategoriesHierarchy(int portalId);
         [Obsolete("This method is not used")]
@@ -250,8 +250,8 @@ namespace Engage.Dnn.Publish.Data
 
         #endregion
 
-        public abstract IDictionary GetViewableCategoryIds(int permissionId);
-        public abstract IDictionary GetViewableArticleIds(int permissionId);
+        public abstract IDictionary GetViewableCategoryIds(int permissionId, int portalId);
+        public abstract IDictionary GetViewableArticleIds(int permissionId, int portalId);
 
         public abstract void InsertPermission(int categoryId, int roleId, int permissionId, int userId);
         public abstract void DeletePermissions(int categoryId);

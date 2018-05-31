@@ -32,14 +32,14 @@ namespace Engage.Dnn.Publish.Security
 			get {return instance;}
 		}
 
-		public override void FilterCategories(DataTable data)
+		public override void FilterCategories(DataTable data, int portalId)
 		{
 			Debug.Assert(data != null, "data must not be null");
 
 			//does nothing
 		}
 
-		public override void FilterArticles(SearchResultsInfoCollection data)
+		public override void FilterArticles(SearchResultsInfoCollection data, int portalId)
 		{
 			Debug.Assert(data != null, "data must not be null");
 

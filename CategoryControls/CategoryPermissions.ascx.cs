@@ -181,7 +181,7 @@ namespace Engage.Dnn.Publish.CategoryControls
         private void LoadAllRoles()
         {
             var rc = new RoleController();
-            ArrayList roles = rc.GetRoles();
+            var roles = rc.GetRoles(PortalId);
 
             foreach (RoleInfo role in roles)
             {

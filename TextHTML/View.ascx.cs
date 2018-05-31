@@ -101,7 +101,7 @@ namespace Engage.Dnn.Publish.TextHtml
                     var tr = new DotNetNuke.Services.Tokens.TokenReplace
                                  {
                                          AccessingUser = UserInfo,
-                                         DebugMessages = !DotNetNuke.Common.Globals.IsTabPreview()
+                                         //DebugMessages = !DotNetNuke.Common.Globals.IsTabPreview()
                                  };
 
                     articleText = tr.ReplaceEnvironmentTokens(articleText);

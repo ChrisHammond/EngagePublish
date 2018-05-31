@@ -72,7 +72,7 @@ namespace Engage.Dnn.Publish.Admin
 
         private void LoadSettings()
         {
-            lblAuthorizationKey.Text = PortalController.GetCurrentPortalSettings().GUID.ToString();
+            lblAuthorizationKey.Text = PortalController.Instance.GetCurrentPortalSettings().GUID.ToString();
             lblServiceUrl.Text = Utility.WebServiceUrl;
 
             //PublishSyndicationModes mode = (PublishSyndicationModes) Enum.Parse(typeof(PublishSyndicationModes), s);

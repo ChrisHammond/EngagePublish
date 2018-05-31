@@ -417,12 +417,12 @@ namespace Engage.Dnn.Publish.Data
 
             //do we need this?
             SecurityFilter sf = SecurityFilter.Instance;
-            sf.FilterCategories(dt);
+            sf.FilterCategories(dt, portalId);
 
             return dt;
         }
 
-        public override DataTable GetCategoriesByModuleId(int moduleId)
+        public override DataTable GetCategoriesByModuleId(int moduleId, int portalId)
         {
             var sql = new StringBuilder(256);
 
@@ -441,7 +441,7 @@ namespace Engage.Dnn.Publish.Data
 
             //do we need this?
             SecurityFilter sf = SecurityFilter.Instance;
-            sf.FilterCategories(dt);
+            sf.FilterCategories(dt, portalId);
 
             return dt;
         }
@@ -616,7 +616,7 @@ namespace Engage.Dnn.Publish.Data
             DataTable dt = ds.Tables[0];
 
             SecurityFilter sf = SecurityFilter.Instance;
-            sf.FilterCategories(dt);
+            sf.FilterCategories(dt, portalId);
 
             return dt;
         }
@@ -660,7 +660,7 @@ namespace Engage.Dnn.Publish.Data
             DataTable dt = ds.Tables[0];
 
             SecurityFilter sf = SecurityFilter.Instance;
-            sf.FilterCategories(dt);
+            sf.FilterCategories(dt, portalId);
 
             return dt;
         }
@@ -693,7 +693,7 @@ namespace Engage.Dnn.Publish.Data
             DataTable dt = ds.Tables[0];
 
             SecurityFilter sf = SecurityFilter.Instance;
-            sf.FilterCategories(dt);
+            sf.FilterCategories(dt, portalId);
 
             return dt;
         }
@@ -1747,7 +1747,7 @@ namespace Engage.Dnn.Publish.Data
             return ds.Tables[0];
         }
 
-        public override IDictionary GetViewableCategoryIds(int permissionId)
+        public override IDictionary GetViewableCategoryIds(int permissionId, int portalId)
         {
             var sql = new StringBuilder(256);
 
@@ -1767,7 +1767,7 @@ namespace Engage.Dnn.Publish.Data
             sql.Append("rp.PermissionId = ");
             sql.Append(permissionId);
             sql.Append(" and r.RoleName in (");
-            sql.Append(GetUserRoles());
+            sql.Append(GetUserRoles(portalId));
             sql.Append(")");
 
             IDataReader dr = null;
@@ -1789,7 +1789,7 @@ namespace Engage.Dnn.Publish.Data
             return d;
         }
 
-        public override IDictionary GetViewableArticleIds(int permissionId)
+        public override IDictionary GetViewableArticleIds(int permissionId, int portalId)
         {
             var sql = new StringBuilder(512);
 
@@ -1813,7 +1813,7 @@ namespace Engage.Dnn.Publish.Data
             sql.Append("and ci.RelationshipName = 'Item to Parent Category' ");
             sql.Append("and a.PortalId = r.PortalId ");
             sql.Append(" and r.RoleName in (");
-            sql.Append(GetUserRoles());
+            sql.Append(GetUserRoles(portalId));
             sql.Append(") ");
             sql.Append("and rp.PermissionId = ");
             sql.Append(permissionId);
@@ -1837,18 +1837,18 @@ namespace Engage.Dnn.Publish.Data
             return d;
         }
 
-        private static string GetUserRoles()
+        private static string GetUserRoles(int portalId)
         {
             if (HttpContext.Current != null && HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 var sb = new StringBuilder(128);
 
-                UserInfo ui = UserController.GetCurrentUserInfo();
+                UserInfo ui = UserController.Instance.GetCurrentUserInfo();
                 var rc = new RoleController();
                 //Not sure why DNN methods that return roles don't consistently return RoleInfo objects. hk
                 if (ui.IsSuperUser)
                 {
-                    foreach (RoleInfo role in rc.GetRoles())
+                    foreach (RoleInfo role in rc.GetRoles(portalId))
                     {
                         sb.Append("'");
                         sb.Append(role.RoleName);
@@ -1857,11 +1857,11 @@ namespace Engage.Dnn.Publish.Data
                 }
                 else
                 {
-                    string[] roles = rc.GetRolesByUser(ui.UserID, ui.PortalID);
-                    foreach (string s in roles)
+                    var roles = RoleController.Instance.GetUserRoles(ui, false);
+                    foreach (RoleInfo s in roles)
                     {
                         sb.Append("'");
-                        sb.Append(s);
+                        sb.Append(s.RoleName);
                         sb.Append("',");
                     }
 
@@ -1986,7 +1986,7 @@ namespace Engage.Dnn.Publish.Data
             DataTable dt = Instance().GetDataTable(sql.ToString(), portalId);
 
             SecurityFilter sf = SecurityFilter.Instance;
-            sf.FilterCategories(dt);
+            sf.FilterCategories(dt, portalId);
 
             LimitRows(maxItems, dt);
 
@@ -1998,7 +1998,7 @@ namespace Engage.Dnn.Publish.Data
             DataTable dt = SqlHelper.ExecuteDataset(ConnectionString, NamePrefix + "spGetChildrenInCategoryPaging", childTypeId, categoryId, index, pageSize, customSort, customSortDirection, sortOrder, portalId).Tables[0];
 
             SecurityFilter sf = SecurityFilter.Instance;
-            sf.FilterCategories(dt);
+            sf.FilterCategories(dt, portalId);
 
             //LimitRows(maxItems, dt);
 
@@ -2072,7 +2072,7 @@ namespace Engage.Dnn.Publish.Data
             DataTable dt = Instance().GetDataTable(sql.ToString(), portalId);
             SecurityFilter sf = SecurityFilter.Instance;
 
-            sf.FilterCategories(dt);
+            sf.FilterCategories(dt, portalId);
             LimitRows(maxItems, dt);
             return dt;
         }
@@ -2128,7 +2128,7 @@ namespace Engage.Dnn.Publish.Data
             DataTable dt = Instance().GetDataTable(sql.ToString(), portalId);
 
             SecurityFilter sf = SecurityFilter.Instance;
-            sf.FilterCategories(dt);
+            sf.FilterCategories(dt, portalId);
 
             LimitRows(maxItems, dt);
 
@@ -2162,7 +2162,7 @@ namespace Engage.Dnn.Publish.Data
             DataTable dt = SqlHelper.ExecuteDataset(ConnectionString, CommandType.Text, sql.ToString(), Utility.CreateIntegerParam("@portalId", portalId), Utility.CreateIntegerParam("@categoryId", categoryId), Utility.CreateIntegerParam("@itemTypeId", childTypeId)).Tables[0];
 
             SecurityFilter sf = SecurityFilter.Instance;
-            sf.FilterCategories(dt);
+            sf.FilterCategories(dt, portalId);
 
             LimitRows(maxItems, dt);
 
@@ -2695,7 +2695,7 @@ namespace Engage.Dnn.Publish.Data
             DataTable dt = SqlHelper.ExecuteDataset(ConnectionString, NamePrefix + "spGetItemViewReport", itemTypeId, categoryId, pageIndex, pageSize, startDate, endDate, sortOrder, portalId).Tables[0];
 
             SecurityFilter sf = SecurityFilter.Instance;
-            sf.FilterCategories(dt);
+            sf.FilterCategories(dt, portalId);
 
             //LimitRows(maxItems, dt);
 

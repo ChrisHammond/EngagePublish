@@ -80,7 +80,7 @@ namespace Engage.Dnn.Publish.Portability
             throw new NotImplementedException();
         }
 
-        public void BuildCategories(bool exportAll)
+        public void BuildCategories(bool exportAll, int portalId)
         {
             XmlNode publishNode = _doc.SelectSingleNode("publish");
             XmlNode categoriesNode = _doc.CreateElement("categories");
@@ -98,7 +98,7 @@ namespace Engage.Dnn.Publish.Portability
             }
             else
             {
-                dt = exportAll ? Category.GetCategoriesByPortalId(_portalId) : Category.GetCategoriesByModuleId(_moduleId);
+                dt = exportAll ? Category.GetCategoriesByPortalId(_portalId) : Category.GetCategoriesByModuleId(_moduleId, portalId);
             }
             
             try
@@ -106,7 +106,7 @@ namespace Engage.Dnn.Publish.Portability
                 foreach (DataRow row in dt.Rows)
                 {
                     var itemVersionId = (int)row["itemVersionId"];
-                    int portalId = Convert.ToInt32(row["PortalId"], CultureInfo.InvariantCulture);
+                    portalId = Convert.ToInt32(row["PortalId"], CultureInfo.InvariantCulture);
                     Category c = Category.GetCategoryVersion(itemVersionId, portalId);
 
                     string xml = c.SerializeObjectToXml();
@@ -241,7 +241,7 @@ namespace Engage.Dnn.Publish.Portability
             //we aren't using modulesettings in Publish, only tabmodulesettings
             //System.Collections.Hashtable moduleSettings = mc.GetModuleSettings(_moduleId);
             ModuleInfo mi = mc.GetModule(_moduleId, _tabId);
-            System.Collections.Hashtable tabModuleSettings = mc.GetTabModuleSettings(mi.TabModuleID);
+            System.Collections.Hashtable tabModuleSettings = mi.TabModuleSettings;
 
             foreach (string key in tabModuleSettings.Keys)
             {

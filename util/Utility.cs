@@ -469,7 +469,7 @@ namespace Engage.Dnn.Publish.Util
         {
             //TODO: we should cache this info as it gets used on GetItemLink requests now.
 
-            int portalId = UserController.GetCurrentUserInfo().PortalID;
+            int portalId = UserController.Instance.GetCurrentUserInfo().PortalID;
 
             var mc = new ModuleController();
             var tc = new TabController();
@@ -493,7 +493,7 @@ namespace Engage.Dnn.Publish.Util
                                 //check if the Tab has an Overrideable instance of Publish
 
                                 //ModuleSettingsBase msb = new ModuleSettingsBase();
-                                IDictionary modSettings = mc.GetTabModuleSettings(mi.TabModuleID);
+                                IDictionary modSettings = mi.TabModuleSettings;
 
                                 if (modSettings.Contains("Overrideable"))
                                 {
@@ -541,7 +541,7 @@ namespace Engage.Dnn.Publish.Util
         public static DataTable GetDisplayTabIdsAll(string[] moduleNames)
         {
             //TODO: this should be cached.
-            int portalId = UserController.GetCurrentUserInfo().PortalID;
+            int portalId = UserController.Instance.GetCurrentUserInfo().PortalID;
 
             var mc = new ModuleController();
             var tc = new TabController();
@@ -607,7 +607,7 @@ namespace Engage.Dnn.Publish.Util
                 if (ti != null && ti.TabID == displayTabId)
                 {
                     //TODO: check if the module is overrideable, if so then set the moduleid
-                    object o = mc.GetTabModuleSettings(mi.TabModuleID)["Overrideable"];
+                    object o = mi.TabModuleSettings["Overrideable"];
 
                     if (o != null)
                     {
@@ -694,8 +694,9 @@ namespace Engage.Dnn.Publish.Util
 
         private static PortalAliasInfo GetPortalAliasInfo(int portalId)
         {
-            ArrayList portalAliases = (new PortalAliasController()).GetPortalAliasArrayByPortalID(portalId);
-            return portalAliases != null && portalAliases.Count > 0 ? (PortalAliasInfo)portalAliases[0] : null;
+            var portalAliases = PortalAliasController.Instance.GetPortalAliasesByPortalId(portalId);//.GetPortalAliasesByPortalId(portalId);
+            
+            return portalAliases != null && portalAliases.Count<PortalAliasInfo>() > 0 ? portalAliases.ElementAt<PortalAliasInfo>(0) : null;
         }
 
         public static PortalSettings GetPortalSettings(int portalId)
@@ -876,7 +877,7 @@ namespace Engage.Dnn.Publish.Util
 
         public static bool IsPageOverrideable(int portalId, int displayTabId)
         {
-            //int portalId = UserController.GetCurrentUserInfo().PortalID;
+            //int portalId = UserController.Instance.GetCurrentUserInfo().PortalID;
             try
             {
                 var mc = new ModuleController();
@@ -892,7 +893,7 @@ namespace Engage.Dnn.Publish.Util
                     if (mi.DesktopModule.FriendlyName == DnnFriendlyModuleName)
                     {
                         //found one
-                        object o = mc.GetTabModuleSettings(mi.TabModuleID)["Overrideable"];
+                        object o = mi.TabModuleSettings["Overrideable"];
 
                         if (o != null)
                         {
@@ -1314,9 +1315,9 @@ namespace Engage.Dnn.Publish.Util
             using (IDataReader dr = GetModuleByModuleId(moduleId))
             {
                 if (dr.Read())
-                {
+                {                    
                     var tabModuleId = (int)dr["TabModuleId"];
-                    object value = (new ModuleController()).GetTabModuleSettings(tabModuleId)[settingName];
+                    object value = ((ModuleInfo)dr).TabModuleSettings[settingName];
                     if (value != null)
                     {
                         return value.ToString();

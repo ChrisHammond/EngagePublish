@@ -15,13 +15,13 @@ namespace Engage.Dnn.Publish.Portability
     using System.Xml.XPath;
     public static class XmlDirector
     {
-        public static void Construct(XmlTransporter transporter, bool exportAll)
+        public static void Construct(XmlTransporter transporter, bool exportAll, int portalId)
         {
             if (transporter == null) throw new ArgumentNullException("transporter");
 
             transporter.BuildRootNode();
             //transporter.BuildCategories(exportAll);
-            transporter.BuildCategories(true);
+            transporter.BuildCategories(true, portalId);
             transporter.BuildArticles(exportAll);
             transporter.BuildRelationships(exportAll);
             transporter.BuildItemVersionSettings(exportAll);

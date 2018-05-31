@@ -414,18 +414,21 @@ namespace Engage.Dnn.Publish
                 }
                 else
                 {
-                    a = (Article)CBO.FillObject(DataProvider.Instance().GetArticleVersion(articleVersionId, portalId), typeof(Article));
+                    
+                    //a = (Article)CBO.FillObject(DataProvider.Instance().GetArticleVersion(articleVersionId, portalId), typeof(Article));
+                    a = (Article)CBO.FillObject<Article>(DataProvider.Instance().GetArticleVersion(articleVersionId, portalId));
                     if (a != null)
                     {
                         a.CorrectDates();
                     }
                     DataCache.SetCache(cacheKey, a, DateTime.Now.AddMinutes(ModuleBase.CacheTimePortal(portalId)));
+                    //Utility.AddCacheKey(cacheKey, portalId);
                     Utility.AddCacheKey(cacheKey, portalId);
                 }
             }
             else
             {
-                a = (Article)CBO.FillObject(DataProvider.Instance().GetArticleVersion(articleVersionId, portalId), typeof(Article));
+                a = CBO.FillObject< Article>(DataProvider.Instance().GetArticleVersion(articleVersionId, portalId));
                 if (a != null)
                 {
                     a.CorrectDates();

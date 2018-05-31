@@ -104,7 +104,7 @@ namespace Engage.Dnn.Publish.Admin.Tools
             ds = DataProvider.Instance().GetAdminKeywordSearch(txtTagSearch.Text, ItemType.Article.GetId(), ApprovalStatus.Approved.GetId(), PortalId);
 
             int articleCount = 0;
-            int articleUpdate = 0;
+            //int articleUpdate = 0; // CJH 5/30/2018 removed for non-use
             DataTable allArticles = ds.Tables[0];
 
 
