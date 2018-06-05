@@ -136,7 +136,7 @@ GO
 CREATE PROCEDURE {databaseOwner}[{objectQualifier}engageams_spGetAllChildrenByType]
 @itemTypeId int, 
 @parentId int, 
-@RelationshipTypeId int, 
+@relationshipTypeId int, 
 @portalId int
 AS
 declare @onlyCurrentVersion bit
@@ -146,7 +146,7 @@ begin
 	select 
 		parent.ParentItemId,child.*, parent.RelationshipTypeId
 	from 
-		{databaseOwner}[{objectQualifier}engageams_fnGetChildItems](@parentId, @RelationshipTypeId) parent
+		{databaseOwner}[{objectQualifier}engageams_fnGetChildItems](@parentId, @relationshipTypeId) parent
 		join {databaseOwner}[{objectQualifier}engageams_vItemVersions] child on (parent.ChildItemId = child.ItemId)
 	where
 		child.PortalId = @portalId
@@ -160,7 +160,7 @@ begin
 	select 
 		parent.ParentItemId,child.*, parent.RelationshipTypeId
 	from 
-		{databaseOwner}[{objectQualifier}engageams_fnGetChildItems](@parentId, @RelationshipTypeId) parent
+		{databaseOwner}[{objectQualifier}engageams_fnGetChildItems](@parentId, @relationshipTypeId) parent
 		join {databaseOwner}[{objectQualifier}engageams_vItemVersions] child on (parent.ChildItemId = child.ItemId)
 	where
 		child.PortalId = @portalId
@@ -197,26 +197,26 @@ returns @hierarchy
 		ParentItemID int,
 		ChildItemID int,
 		ChildItemVersionID int,
-		RelationshipTypeId int,
+		RelationshipTypeID int,
 		Processed int default 0
 	)
 as
 begin
 	declare @rowsAdded int
-	declare @RelationshipTypeId int 
+	declare @relationshipTypeId int 
 	declare @categoryItemTypeId int 
-	set @RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where [relationshipName] = 'Category to Parent Category')
+	set @relationshipTypeId = (select relationshiptypeId from {databaseOwner}[{objectQualifier}engageamsRelationshipType] where [relationshipName] = 'Category to Parent Category')
 
 	set @categoryItemTypeId = (select itemTypeId from {databaseOwner}[{objectQualifier}engageamsItemType] where [name]='Category')
 
-	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeId)
+	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeID)
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeId
+		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeID
 	from 
 		 {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] parent
 		join {databaseOwner}[{objectQualifier}EngageAMSItem] i on (parent.ChildItemID = i.ItemID and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
 	where 
-		parent.RelationshipTypeId = @RelationshipTypeId
+		parent.RelationshipTypeId = @relationshipTypeId
 		and i.PortalId = @portalId
 
 	set @rowsAdded = @@rowcount
@@ -227,14 +227,14 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeId, 0
+			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeID, 0
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] child on (t.ChildItemID = child.ParentItemID)
 			join {databaseOwner}[{objectQualifier}EngageAMSItem] i on (child.ChildItemID = i.ItemID and child.ChildItemVersionID = i.ApprovedItemVersionID)
 		where 
 			t.Processed = 1 
-		and	child.RelationshipTypeId = @RelationshipTypeId
+		and	child.RelationshipTypeId = @relationshipTypeId
 		and not exists
 		(
 			select * from @hierarchy a
@@ -283,8 +283,8 @@ CREATE PROCEDURE {databaseOwner}[{objectQualifier}engageams_spGetAllCategoriesHi
 @portalId int
 AS
 declare @onlyCurrentVersion bit
-declare @RelationshipTypeId int 
-set @RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where [relationshipName] = 'Category to Parent Category')
+declare @relationshipTypeId int 
+set @relationshipTypeId = (select relationshiptypeId from {databaseOwner}[{objectQualifier}engageamsRelationshipType] where [relationshipName] = 'Category to Parent Category')
 
 set @onlyCurrentVersion =1
 if (@onlyCurrentVersion = 1)
@@ -308,7 +308,7 @@ begin
 		{databaseOwner}[{objectQualifier}engageams_fnGetAllCategories](@portalId) parent
 		join {databaseOwner}[{objectQualifier}engageams_vItemVersions] child on (parent.ChildItemId = child.ItemId)
 	where
---		r.RelationshipTypeId = @RelationshipTypeId
+--		r.RelationshipTypeId = @relationshipTypeId
 		child.PortalId = @portalId
 	order by
 		parent.ParentItemId, child.ItemId

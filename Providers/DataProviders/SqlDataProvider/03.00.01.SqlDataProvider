@@ -22,8 +22,8 @@ if exists (select * from dbo.sysobjects where id = object_id(N'{objectQualifier}
 ALTER TABLE {databaseOwner}[{objectQualifier}EngageAMSProductVersionPlant] DROP CONSTRAINT {objectQualifier}FK_ProductVersionPlant_Plant
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'[{objectQualifier}FK_EngageAMSItemRelationship_EngageAMSUtil.RelationshipType]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
-ALTER TABLE {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] DROP CONSTRAINT [{objectQualifier}FK_EngageAMSItemRelationship_EngageAMSUtil.RelationshipType]
+if exists (select * from dbo.sysobjects where id = object_id(N'{objectQualifier}FK_EngageAMSItemRelationship_EngageAMSRelationshipType') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] DROP CONSTRAINT {objectQualifier}FK_EngageAMSItemRelationship_EngageAMSRelationshipType
 GO
 
 if exists (select * from dbo.sysobjects where id = object_id(N'{objectQualifier}FK_ItemRelationship_Item') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
@@ -314,8 +314,8 @@ if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{
 drop table {databaseOwner}[{objectQualifier}EngageAMSProductVersionBak]
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
-drop table {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}EngageAMSRelationshipType]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}EngageAMSRelationshipType]
 GO
 
 if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}EngageAMStempfullproducthierarchy]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
@@ -337,28 +337,28 @@ GO
 
 
 /****** Object:  User Defined Function {databaseOwner}[{objectQualifier}engageams_fnGetChildItems]    Script Date: 11/23/2005 4:19:30 PM ******/
-CREATE function {databaseOwner}[{objectQualifier}engageams_fnGetChildItems](@parentItemID int, @RelationshipTypeId int)
+CREATE function {databaseOwner}[{objectQualifier}engageams_fnGetChildItems](@parentItemID int, @relationshipTypeId int)
 returns @hierarchy 
 	table 
 	(
 		ParentItemID int,
 		ChildItemID int,
 		ChildItemVersionID int,
-		RelationshipTypeId int,
+		RelationshipTypeID int,
 		Processed int default 0
 	)
 as
 begin
 	declare @rowsAdded int
-	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeId)
+	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeID)
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeId
+		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeID
 	from 
 		 {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] parent
 		join {databaseOwner}[{objectQualifier}EngageAMSItem] i on (parent.ChildItemID = i.ItemID and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
 	where 
 		parent.ParentItemID = @parentItemID
-	and	parent.RelationshipTypeId = @RelationshipTypeId
+	and	parent.RelationshipTypeId = @relationshipTypeId
 	
 	set @rowsAdded = @@rowcount
 	
@@ -368,14 +368,14 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeId, 0
+			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeID, 0
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] child on (t.ChildItemID = child.ParentItemID)
 			join {databaseOwner}[{objectQualifier}EngageAMSItem] i on (child.ChildItemID = i.ItemID and child.ChildItemVersionID = i.ApprovedItemVersionID)
 		where 
 			t.Processed = 1 
-		and	child.RelationshipTypeId = @RelationshipTypeId
+		and	child.RelationshipTypeId = @relationshipTypeId
 		and not exists
 		(
 			select * from @hierarchy a
@@ -418,16 +418,16 @@ returns @hierarchy
 as
 begin
 	declare @rowsAdded int
-	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, ItemTypeId, RelationshipTypeId
+	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, ItemTypeId, RelationshipTypeID
 )
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, i.ItemTypeId, parent.RelationshipTypeId
+		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, i.ItemTypeId, parent.RelationshipTypeID
 	from 
 		{databaseOwner}[{objectQualifier}EngageAMSItemRelationship] parent
 		join {databaseOwner}[{objectQualifier}EngageAMSItem] i on (parent.ChildItemID = i.ItemID and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
 	where 
 		parent.ParentItemID = @parentItemID
---		and parent.RelationshipTypeId in (1,2)
+--		and parent.relationshiptypeid in (1,2)
 	
 	set @rowsAdded = @@rowcount
 	
@@ -437,14 +437,14 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, i.ItemTypeId, child.RelationshipTypeId, 0
+			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, i.ItemTypeId, child.RelationshipTypeID, 0
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] child on (t.ChildItemID = child.ParentItemID)
 			join {databaseOwner}[{objectQualifier}EngageAMSItem] i on (child.ChildItemID = i.ItemID and child.ChildItemVersionID = i.ApprovedItemVersionID)
 		where 
 			t.Processed = 1 
---		and child.RelationshipTypeId in (1,2)
+--		and child.relationshiptypeid in (1,2)
 		and not exists
 		(
 			select * from @hierarchy a
@@ -492,9 +492,9 @@ returns @hierarchy
 as
 begin
 	declare @rowsAdded int
-	insert @hierarchy (ParentItemID, ChildItemID,  ItemTypeId, RelationshipTypeId)
+	insert @hierarchy (ParentItemID, ChildItemID,  ItemTypeId, RelationshipTypeID)
 	select 
-		distinct parent.ParentItemID, parent.ChildItemID, i.ItemTypeId, parent.RelationshipTypeId
+		distinct parent.ParentItemID, parent.ChildItemID, i.ItemTypeId, parent.RelationshipTypeID
 	from 
 		{databaseOwner}[{objectQualifier}EngageAMSItemRelationship] parent
 		join {databaseOwner}[{objectQualifier}EngageAMSItem] i on (parent.ChildItemID = i.ItemID)-- and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
@@ -509,7 +509,7 @@ begin
 	
 		insert @hierarchy
 		select 
-			distinct t.ChildItemID, child.ChildItemID, i.ItemTypeId, child.RelationshipTypeId, 0
+			distinct t.ChildItemID, child.ChildItemID, i.ItemTypeId, child.RelationshipTypeID, 0
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] child on (t.ChildItemID = child.ParentItemID)
@@ -556,16 +556,16 @@ returns @hierarchy
 	(
 		ParentItemID int,
 		ChildItemID int,
-		RelationshipTypeId int,
+		RelationshipTypeID int,
 		Processed int default 0,
 		Level int default 0
 	)
 as
 begin
 	declare @rowsAdded int
-	insert @hierarchy (ParentItemID, ChildItemID, RelationshipTypeId)
+	insert @hierarchy (ParentItemID, ChildItemID, RelationshipTypeID)
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.RelationshipTypeId
+		parent.ParentItemID, parent.ChildItemID, parent.RelationshipTypeID
 	from 
 		{databaseOwner}[{objectQualifier}EngageAMSItemRelationship] parent
 	where 
@@ -579,7 +579,7 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.RelationshipTypeId, 0, Level+1
+			t.ChildItemID, child.ChildItemID, child.RelationshipTypeID, 0, Level+1
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] child on (t.ChildItemID = child.ParentItemID)
@@ -625,16 +625,16 @@ returns @hierarchy
 as
 begin
 	declare @rowsAdded int
-	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, ItemTypeId, RelationshipTypeId
+	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, ItemTypeId, RelationshipTypeID
 )
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, i.ItemTypeId, parent.RelationshipTypeId
+		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, i.ItemTypeId, parent.RelationshipTypeID
 	from 
 		 {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] parent
 		join {databaseOwner}[{objectQualifier}EngageAMSItem] i on (parent.ChildItemID = i.ItemID and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
 	where 
 		parent.ParentItemID = @parentItemID
-		and parent.RelationshipTypeId in (1,2)
+		and parent.relationshiptypeid in (1,2)
 	
 	set @rowsAdded = @@rowcount
 	
@@ -644,14 +644,14 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, i.ItemTypeId, child.RelationshipTypeId, 0
+			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, i.ItemTypeId, child.RelationshipTypeID, 0
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] child on (t.ChildItemID = child.ParentItemID)
 			join {databaseOwner}[{objectQualifier}EngageAMSItem] i on (child.ChildItemID = i.ItemID and child.ChildItemVersionID = i.ApprovedItemVersionID)
 		where 
 			t.Processed = 1 
-		and child.RelationshipTypeId in (1,2)
+		and child.relationshiptypeid in (1,2)
 		and not exists
 		(
 			select * from @hierarchy a
@@ -730,8 +730,8 @@ CREATE TABLE {databaseOwner}[{objectQualifier}EngageAMSProductVersionBak] (
 ) ON [PRIMARY]
 GO
 
-CREATE TABLE {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType] (
-	[RelationshipTypeId] [int] IDENTITY (1, 1) NOT NULL ,
+CREATE TABLE {databaseOwner}[{objectQualifier}EngageAMSRelationshipType] (
+	[relationshipTypeId] [int] IDENTITY (1, 1) NOT NULL ,
 	[relationshipName] [varchar] (50)   NOT NULL 
 ) ON [PRIMARY]
 GO
@@ -926,12 +926,12 @@ ALTER TABLE {databaseOwner}[{objectQualifier}EngageAMSPortalSettings] ADD
 	)  ON [PRIMARY] 
 GO
 
-ALTER TABLE {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType] ADD 
-	CONSTRAINT [{objectQualifier}PK_EngageAMSUtil.RelationshipType] PRIMARY KEY  CLUSTERED 
+ALTER TABLE {databaseOwner}[{objectQualifier}EngageAMSRelationshipType] ADD 
+	CONSTRAINT [{objectQualifier}PK_EngageAMSRelationshipType] PRIMARY KEY  CLUSTERED 
 	(
-		[RelationshipTypeId]
+		[relationshipTypeId]
 	)  ON [PRIMARY] ,
-	CONSTRAINT [{objectQualifier}IX_EngageAMSUtil.RelationshipType] UNIQUE  NONCLUSTERED 
+	CONSTRAINT [{objectQualifier}IX_EngageAMSRelationshipType] UNIQUE  NONCLUSTERED 
 	(
 		[relationshipName]
 	)  ON [PRIMARY] 
@@ -1033,11 +1033,11 @@ ALTER TABLE {databaseOwner}[{objectQualifier}EngageAMSItem] ADD
 GO
 
 ALTER TABLE {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] ADD 
-	CONSTRAINT [{objectQualifier}FK_EngageAMSItemRelationship_EngageAMSUtil.RelationshipType] FOREIGN KEY 
+	CONSTRAINT [{objectQualifier}FK_EngageAMSItemRelationship_EngageAMSRelationshipType] FOREIGN KEY 
 	(
 		[RelationshipTypeId]
-	) REFERENCES {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType] (
-		[RelationshipTypeId]
+	) REFERENCES {databaseOwner}[{objectQualifier}EngageAMSRelationshipType] (
+		[relationshipTypeId]
 	),
 	CONSTRAINT [{objectQualifier}FK_ItemRelationship_Item] FOREIGN KEY 
 	(
@@ -1242,10 +1242,10 @@ GO
 /****** Object:  View {databaseOwner}[{objectQualifier}engageams_vChildItems]    Script Date: 11/23/2005 4:19:29 PM ******/
 CREATE view {databaseOwner}[{objectQualifier}engageams_vChildItems] as
 select
-	r.ParentItemID, child.*, rt.RelationshipName, rt.RelationshipTypeId
+	r.ParentItemID, child.*, rt.RelationshipName, rt.RelationshipTypeID
 from 
 	 {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] r
-	join {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType] rt on (r.RelationshipTypeId = rt.RelationshipTypeId)
+	join {databaseOwner}[{objectQualifier}EngageAMSRelationshipType] rt on (r.RelationshipTypeID = rt.RelationshipTypeID)
 	join {databaseOwner}[{objectQualifier}engageams_vItems] child on (r.ChildItemVersionID = child.ItemVersionID)
 
 
@@ -1377,7 +1377,7 @@ select
             r.childItemId, parent.*
 from 
             {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] r
-            join {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType] rt on (r.RelationshipTypeId = rt.RelationshipTypeId)
+            join {databaseOwner}[{objectQualifier}EngageAMSRelationshipType] rt on (r.RelationshipTypeID = rt.RelationshipTypeID)
             join {databaseOwner}[{objectQualifier}engageams_vitems]parent on (r.parentItemId = parent.ItemId)
 
 GO
@@ -1432,7 +1432,7 @@ GO
 /****** Object:  Stored Procedure {databaseOwner}[{objectQualifier}engageams_spGetAllChildren]    Script Date: 11/23/2005 4:19:29 PM ******/
 CREATE PROCEDURE {databaseOwner}[{objectQualifier}engageams_spGetAllChildren]
 @parentId int, 
-@RelationshipTypeId int, 
+@relationshipTypeId int, 
 @portalId int
 AS
 declare @onlyCurrentVersion bit
@@ -1442,11 +1442,11 @@ begin
 	select 
 		parent.ParentItemId,child.*, parent.RelationshipTypeId
 	from 
-		{databaseOwner}[{objectQualifier}engageams_fnGetChildItems](@parentId, @RelationshipTypeId) parent
+		{databaseOwner}[{objectQualifier}engageams_fnGetChildItems](@parentId, @relationshipTypeId) parent
 		join {databaseOwner}[{objectQualifier}engageams_vItemVersions] child on (parent.ChildItemId = child.ItemId)
 		--join {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] r on (parent.ParentItemID = r.ParentItemId and child.ItemVersionId = r.ChildItemVersionId)
 	where
---		r.RelationshipTypeId = @RelationshipTypeId
+--		r.RelationshipTypeId = @relationshipTypeId
 		child.PortalId = @portalId
 	and	IsCurrentVersion = 1
 	order by
@@ -1457,11 +1457,11 @@ begin
 	select 
 		parent.ParentItemId,child.*, parent.RelationshipTypeId
 	from 
-		{databaseOwner}[{objectQualifier}engageams_fnGetChildItems](@parentId, @RelationshipTypeId) parent
+		{databaseOwner}[{objectQualifier}engageams_fnGetChildItems](@parentId, @relationshipTypeId) parent
 		join {databaseOwner}[{objectQualifier}engageams_vItemVersions] child on (parent.ChildItemId = child.ItemId)
 		--join {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] r on (parent.ParentItemID = r.ParentItemId and child.ItemVersionId = r.ChildItemVersionId)
 	where
---		r.RelationshipTypeId = @RelationshipTypeId
+--		r.RelationshipTypeId = @relationshipTypeId
 		child.PortalId = @portalId
 	order by
 		parent.ParentItemId, child.ItemId
@@ -2336,7 +2336,7 @@ CREATE procedure {databaseOwner}[{objectQualifier}engageams_spGetDocumentSearchI
 
 (
 
-@RelationshipTypeId int, 
+@relationshipTypeId int, 
 @parentItemId int, 
 @documentTypeId int, 
 @portalId int
@@ -2383,7 +2383,7 @@ where
 
                                                 PortalID =@portalId 
 
-                                    and RelationshipTypeId = @RelationshipTypeId 
+                                    and RelationshipTypeId = @relationshipTypeId 
 
                                     and IsCurrentVersion = 1  
 
@@ -2415,7 +2415,7 @@ GO
 
 
 
-CREATE procedure {databaseOwner}[{objectQualifier}engageams_spGetImageSearchItems](@RelationshipTypeId int, @parentItemId int, @imageTypeId int, @portalId int)
+CREATE procedure {databaseOwner}[{objectQualifier}engageams_spGetImageSearchItems](@relationshipTypeId int, @parentItemId int, @imageTypeId int, @portalId int)
 as
 select 
 
@@ -2463,7 +2463,7 @@ where
 
                                                 PortalID =@portalId 
 
-                                    and RelationshipTypeId = @RelationshipTypeId 
+                                    and RelationshipTypeId = @relationshipTypeId 
 
                                     and IsCurrentVersion = 1  
 
@@ -2498,7 +2498,7 @@ GO
 /****** Object:  Stored Procedure {databaseOwner}[{objectQualifier}engageams_spGetVideoSearchItems]    Script Date: 11/23/2005 4:19:29 PM ******/
 CREATE procedure {databaseOwner}[{objectQualifier}engageams_spGetVideoSearchItems]
 (
-@RelationshipTypeId int, 
+@relationshipTypeId int, 
 @parentItemId int, 
 @videoTypeId int, 
 @portalId int
@@ -2527,7 +2527,7 @@ where
                                                 {databaseOwner}[{objectQualifier}engageams_vChildItems] 
                                     where 
                                                 PortalID =@portalId 
-                                    and RelationshipTypeId = @RelationshipTypeId 
+                                    and RelationshipTypeId = @relationshipTypeId 
                                     and IsCurrentVersion = 1  
                                     and ParentItemId = @parentItemId 
                         )
@@ -2727,88 +2727,88 @@ GO
 
 /* Item relationship types */
 
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Category To Parent Category')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Document To Document Category')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Article To Article Category')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Product To Product Category')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Product To Slideshow Image')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Product To Product Image')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Product To Other Product Image')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Product To Other Document')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Product To Thumbnail Image')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Product To Document')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Image To Larger Image')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Image To Thumbnail Image')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Image To Medium Image')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Document To Related Document')
 GO
 
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Product To Related Product')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Product To Video')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Category To Image')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Media To Media Category')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Media To Related Media')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Media to Media Large Image')
 GO
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Media to Media Thumbnail')
 GO

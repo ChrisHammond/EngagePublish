@@ -1397,10 +1397,10 @@ namespace Engage.Dnn.Publish
             //    throw new Exception("Trial license expired");
             //}
             base.OnInit(e);
-            if (AJAX.IsInstalled())
-            {
-                AJAX.RegisterScriptManager();
-            }
+            //if (AJAX.IsInstalled())
+            //{
+            //    AJAX.RegisterScriptManager();
+            //}
         }
 
         private void BindNewItem()

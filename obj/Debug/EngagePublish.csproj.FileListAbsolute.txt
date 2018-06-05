@@ -18,7 +18,7 @@ F:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.pdb
 C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.csproj.CoreCompileInputs.cache
 C:\Websites\dnndev.me\Bin\EngagePublish.dll
 C:\Websites\dnndev.me\Bin\EngagePublish.pdb
-C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.csprojResolveAssemblyReference.cache
 C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.csproj.CopyComplete
 C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.dll
 C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.pdb
+C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.csprojAssemblyReference.cache

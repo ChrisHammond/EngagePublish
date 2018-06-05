@@ -1,33 +1,33 @@
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Article To Thumbnail Image')
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Article To Thumbnail Image')
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Article To Thumbnail Image')
 GO
 
 
-update  {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+update  {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 set relationshipname = 'Article To Parent Article Category'
 where 
 relationshipname = 'Article To Article Category'
 GO
 
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Article To Related Article Category')
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Article To Related Article Category')
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Article To Related Article Category')
 GO
 
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Article To Parent Article')
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Article To Parent Article')
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Article To Parent Article')
 GO
 
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Article To Related Article')
-insert into {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Article To Related Article')
+insert into {databaseOwner}[{objectQualifier}EngageAMSrelationshiptype]
 (relationshipname)
 values ('Article To Related Article')
 GO

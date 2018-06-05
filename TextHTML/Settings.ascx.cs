@@ -21,10 +21,10 @@ namespace Engage.Dnn.Publish.TextHtml
         {
             base.OnInit(e);
             Load += ItemDisplayOptionsLoad;
-            if (DotNetNuke.Framework.AJAX.IsInstalled())
-            {
-                DotNetNuke.Framework.AJAX.RegisterScriptManager();
-            }
+            //if (DotNetNuke.Framework.AJAX.IsInstalled())
+            //{
+            //    DotNetNuke.Framework.AJAX.RegisterScriptManager();
+            //}
         }
 
         protected void ItemDisplayOptionsLoad(object sender, EventArgs e)

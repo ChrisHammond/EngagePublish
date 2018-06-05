@@ -25,16 +25,16 @@ returns @hierarchy
 as
 begin
 	declare @rowsAdded int
-	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, ItemTypeId, RelationshipTypeId
+	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, ItemTypeId, RelationshipTypeID
 )
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, i.ItemTypeId, parent.RelationshipTypeId
+		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, i.ItemTypeId, parent.RelationshipTypeID
 	from 
 		{databaseOwner}[{objectQualifier}engageamsItemRelationship] parent
 		join {databaseOwner}[{objectQualifier}engageamsItem] i on (parent.ChildItemID = i.ItemID) -- and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
 	where 
 		parent.ParentItemID = @parentItemID
---		and parent.RelationshipTypeId in (1,2)
+--		and parent.relationshiptypeid in (1,2)
 	
 	set @rowsAdded = @@rowcount
 	
@@ -44,14 +44,14 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, i.ItemTypeId, child.RelationshipTypeId, 0
+			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, i.ItemTypeId, child.RelationshipTypeID, 0
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}engageamsItemRelationship] child on (t.ChildItemID = child.ParentItemID)
 			join {databaseOwner}[{objectQualifier}engageamsItem] i on (child.ChildItemID = i.ItemID) -- and child.ChildItemVersionID = i.ApprovedItemVersionID)
 		where 
 			t.Processed = 1 
---		and child.RelationshipTypeId in (1,2)
+--		and child.relationshiptypeid in (1,2)
 		and not exists
 		(
 			select * from @hierarchy a

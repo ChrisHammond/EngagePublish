@@ -17,8 +17,8 @@ CREATE PROCEDURE {databaseOwner}[{objectQualifier}Publish_spGetAllCategoriesHier
 AS
 
 declare @onlyCurrentVersion bit
-declare @RelationshipTypeId int 
-set @RelationshipTypeId = (select RelationshipTypeId from [{objectQualifier}Publish_RelationshipType] where [relationshipName] = 'Category To Top Level Category')
+declare @relationshipTypeId int 
+set @relationshipTypeId = (select relationshiptypeId from [{objectQualifier}Publish_RelationshipType] where [relationshipName] = 'Category To Top Level Category')
 
 set @onlyCurrentVersion =1
 if (@onlyCurrentVersion = 1)
@@ -29,7 +29,7 @@ begin
 		[{objectQualifier}Publish_fnGetAllCategories]() parent
 		join [{objectQualifier}Publish_vwItemVersions] child on (parent.ChildItemId = child.ItemId)
 	where
---		r.RelationshipTypeId = @RelationshipTypeId
+--		r.RelationshipTypeId = @relationshipTypeId
 		child.PortalId = @portalId
 	and	IsCurrentVersion = 1
 	and 	parent.PortalId = @portalId

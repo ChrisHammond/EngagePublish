@@ -64,8 +64,8 @@ Select vi.[Name]
 	, t.ItemVersionId
 	, vi.IsCurrentVersion
 	, (select count(ParentItemId) from 
-	{databaseOwner}[{objectQualifier}engageams_vchilditems] vci where ParentItemId = t.ItemId and RelationshipTypeId = 
-	(select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname = 'Item To Parent Category')
+	{databaseOwner}[{objectQualifier}engageams_vchilditems] vci where ParentItemId = t.ItemId and RelationShipTypeId = 
+	(select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname = 'Item To Parent Category')
 	and ItemTypeId = 
 	(select  itemtypeid from {databaseOwner}[{objectQualifier}engageamsitemtype] where name = 'Category')
 	) 'ChildCount'

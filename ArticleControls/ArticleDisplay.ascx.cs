@@ -31,6 +31,9 @@ namespace Engage.Dnn.Publish.ArticleControls
     using Data;
     using Forum;
     using Util;
+    using System.Web.UI;
+    using System.Reflection;
+    using System.Linq;
 
     public partial class ArticleDisplay : ModuleBase, IActionable
     {
@@ -218,6 +221,15 @@ namespace Engage.Dnn.Publish.ArticleControls
                 //}
                 //return false;
             }
+        }
+
+
+        protected void UpdatePanel_Unload(object sender, EventArgs e)
+        {
+            MethodInfo methodInfo = typeof(ScriptManager).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
+                .Where(i => i.Name.Equals("System.Web.UI.IScriptManagerInternal.RegisterUpdatePanel")).First();
+            methodInfo.Invoke(ScriptManager.GetCurrent(Page),
+                new object[] { sender as UpdatePanel });
         }
 
         /// <summary>
@@ -623,7 +635,6 @@ namespace Engage.Dnn.Publish.ArticleControls
                 ItemVersionSetting rtSetting = ItemVersionSetting.GetItemVersionSetting(VersionInfoObject.ItemVersionId, "upnlRating", "Visible", PortalId);
                 if (rtSetting != null)
                 {
-
                     upnlRating.Visible = Convert.ToBoolean(rtSetting.PropertyValue, CultureInfo.InvariantCulture);
                 }
                 if (upnlRating.Visible)

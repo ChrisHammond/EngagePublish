@@ -28,6 +28,7 @@ namespace Engage.Dnn.Publish.Data
     using Security;
     using Util;
     using Microsoft.ApplicationBlocks.Data;
+    using System.Configuration;
 
     public class SqlDataProvider : DataProvider
     {
@@ -48,8 +49,10 @@ namespace Engage.Dnn.Publish.Data
         {
             var provider = ((Provider)_providerConfiguration.Providers[_providerConfiguration.DefaultProvider]);
 
-            
-            _connectionString = Config.GetConnectionString();
+
+            //_connectionString = Config.GetConnectionString();
+            _connectionString = ConfigurationManager.ConnectionStrings["SiteSqlServer"].ConnectionString;
+
 
             if (String.IsNullOrEmpty(_connectionString))
             {
@@ -1204,7 +1207,7 @@ namespace Engage.Dnn.Publish.Data
             DataSet ds = SqlHelper.ExecuteDataset(ConnectionString, CommandType.Text, sql.ToString());
             return ds.Tables[0];
         }
-
+        //TODO: this won't work in DNN 9 due to searchitem being removed
         public override DataTable GetArticlesSearchIndexingNew(int portalId, int displayTabId)
         {
             var sql = new StringBuilder(256);

@@ -1,65 +1,65 @@
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Item to Parent Category')
-insert into {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Item to Parent Category')
+insert into {databaseOwner}[{objectQualifier}engageamsrelationshiptype]
 (relationshipname)
 values('Item to Parent Category')
 GO
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Item to Related Category')
-insert into {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Item to Related Category')
+insert into {databaseOwner}[{objectQualifier}engageamsrelationshiptype]
 (relationshipname)
 values('Item to Related Category')
 GO
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Article to Special Content Article')
-insert into {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Article to Special Content Article')
+insert into {databaseOwner}[{objectQualifier}engageamsrelationshiptype]
 (relationshipname)
 values('Article to Special Content Article')
 GO
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Item To Thumbnail Image')
-insert into {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Item To Thumbnail Image')
+insert into {databaseOwner}[{objectQualifier}engageamsrelationshiptype]
 (relationshipname)
 values('Item To Thumbnail Image')
 GO
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Item To Related Category')
-insert into {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Item To Related Category')
+insert into {databaseOwner}[{objectQualifier}engageamsrelationshiptype]
 (relationshipname)
 values('Item To Related Category')
 GO
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Item To Related Article')
-insert into {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Item To Related Article')
+insert into {databaseOwner}[{objectQualifier}engageamsrelationshiptype]
 (relationshipname)
 values('Item To Related Article')
 GO
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Item To Related Document')
-insert into {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Item To Related Document')
+insert into {databaseOwner}[{objectQualifier}engageamsrelationshiptype]
 (relationshipname)
 values('Item To Related Document')
 GO
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Item To Related Product')
-insert into {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Item To Related Product')
+insert into {databaseOwner}[{objectQualifier}engageamsrelationshiptype]
 (relationshipname)
 values('Item To Related Product')
 GO
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Item To Related Media')
-insert into {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Item To Related Media')
+insert into {databaseOwner}[{objectQualifier}engageamsrelationshiptype]
 (relationshipname)
 values('Item To Related Media')
 GO
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Item To Video')
-insert into {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Item To Video')
+insert into {databaseOwner}[{objectQualifier}engageamsrelationshiptype]
 (relationshipname)
 values('Item To Video')
 GO
 
-if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where RelationshipName = 'Category To Top Level Category')
-insert into {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType]
+if not exists  (select * from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where RelationshipName = 'Category To Top Level Category')
+insert into {databaseOwner}[{objectQualifier}engageamsrelationshiptype]
 (relationshipname)
 values('Category To Top Level Category')
 GO
@@ -67,56 +67,56 @@ GO
 
 
 update {databaseOwner}[{objectQualifier}engageamsitemrelationship]
-set RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipName = 'Item To Parent Category')
-where RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname ='Article To Parent Article Category')
+set relationshiptypeid = (select relationshiptypeid from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipName = 'Item To Parent Category')
+where relationshipTypeId = (select relationshipTypeId from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname ='Article To Parent Article Category')
 GO
 
 
 update {databaseOwner}[{objectQualifier}engageamsitemrelationship]
-set RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipName = 'Item To Related Category')
-where RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname ='Article To Related Article Category')
+set relationshiptypeid = (select relationshiptypeid from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipName = 'Item To Related Category')
+where relationshipTypeId = (select relationshipTypeId from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname ='Article To Related Article Category')
 GO
 
 update {databaseOwner}[{objectQualifier}engageamsitemrelationship]
-set RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipName = 'Item to Special Content Article')
-where RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname ='Article to Special Content Article')
-GO
-
-
-update {databaseOwner}[{objectQualifier}engageamsitemrelationship]
-set RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipName = 'Item To Related Article')
-where RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname ='Article To Parent Article')
+set relationshiptypeid = (select relationshiptypeid from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipName = 'Item to Special Content Article')
+where relationshipTypeId = (select relationshipTypeId from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname ='Article to Special Content Article')
 GO
 
 
 update {databaseOwner}[{objectQualifier}engageamsitemrelationship]
-set RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipName = 'Item To Thumbnail Image')
-where RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname ='Article To Thumbnail Image')
+set relationshiptypeid = (select relationshiptypeid from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipName = 'Item To Related Article')
+where relationshipTypeId = (select relationshipTypeId from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname ='Article To Parent Article')
+GO
+
+
+update {databaseOwner}[{objectQualifier}engageamsitemrelationship]
+set relationshiptypeid = (select relationshiptypeid from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipName = 'Item To Thumbnail Image')
+where relationshipTypeId = (select relationshipTypeId from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname ='Article To Thumbnail Image')
 GO
 
 update {databaseOwner}[{objectQualifier}engageamsitemrelationship]
-set RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipName = 'Item To Parent Category')
-where RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname ='Category To Parent Category')
+set relationshiptypeid = (select relationshiptypeid from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipName = 'Item To Parent Category')
+where relationshipTypeId = (select relationshipTypeId from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname ='Category To Parent Category')
 GO
 
 update {databaseOwner}[{objectQualifier}engageamsitemrelationship]
-set RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipName = 'Item To Parent Category')
-where RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname ='Document To Document Category')
+set relationshiptypeid = (select relationshiptypeid from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipName = 'Item To Parent Category')
+where relationshipTypeId = (select relationshipTypeId from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname ='Document To Document Category')
 GO
 
 update {databaseOwner}[{objectQualifier}engageamsitemrelationship]
-set RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipName = 'Item To Related Document')
-where RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname ='Document To Related Document')
+set relationshiptypeid = (select relationshiptypeid from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipName = 'Item To Related Document')
+where relationshipTypeId = (select relationshipTypeId from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname ='Document To Related Document')
 GO
 
 update {databaseOwner}[{objectQualifier}engageamsitemrelationship]
-set RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipName = 'Item To Thumbnail Image')
-where RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname ='Document To Thumbnail Image')
+set relationshiptypeid = (select relationshiptypeid from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipName = 'Item To Thumbnail Image')
+where relationshipTypeId = (select relationshipTypeId from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname ='Document To Thumbnail Image')
 GO
 
 update {databaseOwner}[{objectQualifier}engageamsitemrelationship]
-set RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipName = 'Media to Media Large Image')
-where RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname ='Image To Larger Image')
+set relationshiptypeid = (select relationshiptypeid from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipName = 'Media to Media Large Image')
+where relationshipTypeId = (select relationshipTypeId from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname ='Image To Larger Image')
 GO
 
 
@@ -436,26 +436,26 @@ returns @hierarchy
 		ParentItemID int,
 		ChildItemID int,
 		ChildItemVersionID int,
-		RelationshipTypeId int,
+		RelationshipTypeID int,
 		Processed int default 0
 	)
 as
 begin
 	declare @rowsAdded int
-	declare @RelationshipTypeId int 
+	declare @relationshipTypeId int 
 	declare @categoryItemTypeId int 
-	set @RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where [relationshipName] = 'Category to Top Level Category')
+	set @relationshipTypeId = (select relationshiptypeId from {databaseOwner}[{objectQualifier}engageamsRelationshipType] where [relationshipName] = 'Category to Top Level Category')
 
 	set @categoryItemTypeId = (select itemTypeId from {databaseOwner}[{objectQualifier}engageamsItemType] where [name]='Category')
 
-	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeId)
+	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeID)
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeId
+		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeID
 	from 
 		 {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] parent
 		join {databaseOwner}[{objectQualifier}EngageAMSItem] i on (parent.ChildItemID = i.ItemID and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
 	where 
-		parent.RelationshipTypeId = @RelationshipTypeId
+		parent.RelationshipTypeId = @relationshipTypeId
 		and i.PortalId = @portalId
 		and i.ItemTypeId = (select itemtypeid from {databaseOwner}[{objectQualifier}engageamsitemtype] where name = 'Category')
 
@@ -467,14 +467,14 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeId, 0
+			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeID, 0
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] child on (t.ChildItemID = child.ParentItemID)
 			join {databaseOwner}[{objectQualifier}EngageAMSItem] i on (child.ChildItemID = i.ItemID and child.ChildItemVersionID = i.ApprovedItemVersionID)
 		where 
 			t.Processed = 1 
-		and	child.RelationshipTypeId = @RelationshipTypeId
+		and	child.RelationshipTypeId = @relationshipTypeId
 		and i.ItemTypeId = (select itemtypeid from {databaseOwner}[{objectQualifier}engageamsitemtype] where name = 'Category')
 
 		and not exists
@@ -525,8 +525,8 @@ GO
 --Update the category to article top level category relationships
 Update {databaseOwner}[{objectQualifier}engageamsitemrelationship]
 set parentItemId = (select ItemId from {databaseOwner}[{objectQualifier}engageams_vitems] where description = 'Category Top Level Category')
-, RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname = 'Category To Top Level Category')
-where RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where relationshipname = 'Item To Parent Category')
+, relationshiptypeid = (select relationshiptypeid from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname = 'Category To Top Level Category')
+where relationshiptypeid = (select relationshiptypeid from {databaseOwner}[{objectQualifier}engageamsrelationshiptype] where relationshipname = 'Item To Parent Category')
 and parentItemId = (select itemId from {databaseOwner}[{objectQualifier}engageams_vitems] where description = 'Articles Top Level Category')
 
 GO

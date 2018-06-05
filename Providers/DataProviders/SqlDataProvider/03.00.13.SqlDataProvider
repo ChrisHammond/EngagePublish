@@ -190,9 +190,9 @@ GO
 /****** Object:  view {databaseOwner}[{objectQualifier}engageams_vChildItems]    Script Date: 11/23/2005 4:19:29 PM ******/
 CREATE view {databaseOwner}[{objectQualifier}engageams_vChildItems] as
 select
-	r.ParentItemID, r.sortorder, child.*, rt.RelationshipName, rt.RelationshipTypeId
+	r.ParentItemID, r.sortorder, child.*, rt.RelationshipName, rt.RelationshipTypeID
 from {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] r
-	join {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType] rt on (r.RelationshipTypeId = rt.RelationshipTypeId)
+	join {databaseOwner}[{objectQualifier}EngageAMSRelationshipType] rt on (r.RelationshipTypeID = rt.RelationshipTypeID)
 	join {databaseOwner}[{objectQualifier}engageams_vItems] child on (r.ChildItemVersionID = child.ItemVersionID)
 
 GO
@@ -290,7 +290,7 @@ CREATE view {databaseOwner}[{objectQualifier}engageams_vItemListing] as
 	where
 		catDetail.IsCurrentVersion = 1
 	and 	child.IsCurrentVersion = 1
-	and 	child.RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}EngageAmsUtil.RelationshipType] where RelationshipName = 'Item To Parent Category')
+	and 	child.RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}EngageAmsRelationshipType] where RelationshipName = 'Item To Parent Category')
 
 
 GO
@@ -303,7 +303,7 @@ CREATE view {databaseOwner}[{objectQualifier}engageams_vParentItems] as
 select
             r.childItemId, parent.*
 from {databaseOwner}[{objectQualifier}EngageAMSItemRelationship] r
-            join {databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType] rt on (r.RelationshipTypeId = rt.RelationshipTypeId)
+            join {databaseOwner}[{objectQualifier}EngageAMSRelationshipType] rt on (r.RelationshipTypeID = rt.RelationshipTypeID)
             join {databaseOwner}[{objectQualifier}engageams_vitems]parent on (r.parentItemId = parent.ItemId)
 
 GO

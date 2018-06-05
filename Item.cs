@@ -1010,7 +1010,7 @@ namespace Engage.Dnn.Publish
                 IDataReader dr = DataProvider.Instance().GetItem(itemId, portalId, isCurrent);
                 ItemType it = ItemType.GetFromId(itemTypeId, typeof(ItemType));
 
-                i = (Item)CBO.FillObject(dr, it.GetItemType);
+                i = CBO.FillObject<Item>(dr);
                 i.CorrectDates();
             }
             return i;

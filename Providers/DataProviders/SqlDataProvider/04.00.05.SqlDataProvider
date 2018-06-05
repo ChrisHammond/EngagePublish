@@ -66,8 +66,8 @@ if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{
 drop table {databaseOwner}[{objectQualifier}EngageAMSProductVersionBak]
 GO
 
-if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
-exec sp_Rename '{databaseOwner}[{objectQualifier}EngageAMSUtil.RelationshipType]', '{objectQualifier}Publish_RelationshipType'
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}EngageAMSRelationshipType]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+exec sp_Rename '{databaseOwner}[{objectQualifier}EngageAMSRelationshipType]', '{objectQualifier}Publish_RelationshipType'
 GO
 
 if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}EngageAMStempprodcategories]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
@@ -377,10 +377,10 @@ GO
 
 CREATE view {databaseOwner}[{objectQualifier}Publish_vwChildItems] as
 select
-	r.ParentItemID, r.sortorder, child.*, rt.RelationshipName, rt.RelationshipTypeId
+	r.ParentItemID, r.sortorder, child.*, rt.RelationshipName, rt.RelationshipTypeID
 from 
 	 {databaseOwner}[{objectQualifier}Publish_ItemRelationship] r
-	join {databaseOwner}[{objectQualifier}Publish_RelationshipType] rt on (r.RelationshipTypeId = rt.RelationshipTypeId)
+	join {databaseOwner}[{objectQualifier}Publish_RelationshipType] rt on (r.RelationshipTypeID = rt.RelationshipTypeID)
 	join {databaseOwner}[{objectQualifier}Publish_vwItems] child on (r.ChildItemVersionID = child.ItemVersionID)
 
 GO
@@ -448,9 +448,9 @@ GO
 
 CREATE view {databaseOwner}[{objectQualifier}Publish_vwParentItems] as
 select
-	r.childItemId, r.RelationshipTypeId, parent.*
+	r.childItemId, r.relationshiptypeid, parent.*
 from {databaseOwner}[{objectQualifier}Publish_ItemRelationship] r
-	join {databaseOwner}[{objectQualifier}Publish_RelationshipType] rt on (r.RelationshipTypeId = rt.RelationshipTypeId)
+	join {databaseOwner}[{objectQualifier}Publish_RelationshipType] rt on (r.RelationshipTypeID = rt.RelationshipTypeID)
 	join {databaseOwner}[{objectQualifier}Publish_vwItems]parent on (r.parentItemId = parent.ItemId)
 
 GO
@@ -506,30 +506,30 @@ returns @hierarchy
 		ParentItemID int,
 		ChildItemID int,
 		ChildItemVersionID int,
-		RelationshipTypeId int,
+		RelationshipTypeID int,
 		PortalId int,
 		Processed int default 0
 	)
 as
 begin
 	declare @rowsAdded int
-	declare @RelationshipTypeId int 
-	declare @otherRelationshipTypeId int
+	declare @relationshipTypeId int 
+	declare @otherrelationshipTypeId int
 	declare @categoryItemTypeId int 
 	declare @itemTypeId int 
 
-	set @RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}Publish_RelationshipType] where RelationshipName = 'Category to Top Level Category')
-	set @otherRelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}Publish_RelationshipType] where RelationshipName = 'Item To Parent Category')
+	set @relationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}Publish_RelationshipType] where RelationshipName = 'Category to Top Level Category')
+	set @otherrelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}Publish_RelationshipType] where RelationshipName = 'Item To Parent Category')
 	set @categoryItemTypeId = (select ItemTypeId from {databaseOwner}[{objectQualifier}Publish_ItemType] where [Name] = 'Category')
 
-	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeId, PortalId)
+	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeID, PortalId)
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeId, i.PortalId
+		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeID, i.PortalId
 	from 
 		{databaseOwner}[{objectQualifier}Publish_ItemRelationship] parent
 		join {databaseOwner}[{objectQualifier}Publish_Item] i on (parent.ChildItemID = i.ItemID and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
 	where 
-		(parent.RelationshipTypeId = @RelationshipTypeId or parent.RelationshipTypeId = @otherRelationshipTypeId )		
+		(parent.RelationshipTypeId = @relationshipTypeId or parent.RelationshipTypeId = @otherrelationshipTypeId )		
 		and i.ItemTypeId = (select ItemTypeId from {databaseOwner}[{objectQualifier}Publish_ItemType] where name = 'Category')
 
 	set @rowsAdded = @@rowcount
@@ -540,7 +540,7 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeId, i.PortalId, 0
+			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeID, i.PortalId, 0
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}Publish_ItemRelationship] child on (t.ChildItemID = child.ParentItemID)
@@ -548,8 +548,8 @@ begin
 		where 
 			t.Processed = 1 
 		and	
-		--child.RelationshipTypeId = @RelationshipTypeId
-		(child.RelationshipTypeId = @RelationshipTypeId or child.RelationshipTypeId = @otherRelationshipTypeId )
+		--child.RelationshipTypeId = @relationshipTypeId
+		(child.RelationshipTypeId = @relationshipTypeId or child.RelationshipTypeId = @otherrelationshipTypeId )
 		and 	i.ItemTypeId = @categoryItemTypeId
 		and not exists
 		(
@@ -566,28 +566,28 @@ begin
 end
 GO
 
-CREATE function {databaseOwner}[{objectQualifier}Publish_fnGetChildItems](@parentItemID int, @RelationshipTypeId int)
+CREATE function {databaseOwner}[{objectQualifier}Publish_fnGetChildItems](@parentItemID int, @relationshipTypeId int)
 returns @hierarchy 
 	table 
 	(
 		ParentItemID int,
 		ChildItemID int,
 		ChildItemVersionID int,
-		RelationshipTypeId int,
+		RelationshipTypeID int,
 		Processed int default 0
 	)
 as
 begin
 	declare @rowsAdded int
-	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeId)
+	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeID)
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeId
+		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeID
 	from 
 		 {databaseOwner}[{objectQualifier}Publish_ItemRelationship] parent
 		join {databaseOwner}[{objectQualifier}Publish_Item] i on (parent.ChildItemID = i.ItemID and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
 	where 
 		parent.ParentItemID = @parentItemID
-	and	parent.RelationshipTypeId = @RelationshipTypeId
+	and	parent.RelationshipTypeId = @relationshipTypeId
 	
 	set @rowsAdded = @@rowcount
 	
@@ -597,14 +597,14 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeId, 0
+			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeID, 0
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}Publish_ItemRelationship] child on (t.ChildItemID = child.ParentItemID)
 			join {databaseOwner}[{objectQualifier}Publish_Item] i on (child.ChildItemID = i.ItemID and child.ChildItemVersionID = i.ApprovedItemVersionID)
 		where 
 			t.Processed = 1 
-		and	child.RelationshipTypeId = @RelationshipTypeId
+		and	child.RelationshipTypeId = @relationshipTypeId
 		and not exists
 		(
 			select * from @hierarchy a
@@ -636,16 +636,16 @@ returns @hierarchy
 as
 begin
 	declare @rowsAdded int
-	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, ItemTypeId, RelationshipTypeId
+	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, ItemTypeId, RelationshipTypeID
 )
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, i.ItemTypeId, parent.RelationshipTypeId
+		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, i.ItemTypeId, parent.RelationshipTypeID
 	from 
 		{databaseOwner}[{objectQualifier}Publish_ItemRelationship] parent
 		join {databaseOwner}[{objectQualifier}Publish_Item] i on (parent.ChildItemID = i.ItemID) -- and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
 	where 
 		parent.ParentItemID = @parentItemID
---		and parent.RelationshipTypeId in (1,2)
+--		and parent.relationshiptypeid in (1,2)
 /*	
 	set @rowsAdded = @@rowcount
 	
@@ -655,14 +655,14 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, i.ItemTypeId, child.RelationshipTypeId, 0
+			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, i.ItemTypeId, child.RelationshipTypeID, 0
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}Publish_ItemRelationship] child on (t.ChildItemID = child.ParentItemID)
 			join {databaseOwner}[{objectQualifier}Publish_Item] i on (child.ChildItemID = i.ItemID) -- and child.ChildItemVersionID = i.ApprovedItemVersionID)
 		where 
 			t.Processed = 1 
---		and child.RelationshipTypeId in (1,2)
+--		and child.relationshiptypeid in (1,2)
 		and not exists
 		(
 			select * from @hierarchy a
@@ -687,7 +687,7 @@ returns @hierarchy
 	(
 		ParentItemID int,
 		ChildItemID int,
-		RelationshipTypeId int,
+		RelationshipTypeID int,
 		Processed int default 0,
 		Level int default 0
 	)
@@ -695,9 +695,9 @@ as
 begin
 
 	declare @rowsAdded int
-	insert @hierarchy (ParentItemID, ChildItemID, RelationshipTypeId)
+	insert @hierarchy (ParentItemID, ChildItemID, RelationshipTypeID)
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.RelationshipTypeId
+		parent.ParentItemID, parent.ChildItemID, parent.RelationshipTypeID
 	from 
 		{databaseOwner}[{objectQualifier}Publish_ItemRelationship] parent
 	where 
@@ -711,7 +711,7 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.RelationshipTypeId, 0, Level
+			t.ChildItemID, child.ChildItemID, child.RelationshipTypeID, 0, Level
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}Publish_ItemRelationship] child on (t.ChildItemID = child.ParentItemID)
@@ -743,16 +743,16 @@ returns @hierarchy
 as
 begin
 	declare @rowsAdded int
-	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, ItemTypeId, RelationshipTypeId
+	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, ItemTypeId, RelationshipTypeID
 )
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, i.ItemTypeId, parent.RelationshipTypeId
+		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, i.ItemTypeId, parent.RelationshipTypeID
 	from 
 		 {databaseOwner}[{objectQualifier}Publish_ItemRelationship] parent
 		join {databaseOwner}[{objectQualifier}Publish_Item] i on (parent.ChildItemID = i.ItemID and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
 	where 
 		parent.ParentItemID = @parentItemID
-		and parent.RelationshipTypeId in (1,2)
+		and parent.relationshiptypeid in (1,2)
 	
 	set @rowsAdded = @@rowcount
 	
@@ -762,14 +762,14 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, i.ItemTypeId, child.RelationshipTypeId, 0
+			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, i.ItemTypeId, child.RelationshipTypeID, 0
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}Publish_ItemRelationship] child on (t.ChildItemID = child.ParentItemID)
 			join {databaseOwner}[{objectQualifier}Publish_Item] i on (child.ChildItemID = i.ItemID and child.ChildItemVersionID = i.ApprovedItemVersionID)
 		where 
 			t.Processed = 1 
-		and child.RelationshipTypeId in (1,2)
+		and child.relationshiptypeid in (1,2)
 		and not exists
 		(
 			select * from @hierarchy a
@@ -972,8 +972,8 @@ Select vi.[Name]
 	, t.ItemVersionId
 	, vi.IsCurrentVersion
 	, (select count(ParentItemId) from 
-	{databaseOwner}[{objectQualifier}Publish_vwChilditems] vci where ParentItemId = t.ItemId and RelationshipTypeId = 
-	(select RelationshipTypeId from {databaseOwner}[{objectQualifier}Publish_RelationshipType] where relationshipname = 'Item To Parent Category')
+	{databaseOwner}[{objectQualifier}Publish_vwChilditems] vci where ParentItemId = t.ItemId and RelationShipTypeId = 
+	(select RelationshipTypeId from {databaseOwner}[{objectQualifier}Publish_relationshiptype] where relationshipname = 'Item To Parent Category')
 	and ItemTypeId = 
 	(select  itemtypeid from {databaseOwner}[{objectQualifier}Publish_Itemtype] where name = 'Category')
 	) 'ChildCount'
@@ -991,8 +991,8 @@ CREATE PROCEDURE {databaseOwner}[{objectQualifier}Publish_spGetAllCategoriesHier
 AS
 
 declare @onlyCurrentVersion bit
-declare @RelationshipTypeId int 
-set @RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}Publish_RelationshipType] where [relationshipName] = 'Category To Top Level Category')
+declare @relationshipTypeId int 
+set @relationshipTypeId = (select relationshiptypeId from {databaseOwner}[{objectQualifier}Publish_RelationshipType] where [relationshipName] = 'Category To Top Level Category')
 
 set @onlyCurrentVersion =1
 if (@onlyCurrentVersion = 1)
@@ -1004,7 +1004,7 @@ begin
 		join {databaseOwner}[{objectQualifier}Publish_vwItemVersions] child on (parent.ChildItemId = child.ItemId)
 
 	where
---		r.RelationshipTypeId = @RelationshipTypeId
+--		r.RelationshipTypeId = @relationshipTypeId
 		child.PortalId = @portalId
 	and	IsCurrentVersion = 1
 	and 	parent.PortalId = @portalId
@@ -1031,7 +1031,7 @@ GO
 
 CREATE PROCEDURE {databaseOwner}[{objectQualifier}Publish_spGetAllChildren]
 @parentId int, 
-@RelationshipTypeId int, 
+@relationshipTypeId int, 
 @portalId int
 AS
 declare @onlyCurrentVersion bit
@@ -1041,7 +1041,7 @@ begin
 	select 
 		parent.ParentItemId,child.*, parent.RelationshipTypeId
 	from 
-		{databaseOwner}[{objectQualifier}Publish_fnGetChildItems](@parentId, @RelationshipTypeId) parent
+		{databaseOwner}[{objectQualifier}Publish_fnGetChildItems](@parentId, @relationshipTypeId) parent
 		join {databaseOwner}[{objectQualifier}Publish_vwItemVersions] child on (parent.ChildItemId = child.ItemId)
 	where
 		child.PortalId = @portalId
@@ -1054,7 +1054,7 @@ begin
 	select 
 		parent.ParentItemId,child.*, parent.RelationshipTypeId
 	from 
-		{databaseOwner}[{objectQualifier}Publish_fnGetChildItems](@parentId, @RelationshipTypeId) parent
+		{databaseOwner}[{objectQualifier}Publish_fnGetChildItems](@parentId, @relationshipTypeId) parent
 		join {databaseOwner}[{objectQualifier}Publish_vwItemVersions] child on (parent.ChildItemId = child.ItemId)
 	where
 		child.PortalId = @portalId
@@ -1067,7 +1067,7 @@ GO
 CREATE PROCEDURE {databaseOwner}[{objectQualifier}Publish_spGetAllChildrenByType]
 @itemTypeId int, 
 @parentId int, 
-@RelationshipTypeId int, 
+@relationshipTypeId int, 
 @portalId int
 AS
 declare @onlyCurrentVersion bit
@@ -1077,7 +1077,7 @@ begin
 	select 
 		parent.ParentItemId,child.*, parent.RelationshipTypeId
 	from 
-		{databaseOwner}[{objectQualifier}Publish_fnGetChildItems](@parentId, @RelationshipTypeId) parent
+		{databaseOwner}[{objectQualifier}Publish_fnGetChildItems](@parentId, @relationshipTypeId) parent
 		join {databaseOwner}[{objectQualifier}Publish_vwItemVersions] child on (parent.ChildItemId = child.ItemId)
 	where
 		child.PortalId = @portalId
@@ -1091,7 +1091,7 @@ begin
 	select 
 		parent.ParentItemId,child.*, parent.RelationshipTypeId
 	from 
-		{databaseOwner}[{objectQualifier}Publish_fnGetChildItems](@parentId, @RelationshipTypeId) parent
+		{databaseOwner}[{objectQualifier}Publish_fnGetChildItems](@parentId, @relationshipTypeId) parent
 		join {databaseOwner}[{objectQualifier}Publish_vwItemVersions] child on (parent.ChildItemId = child.ItemId)
 	where
 		child.PortalId = @portalId
@@ -1234,7 +1234,7 @@ GO
 
 CREATE procedure {databaseOwner}[{objectQualifier}Publish_spGetDocumentSearchItems]
 (
-@RelationshipTypeId int, 
+@relationshipTypeId int, 
 @parentItemId int, 
 @documentTypeId int, 
 @portalId int
@@ -1281,7 +1281,7 @@ where
 
                                                 PortalID =@portalId 
 
-                                    and RelationshipTypeId = @RelationshipTypeId 
+                                    and RelationshipTypeId = @relationshipTypeId 
 
                                     and IsCurrentVersion = 1  
 
@@ -1300,7 +1300,7 @@ and vci.PortalId = @portalId
 
 GO
 
-CREATE procedure {databaseOwner}[{objectQualifier}Publish_spGetImageSearchItems](@RelationshipTypeId int, @parentItemId int, @imageTypeId int, @portalId int)
+CREATE procedure {databaseOwner}[{objectQualifier}Publish_spGetImageSearchItems](@relationshipTypeId int, @parentItemId int, @imageTypeId int, @portalId int)
 as
 select 
             * 
@@ -1325,7 +1325,7 @@ where
                                                 {databaseOwner}[{objectQualifier}Publish_vwChildItems]
                                     where 
                                                 PortalID =@portalId 
-                                    and RelationshipTypeId = @RelationshipTypeId 
+                                    and RelationshipTypeId = @relationshipTypeId 
                                     and IsCurrentVersion = 1  
                                     and ParentItemId = @parentItemId 
                         
@@ -1453,7 +1453,7 @@ GO
 
 CREATE procedure {databaseOwner}[{objectQualifier}Publish_spGetVideoSearchItems]
 (
-@RelationshipTypeId int, 
+@relationshipTypeId int, 
 @parentItemId int, 
 @videoTypeId int, 
 @portalId int
@@ -1482,7 +1482,7 @@ where
                                                 {databaseOwner}[{objectQualifier}Publish_vwChildItems]
                                     where 
                                                 PortalID =@portalId 
-                                    and RelationshipTypeId = @RelationshipTypeId 
+                                    and RelationshipTypeId = @relationshipTypeId 
                                     and IsCurrentVersion = 1  
                                     and ParentItemId = @parentItemId 
                         )

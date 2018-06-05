@@ -54,8 +54,8 @@ Select vi.[Name]
 	, t.ItemVersionId
 	, vi.IsCurrentVersion
 	, (select count(ParentItemId) from 
-	[{objectQualifier}Publish_vwChilditems] vci where ParentItemId = t.ItemId and RelationshipTypeId = 
-	(select RelationshipTypeId from [{objectQualifier}Publish_RelationshipType] where relationshipname = 'Item To Parent Category')
+	[{objectQualifier}Publish_vwChilditems] vci where ParentItemId = t.ItemId and RelationShipTypeId = 
+	(select RelationshipTypeId from [{objectQualifier}Publish_relationshiptype] where relationshipname = 'Item To Parent Category')
 	and ItemTypeId = 
 	(select  itemtypeid from [{objectQualifier}Publish_Itemtype] where name = 'Category')
 	) 'ChildCount'

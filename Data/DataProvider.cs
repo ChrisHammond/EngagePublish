@@ -13,6 +13,7 @@ namespace Engage.Dnn.Publish.Data
 {
     using System;
     using System.Collections;
+    using System.Configuration;
     using System.Data;
     using DotNetNuke.Common.Utilities;
     using DotNetNuke.Framework.Providers;
@@ -51,15 +52,8 @@ namespace Engage.Dnn.Publish.Data
 
             var objProvider = ((Provider)providerConfiguration.Providers[providerConfiguration.DefaultProvider]);
             string connectionString;
-            if (!String.IsNullOrEmpty(objProvider.Attributes["connectionStringName"]) && !String.IsNullOrEmpty(System.Configuration.ConfigurationManager.AppSettings[objProvider.Attributes["connectionStringName"]]))
-            {
-                connectionString = System.Configuration.ConfigurationManager.AppSettings[objProvider.Attributes["connectionStringName"]];
-            }
-            else
-            {
-                connectionString = objProvider.Attributes["connectionString"];
-            }
-
+            connectionString = ConfigurationManager.ConnectionStrings["SiteSqlServer"].ConnectionString;
+                     
             IDbConnection newConnection = new System.Data.SqlClient.SqlConnection {ConnectionString = connectionString};
             newConnection.Open();
             return newConnection;

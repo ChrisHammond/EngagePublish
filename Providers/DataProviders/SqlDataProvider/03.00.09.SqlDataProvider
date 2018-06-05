@@ -10,28 +10,28 @@ returns @hierarchy
 		ParentItemID int,
 		ChildItemID int,
 		ChildItemVersionID int,
-		RelationshipTypeId int,
+		RelationshipTypeID int,
 		PortalId int,
 		Processed int default 0
 	)
 as
 begin
 	declare @rowsAdded int
-	declare @RelationshipTypeId int 
+	declare @relationshipTypeId int 
 	declare @categoryItemTypeId int 
 	declare @itemTypeId int 
 
-	set @RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}EngageAmsUtil.RelationshipType] where RelationshipName = 'Category to Top Level Category')
+	set @relationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}EngageAmsRelationshipType] where RelationshipName = 'Category to Top Level Category')
 	set @categoryItemTypeId = (select ItemTypeId from {databaseOwner}[{objectQualifier}EngageAmsItemType] where [Name] = 'Category')
 
-	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeId, PortalId)
+	insert @hierarchy (ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeID, PortalId)
 	select 
-		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeId, i.PortalId
+		parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeID, i.PortalId
 	from 
 		{databaseOwner}[{objectQualifier}EngageAmsItemRelationship] parent
 		join {databaseOwner}[{objectQualifier}EngageAmsItem] i on (parent.ChildItemID = i.ItemID and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
 	where 
-		parent.RelationshipTypeId = @RelationshipTypeId
+		parent.RelationshipTypeId = @relationshipTypeId
 		and i.ItemTypeId = @categoryItemTypeId
 
 	set @rowsAdded = @@rowcount
@@ -42,14 +42,14 @@ begin
 	
 		insert @hierarchy
 		select 
-			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeId, i.PortalId, 0
+			t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeID, i.PortalId, 0
 		from 
 			@hierarchy t
 			join {databaseOwner}[{objectQualifier}EngageAmsItemRelationship] child on (t.ChildItemID = child.ParentItemID)
 			join {databaseOwner}[{objectQualifier}EngageAmsItem] i on (child.ChildItemID = i.ItemID and child.ChildItemVersionID = i.ApprovedItemVersionID)
 		where 
 			t.Processed = 1 
-		and	child.RelationshipTypeId = @RelationshipTypeId
+		and	child.RelationshipTypeId = @relationshipTypeId
 		and 	i.ItemTypeId = @categoryItemTypeId
 		and not exists
 		(
@@ -99,7 +99,7 @@ CREATE view {databaseOwner}[{objectQualifier}engageams_vItemListing] as
 	where
 		catDetail.IsCurrentVersion = 1
 	and 	child.IsCurrentVersion = 1
-	and 	child.RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}EngageAmsUtil.RelationshipType] where RelationshipName = 'Item To Parent Category')
+	and 	child.RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}EngageAmsRelationshipType] where RelationshipName = 'Item To Parent Category')
 GO
 
 if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}engageams_spGetAllCategoriesHierachy]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
@@ -111,8 +111,8 @@ CREATE PROCEDURE {databaseOwner}[{objectQualifier}engageams_spGetAllCategoriesHi
 AS
 
 declare @onlyCurrentVersion bit
-declare @RelationshipTypeId int 
-set @RelationshipTypeId = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}engageamsUtil.RelationshipType] where [relationshipName] = 'Category To Top Level Category')
+declare @relationshipTypeId int 
+set @relationshipTypeId = (select relationshiptypeId from {databaseOwner}[{objectQualifier}engageamsRelationshipType] where [relationshipName] = 'Category To Top Level Category')
 
 set @onlyCurrentVersion =1
 if (@onlyCurrentVersion = 1)
@@ -124,7 +124,7 @@ begin
 		join {databaseOwner}[{objectQualifier}engageams_vItemVersions] child on (parent.ChildItemId = child.ItemId)
 
 	where
---		r.RelationshipTypeId = @RelationshipTypeId
+--		r.RelationshipTypeId = @relationshipTypeId
 		child.PortalId = @portalId
 	and	IsCurrentVersion = 1
 	and 	parent.PortalId = @portalId

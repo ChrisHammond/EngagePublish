@@ -5,7 +5,7 @@ GO
 CREATE PROCEDURE {databaseOwner}[{objectQualifier}Publish_spGetAllChildrenFromTwoParents]  
 @itemTypeId int,   
 @parentId int,   
-@RelationshipTypeId int,   
+@relationshipTypeId int,   
 @otherParentId int,
 @otherRelationshipTypeId int,
 @portalId int  
@@ -13,7 +13,7 @@ AS
  select   
   parent1.ParentItemId, parent1.RelationshipTypeId, parent2.ParentItemId, parent2.RelationshipTypeId, child.*
  from   
-  [{objectQualifier}Publish_fnGetChildItems](@parentId, @RelationshipTypeId) parent1
+  [{objectQualifier}Publish_fnGetChildItems](@parentId, @relationshipTypeId) parent1
   join [{objectQualifier}Publish_fnGetChildItems](@otherParentId, @otherRelationshipTypeId) parent2 on (parent1.childItemId = parent2.childItemId)
   join [{objectQualifier}Publish_vwItemVersions] child on (parent1.ChildItemId = child.ItemId)  
  where  

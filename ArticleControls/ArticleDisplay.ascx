@@ -53,7 +53,7 @@
         <asp:PlaceHolder ID="phRelatedArticles" runat="server"></asp:PlaceHolder>
     </div>
 
-    <asp:UpdatePanel ID="upnlRating" runat="server" UpdateMode="conditional" Visible="false">
+    <asp:UpdatePanel ID="upnlRating" runat="server" UpdateMode="conditional" Visible="false" OnUnload="UpdatePanel_Unload">
         <ContentTemplate>
             <div id="divRating" class="divRatingBefore">
                 <asp:Label ID="lblRatingMessage" runat="server" resourcekey="lblRatingMessage"></asp:Label>
@@ -97,7 +97,7 @@
             </asp:View>
         </asp:MultiView>
 
-        <asp:UpdatePanel ID="upnlComments" runat="server" UpdateMode="Conditional">
+        <asp:UpdatePanel ID="upnlComments" runat="server" UpdateMode="Conditional" OnUnload="UpdatePanel_Unload">
             <ContentTemplate>
 
                 <h3 class="Publish_CommentHeading">
