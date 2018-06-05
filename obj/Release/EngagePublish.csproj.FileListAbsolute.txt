@@ -19,3 +19,4 @@ C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.csp
 C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.csproj.CopyComplete
 C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.dll
 C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.pdb
+C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.csprojAssemblyReference.cache

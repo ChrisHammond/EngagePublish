@@ -536,7 +536,7 @@
                   <moduleControl>
                     <controlKey>Settings</controlKey>
                     <controlSrc>DesktopModules/EngagePublish/ItemDisplayOptions.ascx</controlSrc>
-                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <supportsPartialRendering>True</supportsPartialRendering>
                     <controlTitle>Settings</controlTitle>
                     <controlType>Edit</controlType>
                     <iconFile />

@@ -993,7 +993,8 @@ namespace Engage.Dnn.Publish
                     IDataReader dr = DataProvider.Instance().GetItem(itemId, portalId, isCurrent);
                     ItemType it = ItemType.GetFromId(itemTypeId, typeof(ItemType));
 
-                    i = CBO.FillObject<Item>(dr);
+                    //i = CBO.FillObject<Item>(dr);
+                    i = (Item)CBO.FillObject(dr, it.GetItemType);
 
                     // ReSharper disable ConditionIsAlwaysTrueOrFalse
                     if (i != null)
@@ -1010,7 +1011,8 @@ namespace Engage.Dnn.Publish
                 IDataReader dr = DataProvider.Instance().GetItem(itemId, portalId, isCurrent);
                 ItemType it = ItemType.GetFromId(itemTypeId, typeof(ItemType));
 
-                i = CBO.FillObject<Item>(dr);
+                //i = CBO.FillObject<Item>(dr);
+                i = (Item)CBO.FillObject(dr, it.GetItemType);
                 i.CorrectDates();
             }
             return i;
