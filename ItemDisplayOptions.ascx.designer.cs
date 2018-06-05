@@ -13,15 +13,6 @@ namespace Engage.Dnn.Publish {
     public partial class ItemDisplayOptions {
         
         /// <summary>
-        /// upnlSettings control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upnlSettings;
-        
-        /// <summary>
         /// lblChooseDisplayType control.
         /// </summary>
         /// <remarks>
@@ -182,15 +173,6 @@ namespace Engage.Dnn.Publish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCacheTime;
-        
-        /// <summary>
-        /// rvCacheTime control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator rvCacheTime;
         
         /// <summary>
         /// pnlConfigureOverrideable control.

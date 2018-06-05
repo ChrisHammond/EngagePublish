@@ -1,5 +1,4 @@
 <%@ Control Language="c#" AutoEventWireup="false" Inherits="Engage.Dnn.Publish.ItemDisplayOptions" Codebehind="ItemDisplayOptions.ascx.cs" %>
-
 <%@ Register TagPrefix="dnn" TagName="label" Src="~/controls/labelControl.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="sectionhead" Src="~/controls/sectionheadcontrol.ascx" %>
 
@@ -8,8 +7,6 @@
     .dvUpdateBtns { DISPLAY: none }
 </style>
 <br />
-
-<asp:UpdatePanel id="upnlSettings" runat="server" UpdateMode="Conditional"><ContentTemplate>
 
     <div style="text-align:left">
         <table cellspacing="0" cellpadding="0" border="0" class="SettingsTable">
@@ -45,7 +42,11 @@
                 </tr>
                 <tr>
                     <td class="SubHead"><dnn:label id="lblCacheTime" resourcekey="lblCacheTime" runat="server" /></td>
-                    <td class="NormalTextBox"><asp:TextBox ID="txtCacheTime" runat="server" Text="0" /><asp:RangeValidator id="rvCacheTime"  resourcekey="rvCacheTime" CssClass="error" runat="server" ControlToValidate="txtCacheTime" MaximumValue="1000" MinimumValue="0" Type="Integer"></asp:RangeValidator></td>
+                    <td class="NormalTextBox"><asp:TextBox ID="txtCacheTime" runat="server" Text="0" />
+                        <%--<asp:RangeValidator id="rvCacheTime"  resourcekey="rvCacheTime" CssClass="error" runat="server" ControlToValidate="txtCacheTime" MaximumValue="1000" MinimumValue="0" Type="Integer"></asp:RangeValidator>--%>
+
+
+                    </td>
                 </tr>
 
             </table>
@@ -59,4 +60,3 @@
             </asp:Panel>
         </div>
     </div>
-</ContentTemplate></asp:UpdatePanel>

@@ -13,7 +13,7 @@
       <releaseNotes src="ReleaseNotes.txt" />
 
       <dependencies>
-        <dependency type="CoreVersion">07.01.00</dependency>
+        <dependency type="CoreVersion">09.02.00</dependency>
       </dependencies>
 
       <components>

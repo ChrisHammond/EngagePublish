@@ -134,10 +134,10 @@ namespace Engage.Dnn.Publish
             btnConfigure.Click += BtnConfigureClick;
             ddlChooseDisplayType.SelectedIndexChanged += DdlChooseDisplayTypeSelectedIndexChanged;
 
-            //if (AJAX.IsInstalled())
-            //{
-            //    AJAX.RegisterScriptManager();
-            //}
+            if (AJAX.IsInstalled())
+            {
+                AJAX.RegisterScriptManager();
+            }
         }
 
         /// <summary>
