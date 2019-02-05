@@ -196,7 +196,7 @@
     $("#<%=btnSubmitComment.ClientID %>").click(function (e) {
         var txt = $("#<%=txtHumanTest.ClientID %>");
         var txtval = txt.val().toLowerCase();
-        if (txtval == 'human') {
+        if (txtval == 'human2') {
             $("#<%=btnSubmitComment.ClientID %>").removeAttr('disabled');
         } else {
             e.preventDefault();
