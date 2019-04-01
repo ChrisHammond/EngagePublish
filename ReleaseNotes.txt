@@ -2,6 +2,9 @@
 Release notes
 
 
+6.0.0
+-New release with more things
+
 5.9.8
 -Fix for DNN 9.2 deprecated items
 
