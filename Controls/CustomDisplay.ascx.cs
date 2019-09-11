@@ -586,17 +586,18 @@ namespace Engage.Dnn.Publish.Controls
 
                 //build the new string
                 //split the date month and year 
-                var result = string.Empty;
-                var spl = dt.ToString(_customDisplaySettings.DateFormat, CultureInfo.CurrentCulture).Split('/');
-                int i = 1;
-                foreach (string s in spl)
-                {
-                    result += "<span class=\"cl-time" + i.ToString() + "\">";
-                    result += s;
-                    result += "</span>";
-                    i++;
-                }
-                return result;
+                // var result = string.Empty;
+                //var spl = dt.ToString(_customDisplaySettings.DateFormat, CultureInfo.CurrentCulture).Split('/');
+                //int i = 1;
+                //foreach (string s in spl)
+                //{
+                //    result += "<span class=\"cl-time" + i.ToString() + "\">";
+                //    result += s;
+                //    result += "</span>";
+                //    i++;
+                //}
+                //return result;
+                return dt.ToString(_customDisplaySettings.DateFormat, CultureInfo.CurrentCulture);
             }
             return string.Empty;
         }

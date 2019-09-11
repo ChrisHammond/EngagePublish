@@ -913,7 +913,6 @@ a.mouseOverImage, a.mouseOverImage:visited {
 
 .categoryItemList .itemReadmore {
     clear: both;
-    text-align: right;
 }
 
 .categoryItemList .itemTitle {
@@ -922,8 +921,7 @@ a.mouseOverImage, a.mouseOverImage:visited {
 }
 
 .categoryItemList .itemAuthor {
-    float: left;
-    clear: left;
+
 }
 
 .categoryItemList .itemAuthorDate {
@@ -1271,58 +1269,27 @@ a.mouseOverImage, a.mouseOverImage:visited {
 }
 
 .customlist-header {
-    border-bottom: 1px solid rgba(0,0,0,.1);
+
     position: relative;
     display: flex;
 }
 
     .customlist-header time {
-        float: left;
         padding: 10px 15px;
         text-align: center;
     }
 
 
-.cl-time1 {
-    clear: both;
-    color: #000;
-    display: block;
-    font-size: 36px;
-}
-
-
-.cl-time2 {
-    clear: both;
-    color: #000;
-    display: block;
-}
-
-
-.cl-time3 {
-    clear: both;
-    color: #000;
-    display: block;
-}
-
 .customlistTitle {
-    border-left: 1px solid rgba(0,0,0,.1);
     min-height: 68px;
-    padding: 20px;
-    overflow: hidden;
-    padding-right: 20px;
 }
 
 .itemDescription {
-    padding: 20px;
     overflow: hidden;
     word-wrap: break-word;
 }
 
 .categoryItemList.Article {
-    border-top: 1px solid #e3e3e3;
-    border-bottom: 1px solid #e3e3e3;
-    border-left: 1px solid #e3e3e3;
-    border-right: 1px solid #e3e3e3;
     margin-bottom: 25px;
 }
 
@@ -1330,4 +1297,57 @@ a.mouseOverImage, a.mouseOverImage:visited {
     border-top: 1px solid rgba(0,0,0,.1);
     font-size: 12px;
     padding: 10px 20px;
+}
+
+/* Blog Post & Single Blog Page -- uipasta.com/live-preview/devblog/ */
+
+div.blog-post {
+    display: none;
+    margin-bottom: 50px;
+}
+
+.blog-post .post-image img {
+    width: 100%;
+}
+
+.blog-post .post-image p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.blog-post .post-image a {
+    font-weight: 600;
+}
+
+.blog-post .post-title h2 {
+    color: #333333;
+    font-size: 35px;
+    line-height: 45px;
+    font-weight: 700;
+    margin-top: 24px;
+}
+
+.blog-post .post-title h3 {
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.blog-post .post-info {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 500;
+    padding: 10px 0;
+    color: #8c8c8c;
+}
+
+.blog-post p {
+    font-size: 16px;
+    line-height: 30px;
+    color: #696868;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    font-family: "Poppins", sans-serif;
 }
