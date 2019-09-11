@@ -1,0 +1,244 @@
+﻿IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}Publish_fnGetChildItems]') AND OBJECTPROPERTY(id,N'IsTableFunction') = 1)
+DROP FUNCTION {databaseOwner}[{objectQualifier}Publish_fnGetChildItems]
+GO
+
+CREATE function {databaseOwner}[{objectQualifier}Publish_fnGetChildItems](@parentItemID int, @relationshipTypeId int)
+returns @hierarchy 
+	table 
+	(
+		ItemRelationshipId int,
+		ParentItemID int,
+		ChildItemID int,
+		ChildItemVersionID int,
+		RelationshipTypeID int,
+		SortOrder int,
+		Processed int default 0
+	)
+as
+begin
+	declare @rowsAdded int
+	insert @hierarchy (ItemRelationshipId,ParentItemID, ChildItemID, ChildItemVersionID, RelationshipTypeID, SortOrder)
+	select 
+		parent.ItemRelationshipId,parent.ParentItemID, parent.ChildItemID, parent.ChildItemVersionId, parent.RelationshipTypeID, parent.SortOrder
+	from 
+		 {databaseOwner}[{objectQualifier}Publish_ItemRelationship] parent
+		join {databaseOwner}[{objectQualifier}Publish_Item] i on (parent.ChildItemID = i.ItemID and parent.ChildItemVersionID = i.ApprovedItemVersionID) 
+	where 
+		parent.ParentItemID = @parentItemID
+	and	parent.RelationshipTypeId = @relationshipTypeId
+	
+	set @rowsAdded = @@rowcount
+	
+	while @rowsAdded > 0
+	begin
+		update @hierarchy set Processed = 1 where Processed = 0
+	
+		insert @hierarchy
+		select 
+			child.ItemRelationshipId, t.ChildItemID, child.ChildItemID, child.ChildItemVersionID, child.RelationshipTypeID, Child.SortOrder, 0
+		from 
+			@hierarchy t
+			join {databaseOwner}[{objectQualifier}Publish_ItemRelationship] child on (t.ChildItemID = child.ParentItemID)
+			join {databaseOwner}[{objectQualifier}Publish_Item] i on (child.ChildItemID = i.ItemID and child.ChildItemVersionID = i.ApprovedItemVersionID)
+		where 
+			t.Processed = 1 
+		and	child.RelationshipTypeId = @relationshipTypeId
+		and not exists
+		(
+			select * from @hierarchy a
+			where a.ParentItemId = child.ParentItemId 
+			and a.ChildItemId = child.ChildItemId
+		) 
+	
+		set @rowsAdded = @@rowcount
+	
+		update @hierarchy set Processed = 2 where Processed = 1
+	end
+	return
+end
+GO
+
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Publish_spGetChildrenInCategoryPaging]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}[{objectQualifier}Publish_spGetChildrenInCategoryPaging]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Publish_spGetChildrenInCategoryPaging]  
+(@childTypeId int,   
+@categoryId int,   
+@index int,
+@pagesize int,
+@itemSort bit,
+@itemSortDirection bit,
+@sortParameters nvarchar(400),
+@portalId int  
+)
+as 
+
+
+	declare @sql varchar(8000)
+
+	declare @topCatRel int
+	set @topCatRel  = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}Publish_RelationshipType] 
+		where RelationshipName = 'Category To Top Level Category')
+
+	declare @parentCatRel int
+	set @parentCatRel = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}Publish_RelationshipType] 
+		where RelationshipName = 'Item To Parent Category')
+
+	declare @relatedCatRel int
+	set @relatedCatRel = (select RelationshipTypeId from {databaseOwner}[{objectQualifier}Publish_RelationshipType] 
+		where RelationshipName = 'Item To Related Category')
+
+
+
+	Create table #tmpResults 
+	(
+		Id int not null IDENTITY(1,1),
+		ChildItemId int, 
+		Thumbnail varchar(500), 
+		ChildName nvarchar(255), 
+		ChildDescription ntext,
+		ChildItemTypeId int,
+		StartDate datetime,
+		LastUpdated datetime,
+		CreatedDate datetime,
+		AuthorUserId int,
+		DisplayName nvarchar(128),
+		Author nvarchar(255),
+		ItemRelationshipId int,
+		SortOrder int,
+		TotalRows int,
+		ViewCount int,
+		CommentCount int
+	)
+		CREATE NONCLUSTERED	INDEX ix_tmpResults ON #tmpResults (Id);
+
+DECLARE @IsCategory int 
+IF (@categoryId = (select itemid from {databaseOwner}{objectQualifier}publish_vwItems where name = 'category' and iscurrentversion=1)) 
+SET @IsCategory = 1 
+ELSE 
+SET @IsCategory = 0
+
+
+if (@itemSort = 1)
+begin
+
+	set @sql =  'insert into #tmpResults (ChildItemId, Thumbnail,  ChildName, ChildDescription, ChildItemTypeId, StartDate, LastUpdated, CreatedDate, AuthorUserId, DisplayName, Author, ItemRelationshipId, SortOrder, ViewCount, CommentCount)'
+		
+	set @sql = @sql + ' select  il.ChildItemId, i.Thumbnail, i.Name as ''ChildName'', i.Description as ''ChildDescription'', i.ItemTypeId, i.StartDate, i.LastUpdated, i.CreatedDate, i.AuthorUserId, u.DisplayName, i.Author, il.ItemRelationshipId, il.SortOrder, i.ViewCount, i.CommentCount '
+	
+	if ( @IsCategory =1 )	
+	begin
+	
+		set @sql = @sql + ' from dbo.Publish_fnGetChildItems(' + Convert(varchar(20),@categoryId) + ', ' + Convert(varchar(20),@parentCatRel) +') il '--,' +  Convert(varchar(20),@topCatRel) +') il '
+	end 
+	else
+	begin
+		set @sql = @sql + ' from dbo.Publish_fnGetChildItems(' + Convert(varchar(20),@categoryId) + ', ' + Convert(varchar(20),@parentCatRel) +') il '--,' +  Convert(varchar(20),@relatedCatRel) +') il '
+
+	end
+	
+	set @sql = @sql + ' join {databaseOwner}[{objectQualifier}publish_vwItems] i on (il.ChildItemId = i.ItemId) join {databaseOwner}[{objectQualifier}users] u on (u.UserId = i.AuthorUserId) '
+	set @sql = @sql + ' where i.PortalId = ' + Convert(varchar(20), @PortalId)
+	if (@childTypeId <1)
+	begin
+		set @sql = @sql + ' and (i.ItemTypeId = (select itemtypeid from {databaseOwner}[{objectQualifier}publish_itemtype] where name =''article'') '
+		set @sql = @sql + ' or i.ItemTypeId = (select itemtypeid from {databaseOwner}[{objectQualifier}publish_itemtype] where name =''category'')) '
+	end
+	else begin
+		set @sql = @sql + ' and i.ItemTypeId = ' +  Convert(varchar(20), @childTypeId)
+	end
+	
+	set @sql = @sql + ' and i.StartDate < GetDate() '
+	set @sql = @sql + ' and (i.EndDate > GetDate() or i.EndDate is null) '
+	set @sql = @sql + ' and i.IsCurrentVersion = 1 '
+	set @sql = @sql + ' and il.SortOrder > 0 '
+	if (@categoryId > 0)
+	begin
+		set @sql = @sql + ' and il.ParentItemId = ' +  Convert(varchar(20), @categoryId)
+	end
+
+	set @sql = @sql + ' order by  il.SortOrder '
+
+	if (@itemSortDirection = 1)
+	 begin
+
+		set @sql = @sql + ' asc ' 
+	end
+	else begin
+		set @sql = @sql + ' desc ' 
+	end
+
+	exec (@sql)
+END
+
+	set @sql =  'insert into #tmpResults (ChildItemId, Thumbnail,  ChildName, ChildDescription, ChildItemTypeId, StartDate, LastUpdated, CreatedDate, AuthorUserId, DisplayName, Author, ItemRelationshipId, SortOrder, ViewCount, CommentCount)'
+	
+	set @sql = @sql + ' select  il.ChildItemId, i.Thumbnail, i.Name as ''ChildName'', i.Description as ''ChildDescription'', i.ItemTypeId, i.StartDate, i.LastUpdated, i.CreatedDate, i.AuthorUserId, u.DisplayName, i.Author, il.ItemRelationshipId, il.SortOrder, i.ViewCount, i.CommentCount'
+	if ( @IsCategory = 1)
+	begin
+	
+		set @sql = @sql + ' from dbo.Publish_fnGetChildItems(' + Convert(varchar(20),@categoryId) + ', ' + Convert(varchar(20),@parentCatRel) +') il '--,' +  Convert(varchar(20),@topCatRel) +') il '
+	end 
+	else
+	begin
+		set @sql = @sql + ' from dbo.Publish_fnGetChildItems(' + Convert(varchar(20),@categoryId) + ', ' + Convert(varchar(20),@parentCatRel) +') il '--,' +  Convert(varchar(20),@relatedCatRel) +') il '
+
+	end
+
+	set @sql = @sql + ' join {databaseOwner}[{objectQualifier}publish_vwItems] i on (il.ChildItemId = i.ItemId) join {databaseOwner}[{objectQualifier}users] u on (u.UserId = i.AuthorUserId) '
+	set @sql = @sql + ' where i.PortalId = ' + Convert(varchar(20), @PortalId)
+	if (@childTypeId <1)
+	begin
+		set @sql = @sql + ' and (i.ItemTypeId = (select itemtypeid from {databaseOwner}[{objectQualifier}publish_itemtype] where name =''article'') '
+		set @sql = @sql + ' or i.ItemTypeId = (select itemtypeid from {databaseOwner}[{objectQualifier}publish_itemtype] where name =''category'')) '
+	end
+	else begin
+		set @sql = @sql + ' and i.ItemTypeId = ' +  Convert(varchar(20), @childTypeId)
+	end
+	
+	set @sql = @sql + ' and i.StartDate < GetDate() '
+	set @sql = @sql + ' and (i.EndDate > GetDate() or i.EndDate is null) '
+	set @sql = @sql + ' and i.IsCurrentVersion = 1 '
+
+if (@itemSort = 1)
+begin
+	set @sql = @sql + ' and il.SortOrder = 0 '
+end
+	if (@categoryId > 0)
+	begin
+		set @sql = @sql + ' and il.ParentItemId = ' +  Convert(varchar(20), @categoryId)
+	end
+
+	set @sql = @sql + ' order by  ' + @sortParameters
+
+	exec (@sql)
+
+	DECLARE @rows int
+
+	select @rows = count(*) from #tmpResults
+
+	update #tmpResults set TotalRows = @rows
+
+	if (@PageSize <1)
+	 	BEGIN
+	 		select * from #tmpResults
+	 	END
+	ELSE
+	 	BEGIN
+	 		select * from #tmpResults
+	 		where (id >= @index * @PageSize + 1) and id < (@index * @PageSize) + @PageSize + 1
+	 	END
+GO
+
+
+
+
+if not exists (select * from sysindexes where id = object_id(N'{databaseOwner}[{objectQualifier}Publish_RelationshipType]') and name = '{objectQualifier}ix_publishRelationshipType')
+	CREATE NONCLUSTERED	INDEX ix_publishRelationshipType ON {databaseOwner}[{objectQualifier}Publish_RelationshipType]  (relationshiptypeid);
+GO

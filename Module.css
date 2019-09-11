@@ -906,13 +906,14 @@ a.mouseOverImage, a.mouseOverImage:visited {
 
 
 .categoryItemList .itemDate {
-    float: right;
+    float: left;
     padding-right: 3px;
     font-weight: bold;
 }
 
 .categoryItemList .itemReadmore {
     clear: both;
+    padding:20px 0;
 }
 
 .categoryItemList .itemTitle {
@@ -1294,7 +1295,7 @@ a.mouseOverImage, a.mouseOverImage:visited {
 }
 
 .itemStats {
-    border-top: 1px solid rgba(0,0,0,.1);
+    
     font-size: 12px;
     padding: 10px 20px;
 }
