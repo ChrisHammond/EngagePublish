@@ -422,7 +422,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                 }
                 else
                 {
-                    if (txtHumanTest.Text.Trim().ToLower() == "human")
+                    if (txtHumanTest.Text.Trim().ToLower() == "human2")
                     {
                         string urlText = txtUrlComment.Text;
                         if (urlText.Trim().Length > 0 && !urlText.StartsWith("http://", StringComparison.OrdinalIgnoreCase) && !urlText.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
@@ -474,6 +474,7 @@ namespace Engage.Dnn.Publish.ArticleControls
 
 
                         ConfigureComments();
+                        txtHumanTest.Text = string.Empty;
 
                         pnlCommentEntry.Visible = false;
                         pnlCommentConfirmation.Visible = true;
@@ -519,6 +520,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                         txtFirstNameComment.Visible = false;
                         lblFirstNameComment.Visible = false;
                         rfvFirstNameComment.Enabled = false;
+                        
                         //vceFirstNameComment.Enabled = false;
                         break;
                     //case NameDisplayOption.Full:

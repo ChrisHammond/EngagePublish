@@ -198,6 +198,8 @@
         var txtval = txt.val().toLowerCase();
         if (txtval == 'human2') {
             $("#<%=btnSubmitComment.ClientID %>").removeAttr('disabled');
+
+            _gaq.push(['_trackEvent', 'Human2 Comment Validated', 'Submitted', '<%=GetItemName()%>']);
         } else {
             e.preventDefault();
             alert('<%=Localization.GetString("HumanTestResult.Text",LocalResourceFile)%>');
