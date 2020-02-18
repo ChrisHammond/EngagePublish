@@ -395,7 +395,7 @@ namespace Engage.Dnn.Publish.Util
             PortalAliasInfo pai = GetPortalAliasInfo(portalId);
             if (pai != null)
             {
-                return "http://" + pai.HTTPAlias;
+                return "https://" + pai.HTTPAlias;
             }
 
             return ApplicationUrl;

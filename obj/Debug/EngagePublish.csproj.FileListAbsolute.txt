@@ -22,3 +22,7 @@ C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.cspro
 C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.dll
 C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.pdb
 C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.csprojAssemblyReference.cache
+C:\websites\dnndev.me\DesktopModules\Engage-Publish\obj\Debug\EngagePublish.csprojAssemblyReference.cache
+C:\websites\dnndev.me\DesktopModules\Engage-Publish\obj\Debug\EngagePublish.dll
+C:\websites\dnndev.me\DesktopModules\Engage-Publish\obj\Debug\EngagePublish.pdb
+C:\websites\dnndev.me\DesktopModules\Engage-Publish\obj\Debug\EngagePublish.csproj.CopyComplete

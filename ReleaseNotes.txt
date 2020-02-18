@@ -4,6 +4,7 @@ Release notes
 06.00.02
 -New release with more things
 -Some performance improvements on CustomDisplay listing, removed "related category" inclusion in the listing to speed up queries
+-Updates for DNN 9.4.4
 
 
 6.0.0

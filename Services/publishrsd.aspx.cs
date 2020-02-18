@@ -1,6 +1,4 @@
-﻿
-
-namespace Engage.Dnn.Publish.Services
+﻿namespace Engage.Dnn.Publish.Services
 {
     using System;
     using System.Globalization;
@@ -43,8 +41,10 @@ namespace Engage.Dnn.Publish.Services
             if(o!=null)
             {
                 EngineName = "EngagePublish";
-                EngineUrl = "http://www.engagesoftware.com/modules/engagepublish.aspx";
-                ApiLink = "//" + ps.PortalAlias.HTTPAlias  + ModuleBase.DesktopModuleFolderName + "services/Metaweblog.ashx";
+                EngineUrl = "https://engagesoftware.com/about/products";
+
+                //TODO: how to determine if we should use HTTP or HTTPS here? Right now, I'm assuming use of HTTP
+                ApiLink = "https://" + ps.PortalAlias.HTTPAlias  + ModuleBase.DesktopModuleFolderName + "services/Metaweblog.ashx";
                 
                 HomePageUrl = o.ToString();
             }
