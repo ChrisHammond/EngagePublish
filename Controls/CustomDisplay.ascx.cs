@@ -74,6 +74,8 @@ namespace Engage.Dnn.Publish.Controls
             //read the tags querystring parameter and see if we have any to store into the tagQuery arraylist
             if (AllowTags && Overrideable)
             {
+
+                //TODO: make this one tag, only, ever. No more filtering by multiple tags
                 string tags = Request.QueryString["Tags"];
                 if (tags != null)
                 {
@@ -83,8 +85,11 @@ namespace Engage.Dnn.Publish.Controls
                     _tagQuery = new ArrayList(tagList.Count);
                     foreach (Tag tg in tagList)
                     {
-                        //create a list of tagids to query the database
-                        _tagQuery.Add(tg.TagId);
+                        if (_tagQuery.Count < 1)
+                        {
+                            //create a list of tagids to query the database
+                            _tagQuery.Add(tg.TagId);
+                        }
                     }
                 }
             }
@@ -139,12 +144,12 @@ namespace Engage.Dnn.Publish.Controls
                 rssImage = rssImage.Replace("[L]", string.Empty);
 #endif
 
-                imgRss.Src= ApplicationUrl + rssImage; //"/images/xml.gif";
+                imgRss.Src = ApplicationUrl + rssImage; //"/images/xml.gif";
                 imgRss.Alt = Localization.GetString("rssAlt", LocalResourceFile);
-                
+
                 lnkRss.Attributes.Add("type", "application/rss+xml");
                 lnkRss.ToolTip = Localization.GetString("rssAlt", LocalResourceFile);
-               
+
 
                 if (AllowTags && _tagQuery != null && _tagQuery.Count > 0)
                 {
@@ -155,11 +160,11 @@ namespace Engage.Dnn.Publish.Controls
                 {
                     //check for a setting of an external URL
                     ItemVersionSetting rssSetting = ItemVersionSetting.GetItemVersionSetting(VersionInfoObject.ItemVersionId, "CategorySettings", "RssUrl", PortalId);
-                    if (rssSetting != null && rssSetting.PropertyValue!=string.Empty)
+                    if (rssSetting != null && rssSetting.PropertyValue != string.Empty)
                     {
                         lnkRss.NavigateUrl = rssSetting.PropertyValue;
                         SetExternalRssUrl(lnkRss.NavigateUrl, Localization.GetString("rssAlt", LocalResourceFile));
-                        
+
                     }
                     else
                     {
@@ -169,7 +174,7 @@ namespace Engage.Dnn.Publish.Controls
                     }
 
                 }
-                
+
             }
 
             //store the URL into session for the return to list options
@@ -203,7 +208,7 @@ namespace Engage.Dnn.Publish.Controls
 
                 if ((_customDisplaySettings.ShowParent || _customDisplaySettings.ShowParentDescription) && _categoryId != -1)
                 {
-                    
+
                     Category parentCategory = Category.GetCategory(_categoryId, PortalId);
                     if (_customDisplaySettings.ShowParent)
                     {
@@ -217,7 +222,7 @@ namespace Engage.Dnn.Publish.Controls
                         divParentCategoryDescription.Visible = true;
                         lblCategoryDescription.Text = Utility.ReplaceTokens(parentCategory.Description);
                     }
-                    
+
                 }
                 else
                 {
@@ -263,7 +268,7 @@ namespace Engage.Dnn.Publish.Controls
 
                 if (pnlStats != null)
                 {
-                    pnlStats.Visible = _customDisplaySettings.DisplayOptionStats; 
+                    pnlStats.Visible = _customDisplaySettings.DisplayOptionStats;
                 }
                 if (pnlDate != null)
                 {
@@ -276,9 +281,9 @@ namespace Engage.Dnn.Publish.Controls
 
                 if (pnlTitle != null)
                 {
-                    
+
                     pnlTitle.Visible = _customDisplaySettings.DisplayOptionTitle;
-                   
+
                 }
                 //if (pnlCategory != null)
                 //{
@@ -397,7 +402,10 @@ namespace Engage.Dnn.Publish.Controls
                     }
                 }
 
+                //TODO: look into INavigationManager
+
                 link.NavigateUrl = Globals.NavigateURL(tabId, string.Empty, additionalParameters.ToArray());
+                
             }
             else
             {
@@ -412,7 +420,7 @@ namespace Engage.Dnn.Publish.Controls
 
             string cacheKey = Utility.CacheKeyPublishCustomDisplay +
                     _customDisplaySettings.SortOption.Replace(" ", string.Empty).ToString(CultureInfo.InvariantCulture) +
-                        _categoryId.ToString(CultureInfo.InvariantCulture) + "PageSize" 
+                        _categoryId.ToString(CultureInfo.InvariantCulture) + "PageSize"
                         + _customDisplaySettings.MaxDisplayItems.ToString(CultureInfo.InvariantCulture)
                         + "ItemType" + _customDisplaySettings.ItemTypeId
                         + "PageId" + PageId.ToString(CultureInfo.InvariantCulture);
@@ -420,9 +428,9 @@ namespace Engage.Dnn.Publish.Controls
             //check for tags
             if (AllowTags && _tagQuery != null && _tagQuery.Count > 0)
             {
-                string tagCacheKey = Utility.CacheKeyPublishTag + PortalId.ToString(CultureInfo.InvariantCulture) 
+                string tagCacheKey = Utility.CacheKeyPublishTag + PortalId.ToString(CultureInfo.InvariantCulture)
                     + _customDisplaySettings.ItemTypeId.ToString(CultureInfo.InvariantCulture)
-                    + "PageSize" + _customDisplaySettings.MaxDisplayItems.ToString(CultureInfo.InvariantCulture) 
+                    + "PageSize" + _customDisplaySettings.MaxDisplayItems.ToString(CultureInfo.InvariantCulture)
                     + "PageId" + PageId.ToString(CultureInfo.InvariantCulture)
                     + _qsTags; // +"PageId";
                 dt = DataCache.GetCache(tagCacheKey) as DataTable;
@@ -623,16 +631,16 @@ namespace Engage.Dnn.Publish.Controls
             }
             return string.Empty;
         }
-          /// <summary>
+        /// <summary>
         /// Format Text currently just looks for the token 
         /// </summary>
         protected string DisplayItemCommentCount(object commentCount)
         {
             if (commentCount != null)
             {
-                return String.Format(Localization.GetString("CommentStats", LocalResourceFile),commentCount);
+                return String.Format(Localization.GetString("CommentStats", LocalResourceFile), commentCount);
             }
-              return string.Empty;
+            return string.Empty;
         }
 
         /// <summary>
@@ -646,8 +654,8 @@ namespace Engage.Dnn.Publish.Controls
             }
             return string.Empty;
         }
-        
-        
+
+
 
         /// <summary>
         /// Record a Viewing.
@@ -666,7 +674,7 @@ namespace Engage.Dnn.Publish.Controls
                 {
                     url = HttpContext.Current.Request.RawUrl;
                 }
-                
+
                 VersionInfoObject.AddView(UserId, TabId, HttpContext.Current.Request.UserHostAddress);
             }
         }
@@ -709,7 +717,7 @@ namespace Engage.Dnn.Publish.Controls
                 return author.ToString();
             var uc = new UserController();
             return uc.GetUser(portalId, Convert.ToInt32(authorUserId)).DisplayName;
-                
+
 
         }
     }

@@ -74,10 +74,14 @@
     width: 120px;
     float: left;
     text-align: center;
+    
 }
+
+
 
 .admin_item_icon {
     width: 70px;
+    min-height: 45px;
 }
 
 .admin_item_text {
@@ -89,83 +93,99 @@
 .admin_item_articles {
     background: url(admin/images/articles.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_articles_sel {
     background: url(admin/images/articles_sel.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_categories {
     background: url(admin/images/categories.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_categories_sel {
     background: url(admin/images/categories_sel.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_settings {
     background: url(admin/images/settings.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_settings_sel {
     background: url(admin/images/settings_sel.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_comments {
     background: url(admin/images/comments.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_comments_sel {
     background: url(admin/images/comments_sel.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_help {
     background: url(admin/images/help.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_help_sel {
     background: url(admin/images/help_sel.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 
 .admin_item_delete {
     background: url(admin/images/delete.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_delete_sel {
     background: url(admin/images/delete_sel.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_syndication {
     background: url(admin/images/syndication.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_syndication_sel {
     background: url(admin/images/syndication_sel.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 
 .admin_item_admintools {
     background: url(admin/images/admintools.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 .admin_item_admintools_sel {
     background: url(admin/images/admintools_sel.gif);
     background-repeat: no-repeat;
+    min-height: 45px;
 }
 
 
@@ -1253,6 +1273,7 @@ a.mouseOverImage, a.mouseOverImage:visited {
 
 #articleDisplay {
     margin-bottom: 4rem;
+    clear:left;
 }
 
 #publishTitle {

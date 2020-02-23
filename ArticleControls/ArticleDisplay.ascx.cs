@@ -29,7 +29,6 @@ namespace Engage.Dnn.Publish.ArticleControls
     using DotNetNuke.Services.Mail;
     using Controls;
     using Data;
-    using Forum;
     using Util;
     using System.Web.UI;
     using System.Reflection;
@@ -185,11 +184,11 @@ namespace Engage.Dnn.Publish.ArticleControls
 
                     ItemVersionSetting forumCommentSetting = ItemVersionSetting.GetItemVersionSetting(VersionInfoObject.ItemVersionId, "chkForumComments", "Checked", PortalId)
                                                              ?? new ItemVersionSetting
-                                                                                                                                                                                       {
-                                                                                                                                                                                           ControlName = "chkForumComments",
-                                                                                                                                                                                           PropertyName = "Checked",
-                                                                                                                                                                                           PropertyValue = false.ToString()
-                                                                                                                                                                                       };
+                                                             {
+                                                                 ControlName = "chkForumComments",
+                                                                 PropertyName = "Checked",
+                                                                 PropertyValue = false.ToString()
+                                                             };
 
                     return IsPublishCommentType || !Convert.ToBoolean(forumCommentSetting.PropertyValue, CultureInfo.InvariantCulture);
                 }
@@ -399,87 +398,65 @@ namespace Engage.Dnn.Publish.ArticleControls
             {
                 //TODO: we're allowing anonymous comments, we should have a setting for this.
                 var objSecurity = new DotNetNuke.Security.PortalSecurity();
-                if (UseForumComments)
+
+                if (txtHumanTest.Text.Trim().ToLower() == "human2")
                 {
-                    int? categoryForumId = GetCategoryForumId();
-                    if (categoryForumId.HasValue)
+                    string urlText = txtUrlComment.Text;
+                    if (urlText.Trim().Length > 0 && !urlText.StartsWith("http://", StringComparison.OrdinalIgnoreCase) && !urlText.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
                     {
-                        int threadId = ForumProvider.GetInstance(PortalId).AddComment(categoryForumId.Value, VersionInfoObject.AuthorUserId,
-                            VersionInfoObject.Name, VersionInfoObject.Description, GetItemLinkUrl(VersionInfoObject.ItemId, PortalId),
-                            objSecurity.InputFilter(txtComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting), UserId,
-                            Request.UserHostAddress);
-
-                        var threadIdSetting = new ItemVersionSetting(Setting.CommentForumThreadId)
-                                                  {
-                                                      PropertyValue = threadId.ToString(CultureInfo.InvariantCulture),
-                                                      ItemVersionId = VersionInfoObject.ItemVersionId
-                                                  };
-                        threadIdSetting.Save();
-                        //VersionInfoObject.VersionSettings.Add(threadIdSetting);
-                        //VersionInfoObject.Save(VersionInfoObject.AuthorUserId);
-                        Response.Redirect(ForumProvider.GetInstance(PortalId).GetThreadUrl(threadId), true);
+                        urlText = "http://" + urlText;
                     }
-                }
-                else
-                {
-                    if (txtHumanTest.Text.Trim().ToLower() == "human2")
+
+                    int approvalStatusId = ApprovalStatus.Waiting.GetId();
+                    if (IsAdmin)
+                    {//automatically approve admin comments
+                        approvalStatusId = ApprovalStatus.Approved.GetId();
+                    }
+
+                    //TODO: format the comment text
+                    UserFeedback.Comment.AddComment(VersionInfoObject.ItemVersionId, (UserId == -1 ? null : (int?)UserId),
+                        objSecurity.InputFilter(txtComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting), approvalStatusId,
+                        null, objSecurity.InputFilter(txtFirstNameComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting),
+                        objSecurity.InputFilter(txtLastNameComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting),
+                        objSecurity.InputFilter(txtEmailAddressComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting),
+                        objSecurity.InputFilter(urlText, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting),
+                        DataProvider.ModuleQualifier);
+
+                    //see if comment notification is turned on. Notify the ItemVersion.Author
+                    if (IsCommentAuthorNotificationEnabled)
                     {
-                        string urlText = txtUrlComment.Text;
-                        if (urlText.Trim().Length > 0 && !urlText.StartsWith("http://", StringComparison.OrdinalIgnoreCase) && !urlText.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+                        var uc = new UserController();
+
+                        UserInfo ui = uc.GetUser(PortalId, VersionInfoObject.AuthorUserId);
+
+                        if (ui != null)
                         {
-                            urlText = "http://" + urlText;
+                            string emailBody = Localization.GetString("CommentNotificationEmail.Text", LocalResourceFile);
+                            emailBody = String.Format(emailBody
+                                , VersionInfoObject.Name
+                                , GetItemLinkUrlExternal(VersionInfoObject.ItemId)
+                                , objSecurity.InputFilter(txtFirstNameComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting)
+                                , objSecurity.InputFilter(txtLastNameComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting)
+                                , objSecurity.InputFilter(txtEmailAddressComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting)
+                                , objSecurity.InputFilter(txtComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting)
+
+                                );
+
+                            string emailSubject = Localization.GetString("CommentNotificationEmailSubject.Text", LocalResourceFile);
+                            emailSubject = String.Format(emailSubject, VersionInfoObject.Name);
+
+                            Mail.SendMail(PortalSettings.Email, ui.Email, string.Empty, emailSubject, emailBody, string.Empty, "HTML", string.Empty, string.Empty, string.Empty, string.Empty);
                         }
-
-                        int approvalStatusId = ApprovalStatus.Waiting.GetId();
-                        if (IsAdmin)
-                        {//automatically approve admin comments
-                            approvalStatusId = ApprovalStatus.Approved.GetId();
-                        }
-
-                        //TODO: format the comment text
-                        UserFeedback.Comment.AddComment(VersionInfoObject.ItemVersionId, (UserId == -1 ? null : (int?)UserId),
-                            objSecurity.InputFilter(txtComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting), approvalStatusId,
-                            null, objSecurity.InputFilter(txtFirstNameComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting),
-                            objSecurity.InputFilter(txtLastNameComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting),
-                            objSecurity.InputFilter(txtEmailAddressComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting),
-                            objSecurity.InputFilter(urlText, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting),
-                            DataProvider.ModuleQualifier);
-
-                        //see if comment notification is turned on. Notify the ItemVersion.Author
-                        if (IsCommentAuthorNotificationEnabled)
-                        {
-                            var uc = new UserController();
-
-                            UserInfo ui = uc.GetUser(PortalId, VersionInfoObject.AuthorUserId);
-
-                            if (ui != null)
-                            {
-                                string emailBody = Localization.GetString("CommentNotificationEmail.Text", LocalResourceFile);
-                                emailBody = String.Format(emailBody
-                                    , VersionInfoObject.Name
-                                    , GetItemLinkUrlExternal(VersionInfoObject.ItemId)
-                                    , objSecurity.InputFilter(txtFirstNameComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting)
-                                    , objSecurity.InputFilter(txtLastNameComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting)
-                                    , objSecurity.InputFilter(txtEmailAddressComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting)
-                                    , objSecurity.InputFilter(txtComment.Text, DotNetNuke.Security.PortalSecurity.FilterFlag.NoScripting)
-
-                                    );
-
-                                string emailSubject = Localization.GetString("CommentNotificationEmailSubject.Text", LocalResourceFile);
-                                emailSubject = String.Format(emailSubject, VersionInfoObject.Name);
-
-                                Mail.SendMail(PortalSettings.Email, ui.Email, string.Empty, emailSubject, emailBody, string.Empty, "HTML", string.Empty, string.Empty, string.Empty, string.Empty);
-                            }
-                        }
-
-
-                        ConfigureComments();
-                        txtHumanTest.Text = string.Empty;
-
-                        pnlCommentEntry.Visible = false;
-                        pnlCommentConfirmation.Visible = true;
                     }
+
+
+                    ConfigureComments();
+                    txtHumanTest.Text = string.Empty;
+
+                    pnlCommentEntry.Visible = false;
+                    pnlCommentConfirmation.Visible = true;
                 }
+
             }
         }
 
@@ -520,7 +497,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                         txtFirstNameComment.Visible = false;
                         lblFirstNameComment.Visible = false;
                         rfvFirstNameComment.Enabled = false;
-                        
+
                         //vceFirstNameComment.Enabled = false;
                         break;
                     //case NameDisplayOption.Full:
@@ -672,15 +649,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                     pnlComments.Visible = true;
                     mvCommentDisplay.SetActiveView(vwForumComments);
                     ItemVersionSetting forumThreadIdSetting = ItemVersionSetting.GetItemVersionSetting(VersionInfoObject.ItemVersionId, "ArticleSetting", "CommentForumThreadId", PortalId);
-                    if (forumThreadIdSetting != null)
-                    {
-                        lnkGoToForum.Visible = true;
-                        lnkGoToForum.NavigateUrl = ForumProvider.GetInstance(PortalId).GetThreadUrl(Convert.ToInt32(forumThreadIdSetting.PropertyValue, CultureInfo.InvariantCulture));
-                    }
-                    else
-                    {
                         btnForumComment.Visible = true;
-                    }
                 }
             }
             ConfigureTags();
@@ -786,8 +755,8 @@ namespace Engage.Dnn.Publish.ArticleControls
 
                 lblDateCreated.Text = String.Format(Localization.GetString("DateCreated", LocalResourceFile), dateCreated.ToLongDateString());
 
-                if(lastUpdated.Date > dateCreated.Date)
-                { 
+                if (lastUpdated.Date > dateCreated.Date)
+                {
                     lblLastUpdated.Text = String.Format(Localization.GetString("LastUpdated", LocalResourceFile), lastUpdated.ToShortDateString());
                     lblLastUpdated.Visible = true;
                 }

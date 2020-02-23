@@ -568,8 +568,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\DataProviders\SqlDataProvider\SqlDataProvider.cs" />
-    <Compile Include="Providers\ForumProvider\ActiveForumsProvider\ActiveForumsProvider.cs" />
-    <Compile Include="Providers\ForumProvider\ForumProvider.cs" />
     <Compile Include="Rating.cs" />
     <Compile Include="Search\SearchProvider.cs" />
     <Compile Include="Security\NullSecurityFilter.cs" />
@@ -1021,11 +1019,6 @@
     <None Include="Providers\DataProviders\SqlDataProvider\05.05.06.SqlDataProvider" />
     <None Include="Providers\DataProviders\SqlDataProvider\05.05.08.SqlDataProvider" />
     <None Include="Providers\DataProviders\SqlDataProvider\Uninstall.SqlDataProvider" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Providers\ForumProvider\ActiveForumsProvider\App_LocalResources\ActiveForumsProvider.resx">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ArticleControls\AuthorToken.ascx" />

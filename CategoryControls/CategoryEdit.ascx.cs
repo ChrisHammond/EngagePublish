@@ -25,7 +25,6 @@ namespace Engage.Dnn.Publish.CategoryControls
     using DotNetNuke.Services.Exceptions;
     using DotNetNuke.Services.Localization;
     using Controls;
-    using Forum;
     using Security;
     using Util;
 
@@ -243,7 +242,6 @@ namespace Engage.Dnn.Publish.CategoryControls
 
                     chkForceDisplayTab.Checked = VersionInfoObject.ForceDisplayOnPage();
 
-                    LoadCommentForumsDropDown();
                     LoadCategoryDisplayTabDropDown();
                     LoadChildDisplayTabDropDown();
 
@@ -537,28 +535,7 @@ namespace Engage.Dnn.Publish.CategoryControls
 
         }
 
-        private void LoadCommentForumsDropDown()
-        {
-            if (IsCommentsEnabled && !IsPublishCommentType)
-            {
-                ddlCommentForum.Items.Clear();
-                foreach (KeyValuePair<int, string> pair in ForumProvider.GetInstance(PortalId).GetForums())
-                {
-                    ddlCommentForum.Items.Add(new ListItem(pair.Value, pair.Key.ToString(CultureInfo.InvariantCulture)));
-                }
-                ddlCommentForum.Items.Insert(0,(new ListItem(Localization.GetString("NoForum",LocalResourceFile),"-1")));
-
-                ItemVersionSetting commentForumSetting = ItemVersionSetting.GetItemVersionSetting(VersionInfoObject.ItemVersionId, "CategorySettings", "CommentForumId", PortalId);
-                if (commentForumSetting != null)
-                {
-                    ddlCommentForum.SelectedValue = commentForumSetting.PropertyValue;
-                }
-            }
-            else
-            {
-                rowCommentForum.Visible = false;
-            }
-        }
+       
 
         private void LoadCategoryDisplayTabDropDown()
         {
