@@ -154,14 +154,14 @@ SET Transaction Isolation Level Read UNCOMMITTED
 		from {objectQualifier}publish_tags t
 		inner join {objectQualifier}publish_itemversiontags ivt on t.TagId = ivt.TagId
 		where ivt.ItemVersionId in (
-				select vi2.ItemVersionId
+				select distinct vi2.ItemVersionId
 				from #Tags X
 				inner join {objectQualifier}publish_tags t2 on X.[TagId] = t2.TagId
 				inner join {objectQualifier}publish_itemversiontags ivt2 on ivt2.TagId = t2.TagId
 				inner join {objectQualifier}publish_vwItems vi2 on vi2.ItemVersionId = ivt2.ItemVersionId
 				where vi2.IsCurrentVersion = 1
-				group by vi2.ItemVersionId
-				having count(*) = ' + Convert(varchar(20), @TagCount) + '
+				--group by vi2.ItemVersionId
+				--having count(*) = ' + Convert(varchar(20), @TagCount) + '
 				)
 		and vi.PortalId = ' + Convert(varchar(20), @PortalId) + ' Group By t.TagId, ivt.itemversionid having t.[TagId] in (select [TagId] from #Tags))'
 
