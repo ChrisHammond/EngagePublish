@@ -743,6 +743,7 @@
     <Content Include="Images\AvatarHead.psd" />
     <Content Include="Providers\DataProviders\SqlDataProvider\05.09.07.SqlDataProvider" />
     <Content Include="Providers\DataProviders\SqlDataProvider\06.00.02.SqlDataProvider" />
+    <Content Include="Providers\DataProviders\SqlDataProvider\06.00.03.SqlDataProvider" />
     <None Include="ReadMe.Md" />
     <Content Include="Rss.aspx" />
     <Content Include="Services\PublishServices.asmx" />

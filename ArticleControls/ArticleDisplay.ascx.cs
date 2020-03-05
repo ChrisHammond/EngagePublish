@@ -115,29 +115,7 @@ namespace Engage.Dnn.Publish.ArticleControls
 
 
 
-        /// <summary>
-        /// Gets the setting value for this module, whether to show ratings or not.
-        /// </summary>
-        /// <value>
-        /// The rating display option.
-        /// Defaults to <see cref="Util.RatingDisplayOption.Enable"/> if no setting is defined.
-        /// </value>
-        private RatingDisplayOption RatingDisplayOption
-        {
-            get
-            {
-                if (AreRatingsEnabled)
-                {
-                    object o = Settings["adEnableRatings"];
-                    if (o != null && Enum.IsDefined(typeof(RatingDisplayOption), o))
-                    {
-                        return (RatingDisplayOption)Enum.Parse(typeof(RatingDisplayOption), o.ToString());
-                    }
-                    return RatingDisplayOption.Enable;
-                }
-                return RatingDisplayOption.Disable;
-            }
-        }
+        
 
         /// <summary>
         /// Gets whether to display the option to create a comment.
@@ -383,13 +361,6 @@ namespace Engage.Dnn.Publish.ArticleControls
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Member", Justification = "Controls use lower case prefix")]
-        //protected void ajaxRating_Changed(object sender, AjaxControlToolkit.RatingEventArgs e)
-        //{
-        //    var article = (Article)VersionInfoObject;
-        //    article.AddRating(int.Parse(e.Value, CultureInfo.InvariantCulture), UserId == -1 ? null : (int?)UserId);
-        //    ajaxRating.ReadOnly = true;
-        //}
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "Member", Justification = "Controls use lower case prefix")]
         protected void btnSubmitComment_Click(object sender, EventArgs e)
@@ -608,27 +579,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                 }
             }
 
-            if (RatingDisplayOption.Equals(RatingDisplayOption.Enable) || RatingDisplayOption.Equals(RatingDisplayOption.ReadOnly))
-            {
-                //get the upnlRating setting
-                ItemVersionSetting rtSetting = ItemVersionSetting.GetItemVersionSetting(VersionInfoObject.ItemVersionId, "upnlRating", "Visible", PortalId);
-                if (rtSetting != null)
-                {
-                    upnlRating.Visible = Convert.ToBoolean(rtSetting.PropertyValue, CultureInfo.InvariantCulture);
-                }
-                if (upnlRating.Visible)
-                {
-                    //lblRatingMessage.Visible = true; //TODO: re-enable ratings
-                    lblRatingMessage.Visible = false; //TODO: re-enable ratings
 
-                    //ajaxRating.MaxRating = MaximumRating;
-
-                    var avgRating = (int)Math.Round(((Article)VersionInfoObject).AverageRating);
-                    //ajaxRating.CurrentRating = (avgRating > MaximumRating ? MaximumRating : (avgRating < 0 ? 0 : avgRating));
-
-                    //ajaxRating.ReadOnly = RatingDisplayOption.Equals(RatingDisplayOption.ReadOnly);
-                }
-            }
 
             btnComment.Visible = DisplayCommentsLink;
             if (IsCommentsEnabled)
@@ -658,7 +609,7 @@ namespace Engage.Dnn.Publish.ArticleControls
 
         private void ConfigureTags()
         {
-            //get the upnlRating setting
+            
             ItemVersionSetting tgSetting = ItemVersionSetting.GetItemVersionSetting(VersionInfoObject.ItemVersionId, "pnlTags", "Visible", PortalId);
             if (tgSetting != null)
             {
@@ -813,26 +764,6 @@ namespace Engage.Dnn.Publish.ArticleControls
                 {
                     pnlComments.Visible = Convert.ToBoolean(ctSetting.PropertyValue, CultureInfo.InvariantCulture);
                 }
-
-
-                ////get the upnlRating setting
-                //ItemVersionSetting tgSetting = ItemVersionSetting.GetItemVersionSetting(article.ItemVersionId, "pnlTags", "Visible");
-                //if (tgSetting != null)
-                //{
-                //    pnlTags.Visible = Convert.ToBoolean(tgSetting.PropertyValue, CultureInfo.InvariantCulture);
-                //    if (Convert.ToBoolean(tgSetting.PropertyValue, CultureInfo.InvariantCulture))
-                //    {
-                //        PopulateTagList();
-                //    }
-                //}
-                //else
-                //{
-                //    if (article.Tags.Count > 0)
-                //    {
-                //        pnlTags.Visible = true;
-                //        PopulateTagList();
-                //    }
-                //}
 
 
                 DisplayReturnToList(article);

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Engage.Dnn.Publish.Controls {
-    
-    
-    public partial class CommentDisplay {
-        
+namespace Engage.Dnn.Publish.Controls
+{
+
+
+    public partial class CommentDisplay
+    {
+
         /// <summary>
         /// lblNoComments control.
         /// </summary>
@@ -20,16 +22,7 @@ namespace Engage.Dnn.Publish.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNoComments;
-        
-        /// <summary>
-        /// upnlCommentDisplay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upnlCommentDisplay;
-        
+
         /// <summary>
         /// dlCommentText control.
         /// </summary>
@@ -38,7 +31,7 @@ namespace Engage.Dnn.Publish.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater dlCommentText;
-        
+
         /// <summary>
         /// divPager control.
         /// </summary>
@@ -47,7 +40,7 @@ namespace Engage.Dnn.Publish.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPager;
-        
+
         /// <summary>
         /// btnPrevious control.
         /// </summary>
@@ -56,7 +49,7 @@ namespace Engage.Dnn.Publish.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnPrevious;
-        
+
         /// <summary>
         /// btnNext control.
         /// </summary>

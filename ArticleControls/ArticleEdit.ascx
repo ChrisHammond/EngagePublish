@@ -28,23 +28,15 @@
             <dnn:label ID="lblParentCategory" runat="server" ResourceKey="ParentCategory" />
         </div>
         <div class="form-group">
-            <asp:UpdatePanel ID="upnlParentCategory" runat="server" UpdateMode="Conditional">
-                <ContentTemplate>
                     <asp:PlaceHolder ID="phParentCategory" runat="server" />
-                </ContentTemplate>
-            </asp:UpdatePanel>
         </div>
         <div class="form-group">
-            <asp:UpdatePanel ID="upnlRelatedCategories" runat="server" UpdateMode="Conditional">
-                <ContentTemplate>
                     <div class="dnnClear">
                         <dnn:label ID="lblRelatedCategories" runat="server" ResourceKey="RelatedCategories" />
                     </div>
 
                     <asp:PlaceHolder ID="phRelatedCategories" runat="server" />
 
-                </ContentTemplate>
-            </asp:UpdatePanel>
         </div>
         <div class="form-group dnnClear">
             <dnn:label ID="lblDisplayOptions" ResourceKey="lblDisplayOptions" runat="server" cssclass="title dnnClear" />
@@ -87,41 +79,23 @@
         </div>
         <div class="form-group">
             <dnn:label ID="lblDisplayOnCurrentPage" ResourceKey="lblDisplayOnCurrentPage" runat="server" cssclass="title" />
-            <asp:UpdatePanel ID="upnlDisplayLocationOptions" runat="server" UpdateMode="Conditional">
-                <ContentTemplate>
                     <asp:RadioButtonList ID="rblDisplayOnCurrentPage" runat="server" CssClass="Normal" Style="display: inline" RepeatDirection="Horizontal" AutoPostBack="true" OnSelectedIndexChanged="rblDisplayOnCurrentPage_SelectedIndexChanged" />
                     <asp:DropDownList ID="ddlDisplayTabId" BorderWidth="0" DataValueField="TabID" DataTextField="TabName" runat="server" />
                     <asp:Label ID="lblPublishOverrideable" runat="server" />
-                </ContentTemplate>
-            </asp:UpdatePanel>
         </div>
         <div class="form-group">
-            <asp:UpdatePanel ID="upnlForceDisplayTabLabel" runat="server" RenderMode="Inline" UpdateMode="Conditional" ChildrenAsTriggers="false">
-                <Triggers>
-                    <asp:AsyncPostBackTrigger ControlID="rblDisplayOnCurrentPage" />
-                </Triggers>
-                <ContentTemplate>
+
                     <dnn:label ID="lblForceDisplayTab" runat="server" cssclass="title" Visible="false" />
-                </ContentTemplate>
-            </asp:UpdatePanel>
-            <asp:UpdatePanel ID="upnlForceDisplayTab" runat="server" RenderMode="Inline" UpdateMode="Conditional" ChildrenAsTriggers="false">
-                <Triggers>
-                    <asp:AsyncPostBackTrigger ControlID="rblDisplayOnCurrentPage" />
-                </Triggers>
-                <ContentTemplate>
+
+
                     <asp:CheckBox ID="chkForceDisplayTab" runat="server" AutoPostBack="true" Visible="false" CssClass="checkbox" /><%--OnCheckedChanged="chkForceDisplayTab_CheckedChanged"--%>
-                </ContentTemplate>
-            </asp:UpdatePanel>
         </div>
         <div class="form-group">
             <dnn:label ID="lblApproval" runat="server" ResourceKey="ApprovalStatus" />
-            <asp:UpdatePanel ID="upnlApproval" runat="server" UpdateMode="Conditional">
-                <ContentTemplate>
+
                     <asp:CheckBox ID="chkUseApprovals" runat="server" Text="Use Approvals" ResourceKey="chkUseApprovals" AutoPostBack="true" OnCheckedChanged="chkUseApprovals_CheckedChanged" Visible="false" Checked="true" />
                     <asp:PlaceHolder ID="phApproval" runat="Server" />
                     <asp:Label ID="lblNotUsingApprovals" runat="server" Visible="false" />
-                </ContentTemplate>
-            </asp:UpdatePanel>
         </div>
         <div class="form-group">
             <dnn:label ID="lblTagEntry" runat="server" ResourceKey="TagEntry" />

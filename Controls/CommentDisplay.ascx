@@ -3,8 +3,6 @@
 <div id="divComment" class="Normal">
 
     <asp:Label ID="lblNoComments" runat="server" resourcekey="lblNoComments" CssClass="dnnFormMessage"></asp:Label>
-    <asp:UpdatePanel ID="upnlCommentDisplay" runat="server" UpdateMode="Always">
-        <ContentTemplate>
             <asp:Repeater ID="dlCommentText" runat="server">
                 <HeaderTemplate />
                 <ItemTemplate>
@@ -30,6 +28,4 @@
                 <asp:LinkButton ID="btnPrevious" runat="server" ResourceKey="btnPrev" CssClass="commentPrev" CausesValidation="false" /><%--OnClick="btnPrevious_Click" --%>
                 <asp:LinkButton ID="btnNext" runat="server" ResourceKey="btnNext" OnClick="btnNext_Click" CssClass="commentNext" CausesValidation="false" />
             </div>
-        </ContentTemplate>
-    </asp:UpdatePanel>
 </div>

@@ -144,13 +144,16 @@ namespace Engage.Dnn.Publish
                 if (tags != null)
                 {
                     _qsTags = HttpUtility.UrlDecode(tags);
-                    char[] seperator = {'-'};
+                    char[] seperator = { '-' };
                     ArrayList tagList = Tag.ParseTags(_qsTags, PortalId, seperator, false);
                     _tagQuery = new ArrayList(tagList.Count);
                     foreach (Tag tg in tagList)
                     {
                         //create a list of tagids to query the database
-                        _tagQuery.Add(tg.TagId);
+                        if (_tagQuery.Count < 1)
+                        {
+                            _tagQuery.Add(tg.TagId);
+                        }
                     }
                 }
             }
@@ -188,7 +191,7 @@ namespace Engage.Dnn.Publish
             wr.WriteElementString("ttl", "120");
 
             //TODO: look into options for how to display the "Title" of the RSS feed
-            var dt = new DataTable {Locale = CultureInfo.InvariantCulture};
+            var dt = new DataTable { Locale = CultureInfo.InvariantCulture };
             if (DisplayType == "ItemListing" || DisplayType == null)
             {
                 dt = ItemId == -1 ? DataProvider.Instance().GetMostRecent(ItemTypeId, NumberOfItems, PortalId) : DataProvider.Instance().GetMostRecentByCategoryId(ItemId, ItemTypeId, NumberOfItems, PortalId);
@@ -203,7 +206,7 @@ namespace Engage.Dnn.Publish
                 if (AllowTags && _tagQuery != null && _tagQuery.Count > 0)
                 {
                     string tagCacheKey = Utility.CacheKeyPublishTag + PortalId + ItemTypeId.ToString(CultureInfo.InvariantCulture) + _qsTags;
-                        // +"PageId";
+                    // +"PageId";
                     dt = DataCache.GetCache(tagCacheKey) as DataTable;
                     if (dt == null)
                     {
@@ -281,7 +284,7 @@ namespace Engage.Dnn.Publish
                         //author = ui.DisplayName;
                     }
 
-                    if (!Uri.IsWellFormedUriString(thumbnail, UriKind.Absolute) && thumbnail!=string.Empty)
+                    if (!Uri.IsWellFormedUriString(thumbnail, UriKind.Absolute) && thumbnail != string.Empty)
                     {
                         var thumnailLink = new Uri(Request.Url, ps.HomeDirectory + thumbnail);
                         thumbnail = thumnailLink.ToString();
@@ -314,12 +317,12 @@ namespace Engage.Dnn.Publish
                             //var fileController = new FileController();
                             var fileManager = new FileManager();
                             int fileId = Convert.ToInt32(attachmentSetting.PropertyValue.Substring(7));
-                            
+
                             var fi = fileManager.GetFile(fileId); //fileController.GetFileById(fileId, PortalId);
                             string fileurl = "http://" + PortalSettings.PortalAlias.HTTPAlias + PortalSettings.HomeDirectory + fi.Folder + fi.FileName;
                             wr.WriteStartElement("enclosure");
                             wr.WriteAttributeString("url", fileurl);
-                            wr.WriteAttributeString("length",fi.Size.ToString());
+                            wr.WriteAttributeString("length", fi.Size.ToString());
                             wr.WriteAttributeString("type", fi.ContentType);
                             wr.WriteEndElement();
                         }
@@ -332,7 +335,7 @@ namespace Engage.Dnn.Publish
                     wr.WriteString(guid);
                     //wr.WriteString(itemVersionId);
 
-                    
+
                     wr.WriteEndElement();
 
                     wr.WriteEndElement();

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Engage.Dnn.Publish.ArticleControls {
-    
-    
-    public partial class ArticleDisplay {
-        
+namespace Engage.Dnn.Publish.ArticleControls
+{
+
+
+    public partial class ArticleDisplay
+    {
+
         /// <summary>
         /// divArticleTitle control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divArticleTitle;
-        
+
         /// <summary>
         /// lblArticleTitle control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lblArticleTitle;
-        
+
         /// <summary>
         /// phPrinterFriendly control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phPrinterFriendly;
-        
+
         /// <summary>
         /// phEmailAFriend control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phEmailAFriend;
-        
+
         /// <summary>
         /// lblDateCreated control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lblDateCreated;
-        
+
         /// <summary>
         /// lblAuthorInfo control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAuthorInfo;
-        
+
         /// <summary>
         /// lblAuthor control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lblAuthor;
-        
+
         /// <summary>
         /// lblLastUpdated control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lblLastUpdated;
-        
+
         /// <summary>
         /// divRelatedArticle control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divRelatedArticle;
-        
+
         /// <summary>
         /// phRelatedArticle control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phRelatedArticle;
-        
+
         /// <summary>
         /// lblArticleText control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lblArticleText;
-        
+
         /// <summary>
         /// pnlTags control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlTags;
-        
+
         /// <summary>
         /// lblTag control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTag;
-        
+
         /// <summary>
         /// phTags control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phTags;
-        
+
         /// <summary>
         /// lnkPreviousPage control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkPreviousPage;
-        
+
         /// <summary>
         /// lnkNextPage control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkNextPage;
-        
+
         /// <summary>
         /// lnkConfigure control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkConfigure;
-        
+
         /// <summary>
         /// pnlReturnToList control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlReturnToList;
-        
+
         /// <summary>
         /// lnkReturnToList control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkReturnToList;
-        
+
         /// <summary>
         /// phRelatedArticles control.
         /// </summary>
@@ -191,25 +193,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phRelatedArticles;
-        
-        /// <summary>
-        /// upnlRating control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upnlRating;
-        
-        /// <summary>
-        /// lblRatingMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRatingMessage;
-        
+
         /// <summary>
         /// pnlComments control.
         /// </summary>
@@ -218,7 +202,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlComments;
-        
+
         /// <summary>
         /// mvCommentDisplay control.
         /// </summary>
@@ -227,7 +211,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.MultiView mvCommentDisplay;
-        
+
         /// <summary>
         /// vwPublishComments control.
         /// </summary>
@@ -236,7 +220,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View vwPublishComments;
-        
+
         /// <summary>
         /// btnComment control.
         /// </summary>
@@ -245,7 +229,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink btnComment;
-        
+
         /// <summary>
         /// pnlCommentDisplay control.
         /// </summary>
@@ -254,7 +238,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlCommentDisplay;
-        
+
         /// <summary>
         /// lblCommentHeading control.
         /// </summary>
@@ -263,7 +247,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCommentHeading;
-        
+
         /// <summary>
         /// phCommentsDisplay control.
         /// </summary>
@@ -272,7 +256,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phCommentsDisplay;
-        
+
         /// <summary>
         /// vwForumComments control.
         /// </summary>
@@ -281,7 +265,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View vwForumComments;
-        
+
         /// <summary>
         /// btnForumComment control.
         /// </summary>
@@ -290,7 +274,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnForumComment;
-        
+
         /// <summary>
         /// lnkGoToForum control.
         /// </summary>
@@ -299,16 +283,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkGoToForum;
-        
-        /// <summary>
-        /// upnlComments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upnlComments;
-        
+
         /// <summary>
         /// lblAddComment control.
         /// </summary>
@@ -317,7 +292,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAddComment;
-        
+
         /// <summary>
         /// pnlCommentEntry control.
         /// </summary>
@@ -326,7 +301,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlCommentEntry;
-        
+
         /// <summary>
         /// lblInstructions control.
         /// </summary>
@@ -335,7 +310,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblInstructions;
-        
+
         /// <summary>
         /// pnlNameComment control.
         /// </summary>
@@ -344,7 +319,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlNameComment;
-        
+
         /// <summary>
         /// lblFirstNameComment control.
         /// </summary>
@@ -353,7 +328,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblFirstNameComment;
-        
+
         /// <summary>
         /// txtFirstNameComment control.
         /// </summary>
@@ -362,7 +337,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFirstNameComment;
-        
+
         /// <summary>
         /// rfvFirstNameComment control.
         /// </summary>
@@ -371,7 +346,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFirstNameComment;
-        
+
         /// <summary>
         /// lblLastNameComment control.
         /// </summary>
@@ -380,7 +355,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblLastNameComment;
-        
+
         /// <summary>
         /// txtLastNameComment control.
         /// </summary>
@@ -389,7 +364,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLastNameComment;
-        
+
         /// <summary>
         /// rfvLastNameComment control.
         /// </summary>
@@ -398,7 +373,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLastNameComment;
-        
+
         /// <summary>
         /// pnlEmailAddressComment control.
         /// </summary>
@@ -407,7 +382,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlEmailAddressComment;
-        
+
         /// <summary>
         /// lblEmailAddressComment control.
         /// </summary>
@@ -416,7 +391,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblEmailAddressComment;
-        
+
         /// <summary>
         /// txtEmailAddressComment control.
         /// </summary>
@@ -425,7 +400,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmailAddressComment;
-        
+
         /// <summary>
         /// rfvEmailAddressComment control.
         /// </summary>
@@ -434,7 +409,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmailAddressComment;
-        
+
         /// <summary>
         /// pnlUrlComment control.
         /// </summary>
@@ -443,7 +418,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlUrlComment;
-        
+
         /// <summary>
         /// lblUrlComment control.
         /// </summary>
@@ -452,7 +427,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblUrlComment;
-        
+
         /// <summary>
         /// txtUrlComment control.
         /// </summary>
@@ -461,7 +436,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUrlComment;
-        
+
         /// <summary>
         /// lblComment control.
         /// </summary>
@@ -470,7 +445,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblComment;
-        
+
         /// <summary>
         /// txtComment control.
         /// </summary>
@@ -479,7 +454,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtComment;
-        
+
         /// <summary>
         /// rfvCommentText control.
         /// </summary>
@@ -488,7 +463,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCommentText;
-        
+
         /// <summary>
         /// lblHumanTest control.
         /// </summary>
@@ -497,7 +472,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblHumanTest;
-        
+
         /// <summary>
         /// txtHumanTest control.
         /// </summary>
@@ -506,7 +481,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHumanTest;
-        
+
         /// <summary>
         /// RequiredFieldValidator1 control.
         /// </summary>
@@ -515,7 +490,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
+
         /// <summary>
         /// btnSubmitComment control.
         /// </summary>
@@ -524,7 +499,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnSubmitComment;
-        
+
         /// <summary>
         /// btnCancelComment control.
         /// </summary>
@@ -533,7 +508,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnCancelComment;
-        
+
         /// <summary>
         /// valCommentSummary control.
         /// </summary>
@@ -542,7 +517,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary valCommentSummary;
-        
+
         /// <summary>
         /// pnlCommentConfirmation control.
         /// </summary>
@@ -551,7 +526,7 @@ namespace Engage.Dnn.Publish.ArticleControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlCommentConfirmation;
-        
+
         /// <summary>
         /// btnConfirmationClose control.
         /// </summary>

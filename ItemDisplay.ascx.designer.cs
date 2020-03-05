@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Engage.Dnn.Publish {
-    
-    
-    public partial class ItemDisplay {
-        
+namespace Engage.Dnn.Publish
+{
+
+
+    public partial class ItemDisplay
+    {
+
         /// <summary>
         /// Publish_ItemDisplay control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Engage.Dnn.Publish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Publish_ItemDisplay;
-        
+
         /// <summary>
         /// divPublishNotifications control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Engage.Dnn.Publish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPublishNotifications;
-        
+
         /// <summary>
         /// lblPublishMessages control.
         /// </summary>
@@ -38,16 +40,7 @@ namespace Engage.Dnn.Publish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPublishMessages;
-        
-        /// <summary>
-        /// upnlPublish control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upnlPublish;
-        
+
         /// <summary>
         /// phAdminControls control.
         /// </summary>
@@ -56,7 +49,7 @@ namespace Engage.Dnn.Publish {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder phAdminControls;
-        
+
         /// <summary>
         /// phControls control.
         /// </summary>
