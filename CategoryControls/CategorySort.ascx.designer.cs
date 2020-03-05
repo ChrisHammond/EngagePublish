@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Engage.Dnn.Publish.CategoryControls {
-    
-    
-    public partial class CategorySort {
-        
+namespace Engage.Dnn.Publish.CategoryControls
+{
+
+
+    public partial class CategorySort
+    {
+
         /// <summary>
         /// lblCategory control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Engage.Dnn.Publish.CategoryControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCategory;
-        
+
         /// <summary>
         /// shPublishInstructions control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Engage.Dnn.Publish.CategoryControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.SectionHeadControl shPublishInstructions;
-        
+
         /// <summary>
         /// publishInstructions control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Engage.Dnn.Publish.CategoryControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl publishInstructions;
-        
+
         /// <summary>
         /// lblPublishInstructions control.
         /// </summary>
@@ -47,16 +49,7 @@ namespace Engage.Dnn.Publish.CategoryControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPublishInstructions;
-        
-        /// <summary>
-        /// upnlPublish control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upnlPublish;
-        
+
         /// <summary>
         /// pnlSortList control.
         /// </summary>
@@ -65,7 +58,7 @@ namespace Engage.Dnn.Publish.CategoryControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlSortList;
-        
+
         /// <summary>
         /// lblCategoryItems control.
         /// </summary>
@@ -74,7 +67,7 @@ namespace Engage.Dnn.Publish.CategoryControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblCategoryItems;
-        
+
         /// <summary>
         /// lbCategoryItems control.
         /// </summary>
@@ -83,7 +76,7 @@ namespace Engage.Dnn.Publish.CategoryControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox lbCategoryItems;
-        
+
         /// <summary>
         /// lbMoveToSort control.
         /// </summary>
@@ -92,7 +85,7 @@ namespace Engage.Dnn.Publish.CategoryControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbMoveToSort;
-        
+
         /// <summary>
         /// lblSortedItems control.
         /// </summary>
@@ -101,7 +94,7 @@ namespace Engage.Dnn.Publish.CategoryControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblSortedItems;
-        
+
         /// <summary>
         /// lblMessage control.
         /// </summary>
@@ -110,7 +103,7 @@ namespace Engage.Dnn.Publish.CategoryControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessage;
-        
+
         /// <summary>
         /// lbSaveSort control.
         /// </summary>
@@ -119,7 +112,7 @@ namespace Engage.Dnn.Publish.CategoryControls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbSaveSort;
-        
+
         /// <summary>
         /// lbCancel control.
         /// </summary>

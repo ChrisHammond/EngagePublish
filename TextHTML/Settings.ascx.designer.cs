@@ -7,20 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Engage.Dnn.Publish.TextHtml {
-    
-    
-    public partial class Settings {
-        
-        /// <summary>
-        /// upnlSettings control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upnlSettings;
-        
+namespace Engage.Dnn.Publish.TextHtml
+{
+
+
+    public partial class Settings
+    {
+
         /// <summary>
         /// lblTemplate control.
         /// </summary>
@@ -29,7 +22,7 @@ namespace Engage.Dnn.Publish.TextHtml {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblTemplate;
-        
+
         /// <summary>
         /// txtTemplate control.
         /// </summary>

@@ -201,13 +201,13 @@ namespace Engage.Dnn.Publish.ArticleControls
         }
 
 
-        protected void UpdatePanel_Unload(object sender, EventArgs e)
-        {
-            MethodInfo methodInfo = typeof(ScriptManager).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
-                .Where(i => i.Name.Equals("System.Web.UI.IScriptManagerInternal.RegisterUpdatePanel")).First();
-            methodInfo.Invoke(ScriptManager.GetCurrent(Page),
-                new object[] { sender as UpdatePanel });
-        }
+        //protected void UpdatePanel_Unload(object sender, EventArgs e)
+        //{
+        //    MethodInfo methodInfo = typeof(ScriptManager).GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
+        //        .Where(i => i.Name.Equals("System.Web.UI.IScriptManagerInternal.RegisterUpdatePanel")).First();
+        //    methodInfo.Invoke(ScriptManager.GetCurrent(Page),
+        //        new object[] { sender as UpdatePanel });
+        //}
 
         /// <summary>
         /// Gets the first name collection option, whether to ask for the full name, only the initial, or not to ask for the first name at all.

@@ -10,8 +10,7 @@
 <div id="publishInstructions" runat="server" class="instructions">
     <asp:Label ID="lblPublishInstructions" runat="server" resourcekey="lblPublishInstructions" CssClass="Normal"></asp:Label>
 </div>
-<asp:UpdatePanel ID="upnlPublish" runat="server" UpdateMode="Conditional">
-    <ContentTemplate>
+
         <asp:Panel ID="pnlSortList" runat="server">
             <div id="Publish_CategorySortInitialListDiv">
                 <dnn:label ID="lblCategoryItems" runat="server" />
@@ -25,8 +24,7 @@
             </div>
         </asp:Panel>
         <asp:Label ID="lblMessage" runat="server" Visible="false"></asp:Label>
-    </ContentTemplate>
-</asp:UpdatePanel>
+
 <div id="publishSortSave">
     <asp:LinkButton ID="lbSaveSort" runat="server" resourcekey="lbSaveSort" OnClick="lbSaveSort_Click"></asp:LinkButton>
     <asp:LinkButton ID="lbCancel" runat="server" resourcekey="lbCancel" OnClick="lbCancel_Click"></asp:LinkButton>

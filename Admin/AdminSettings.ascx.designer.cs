@@ -7,20 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Engage.Dnn.Publish.Admin {
-    
-    
-    public partial class AdminSettings {
-        
-        /// <summary>
-        /// pnlSyndication control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel pnlSyndication;
-        
+namespace Engage.Dnn.Publish.Admin
+{
+
+
+    public partial class AdminSettings
+    {
+
         /// <summary>
         /// lblMessage control.
         /// </summary>
@@ -29,7 +22,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessage;
-        
+
         /// <summary>
         /// lblRolesAndPermissions control.
         /// </summary>
@@ -38,7 +31,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRolesAndPermissions;
-        
+
         /// <summary>
         /// plEmailNotificationRole control.
         /// </summary>
@@ -47,7 +40,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEmailNotificationRole;
-        
+
         /// <summary>
         /// ddlEmailRoles control.
         /// </summary>
@@ -56,7 +49,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEmailRoles;
-        
+
         /// <summary>
         /// plAuthorRole control.
         /// </summary>
@@ -65,7 +58,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plAuthorRole;
-        
+
         /// <summary>
         /// ddlAuthor control.
         /// </summary>
@@ -74,7 +67,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAuthor;
-        
+
         /// <summary>
         /// plAdministratorRole control.
         /// </summary>
@@ -83,7 +76,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plAdministratorRole;
-        
+
         /// <summary>
         /// ddlRoles control.
         /// </summary>
@@ -92,7 +85,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlRoles;
-        
+
         /// <summary>
         /// lblAuthorCategoryEdit control.
         /// </summary>
@@ -101,7 +94,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblAuthorCategoryEdit;
-        
+
         /// <summary>
         /// chkAuthorCategoryEdit control.
         /// </summary>
@@ -110,7 +103,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkAuthorCategoryEdit;
-        
+
         /// <summary>
         /// lblDefaultSettings control.
         /// </summary>
@@ -119,7 +112,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDefaultSettings;
-        
+
         /// <summary>
         /// plUseApprovals control.
         /// </summary>
@@ -128,7 +121,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plUseApprovals;
-        
+
         /// <summary>
         /// chkUseApprovals control.
         /// </summary>
@@ -137,7 +130,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkUseApprovals;
-        
+
         /// <summary>
         /// plEmailNotification control.
         /// </summary>
@@ -146,7 +139,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEmailNotification;
-        
+
         /// <summary>
         /// lblMailNotConfigured control.
         /// </summary>
@@ -155,7 +148,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMailNotConfigured;
-        
+
         /// <summary>
         /// chkEmailNotification control.
         /// </summary>
@@ -164,7 +157,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEmailNotification;
-        
+
         /// <summary>
         /// cvEmailNotification control.
         /// </summary>
@@ -173,7 +166,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator cvEmailNotification;
-        
+
         /// <summary>
         /// plDefaultDisplayPage control.
         /// </summary>
@@ -182,7 +175,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plDefaultDisplayPage;
-        
+
         /// <summary>
         /// ddlDefaultDisplay control.
         /// </summary>
@@ -191,7 +184,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlDefaultDisplay;
-        
+
         /// <summary>
         /// rfvDefaultDisplayPage control.
         /// </summary>
@@ -200,7 +193,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDefaultDisplayPage;
-        
+
         /// <summary>
         /// lblDefaultCategory control.
         /// </summary>
@@ -209,7 +202,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblDefaultCategory;
-        
+
         /// <summary>
         /// ddlDefaultCategory control.
         /// </summary>
@@ -218,7 +211,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlDefaultCategory;
-        
+
         /// <summary>
         /// plThumbnailSelection control.
         /// </summary>
@@ -227,7 +220,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plThumbnailSelection;
-        
+
         /// <summary>
         /// radThumbnailSelection control.
         /// </summary>
@@ -236,7 +229,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList radThumbnailSelection;
-        
+
         /// <summary>
         /// plThumbnailSubdirectory control.
         /// </summary>
@@ -245,7 +238,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plThumbnailSubdirectory;
-        
+
         /// <summary>
         /// txtThumbnailSubdirectory control.
         /// </summary>
@@ -254,7 +247,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtThumbnailSubdirectory;
-        
+
         /// <summary>
         /// plEnablePublishFriendlyUrls control.
         /// </summary>
@@ -263,7 +256,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEnablePublishFriendlyUrls;
-        
+
         /// <summary>
         /// lblFriendlyUrlsNotOn control.
         /// </summary>
@@ -272,7 +265,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFriendlyUrlsNotOn;
-        
+
         /// <summary>
         /// chkEnablePublishFriendlyUrls control.
         /// </summary>
@@ -281,7 +274,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEnablePublishFriendlyUrls;
-        
+
         /// <summary>
         /// plEnablePaging control.
         /// </summary>
@@ -290,7 +283,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEnablePaging;
-        
+
         /// <summary>
         /// chkEnablePaging control.
         /// </summary>
@@ -299,7 +292,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEnablePaging;
-        
+
         /// <summary>
         /// plDefaultCacheTime control.
         /// </summary>
@@ -308,7 +301,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plDefaultCacheTime;
-        
+
         /// <summary>
         /// txtDefaultCacheTime control.
         /// </summary>
@@ -317,7 +310,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDefaultCacheTime;
-        
+
         /// <summary>
         /// rvDefaultCacheTime control.
         /// </summary>
@@ -326,7 +319,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator rvDefaultCacheTime;
-        
+
         /// <summary>
         /// plAdminPagingSize control.
         /// </summary>
@@ -335,7 +328,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plAdminPagingSize;
-        
+
         /// <summary>
         /// txtAdminPagingSize control.
         /// </summary>
@@ -344,7 +337,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAdminPagingSize;
-        
+
         /// <summary>
         /// rvAdminPagingSize control.
         /// </summary>
@@ -353,7 +346,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator rvAdminPagingSize;
-        
+
         /// <summary>
         /// plDefaultTextHtmlCategory control.
         /// </summary>
@@ -362,7 +355,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plDefaultTextHtmlCategory;
-        
+
         /// <summary>
         /// ddlDefaultTextHtmlCategory control.
         /// </summary>
@@ -371,7 +364,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlDefaultTextHtmlCategory;
-        
+
         /// <summary>
         /// lblDisplayFunctionality control.
         /// </summary>
@@ -380,7 +373,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDisplayFunctionality;
-        
+
         /// <summary>
         /// plEnableViewTracking control.
         /// </summary>
@@ -389,7 +382,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEnableViewTracking;
-        
+
         /// <summary>
         /// chkEnableViewTracking control.
         /// </summary>
@@ -398,7 +391,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEnableViewTracking;
-        
+
         /// <summary>
         /// plEnableRatings control.
         /// </summary>
@@ -407,7 +400,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEnableRatings;
-        
+
         /// <summary>
         /// chkEnableRatings control.
         /// </summary>
@@ -416,7 +409,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEnableRatings;
-        
+
         /// <summary>
         /// rowMaximumRating control.
         /// </summary>
@@ -425,7 +418,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTableRow rowMaximumRating;
-        
+
         /// <summary>
         /// plMaximumRating control.
         /// </summary>
@@ -434,7 +427,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plMaximumRating;
-        
+
         /// <summary>
         /// txtMaximumRating control.
         /// </summary>
@@ -443,7 +436,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMaximumRating;
-        
+
         /// <summary>
         /// cvMaximumRating control.
         /// </summary>
@@ -452,7 +445,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator cvMaximumRating;
-        
+
         /// <summary>
         /// plReturnToListSession control.
         /// </summary>
@@ -461,7 +454,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plReturnToListSession;
-        
+
         /// <summary>
         /// chkReturnToListSession control.
         /// </summary>
@@ -470,7 +463,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkReturnToListSession;
-        
+
         /// <summary>
         /// AdminEditHeader control.
         /// </summary>
@@ -479,7 +472,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel AdminEditHeader;
-        
+
         /// <summary>
         /// lblAdminEditHeader control.
         /// </summary>
@@ -488,7 +481,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAdminEditHeader;
-        
+
         /// <summary>
         /// imgAdminEditHeader control.
         /// </summary>
@@ -497,7 +490,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgAdminEditHeader;
-        
+
         /// <summary>
         /// pnlAdminEdit control.
         /// </summary>
@@ -506,7 +499,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlAdminEdit;
-        
+
         /// <summary>
         /// plShowItemId control.
         /// </summary>
@@ -515,7 +508,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plShowItemId;
-        
+
         /// <summary>
         /// chkShowItemId control.
         /// </summary>
@@ -524,7 +517,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkShowItemId;
-        
+
         /// <summary>
         /// plEnableDisplayNameAsHyperlink control.
         /// </summary>
@@ -533,7 +526,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEnableDisplayNameAsHyperlink;
-        
+
         /// <summary>
         /// chkEnableDisplayNameAsHyperlink control.
         /// </summary>
@@ -542,7 +535,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEnableDisplayNameAsHyperlink;
-        
+
         /// <summary>
         /// plAllowRichTextDescriptions control.
         /// </summary>
@@ -551,7 +544,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plAllowRichTextDescriptions;
-        
+
         /// <summary>
         /// chkAllowRichTextDescriptions control.
         /// </summary>
@@ -560,7 +553,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkAllowRichTextDescriptions;
-        
+
         /// <summary>
         /// plDefaultRichTextDescriptions control.
         /// </summary>
@@ -569,7 +562,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plDefaultRichTextDescriptions;
-        
+
         /// <summary>
         /// chkDefaultRichTextDescriptions control.
         /// </summary>
@@ -578,7 +571,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkDefaultRichTextDescriptions;
-        
+
         /// <summary>
         /// plItemDescriptionWidth control.
         /// </summary>
@@ -587,7 +580,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plItemDescriptionWidth;
-        
+
         /// <summary>
         /// txtItemDescriptionWidth control.
         /// </summary>
@@ -596,7 +589,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtItemDescriptionWidth;
-        
+
         /// <summary>
         /// rvItemDescriptionWidth control.
         /// </summary>
@@ -605,7 +598,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator rvItemDescriptionWidth;
-        
+
         /// <summary>
         /// plItemDescriptionHeight control.
         /// </summary>
@@ -614,7 +607,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plItemDescriptionHeight;
-        
+
         /// <summary>
         /// txtItemDescriptionHeight control.
         /// </summary>
@@ -623,7 +616,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtItemDescriptionHeight;
-        
+
         /// <summary>
         /// rvItemDescriptionHeight control.
         /// </summary>
@@ -632,7 +625,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator rvItemDescriptionHeight;
-        
+
         /// <summary>
         /// ArticleEditHeader control.
         /// </summary>
@@ -641,7 +634,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel ArticleEditHeader;
-        
+
         /// <summary>
         /// lblArticleEditHeader control.
         /// </summary>
@@ -650,7 +643,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblArticleEditHeader;
-        
+
         /// <summary>
         /// imgArticleEditHeader control.
         /// </summary>
@@ -659,7 +652,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgArticleEditHeader;
-        
+
         /// <summary>
         /// pnlArticleEditDefaults control.
         /// </summary>
@@ -668,7 +661,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlArticleEditDefaults;
-        
+
         /// <summary>
         /// plUseEmbeddedArticles control.
         /// </summary>
@@ -677,7 +670,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plUseEmbeddedArticles;
-        
+
         /// <summary>
         /// chkUseEmbeddedArticles control.
         /// </summary>
@@ -686,7 +679,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkUseEmbeddedArticles;
-        
+
         /// <summary>
         /// plEnableEmailAFriend control.
         /// </summary>
@@ -695,7 +688,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEnableEmailAFriend;
-        
+
         /// <summary>
         /// chkDefaultEmailAFriend control.
         /// </summary>
@@ -704,7 +697,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkDefaultEmailAFriend;
-        
+
         /// <summary>
         /// plPrinterFriendly control.
         /// </summary>
@@ -713,7 +706,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plPrinterFriendly;
-        
+
         /// <summary>
         /// chkDefaultPrinterFriendly control.
         /// </summary>
@@ -722,7 +715,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkDefaultPrinterFriendly;
-        
+
         /// <summary>
         /// plArticleRatings control.
         /// </summary>
@@ -731,7 +724,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plArticleRatings;
-        
+
         /// <summary>
         /// chkDefaultArticleRatings control.
         /// </summary>
@@ -740,7 +733,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkDefaultArticleRatings;
-        
+
         /// <summary>
         /// plArticleComments control.
         /// </summary>
@@ -749,7 +742,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plArticleComments;
-        
+
         /// <summary>
         /// chkDefaultArticleComments control.
         /// </summary>
@@ -758,7 +751,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkDefaultArticleComments;
-        
+
         /// <summary>
         /// plReturnToList control.
         /// </summary>
@@ -767,7 +760,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plReturnToList;
-        
+
         /// <summary>
         /// chkDefaultReturnToList control.
         /// </summary>
@@ -776,7 +769,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkDefaultReturnToList;
-        
+
         /// <summary>
         /// plShowAuthor control.
         /// </summary>
@@ -785,7 +778,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plShowAuthor;
-        
+
         /// <summary>
         /// chkDefaultShowAuthor control.
         /// </summary>
@@ -794,7 +787,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkDefaultShowAuthor;
-        
+
         /// <summary>
         /// plShowTags control.
         /// </summary>
@@ -803,7 +796,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plShowTags;
-        
+
         /// <summary>
         /// chkDefaultShowTags control.
         /// </summary>
@@ -812,7 +805,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkDefaultShowTags;
-        
+
         /// <summary>
         /// plArticleTextWidth control.
         /// </summary>
@@ -821,7 +814,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plArticleTextWidth;
-        
+
         /// <summary>
         /// txtArticleTextWidth control.
         /// </summary>
@@ -830,7 +823,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtArticleTextWidth;
-        
+
         /// <summary>
         /// rvArticleTextWidth control.
         /// </summary>
@@ -839,7 +832,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator rvArticleTextWidth;
-        
+
         /// <summary>
         /// plArticleTextHeight control.
         /// </summary>
@@ -848,7 +841,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plArticleTextHeight;
-        
+
         /// <summary>
         /// txtArticleTextHeight control.
         /// </summary>
@@ -857,7 +850,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtArticleTextHeight;
-        
+
         /// <summary>
         /// rvArticleTextHeight control.
         /// </summary>
@@ -866,7 +859,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator rvArticleTextHeight;
-        
+
         /// <summary>
         /// CommunityTitlePanel control.
         /// </summary>
@@ -875,7 +868,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel CommunityTitlePanel;
-        
+
         /// <summary>
         /// lblCommunityHeader control.
         /// </summary>
@@ -884,7 +877,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCommunityHeader;
-        
+
         /// <summary>
         /// imgCommunityHeader control.
         /// </summary>
@@ -893,7 +886,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgCommunityHeader;
-        
+
         /// <summary>
         /// pnlCommunitySettings control.
         /// </summary>
@@ -902,7 +895,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlCommunitySettings;
-        
+
         /// <summary>
         /// plEnableComments control.
         /// </summary>
@@ -911,7 +904,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEnableComments;
-        
+
         /// <summary>
         /// chkEnableComments control.
         /// </summary>
@@ -920,7 +913,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEnableComments;
-        
+
         /// <summary>
         /// rowCommentsType control.
         /// </summary>
@@ -929,7 +922,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTableRow rowCommentsType;
-        
+
         /// <summary>
         /// lblCommentsType control.
         /// </summary>
@@ -938,7 +931,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblCommentsType;
-        
+
         /// <summary>
         /// ddlCommentsType control.
         /// </summary>
@@ -947,7 +940,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCommentsType;
-        
+
         /// <summary>
         /// plCommentNotification control.
         /// </summary>
@@ -956,7 +949,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plCommentNotification;
-        
+
         /// <summary>
         /// lblMailNotConfiguredComment control.
         /// </summary>
@@ -965,7 +958,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMailNotConfiguredComment;
-        
+
         /// <summary>
         /// chkCommentNotification control.
         /// </summary>
@@ -974,7 +967,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkCommentNotification;
-        
+
         /// <summary>
         /// cvCommentNotification control.
         /// </summary>
@@ -983,7 +976,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator cvCommentNotification;
-        
+
         /// <summary>
         /// lblEnablePing control.
         /// </summary>
@@ -992,7 +985,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblEnablePing;
-        
+
         /// <summary>
         /// chkEnablePing control.
         /// </summary>
@@ -1001,7 +994,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEnablePing;
-        
+
         /// <summary>
         /// lblPingServers control.
         /// </summary>
@@ -1010,7 +1003,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblPingServers;
-        
+
         /// <summary>
         /// txtPingServers control.
         /// </summary>
@@ -1019,7 +1012,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPingServers;
-        
+
         /// <summary>
         /// lblChangedPage control.
         /// </summary>
@@ -1028,7 +1021,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblChangedPage;
-        
+
         /// <summary>
         /// txtPingChangedUrl control.
         /// </summary>
@@ -1037,7 +1030,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPingChangedUrl;
-        
+
         /// <summary>
         /// TagTitlePanel control.
         /// </summary>
@@ -1046,7 +1039,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel TagTitlePanel;
-        
+
         /// <summary>
         /// lblTagHeader control.
         /// </summary>
@@ -1055,7 +1048,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTagHeader;
-        
+
         /// <summary>
         /// imgTagHeader control.
         /// </summary>
@@ -1064,7 +1057,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgTagHeader;
-        
+
         /// <summary>
         /// pnlTagSettings control.
         /// </summary>
@@ -1073,7 +1066,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlTagSettings;
-        
+
         /// <summary>
         /// plEnableTags control.
         /// </summary>
@@ -1082,7 +1075,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEnableTags;
-        
+
         /// <summary>
         /// chkEnableTags control.
         /// </summary>
@@ -1091,7 +1084,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEnableTags;
-        
+
         /// <summary>
         /// plTagList control.
         /// </summary>
@@ -1100,7 +1093,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plTagList;
-        
+
         /// <summary>
         /// ddlTagList control.
         /// </summary>
@@ -1109,7 +1102,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTagList;
-        
+
         /// <summary>
         /// AddonsHeader control.
         /// </summary>
@@ -1118,7 +1111,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel AddonsHeader;
-        
+
         /// <summary>
         /// lblAddOnsHeader control.
         /// </summary>
@@ -1127,7 +1120,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAddOnsHeader;
-        
+
         /// <summary>
         /// imgAddOnsHeader control.
         /// </summary>
@@ -1136,7 +1129,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgAddOnsHeader;
-        
+
         /// <summary>
         /// pnlAddOns control.
         /// </summary>
@@ -1145,7 +1138,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlAddOns;
-        
+
         /// <summary>
         /// plEnableSimpleGallery control.
         /// </summary>
@@ -1154,7 +1147,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEnableSimpleGallery;
-        
+
         /// <summary>
         /// chkEnableSimpleGallery control.
         /// </summary>
@@ -1163,7 +1156,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEnableSimpleGallery;
-        
+
         /// <summary>
         /// plEnableUltraMediaGallery control.
         /// </summary>
@@ -1172,7 +1165,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEnableUltraMediaGallery;
-        
+
         /// <summary>
         /// chkEnableUltraMediaGallery control.
         /// </summary>
@@ -1181,7 +1174,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEnableUltraMediaGallery;
-        
+
         /// <summary>
         /// plEnableVenexus control.
         /// </summary>
@@ -1190,7 +1183,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl plEnableVenexus;
-        
+
         /// <summary>
         /// chkEnableVenexus control.
         /// </summary>
@@ -1199,7 +1192,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chkEnableVenexus;
-        
+
         /// <summary>
         /// vsSummary control.
         /// </summary>
@@ -1208,7 +1201,7 @@ namespace Engage.Dnn.Publish.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary vsSummary;
-        
+
         /// <summary>
         /// lnkUpdate control.
         /// </summary>

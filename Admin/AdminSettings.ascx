@@ -2,8 +2,7 @@
 <%@ Register TagPrefix="dnn" TagName="label" Src="~/controls/labelControl.ascx" %>
 
 <div class="Normal">
-<asp:UpdatePanel ID="pnlSyndication" runat="server" UpdateMode="conditional">
-<ContentTemplate>
+
 	<asp:Label ID="lblMessage" CssClass="error" Runat="server"></asp:Label>
 	<table id="PublishSettingsTable" border="0" class="Normal AdminSettingsTable SettingsTable">
 		<tr>
@@ -546,8 +545,7 @@
 		</tr>		
 		</table>
     </asp:Panel>
-</ContentTemplate>
-</asp:UpdatePanel>
+
     <br />
     <br />
     <asp:ValidationSummary ID="vsSummary" runat="server" />
