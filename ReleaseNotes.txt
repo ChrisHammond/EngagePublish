@@ -1,6 +1,17 @@
 ﻿<pre>
 Release notes
 
+
+
+06.00.04
+-Removed some font size pixel settings from module.css
+
+06.00.03
+-Performance updates for publish_spGetItemsForTags (made it single tag)
+-Removed updatepanels
+
+
+
 06.00.02
 -New release with more things
 -Some performance improvements on CustomDisplay listing, removed "related category" inclusion in the listing to speed up queries

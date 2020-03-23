@@ -207,10 +207,10 @@ namespace Engage.Dnn.Publish.Controls
 
         public string BuildCommentAvatar(object emailAddress)
         {
-            var badImage = "//" + PortalSettings.DefaultPortalAlias + "/desktopmodules/engagepublish/images/avatarhead.png";
+            var badImage = "https://" + PortalSettings.DefaultPortalAlias + "/desktopmodules/engagepublish/images/avatarhead.png";
 
             badImage = HttpUtility.UrlEncode(badImage);
-            var gravatarString = "//www.gravatar.com/avatar.php?gravatar_id={0}&rating=G&size=80&d={1}";
+            var gravatarString = "https://www.gravatar.com/avatar.php?gravatar_id={0}&rating=G&size=80&d={1}";
             
             if (emailAddress == null)
             {

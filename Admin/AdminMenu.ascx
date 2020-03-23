@@ -7,7 +7,7 @@
         <ul>
             <asp:PlaceHolder ID="phLink" runat="server" Visible="false"></asp:PlaceHolder>
             <li>
-                <asp:LinkButton ID="lnkUpdateStatus" resourcekey="lnkUpdateStatus" runat="server" OnClick="lnkUpdateStatus_Click" CssClass="btn btn-default"></asp:LinkButton>
+                <asp:LinkButton ID="lnkUpdateStatus" resourcekey="lnkUpdateStatus" runat="server" OnClick="lnkUpdateStatus_Click" CssClass="btn btn-secondary"></asp:LinkButton>
             </li>
         </ul>
     </div>

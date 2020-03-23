@@ -600,6 +600,7 @@ Module CSS
 #divAdminLinks {
     clear: both;
     width: 100%;
+    display:table;
 }
 
     #divAdminLinks ul {
@@ -616,6 +617,7 @@ Module CSS
 
 #PublishStatsContent {
     float: right;
+    display:table;clear:both;
 }
 
     #PublishStatsContent a {
@@ -1316,12 +1318,10 @@ a.mouseOverImage, a.mouseOverImage:visited {
 }
 
 .itemStats {
-    
     font-size: 12px;
     padding: 10px 20px;
 }
 
-/* Blog Post & Single Blog Page -- uipasta.com/live-preview/devblog/ */
 
 div.blog-post {
     display: none;
@@ -1334,7 +1334,6 @@ div.blog-post {
 
 .blog-post .post-image p {
     text-align: center;
-    font-size: 14px;
     margin-top: 10px;
 }
 
@@ -1343,33 +1342,16 @@ div.blog-post {
 }
 
 .blog-post .post-title h2 {
-    color: #333333;
-    font-size: 35px;
-    line-height: 45px;
-    font-weight: 700;
+    
     margin-top: 24px;
 }
 
 .blog-post .post-title h3 {
-    font-size: 25px;
-    line-height: 35px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
 }
 
 .blog-post .post-info {
-    font-size: 14px;
-    line-height: 30px;
-    font-weight: 500;
     padding: 10px 0;
-    color: #8c8c8c;
 }
 
 .blog-post p {
-    font-size: 16px;
-    line-height: 30px;
-    color: #696868;
-    font-weight: 300;
-    letter-spacing: 0.8px;
-    font-family: "Poppins", sans-serif;
 }
