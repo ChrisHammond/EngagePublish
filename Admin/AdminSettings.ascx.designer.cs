@@ -348,24 +348,6 @@ namespace Engage.Dnn.Publish.Admin
         protected global::System.Web.UI.WebControls.RangeValidator rvAdminPagingSize;
 
         /// <summary>
-        /// plDefaultTextHtmlCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl plDefaultTextHtmlCategory;
-
-        /// <summary>
-        /// ddlDefaultTextHtmlCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlDefaultTextHtmlCategory;
-
-        /// <summary>
         /// lblDisplayFunctionality control.
         /// </summary>
         /// <remarks>
@@ -1138,60 +1120,6 @@ namespace Engage.Dnn.Publish.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlAddOns;
-
-        /// <summary>
-        /// plEnableSimpleGallery control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl plEnableSimpleGallery;
-
-        /// <summary>
-        /// chkEnableSimpleGallery control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkEnableSimpleGallery;
-
-        /// <summary>
-        /// plEnableUltraMediaGallery control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl plEnableUltraMediaGallery;
-
-        /// <summary>
-        /// chkEnableUltraMediaGallery control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkEnableUltraMediaGallery;
-
-        /// <summary>
-        /// plEnableVenexus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl plEnableVenexus;
-
-        /// <summary>
-        /// chkEnableVenexus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkEnableVenexus;
 
         /// <summary>
         /// vsSummary control.

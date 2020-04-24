@@ -228,8 +228,6 @@ namespace Engage.Dnn.Publish.Data
 
         public abstract void UpdateItemVersion(IDbTransaction trans, int itemId, int itemVersionId, int approvalStatusId, int userId, string approvalComments);
 
-        public abstract void UpdateVenexusBraindump(int itemId, string indexTitle, string indexContent, string indexWashedContent, int portalId, string indexUrl);
-
         public abstract void UpdateDescription(int itemVersionId, string description, string metaDescription);
 
         public abstract void UpdateItemRelationship(int itemRelationshipId, int sortOrder);
@@ -258,12 +256,6 @@ namespace Engage.Dnn.Publish.Data
 
         public abstract IDataReader GetComments(int itemId, int approvalStatusId);
 
-        public abstract IDataReader GetSimpleGalleryAlbums(int moduleId);
-        public abstract DataTable GetSimpleGalleryPhotos(int albumId, int? maxCount);
-        internal abstract string GetSimpleGalleryVersion();
-
-        public abstract IDataReader GetUltraMediaGalleryAlbums(int moduleId);
-        public abstract DataTable GetUltraMediaGalleryPhotos(int albumId, int? maxCount);
 
         internal abstract IDataReader GetModulesByModuleId(int moduleId);
 

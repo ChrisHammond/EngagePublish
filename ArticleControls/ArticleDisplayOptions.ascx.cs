@@ -433,7 +433,6 @@ namespace Engage.Dnn.Publish.ArticleControls
                 SetInitialValues();
             }
 
-            SetPhotoGalleryOptionsVisibility(ModuleBase.AllowSimpleGalleryIntegrationForPortal(PortalId) || ModuleBase.AllowUltraMediaGalleryIntegrationForPortal(PortalId));
             SetCommentOptionsVisibility(ModuleBase.IsCommentsEnabledForPortal(PortalId));
             SetRatingsOptionsVisibility(ModuleBase.AreRatingsEnabledForPortal(PortalId));
         }

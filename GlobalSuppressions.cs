@@ -50,8 +50,6 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "lbl", Scope = "member", Target = "Engage.Dnn.Publish.ItemLink.#lblPossibleB")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "lbl", Scope = "member", Target = "Engage.Dnn.Publish.ItemLink.#lblTitle")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Overrideable", Scope = "member", Target = "Engage.Dnn.Publish.ItemManager.#IsOverrideable")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Venexus", Scope = "member", Target = "Engage.Dnn.Publish.ModuleBase.#AllowVenexusSearch")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Venexus", Scope = "member", Target = "Engage.Dnn.Publish.ModuleBase.#AllowVenexusSearchForPortal(System.Int32)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Rss", Scope = "member", Target = "Engage.Dnn.Publish.ModuleBase.#GetRssLinkUrl(System.Object,System.Int32,System.Int32,System.Int32,System.String)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Overrideable", Scope = "member", Target = "Engage.Dnn.Publish.ModuleBase.#Overrideable")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "lbl", Scope = "member", Target = "Engage.Dnn.Publish.PrinterFriendly.#lblArticleText")]
@@ -83,10 +81,8 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "chk", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#chkEnablePublishFriendlyUrls")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "chk", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#chkEnableRatings")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "chk", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#chkEnableRatings_CheckedChanged(System.Object,System.EventArgs)")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "chk", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#chkEnableSimpleGallery")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "chk", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#chkEnableUltraMediaGallery")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Venexus", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#chkEnableVenexus")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "chk", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#chkEnableVenexus")]
+
+
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "chk", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#chkEnableViewTracking")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "chk", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#chkReturnToListSession")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "chk", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#chkShowItemId")]
@@ -107,7 +103,7 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "lbl", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#lblRolesAndPermissions")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "lnk", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#lnkUpdate")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "lnk", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#lnkUpdate_Click(System.Object,System.EventArgs)")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Venexus", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#plEnableVenexus")]
+
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "rad", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#radThumbnailSelection")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "rfv", Scope = "member", Target = "Engage.Dnn.Publish.Admin.AdminSettings.#rfvDefaultDisplayPage")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Ias", Scope = "member", Target = "Engage.Dnn.Publish.Admin.CommentEdit.#Ias")]
@@ -477,11 +473,11 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "vw", Scope = "member", Target = "Engage.Dnn.Publish.Controls.ThumbnailSelector.#vwExternal")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "vw", Scope = "member", Target = "Engage.Dnn.Publish.Controls.ThumbnailSelector.#vwInternal")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "vw", Scope = "member", Target = "Engage.Dnn.Publish.Controls.ThumbnailSelector.#vwUpload")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Braindump", Scope = "member", Target = "Engage.Dnn.Publish.Data.DataProvider.#UpdateVenexusBraindump(System.Int32,System.String,System.String,System.String,System.Int32,System.String)")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Venexus", Scope = "member", Target = "Engage.Dnn.Publish.Data.DataProvider.#UpdateVenexusBraindump(System.Int32,System.String,System.String,System.String,System.Int32,System.String)")]
+
+
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Dnn", Scope = "member", Target = "Engage.Dnn.Publish.Util.Utility.#DnnFriendlyModuleName")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Overrideable", Scope = "member", Target = "Engage.Dnn.Publish.Util.Utility.#IsPageOverrideable(System.Int32,System.Int32)")]
-[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Venexus", Scope = "member", Target = "Engage.Dnn.Publish.Util.Utility.#PublishEnableVenexusSearch")]
+
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Dnn", Scope = "member", Target = "Engage.Dnn.Publish.Util.Utility.#DnnTagsFriendlyModuleName")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Dnn", Scope = "namespace", Target = "Engage.Dnn.Publish.Admin.Tools")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Dnn", Scope = "namespace", Target = "Engage.Dnn.Publish.Forum")]

@@ -526,14 +526,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                 {
                     VersionInfoObject.ModuleId = newModuleId;
                 }
-                else
-                {
-                    newModuleId = Utility.GetModuleIdFromDisplayTabId(VersionInfoObject.DisplayTabId, PortalId, Utility.DnnFriendlyModuleNameTextHTML);
-                    if (newModuleId > 0)
-                    {
-                        VersionInfoObject.ModuleId = newModuleId;
-                    }
-                }
+
 
                 //create a relationship
                 var irel = new ItemRelationship { RelationshipTypeId = Util.RelationshipType.ItemToParentCategory.GetId() };

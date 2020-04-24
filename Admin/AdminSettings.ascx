@@ -132,15 +132,7 @@
 				<asp:TextBox ID="txtAdminPagingSize" runat="server" /> <asp:RangeValidator ID="rvAdminPagingSize" resourcekey="rvAdminPagingSize" runat="server" ControlToValidate="txtAdminPagingSize" Type="integer" MaximumValue="1000" MinimumValue="1"></asp:RangeValidator>
 			</td>
 		</tr>
-         <tr>
-			<td>
-				<dnn:label id="plDefaultTextHtmlCategory" runat="server" controlname="ddlDefaultTextHtmlCategory" text="Admin Paging Size:"></dnn:label>
-			</td>
-			<td>
-				<asp:DropDownList ID="ddlDefaultTextHtmlCategory" runat="server" />
-			</td>
-		</tr>
-
+        
 		</table>
     
     <table id="tblDisplayFunctionality" border="0" class="Normal AdminSettingsTable SettingsTable">
@@ -518,33 +510,7 @@
     </asp:Panel>
     
 <asp:Panel ID="pnlAddOns" runat="server">
-    <table id="tblAddOns" border="0" class="Normal AdminSettingsTable SettingsTable">
-        <tr>
-			<td>
-				<dnn:label id="plEnableSimpleGallery" runat="server" controlname="chkEnableSimpleGallery"/>
-			</td>
-			<td>
-				<asp:CheckBox ID="chkEnableSimpleGallery" runat="server" />
-			</td>
-		</tr>		
-        <tr>
-			<td>
-				<dnn:label id="plEnableUltraMediaGallery" runat="server" controlname="chkEnableUltraMediaGallery"/>
-			</td>
-			<td>
-				<asp:CheckBox ID="chkEnableUltraMediaGallery" runat="server" />
-			</td>
-		</tr>		
-        <tr>
-			<td>
-				<dnn:label id="plEnableVenexus" runat="server" controlname="chkEnableVenexus" text="Enable Venexus Search Integration:"></dnn:label>
-			</td>
-			<td>
-				<asp:CheckBox ID="chkEnableVenexus" runat="server" />
-			</td>
-		</tr>		
-		</table>
-    </asp:Panel>
+</asp:Panel>
 
     <br />
     <br />

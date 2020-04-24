@@ -90,9 +90,6 @@ namespace Engage.Dnn.Publish.Admin
                 
                 HostController.Instance.Update(Utility.PublishEnableTags + PortalId.ToString(CultureInfo.InvariantCulture), chkEnableTags.Checked.ToString(CultureInfo.InvariantCulture));
                 
-                HostController.Instance.Update(Utility.PublishEnableSimpleGalleryIntegration + PortalId.ToString(CultureInfo.InvariantCulture), chkEnableSimpleGallery.Checked.ToString(CultureInfo.InvariantCulture));
-                HostController.Instance.Update(Utility.PublishEnableUltraMediaGalleryIntegration + PortalId.ToString(CultureInfo.InvariantCulture), chkEnableUltraMediaGallery.Checked.ToString(CultureInfo.InvariantCulture));
-                HostController.Instance.Update(Utility.PublishEnableVenexusSearch + PortalId.ToString(CultureInfo.InvariantCulture), chkEnableVenexus.Checked.ToString(CultureInfo.InvariantCulture));
                 HostController.Instance.Update(Utility.PublishEnableViewTracking + PortalId.ToString(CultureInfo.InvariantCulture), chkEnableViewTracking.Checked.ToString(CultureInfo.InvariantCulture));
                 HostController.Instance.Update(Utility.PublishEnableDisplayNameAsHyperlink + PortalId.ToString(CultureInfo.InvariantCulture), chkEnableDisplayNameAsHyperlink.Checked.ToString(CultureInfo.InvariantCulture));
                 HostController.Instance.Update(Utility.PublishAllowRichTextDescriptions + PortalId.ToString(CultureInfo.InvariantCulture), chkAllowRichTextDescriptions.Checked.ToString(CultureInfo.InvariantCulture));
@@ -115,9 +112,6 @@ namespace Engage.Dnn.Publish.Admin
                 HostController.Instance.Update(Utility.PublishThumbnailSubdirectory + PortalId.ToString(CultureInfo.InvariantCulture), txtThumbnailSubdirectory.Text.EndsWith("/", StringComparison.Ordinal) ? txtThumbnailSubdirectory.Text : txtThumbnailSubdirectory.Text + "/");
                 HostController.Instance.Update(Utility.PublishThumbnailDisplayOption + PortalId.ToString(CultureInfo.InvariantCulture), radThumbnailSelection.SelectedValue.ToString(CultureInfo.InvariantCulture));
                 HostController.Instance.Update(Utility.PublishDefaultDisplayPage + PortalId.ToString(CultureInfo.InvariantCulture), ddlDefaultDisplay.SelectedValue.ToString(CultureInfo.InvariantCulture));
-
-                if(ddlDefaultTextHtmlCategory.SelectedIndex>0)
-                HostController.Instance.Update(Utility.PublishDefaultTextHtmlCategory+ PortalId.ToString(CultureInfo.InvariantCulture), ddlDefaultTextHtmlCategory.SelectedValue.ToString(CultureInfo.InvariantCulture));
 
                 if (ddlDefaultCategory.SelectedIndex > 0)
                     HostController.Instance.Update(Utility.PublishDefaultCategory + PortalId.ToString(CultureInfo.InvariantCulture), ddlDefaultCategory.SelectedValue.ToString(CultureInfo.InvariantCulture));
@@ -240,7 +234,7 @@ namespace Engage.Dnn.Publish.Admin
             Utility.SetSettingListValue(Utility.PublishDefaultTagPage, PortalId, ddlTagList);
             Utility.SetSettingListValue(Utility.PublishDefaultDisplayPage, PortalId, ddlDefaultDisplay);
 
-            Utility.SetSettingListValue(Utility.PublishDefaultTextHtmlCategory, PortalId, ddlDefaultTextHtmlCategory);
+            
             Utility.SetSettingListValue(Utility.PublishDefaultCategory, PortalId, ddlDefaultCategory);
             
             Utility.SetSettingListValue(Utility.PublishForumProviderType, PortalId, ddlCommentsType);
@@ -263,7 +257,6 @@ namespace Engage.Dnn.Publish.Admin
             chkEnablePaging.Checked = Utility.GetBooleanPortalSetting(Utility.PublishEnableArticlePaging, PortalId, true);
 
             chkEnableTags.Checked = Utility.GetBooleanPortalSetting(Utility.PublishEnableTags, PortalId, false);
-            chkEnableVenexus.Checked = Utility.GetBooleanPortalSetting(Utility.PublishEnableVenexusSearch, PortalId, false);
             chkEnableViewTracking.Checked = Utility.GetBooleanPortalSetting(Utility.PublishEnableViewTracking, PortalId, false);
             chkEnableDisplayNameAsHyperlink.Checked = Utility.GetBooleanPortalSetting(Utility.PublishEnableDisplayNameAsHyperlink, PortalId, false);
             chkAllowRichTextDescriptions.Checked = Utility.GetBooleanPortalSetting(Utility.PublishAllowRichTextDescriptions, PortalId, true);
@@ -286,23 +279,7 @@ namespace Engage.Dnn.Publish.Admin
 
             chkDefaultReturnToList.Checked = Utility.GetBooleanPortalSetting(Utility.PublishDefaultReturnToList, PortalId, false);
 
-            if (Utility.IsSimpleGalleryInstalled)
-            {
-                chkEnableSimpleGallery.Checked = Utility.GetBooleanPortalSetting(Utility.PublishEnableSimpleGalleryIntegration, PortalId, false);
-            }
-            else
-            {
-                chkEnableSimpleGallery.Enabled = false;
-            }
-
-            if (Utility.IsUltraMediaGalleryInstalled)
-            {
-                chkEnableUltraMediaGallery.Checked = Utility.GetBooleanPortalSetting(Utility.PublishEnableUltraMediaGalleryIntegration, PortalId, false);
-            }
-            else
-            {
-                chkEnableUltraMediaGallery.Enabled = false;
-            }
+            
 
             //default to using Publish URLs, unless FriendlyUrls aren't on, then disable the option and show a message.
             if (HostController.Instance.GetString("UseFriendlyUrls") == "Y")
@@ -381,7 +358,6 @@ namespace Engage.Dnn.Publish.Admin
             LoadCommentTypesDropDown();
             LoadThumbnailSelectionRadioButtonList();
 
-            LoadDefaultTextHtmlCategoryDropDown();
             LoadDefaultCategoryDropDown();
         }
 
@@ -429,13 +405,6 @@ namespace Engage.Dnn.Publish.Admin
             }
         }
 
-        private void LoadDefaultTextHtmlCategoryDropDown()
-        {
-            ItemRelationship.DisplayCategoryHierarchy(ddlDefaultTextHtmlCategory, -1, PortalId, false);
-            var li = new ListItem(Localization.GetString("ChooseOne", LocalSharedResourceFile), "-1");
-            ddlDefaultTextHtmlCategory.Items.Insert(0, li);
-
-        }
 
         private void LoadDefaultCategoryDropDown()
         {

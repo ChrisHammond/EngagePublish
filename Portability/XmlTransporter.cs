@@ -84,23 +84,16 @@ namespace Engage.Dnn.Publish.Portability
         {
             XmlNode publishNode = _doc.SelectSingleNode("publish");
             XmlNode categoriesNode = _doc.CreateElement("categories");
-            //TODO: if we're exporting Text/HTML we at least need to pull the text/html defined category
+
             var mc = new ModuleController();
             ModuleInfo mi = mc.GetModule(_moduleId, _tabId);
 
             DataTable dt;
 
-            if (mi.DesktopModule.FriendlyName == Utility.DnnFriendlyModuleNameTextHTML)
-            {
-                //if we're dealing with the text/html module we need to get all categories always
-                //TODO: in the future configure it so we can only get one category.
-                dt = Category.GetCategoriesByPortalId(_portalId);
-            }
-            else
-            {
-                dt = exportAll ? Category.GetCategoriesByPortalId(_portalId) : Category.GetCategoriesByModuleId(_moduleId, portalId);
-            }
-            
+
+            dt = exportAll ? Category.GetCategoriesByPortalId(_portalId) : Category.GetCategoriesByModuleId(_moduleId, portalId);
+
+
             try
             {
                 foreach (DataRow row in dt.Rows)
@@ -168,7 +161,7 @@ namespace Engage.Dnn.Publish.Portability
 
             List<ItemRelationship> relationships = exportAll ? ItemRelationship.GetAllRelationshipsByPortalId(_portalId) : ItemRelationship.GetAllRelationships(_moduleId);
 
-            foreach (ItemRelationship relationship  in relationships)
+            foreach (ItemRelationship relationship in relationships)
             {
                 relationship.CorrectDates();
                 string xml = relationship.SerializeObjectToXml();
@@ -194,7 +187,7 @@ namespace Engage.Dnn.Publish.Portability
         }
 
         [Obsolete("Not implemented")]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification="Not implemented")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "Not implemented")]
         public void BuildTags()
         {
             throw new NotImplementedException();
@@ -257,12 +250,12 @@ namespace Engage.Dnn.Publish.Portability
                 XmlNode valueNode = _doc.CreateElement("Value");
                 valueNode.AppendChild(_doc.CreateTextNode(tabModuleSettings[key].ToString()));
                 settingNode.AppendChild(valueNode);
-                settingsNode.AppendChild(_doc.ImportNode(settingNode, true));                                
+                settingsNode.AppendChild(_doc.ImportNode(settingNode, true));
             }
             publishNode.AppendChild(_doc.ImportNode(settingsNode, true));
         }
 
-        
+
         #endregion
 
         #region Deconstruct Methods
@@ -315,7 +308,7 @@ namespace Engage.Dnn.Publish.Portability
                 var reader = new StringReader(relationshipNode.OuterXml);
 
                 // Use the Deserialize method to restore the object's state.
-                var r = (ItemRelationship) serializer.Deserialize(reader);
+                var r = (ItemRelationship)serializer.Deserialize(reader);
                 r.Import(_moduleId, _portalId);
             }
         }
@@ -358,7 +351,7 @@ namespace Engage.Dnn.Publish.Portability
                 var reader = new StringReader(settingNode.OuterXml);
 
                 // Use the Deserialize method to restore the object's state.
-                var s = (ItemVersionSetting) serializer.Deserialize(reader);
+                var s = (ItemVersionSetting)serializer.Deserialize(reader);
                 s.Import(_moduleId, _portalId);
             }
         }
@@ -384,11 +377,11 @@ namespace Engage.Dnn.Publish.Portability
 
             }
         }
-        
+
 
         #endregion
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1059:MembersShouldNotExposeCertainConcreteTypes", MessageId = "System.Xml.XmlNode", Justification="Need access to OuterXml property of XmlDocument")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1059:MembersShouldNotExposeCertainConcreteTypes", MessageId = "System.Xml.XmlNode", Justification = "Need access to OuterXml property of XmlDocument")]
         public XmlDocument Document
         {
             get { return _doc; }

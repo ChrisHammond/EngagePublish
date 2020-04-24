@@ -354,18 +354,7 @@
   <data name="SpecificPage.Text" xml:space="preserve">
     <value>A Specific Page: </value>
   </data>
-  <data name="lblPhotoGalleryAlbum.Help" xml:space="preserve">
-    <value>You can choose to associate an album from the installed SimpleGallery or Ultra Media Gallery module with this article.  When the article is displayed, thumbnails from the album will be displayed alongisde the article.</value>
-  </data>
-  <data name="lblPhotoGalleryAlbum.Text" xml:space="preserve">
-    <value>Photo Album</value>
-  </data>
-  <data name="SimpleGallery.Text" xml:space="preserve">
-    <value>SimpleGallery</value>
-  </data>
-  <data name="UltraMediaGallery.Text" xml:space="preserve">
-    <value>Ultra Media Gallery</value>
-  </data>
+
   <data name="chkShowAuthor.Text" xml:space="preserve">
     <value>Show Author</value>
   </data>

@@ -30,8 +30,6 @@ namespace Engage.Dnn.Publish
         public static readonly Setting AuthorName = new Setting("lblAuthorName", "Text");//, "Value of author's name to display.");
         public static readonly Setting ShowTags = new Setting("pnlTags", "Visible");//, "Show the TagList on an article.");
         public static readonly Setting UseApprovals = new Setting("chkUseApprovals", "Checked");//, "If checked, approval workflow is disabled for this item.");
-        public static readonly Setting UseSimpleGalleryAlbum = new Setting("ddlSimpleGalleryAlbum", "SelectedValue");
-        public static readonly Setting UseUltraMediaGalleryAlbum = new Setting("ddlUltraMediaGalleryAlbum", "SelectedValue");
         public static readonly Setting ArticleAttachment = new Setting("ArticleSettings", "ArticleAttachment");
 
         //Categories Settings

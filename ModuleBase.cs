@@ -275,20 +275,7 @@ namespace Engage.Dnn.Publish
             get { return AllowArticlePagingForPortal(PortalId); }
         }
 
-        public bool AllowVenexusSearch
-        {
-            get { return AllowVenexusSearchForPortal(PortalId); }
-        }
-
-        public bool AllowSimpleGalleryIntegration
-        {
-            get { return AllowSimpleGalleryIntegrationForPortal(PortalId); }
-        }
-
-        public bool AllowUltraMediaGalleryIntegration
-        {
-            get { return AllowUltraMediaGalleryIntegrationForPortal(PortalId); }
-        }
+        
 
         public bool EnableDisplayNameAsHyperlink
         {
@@ -314,12 +301,6 @@ namespace Engage.Dnn.Publish
         {
             get { return DefaultTagDisplayTabIdForPortal(PortalId); }
         }
-
-        public int DefaultTextHtmlCategory
-        {
-            get { return DefaultTextHtmlCategoryForPortal(PortalId); }
-        }
-
 
 
         public bool AllowRichTextDescriptions
@@ -679,41 +660,6 @@ namespace Engage.Dnn.Publish
             return true;
         }
 
-        public static bool AllowVenexusSearchForPortal(int portalId)
-        {
-            string s = HostController.Instance.GetString(Utility.PublishEnableVenexusSearch + portalId.ToString(CultureInfo.InvariantCulture));
-            if (Utility.HasValue(s))
-            {
-                return Convert.ToBoolean(s, CultureInfo.InvariantCulture);
-            }
-            return false;
-        }
-
-        public static bool AllowSimpleGalleryIntegrationForPortal(int portalId)
-        {
-            if (Utility.IsSimpleGalleryInstalled)
-            {
-                string s = HostController.Instance.GetString(Utility.PublishEnableSimpleGalleryIntegration + portalId.ToString(CultureInfo.InvariantCulture));
-                if (Utility.HasValue(s))
-                {
-                    return Convert.ToBoolean(s, CultureInfo.InvariantCulture);
-                }
-            }
-            return false;
-        }
-
-        public static bool AllowUltraMediaGalleryIntegrationForPortal(int portalId)
-        {
-            if (Utility.IsUltraMediaGalleryInstalled)
-            {
-                string s = HostController.Instance.GetString(Utility.PublishEnableUltraMediaGalleryIntegration + portalId.ToString(CultureInfo.InvariantCulture));
-                if (Utility.HasValue(s))
-                {
-                    return Convert.ToBoolean(s, CultureInfo.InvariantCulture);
-                }
-            }
-            return false;
-        }
 
         public static bool AllowArticlePagingForPortal(int portalId)
         {
@@ -776,15 +722,6 @@ namespace Engage.Dnn.Publish
         }
 
 
-        public static int DefaultTextHtmlCategoryForPortal(int portalId)
-        {
-            string s = HostController.Instance.GetString(Utility.PublishDefaultTextHtmlCategory + portalId.ToString(CultureInfo.InvariantCulture));
-            if (Utility.HasValue(s))
-            {
-                return Convert.ToInt32(s, CultureInfo.InvariantCulture);
-            }
-            return -1;
-        }
 
         public static int DefaultCategoryForPortal(int portalId)
         {

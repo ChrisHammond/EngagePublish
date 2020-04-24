@@ -235,7 +235,7 @@ namespace Engage.Dnn.Publish.Util
 
         public const string CacheKeyPublishTopLevelCategories = "CacheKeyPublishTopLevelCategories_";
         public const string DnnFriendlyModuleName = "Engage: Publish";
-        public const string DnnFriendlyModuleNameTextHTML = "Engage: Text/HTML";
+        
 
         public const string DnnTagsFriendlyModuleName = "Engage: Publish Tag Cloud";
         public const string MediaFileTypes = "jpg,jpeg,jpe,gif,bmp,png,swf";
@@ -267,7 +267,6 @@ namespace Engage.Dnn.Publish.Util
 
         public const string PublishEnableWlwSupport = "PublishEnableWLWSupport";
 
-        public const string PublishDefaultTextHtmlCategory = "PublishDefaultTextHtmlCategory";
         public const string PublishDefaultCategory = "PublishDefaultCategory";
 
         public const string PublishDefaultEmailAFriend = "PublishDefaultEmailAFriend";
@@ -290,10 +289,9 @@ namespace Engage.Dnn.Publish.Util
         public const string PublishEnableDisplayNameAsHyperlink = "PublishEnableDisplayNameAsHyperlink";
         public const string PublishEnablePing = "PublishEnablePing";
         public const string PublishEnablePublishFriendlyUrls = "PublishEnablePublishFriendlyUrls";
-        public const string PublishEnableSimpleGalleryIntegration = "PublishEnableSimpleGalleryIntegration";
+        
         public const string PublishEnableTags = "PublishEnableTags";
-        public const string PublishEnableUltraMediaGalleryIntegration = "PublishEnableUltraMediaGalleryIntegration";
-        public const string PublishEnableVenexusSearch = "PublishEnableVenexusSearch";
+
         public const string PublishEnableViewTracking = "PublishEnableViewTracking";
 
         //Forum settings
@@ -315,10 +313,6 @@ namespace Engage.Dnn.Publish.Util
         public const string PublishUseApprovals = "PublishUseApprovals";
         public const string PublishUseEmbeddedArticles = "PublishUseEmbeddedArticles";
         public const int RedirectInSeconds = 10;
-        public const string SimpleGalleryDefinitionModuleName = "SimpleGallery";
-        public const string SimpleGalleryFriendlyName = "SimpleGallery";
-        public const string UltraMediaGalleryDefinitionModuleName = "BizModules - UltraPhotoGallery";
-        public const string UltraMediaGalleryFriendlyName = "BizModules - UltraPhotoGallery";
 
         /*******************Cache Key Constants********************/
 
@@ -335,25 +329,6 @@ namespace Engage.Dnn.Publish.Util
                 sb.Append(DesktopModuleController.GetDesktopModuleByFriendlyName(DnnFriendlyModuleName).FolderName);
                 sb.Append("/");
                 return sb.ToString();
-            }
-        }
-        public static bool IsSimpleGalleryInstalled
-        {
-            get
-            {
-                //var desktopModules = new DesktopModuleController();
-                //return desktopModules.GetDesktopModuleByFriendlyName(SimpleGalleryFriendlyName) != null;
-                return DesktopModuleController.GetDesktopModuleByFriendlyName(SimpleGalleryDefinitionModuleName) != null;
-            }
-        }
-
-        public static bool IsUltraMediaGalleryInstalled
-        {
-            get
-            {
-                //var desktopModules = new DesktopModuleController();
-                //return desktopModules.GetDesktopModuleByFriendlyName(UltraMediaGalleryDefinitionFriendlyName) != null;
-                return DesktopModuleController.GetDesktopModuleByFriendlyName(UltraMediaGalleryDefinitionModuleName) != null;
             }
         }
 
