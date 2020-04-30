@@ -116,7 +116,6 @@ namespace Engage.Dnn.Publish.Admin
                 if (ddlDefaultCategory.SelectedIndex > 0)
                     HostController.Instance.Update(Utility.PublishDefaultCategory + PortalId.ToString(CultureInfo.InvariantCulture), ddlDefaultCategory.SelectedValue.ToString(CultureInfo.InvariantCulture));
 
-                HostController.Instance.Update(Utility.PublishDefaultTagPage + PortalId.ToString(CultureInfo.InvariantCulture), ddlTagList.SelectedValue.ToString(CultureInfo.InvariantCulture));
 
                 HostController.Instance.Update(Utility.PublishDefaultReturnToList + PortalId.ToString(CultureInfo.InvariantCulture), chkDefaultReturnToList.Checked.ToString(CultureInfo.InvariantCulture));
                 HostController.Instance.Update(Utility.PublishDefaultRatings + PortalId.ToString(CultureInfo.InvariantCulture), chkDefaultArticleRatings.Checked.ToString(CultureInfo.InvariantCulture));
@@ -231,7 +230,7 @@ namespace Engage.Dnn.Publish.Admin
             Utility.SetSettingListValue(Utility.PublishAdminRole, PortalId, ddlRoles);
             Utility.SetSettingListValue(Utility.PublishAuthorRole, PortalId, ddlAuthor);
             Utility.SetSettingListValue(Utility.PublishEmailNotificationRole, PortalId, ddlEmailRoles);
-            Utility.SetSettingListValue(Utility.PublishDefaultTagPage, PortalId, ddlTagList);
+           
             Utility.SetSettingListValue(Utility.PublishDefaultDisplayPage, PortalId, ddlDefaultDisplay);
 
             
@@ -354,7 +353,7 @@ namespace Engage.Dnn.Publish.Admin
             LoadNotificationRolesDropDown(portalRoles);
             LoadAuthorRoleDropDown(portalRoles);
             LoadDisplayTabDropDown();
-            LoadTagDropDown();
+            
             LoadCommentTypesDropDown();
             LoadThumbnailSelectionRadioButtonList();
 
@@ -415,21 +414,6 @@ namespace Engage.Dnn.Publish.Admin
         }
 
 
-        private void LoadTagDropDown()
-        {
-            var mc = new ModuleController();
-            var tc = new TabController();
-            ArrayList al = mc.GetModulesByDefinition(PortalId, Utility.DnnTagsFriendlyModuleName);
-
-            ddlTagList.Items.Insert(0, new ListItem(Localization.GetString("ChooseOne", LocalResourceFile), "-1"));
-
-            foreach (ModuleInfo mi in al)
-            {
-                TabInfo ti = tc.GetTab(mi.TabID, mi.PortalID, false);
-                var li = new ListItem(ti.TabName + " (" + ti.TabID + ")", ti.TabID.ToString(CultureInfo.InvariantCulture));
-                ddlTagList.Items.Add(li);
-            }
-        }
 
         private void LocalizeCollapsePanels()
         {

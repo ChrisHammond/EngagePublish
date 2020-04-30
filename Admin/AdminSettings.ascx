@@ -484,14 +484,7 @@
 				<asp:CheckBox ID="chkEnableTags" runat="server" />
 			</td>
 		</tr>		
-        <tr>
-			<td>
-				<dnn:label id="plTagList" runat="server" controlname="ddlTagList" text="Default Tag Cloud:"></dnn:label>
-			</td>
-			<td>
-                <asp:DropDownList ID="ddlTagList" runat="server"></asp:DropDownList>
-			</td>
-		</tr>		
+        
     </table>
 </asp:Panel>
 

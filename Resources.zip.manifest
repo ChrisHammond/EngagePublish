@@ -1,100 +1,8 @@
 ﻿<dotnetnuke type="ResourceFile" version="5.0">
   <files>
     <file>
-      <path>Providers/ForumProvider/ActiveForumsProvider/App_LocalResources/</path>
-      <name>ActiveForumsProvider.resx</name>
-    </file>
-    <file>
       <path>util/App_LocalResources/</path>
       <name>BreadCrumb.cs.resx</name>
-    </file>
-    <file>
-      <path>TextHTML/app_localresources/</path>
-      <name>Edit.ascx.resx</name>
-    </file>
-    <file>
-      <path>TextHTML/app_localresources/</path>
-      <name>Settings.ascx.resx</name>
-    </file>
-    <file>
-      <path>TextHTML/app_localresources/</path>
-      <name>View.ascx.resx</name>
-    </file>
-    <file>
-      <path>TextHTML/</path>
-      <name>Edit.ascx</name>
-    </file>
-    <file>
-      <path>TextHTML/</path>
-      <name>Module.css</name>
-    </file>
-    <file>
-      <path>TextHTML/</path>
-      <name>Settings.ascx</name>
-    </file>
-    <file>
-      <path>TextHTML/</path>
-      <name>View.ascx</name>
-    </file>
-    <file>
-      <path>Resources/</path>
-      <name>default.css</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>CategoryDisplay.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>CategoryDisplayOptions.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>CategoryEdit.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>CategoryFeature.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>CategoryFeatureOptions.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>CategoryList.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>CategoryNLevels.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>CategoryNLevelsOptions.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>CategoryPermissions.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>CategorySearch.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>CategorySearchOptions.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>CategorySort.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>DocumentCategoryDisplay.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/App_LocalResources/</path>
-      <name>ItemCategoryDisplay.ascx.resx</name>
     </file>
     <file>
       <path>Tags/App_LocalResources/</path>
@@ -103,58 +11,6 @@
     <file>
       <path>Tags/App_LocalResources/</path>
       <name>TagCloudOptions.ascx.resx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>CategoryDisplay.ascx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>CategoryDisplayOptions.ascx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>CategoryEdit.ascx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>CategoryFeature.ascx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>CategoryFeatureOptions.ascx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>CategoryList.ascx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>CategoryNLevels.ascx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>CategoryNLevelsOptions.ascx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>CategoryPermissions.ascx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>CategorySearch.ascx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>CategorySearchOptions.ascx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>CategorySort.ascx</name>
-    </file>
-    <file>
-      <path>CategoryControls/</path>
-      <name>main.js</name>
     </file>
     <file>
       <path>ArticleControls/App_LocalResources/</path>
@@ -181,22 +37,6 @@
       <name>ItemApproval.ascx.resx</name>
     </file>
     <file>
-      <path>Tags/</path>
-      <name>Module.css</name>
-    </file>
-    <file>
-      <path>Tags/</path>
-      <name>TagCloud.ascx</name>
-    </file>
-    <file>
-      <path>Tags/</path>
-      <name>TagCloudOptions.ascx</name>
-    </file>
-    <file>
-      <path>Tags/</path>
-      <name>TagEntry.ascx</name>
-    </file>
-    <file>
       <path>ArticleControls/</path>
       <name>ArticleCategoryListing.ascx</name>
     </file>
@@ -221,8 +61,104 @@
       <name>AuthorToken.ascx</name>
     </file>
     <file>
-      <path>Services/App_LocalResources/</path>
-      <name>MetaWeblog.ashx.resx</name>
+      <path>Admin/Tools/App_LocalResources/</path>
+      <name>Dashboard.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/App_LocalResources/</path>
+      <name>DescriptionReplace.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/App_LocalResources/</path>
+      <name>ItemViewReport.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/App_LocalResources/</path>
+      <name>Recategorize.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/App_LocalResources/</path>
+      <name>ResetDisplayPage.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/App_LocalResources/</path>
+      <name>ResetItemStatistics.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/App_LocalResources/</path>
+      <name>TagSearch.ascx.resx</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>Module.css</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>TagCloud.ascx</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>TagCloudOptions.ascx</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>TagEntry.ascx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>AdminLoader.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>ItemDisplay.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>ItemDisplayOptions.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>ItemLink.aspx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>ItemPreview.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>PrinterFriendly.aspx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>SharedResources.resx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>Dashboard.ascx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>DescriptionReplace.ascx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>ItemViewReport.ascx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>Recategorize.ascx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>ResetDisplayPage.ascx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>ResetItemStatistics.ascx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>TagSearch.ascx</name>
     </file>
     <file>
       <path>Images/</path>
@@ -285,152 +221,8 @@
       <name>up.gif</name>
     </file>
     <file>
-      <path>App_LocalResources/</path>
-      <name>AdminLoader.ascx.resx</name>
-    </file>
-    <file>
-      <path>App_LocalResources/</path>
-      <name>ItemDisplay.ascx.resx</name>
-    </file>
-    <file>
-      <path>App_LocalResources/</path>
-      <name>ItemDisplayOptions.ascx.resx</name>
-    </file>
-    <file>
-      <path>App_LocalResources/</path>
-      <name>ItemLink.aspx.resx</name>
-    </file>
-    <file>
-      <path>App_LocalResources/</path>
-      <name>ItemPreview.ascx.resx</name>
-    </file>
-    <file>
-      <path>App_LocalResources/</path>
-      <name>PrinterFriendly.aspx.resx</name>
-    </file>
-    <file>
-      <path>App_LocalResources/</path>
-      <name>SharedResources.resx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/App_LocalResources/</path>
-      <name>Dashboard.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/App_LocalResources/</path>
-      <name>DescriptionReplace.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/App_LocalResources/</path>
-      <name>ItemViewReport.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/App_LocalResources/</path>
-      <name>Recategorize.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/App_LocalResources/</path>
-      <name>ResetDisplayPage.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/App_LocalResources/</path>
-      <name>ResetItemStatistics.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/App_LocalResources/</path>
-      <name>TagSearch.ascx.resx</name>
-    </file>
-    <file>
-      <path>Services/</path>
-      <name>publishrsd.aspx</name>
-    </file>
-    <file>
-      <path>Services/</path>
-      <name>PublishServices.asmx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/</path>
-      <name>Dashboard.ascx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/</path>
-      <name>DescriptionReplace.ascx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/</path>
-      <name>ItemViewReport.ascx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/</path>
-      <name>Recategorize.ascx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/</path>
-      <name>ResetDisplayPage.ascx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/</path>
-      <name>ResetItemStatistics.ascx</name>
-    </file>
-    <file>
-      <path>Admin/Tools/</path>
-      <name>TagSearch.ascx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>ArticleSelector.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>CommentDisplay.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>CustomDisplay.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>CustomDisplayOptions.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>EmailAFriend.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>ItemApproval.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>ItemEdit.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>ItemListing.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>ItemListingOptions.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>ItemRelationships.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>ItemVersions.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>PrinterFriendlyButton.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>RelatedArticleLinks.ascx.resx</name>
-    </file>
-    <file>
-      <path>Controls/App_LocalResources/</path>
-      <name>ThumbnailSelector.ascx.resx</name>
+      <path>Services/App_LocalResources/</path>
+      <name>MetaWeblog.ashx.resx</name>
     </file>
     <file>
       <path>Admin/Images/</path>
@@ -509,64 +301,68 @@
       <name>syndication_sel.gif</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminInstructions.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>ArticleSelector.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminItemList.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>CommentDisplay.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminItemSearch.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>CustomDisplay.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminItemSearchOptions.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>CustomDisplayOptions.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminMain.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>EmailAFriend.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminMenu.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>ItemApproval.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminSettings.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>ItemEdit.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminTools.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>ItemListing.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>CommentEdit.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>ItemListingOptions.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>CommentList.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>ItemRelationships.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>DeleteItem.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>ItemVersions.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>ItemCreated.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>PrinterFriendlyButton.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>QuickStats.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>RelatedArticleLinks.ascx.resx</name>
     </file>
     <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>Syndication.ascx.resx</name>
+      <path>Controls/App_LocalResources/</path>
+      <name>ThumbnailSelector.ascx.resx</name>
     </file>
     <file>
-      <path>Scripts/</path>
-      <name>ArticleSelector.js</name>
+      <path>Services/</path>
+      <name>publishrsd.aspx</name>
+    </file>
+    <file>
+      <path>Services/</path>
+      <name>PublishServices.asmx</name>
     </file>
     <file>
       <path>Controls/</path>
@@ -637,6 +433,174 @@
       <name>ThumbnailSelector.ascx</name>
     </file>
     <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminInstructions.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminItemList.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminItemSearch.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminItemSearchOptions.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminMain.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminMenu.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminSettings.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminTools.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>CommentEdit.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>CommentList.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>DeleteItem.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>ItemCreated.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>QuickStats.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>Syndication.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>CategoryDisplay.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>CategoryDisplayOptions.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>CategoryEdit.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>CategoryFeature.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>CategoryFeatureOptions.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>CategoryList.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>CategoryNLevels.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>CategoryNLevelsOptions.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>CategoryPermissions.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>CategorySearch.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>CategorySearchOptions.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>CategorySort.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>DocumentCategoryDisplay.ascx.resx</name>
+    </file>
+    <file>
+      <path>CategoryControls/App_LocalResources/</path>
+      <name>ItemCategoryDisplay.ascx.resx</name>
+    </file>
+    <file>
+      <path>Scripts/</path>
+      <name>ArticleSelector.js</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryDisplay.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryDisplayOptions.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryEdit.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryFeature.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryFeatureOptions.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryList.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryNLevels.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryNLevelsOptions.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryPermissions.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategorySearch.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategorySearchOptions.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategorySort.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>main.js</name>
+    </file>
+    <file>
       <path>Admin/</path>
       <name>AdminInstructions.ascx</name>
     </file>
@@ -681,6 +645,10 @@
       <name>Syndication.ascx</name>
     </file>
     <file>
+      <path>Resources/</path>
+      <name>default.css</name>
+    </file>
+    <file>
       <path />
       <name>AdminLoader.ascx</name>
     </file>
@@ -723,10 +691,6 @@
     <file>
       <path />
       <name>Rss.aspx</name>
-    </file>
-    <file>
-      <path />
-      <name>UpgradeLog2.htm</name>
     </file>
   </files>
 </dotnetnuke>

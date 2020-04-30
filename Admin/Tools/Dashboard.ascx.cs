@@ -65,9 +65,11 @@ namespace Engage.Dnn.Publish.Admin.Tools
         /// <param name="toolValue">The value of the tool <c>QueryString</c> key for this tool.</param>
         private void AddDashboardLink(string resourceKey, string toolValue)
         {
+            phAdminTools.Controls.Add(new LiteralControl(" <p><strong> "));
             phAdminTools.Controls.Add(GetDashboardLink(Localization.GetString(resourceKey, LocalResourceFile), toolValue));
+            phAdminTools.Controls.Add(new LiteralControl(" </strong><br /> "));
             phAdminTools.Controls.Add(GetDashboardLinkDescription(Localization.GetString(resourceKey + ".Help", LocalResourceFile), toolValue));
-            phAdminTools.Controls.Add(new LiteralControl(" <br /> "));
+            phAdminTools.Controls.Add(new LiteralControl(" </p> "));
         }
 
         /// <summary>
