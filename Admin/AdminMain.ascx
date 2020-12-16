@@ -7,7 +7,7 @@
 		    </div>
 		</div>
 		<div class="admin_item_text">
-			<div class="Normal">
+			<div class="Normal nowrap">
 				<a href='<%= BuildLinkUrl("&amp;mid="+ ModuleId + "&amp;ctl=admincontainer&amp;adminType=articlelist")%>'>
 					<asp:Label ID="lblArticles" ResourceKey="lblArticles" Runat="server"></asp:Label></a>
 			</div>
@@ -20,7 +20,7 @@
 		    </div>
 		</div>
 		<div class="admin_item_text">
-			<div class="Normal">
+			<div class="Normal nowrap">
 				<a href='<%= BuildLinkUrl("&amp;mid="+ ModuleId +"&amp;ctl=admincontainer&amp;adminType=categorylist")%>'>
 					<asp:Label ID="lblCategories" ResourceKey="lblCategories" Runat="server"></asp:Label></a>
 			</div>
@@ -36,7 +36,7 @@
         </div>
         
         <div class="admin_item_text">
-            <div class="Normal">
+            <div class="Normal nowrap">
                 <a href='<%= BuildLinkUrl("&amp;mid=" + ModuleId + "&amp;ctl=admincontainer&amp;adminType=commentList")%>'>
                     <asp:Label ID="lblComments" ResourceKey="lblComments" runat="server"></asp:Label></a>
             </div>
@@ -53,7 +53,7 @@
 		</div>
 			
 		<div class="admin_item_text">
-			<div class="Normal">
+			<div class="Normal nowrap">
 				<a href='<%= BuildLinkUrl("&amp;mid="+ ModuleId +"&amp;ctl=admincontainer&amp;adminType=amsSettings")%>'>
 					<asp:Label ID="lblAmsSettings" ResourceKey="lblAmsSettings" Runat="server"></asp:Label></a>
 			</div>
@@ -70,7 +70,7 @@
 		</div>
 			
 		<div class="admin_item_text">
-			<div class="Normal">
+			<div class="Normal nowrap">
 				<a href='<%= BuildLinkUrl("&amp;mid="+ ModuleId +"&amp;ctl=admincontainer&amp;adminType=admintools")%>'>
 					<asp:Label ID="lblAdminTools" ResourceKey="lblAdminTools" Runat="server"></asp:Label></a>
 			</div>
@@ -88,7 +88,7 @@
 		</div>
 
 		<div class="admin_item_text">
-			<div class="Normal">
+			<div class="Normal nowrap">
 				<a href='<%= BuildLinkUrl("&amp;mid="+ ModuleId +"&amp;ctl=admincontainer&amp;adminType=deleteItem")%>'>
 					<asp:Label ID="lblDeleteItem" ResourceKey="lblDeleteItem" Runat="server"></asp:Label></a>
 			</div>
@@ -104,7 +104,7 @@
 		</div>
 
 		<div class="admin_item_text">
-			<div class="Normal">
+			<div class="Normal nowrap">
 				<a href='<%= BuildLinkUrl("&amp;mid="+ ModuleId +"&amp;ctl=admincontainer&amp;adminType=syndication")%>'>
 					<asp:Label ID="lblSyndication" ResourceKey="lblSyndication" Runat="server"></asp:Label></a>
 			</div>

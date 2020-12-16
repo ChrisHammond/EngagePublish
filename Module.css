@@ -14,7 +14,7 @@
 
 /*nowrap only work when applied to a td directly (either as <td class="nowrap"> or <table class="nowrapTable">)*/
 .nowrap {
-    white-space: normal;
+    white-space: nowrap;
 }
 
 .nowrapTable td {
@@ -71,10 +71,9 @@
 }
 
 .admin_item {
-    width: 120px;
+    width: 175px;
     float: left;
-    text-align: center;
-    
+    text-align: center;    
 }
 
 
@@ -82,10 +81,12 @@
 .admin_item_icon {
     width: 70px;
     min-height: 45px;
+    margin: 0 auto;
+    text-align:center;
 }
 
 .admin_item_text {
-    width: 70px;
+    width: 100%;
     padding-top: 5px;
     clear: both;
 }
