@@ -1,6 +1,6 @@
 <dotnetnuke type="Package" version="5.0">
   <packages>
-    <package name="Engage: Publish" type="Module" version="06.00.05">
+    <package name="Engage: Publish" type="Module" version="06.00.06">
       <friendlyName>Engage: Publish</friendlyName>
       <description>The DotNetNuke Publishing module by Engage Software (www.engagesoftware.com), modified and maintained by Christoc.com</description>
       <owner>
@@ -502,7 +502,12 @@
               <name>06.00.03.SqlDataProvider</name>
               <version>06.00.03</version>
             </script>
+			  <script type="Install">
 
+				  <path>Providers\DataProviders\SqlDataProvider</path>
+				  <name>06.00.06.SqlDataProvider</name>
+				  <version>06.00.06</version>
+			  </script>
 
           </scripts>
         </component>

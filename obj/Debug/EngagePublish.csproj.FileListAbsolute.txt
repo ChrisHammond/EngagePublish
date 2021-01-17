@@ -25,3 +25,4 @@ C:\websites\dnndev.me\DesktopModules\Engage-Publish\obj\Debug\EngagePublish.cspr
 C:\websites\dnndev.me\DesktopModules\Engage-Publish\obj\Debug\EngagePublish.dll
 C:\websites\dnndev.me\DesktopModules\Engage-Publish\obj\Debug\EngagePublish.pdb
 C:\websites\dnndev.me\DesktopModules\Engage-Publish\obj\Debug\EngagePublish.csproj.CopyComplete
+C:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Debug\EngagePublish.csproj.CoreCompileInputs.cache
