@@ -3,23 +3,23 @@
 
 
 
-<table border="0" class="Normal">
+<table border="0" class="">
     <tr valign="top">
         <td>
-            <dnn:Label ID="lblItemType" ResourceKey="lblItemType" Runat="server" CssClass="Normal" ControlName="cboCategories"></dnn:Label></td>
+            <dnn:Label ID="lblItemType" ResourceKey="lblItemType" Runat="server" CssClass="" ControlName="cboCategories"></dnn:Label></td>
         <td>
-            <asp:DropDownList ID="cboCategories" runat="server" AutoPostBack="True" CssClass="Normal"></asp:DropDownList></td>
+            <asp:DropDownList ID="cboCategories" runat="server" AutoPostBack="True" CssClass=""></asp:DropDownList></td>
         <td>
-            <dnn:Label ID="lblWorkflow" ResourceKey="lblWorkFlow" Runat="server" CssClass="Normal" ControlName="cboWorkFlow"></dnn:Label></td>
+            <dnn:Label ID="lblWorkflow" ResourceKey="lblWorkFlow" Runat="server" CssClass="" ControlName="cboWorkFlow"></dnn:Label></td>
         <td>
-            <asp:DropDownList ID="cboWorkflow" runat="server" AutoPostBack="True" CssClass="Normal"></asp:DropDownList></td>
+            <asp:DropDownList ID="cboWorkflow" runat="server" AutoPostBack="True" CssClass=""></asp:DropDownList></td>
         <td>
-            <dnn:Label ID="lblArticleSearch" ResourceKey="lblArticleSearch" Runat="server" cssClass="Normal" ControlName="txtArticleSearch"></dnn:Label></td>
+            <dnn:Label ID="lblArticleSearch" ResourceKey="lblArticleSearch" Runat="server" cssClass="" ControlName="txtArticleSearch"></dnn:Label></td>
         <td>
-            <asp:TextBox ID="txtArticleSearch" runat="server" CssClass="Normal"></asp:TextBox></td>
+            <asp:TextBox ID="txtArticleSearch" runat="server" CssClass=""></asp:TextBox></td>
         <td>
             <asp:LinkButton ID="btnFilter" runat="server" resourcekey="btnFilter"
-                OnClick="btnFilter_Click" CssClass="Normal" /></td>
+                OnClick="btnFilter_Click" CssClass="" /></td>
 
     </tr>
 </table>
@@ -28,11 +28,11 @@
         Visible="false"
         runat="server"
         EnableViewState="true"
-        AlternatingRowStyle-CssClass="DataGrid_AlternatingItem Normal"
+        AlternatingRowStyle-CssClass="DataGrid_AlternatingItem"
         HeaderStyle-CssClass="DataGrid_Header"
-        RowStyle-CssClass="DataGrid_Item Normal"
+        RowStyle-CssClass="DataGrid_Item"
         PagerStyle-CssClass="Normal"
-        CssClass="Normal"
+        CssClass=""
         AutoGenerateColumns="false"
         Width="100%"
         AllowPaging="true"
@@ -51,35 +51,35 @@
 
             <asp:TemplateField ShowHeader="true" HeaderText="ID" SortExpression="ItemId">
                 <ItemTemplate>
-                    <asp:HyperLink ID="hlId" runat="server" CssClass="Normal" NavigateUrl='<%# GetItemVersionLinkUrl(DataBinder.Eval(Container.DataItem,"ItemVersionId")) %>' Text='<%# DataBinder.Eval(Container.DataItem,"ItemId") %>' />
+                    <asp:HyperLink ID="hlId" runat="server" CssClass="" NavigateUrl='<%# GetItemVersionLinkUrl(DataBinder.Eval(Container.DataItem,"ItemVersionId")) %>' Text='<%# DataBinder.Eval(Container.DataItem,"ItemId") %>' />
                     <asp:Label ID="lblItemVersionId" runat="server" Visible="false" Text='<%# DataBinder.Eval(Container.DataItem,"ItemVersionId") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
 
             <asp:TemplateField ShowHeader="true" HeaderText="Name" SortExpression="Name">
                 <ItemTemplate>
-                    <asp:HyperLink ID="hlPreview" runat="server" CssClass="Normal" NavigateUrl='<%# GetItemVersionLinkUrl(DataBinder.Eval(Container.DataItem,"ItemVersionId")) %>'
+                    <asp:HyperLink ID="hlPreview" runat="server" CssClass="" NavigateUrl='<%# GetItemVersionLinkUrl(DataBinder.Eval(Container.DataItem,"ItemVersionId")) %>'
                         Text='<%# DataBinder.Eval(Container.DataItem,"Name") %>'></asp:HyperLink>
                 </ItemTemplate>
             </asp:TemplateField>
 
             <asp:TemplateField ShowHeader="true" HeaderText="Description" SortExpression="Name">
                 <ItemTemplate>
-                    <asp:Label ID="lblDescription" runat="server" CssClass="Normal" Text='<%# GetDescription(DataBinder.Eval(Container.DataItem,"Description")) %>'></asp:Label>
+                    <asp:Label ID="lblDescription" runat="server" CssClass="" Text='<%# GetDescription(DataBinder.Eval(Container.DataItem,"Description")) %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="Author" HeaderText="DisplayName" SortExpression="Author" ItemStyle-CssClass="Normal" />
-            <asp:BoundField DataField="CreatedDate" HeaderText="CreatedDate" SortExpression="CreatedDate" ItemStyle-CssClass="Normal" />
-            <asp:BoundField DataField="LastUpdated" HeaderText="LastUpdated" SortExpression="LastUpdated" ItemStyle-CssClass="Normal" />
+            <asp:BoundField DataField="Author" HeaderText="DisplayName" SortExpression="Author" ItemStyle-CssClass="" />
+            <asp:BoundField DataField="CreatedDate" HeaderText="CreatedDate" SortExpression="CreatedDate" ItemStyle-CssClass="" />
+            <asp:BoundField DataField="LastUpdated" HeaderText="LastUpdated" SortExpression="LastUpdated" ItemStyle-CssClass="" />
             <asp:TemplateField ShowHeader="true" HeaderText="">
                 <ItemTemplate>
-                    <asp:HyperLink ID="hlVersions" runat="server" CssClass="Normal" NavigateUrl='<%# GetVersionsUrl(DataBinder.Eval(Container.DataItem,"ItemId")) %>'
+                    <asp:HyperLink ID="hlVersions" runat="server" CssClass="" NavigateUrl='<%# GetVersionsUrl(DataBinder.Eval(Container.DataItem,"ItemId")) %>'
                         Text='<%# GetLocalizedVersionText() %>'></asp:HyperLink>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField ShowHeader="true" HeaderText="">
                 <ItemTemplate>
-                    <asp:HyperLink ID="hlEdit" runat="server" CssClass="Normal" NavigateUrl='<%# GetArticleEditUrl(DataBinder.Eval(Container.DataItem,"ItemVersionId")) %>'
+                    <asp:HyperLink ID="hlEdit" runat="server" CssClass="" NavigateUrl='<%# GetArticleEditUrl(DataBinder.Eval(Container.DataItem,"ItemVersionId")) %>'
                         Text='<%# GetLocalizedEditText() %>'></asp:HyperLink>
                 </ItemTemplate>
             </asp:TemplateField>
