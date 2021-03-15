@@ -37,8 +37,8 @@
     </asp:Panel>
 
     <div id="divArticlePage" class="Normal">
-        <asp:HyperLink rel="prev" ID="lnkPreviousPage" CssClass="Publish_lnkPrevious" runat="server" />
-        <asp:HyperLink rel="next" ID="lnkNextPage" CssClass="Publish_lnkNext" runat="server" />
+        <asp:HyperLink rel="prev" ID="lnkPreviousPage" CssClass="Publish_lnkPrevious btn btn-secondary" runat="server" />
+        <asp:HyperLink rel="next" ID="lnkNextPage" CssClass="Publish_lnkNext btn btn-primary" runat="server" />
     </div>
 
     <div id="div1" class="Normal">
