@@ -66,7 +66,7 @@ namespace Engage.Dnn.Publish.CategoryControls
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trCategoryId;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl trCategoryId;
 
         /// <summary>
         /// lblCategoryId control.
@@ -114,15 +114,6 @@ namespace Engage.Dnn.Publish.CategoryControls
         protected global::System.Web.UI.WebControls.PlaceHolder phItemEdit;
 
         /// <summary>
-        /// trCategoryPermissions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trCategoryPermissions;
-
-        /// <summary>
         /// lblChooseRoles control.
         /// </summary>
         /// <remarks>
@@ -130,6 +121,15 @@ namespace Engage.Dnn.Publish.CategoryControls
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.UI.UserControls.LabelControl lblChooseRoles;
+
+        /// <summary>
+        /// trCategoryPermissions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl trCategoryPermissions;
 
         /// <summary>
         /// phCategoryPermissions control.
@@ -219,7 +219,7 @@ namespace Engage.Dnn.Publish.CategoryControls
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow rowCommentForum;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl rowCommentForum;
 
         /// <summary>
         /// lblCommentForum control.

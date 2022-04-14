@@ -2,6 +2,9 @@
 Release notes
 
 
+06.00.07
+-General cleanup
+
 
 06.00.06
 -Performance updates, added archive into View Items (vwitems) to restrict archived versions from being pulled back. Need to manually run the script to add the archive flag to old versions.

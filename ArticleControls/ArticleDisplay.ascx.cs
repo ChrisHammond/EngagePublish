@@ -727,6 +727,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                 {
                     //pnlAuthor.Visible = true;
                     lblAuthor.Text = article.Author;
+                    lblAuthorInfo.Visible = true;
                     if (lblAuthor.Text.Trim().Length < 1)
                     {
                         var uc = new UserController();
@@ -742,6 +743,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                 else
                 {
                     //pnlAuthor.Visible = false;
+
                 }
 
                 //get the pnlPrinterFriendly setting
@@ -813,7 +815,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                 {
                     lnkPreviousPage.Text = Localization.GetString("lnkPreviousPage", LocalResourceFile);
                     lnkPreviousPage.NavigateUrl = Utility.GetItemLinkUrl(article.ItemId, PortalId, TabId, ModuleId, PageId - 1, GetCultureName());
-                    lnkNextPage.Attributes.Add("rel", "prev");
+                    lnkPreviousPage.Attributes.Add("rel", "prev");
                 }
 
                 if (PageId < article.GetNumberOfPages)

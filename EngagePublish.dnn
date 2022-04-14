@@ -1,12 +1,12 @@
 <dotnetnuke type="Package" version="5.0">
   <packages>
-    <package name="Engage: Publish" type="Module" version="06.00.06">
+    <package name="Engage: Publish" type="Module" version="06.00.07">
       <friendlyName>Engage: Publish</friendlyName>
       <description>The DotNetNuke Publishing module by Engage Software (www.engagesoftware.com), modified and maintained by Christoc.com</description>
       <owner>
         <name>Chris Hammond</name>
         <organization>Christoc.com</organization>
-        <url>http://www.christoc.com</url>
+        <url>https://www.christoc.com</url>
         <email>publish@christoc.com</email>
       </owner>
       <license src="License.txt"/>

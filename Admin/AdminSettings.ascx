@@ -71,7 +71,7 @@
 				<dnn:label id="plDefaultDisplayPage" runat="server" controlname="ddlDefaultDisplay" text="Default Display Page:"></dnn:label>
 			</td>
 			<td>
-				<asp:DropDownList ID="ddlDefaultDisplay" runat="server"></asp:DropDownList><asp:RequiredFieldValidator ID="rfvDefaultDisplayPage" runat="server" ControlToValidate="ddlDefaultDisplay" resourcekey="rfvDefaultDisplayPage" InitialValue="-1" Display="Dynamic"></asp:RequiredFieldValidator>
+				<asp:DropDownList ID="ddlDefaultDisplay" runat="server"></asp:DropDownList><asp:RequiredFieldValidator ID="rfvDefaultDisplayPage" runat="server" ControlToValidate="ddlDefaultDisplay" resourcekey="rfvDefaultDisplayPage" InitialValue="-1" Display="Dynamic" CssClass="error"></asp:RequiredFieldValidator>
 			</td>
 		</tr>
         <tr>

@@ -54,6 +54,10 @@
         vertical-align: top;
     }
 
+.fullWidth .dnnLabel{
+    width:100% !important;
+}
+
 .AdminSettingsTable {
     width: 100%;
 }

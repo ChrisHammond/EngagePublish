@@ -14,7 +14,7 @@
         <asp:PlaceHolder ID="phPrinterFriendly" runat="server"></asp:PlaceHolder>
         <asp:PlaceHolder ID="phEmailAFriend" runat="server"></asp:PlaceHolder>
         <asp:Literal ID="lblDateCreated" runat="server"></asp:Literal>
-        <asp:Label ID="lblAuthorInfo" runat="server" resourcekey="lblAuthorInfo"></asp:Label>
+        <asp:Label ID="lblAuthorInfo" runat="server" resourcekey="lblAuthorInfo" Visible="false"></asp:Label>
         <asp:Literal ID="lblAuthor" runat="server"></asp:Literal>
 
         <asp:Literal ID="lblLastUpdated" runat="server"></asp:Literal>
@@ -37,8 +37,8 @@
     </asp:Panel>
 
     <div id="divArticlePage" class="Normal">
-        <asp:HyperLink rel="prev" ID="lnkPreviousPage" CssClass="Publish_lnkPrevious btn btn-secondary" runat="server" />
-        <asp:HyperLink rel="next" ID="lnkNextPage" CssClass="Publish_lnkNext btn btn-primary" runat="server" />
+        <asp:HyperLink rel="prev" ID="lnkPreviousPage" CssClass="Publish_lnkPrevious btn btn-secondary" runat="server" Visible="false" />
+        <asp:HyperLink rel="next" ID="lnkNextPage" CssClass="Publish_lnkNext btn btn-primary" runat="server" Visible="false" />
     </div>
 
     <div id="div1" class="Normal">
