@@ -1548,6 +1548,21 @@ namespace Engage.Dnn.Publish.Util
             }
         }
 
+        public static bool IsLocalURL(this string _url)
+        {
+            bool flag = false;
+            try
+            {
+                var url = new Uri(_url);
+                var ctx = HttpContext.Current;
+                if (url.Host.Equals(ctx.Request.Url.Host) && url.Port.Equals(ctx.Request.Url.Port))
+                    flag = true;
+            }
+            catch { }
+            return flag;
+        }
+
+
         //Utility method for replacing YouTube and Flickr tokens in text
         public static string ReplaceTokens(string replaceText)
         {

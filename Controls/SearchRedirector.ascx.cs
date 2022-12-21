@@ -16,7 +16,7 @@ namespace Engage.Dnn.Publish.Controls
     using DotNetNuke.Services.Exceptions;
     using Util;
 
-	public partial class SearchRedirector :  ModuleBase, IActionable//, ISearchable
+	public partial class SearchRedirector :  ModuleBase, IActionable, ISearchable
 	{
 
 		#region Web Form Designer generated code
@@ -71,13 +71,13 @@ namespace Engage.Dnn.Publish.Controls
 			}
 		}
 
-        
-  //      [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "0#", Justification = "Interface Implementation"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "Interface Implementation"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "modInfo", Justification = "Interface implementation")]
-		//public DotNetNuke.Services.Search.SearchItemInfoCollection GetSearchItems(ModuleInfo modInfo)
-		//{
-		//	// included as a stub only so that the core knows this module Implements Entities.Modules.ISearchable
-		//	return null;
-		//}
+
+		//      [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1709:IdentifiersShouldBeCasedCorrectly", MessageId = "0#", Justification = "Interface Implementation"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Justification = "Interface Implementation"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId = "modInfo", Justification = "Interface implementation")]
+		public DotNetNuke.Services.Search.SearchItemInfoCollection GetSearchItems(ModuleInfo modInfo)
+		{
+			// included as a stub only so that the core knows this module Implements Entities.Modules.ISearchable
+			return null;
+		}
 
 		#endregion
 

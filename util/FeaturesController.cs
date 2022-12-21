@@ -28,7 +28,7 @@ namespace Engage.Dnn.Publish.Util
     /// <summary>
     /// Features Controller Class supports IPortable currently.
     /// </summary>
-    public class FeaturesController : IPortable //, ISearchable
+    public class FeaturesController : IPortable, ISearchable
     {
         #region IPortable Members
 
@@ -103,103 +103,103 @@ namespace Engage.Dnn.Publish.Util
 
         //#region ISearchable Members
 
-        //public SearchItemInfoCollection GetSearchItems(ModuleInfo modInfo)
-        //{
-        //    var items = new SearchItemInfoCollection();
-        //    AddArticleSearchItems(items, modInfo);
-        //    return items;
-        //}
+        public SearchItemInfoCollection GetSearchItems(ModuleInfo modInfo)
+        {
+            var items = new SearchItemInfoCollection();
+            AddArticleSearchItems(items, modInfo);
+            return items;
+        }
 
         //#endregion
 
-        //private static void AddArticleSearchItems(SearchItemInfoCollection items, ModuleInfo modInfo)
-        //{
-        //    //get all the updated items
-        //    //DataTable dt = Article.GetArticlesSearchIndexingUpdated(modInfo.PortalID, modInfo.ModuleDefID, modInfo.TabID);
+        private static void AddArticleSearchItems(SearchItemInfoCollection items, ModuleInfo modInfo)
+        {
+            //get all the updated items
+            //DataTable dt = Article.GetArticlesSearchIndexingUpdated(modInfo.PortalID, modInfo.ModuleDefID, modInfo.TabID);
 
-        //    //TODO: we should get articles by ModuleID and only perform indexing by ModuleID 
-        //    DataTable dt = Article.GetArticlesByModuleId(modInfo.ModuleID, true);
-        //    SearchArticleIndex(dt, items, modInfo);
+            //TODO: we should get articles by ModuleID and only perform indexing by ModuleID 
+            DataTable dt = Article.GetArticlesByModuleId(modInfo.ModuleID, true);
+            SearchArticleIndex(dt, items, modInfo);
 
-        //}
+        }
 
-        //private static void SearchArticleIndex(DataTable dt, SearchItemInfoCollection items, ModuleInfo modInfo)
-        //{
-        //    for (int i = 0; i < dt.Rows.Count; i++)
-        //    {
-        //        DataRow row = dt.Rows[i];
+        private static void SearchArticleIndex(DataTable dt, SearchItemInfoCollection items, ModuleInfo modInfo)
+        {
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DataRow row = dt.Rows[i];
 
 
-        //        var searchedContent = new StringBuilder(8192);
-        //        //article name
-        //        string name = HtmlUtils.Clean(row["Name"].ToString().Trim(), false);
-        //        if (Utility.HasValue(name))
-        //        {
-        //            searchedContent.AppendFormat("{0}{1}", name, " ");
-        //        }
-        //        else
-        //        {
-        //            //do we bother with the rest?
-        //            continue;
-        //        }
+                var searchedContent = new StringBuilder(8192);
+                //article name
+                string name = HtmlUtils.Clean(row["Name"].ToString().Trim(), false);
+                if (Utility.HasValue(name))
+                {
+                    searchedContent.AppendFormat("{0}{1}", name, " ");
+                }
+                else
+                {
+                    //do we bother with the rest?
+                    continue;
+                }
 
-        //        //article text
-        //        string articleText = row["ArticleText"].ToString().Trim();
-        //        if (Utility.HasValue(articleText))
-        //        {
-        //            searchedContent.AppendFormat("{0}{1}", articleText, " ");
-        //        }
+                //article text
+                string articleText = row["ArticleText"].ToString().Trim();
+                if (Utility.HasValue(articleText))
+                {
+                    searchedContent.AppendFormat("{0}{1}", articleText, " ");
+                }
 
-        //        //article description
-        //        string description = row["Description"].ToString().Trim();
-        //        if (Utility.HasValue(description))
-        //        {
-        //            searchedContent.AppendFormat("{0}{1}", description, " ");
-        //        }
+                //article description
+                string description = row["Description"].ToString().Trim();
+                if (Utility.HasValue(description))
+                {
+                    searchedContent.AppendFormat("{0}{1}", description, " ");
+                }
 
-        //        //article metakeyword
-        //        string keyword = row["MetaKeywords"].ToString().Trim();
-        //        if (Utility.HasValue(keyword))
-        //        {
-        //            searchedContent.AppendFormat("{0}{1}", keyword, " ");
-        //        }
+                //article metakeyword
+                string keyword = row["MetaKeywords"].ToString().Trim();
+                if (Utility.HasValue(keyword))
+                {
+                    searchedContent.AppendFormat("{0}{1}", keyword, " ");
+                }
 
-        //        //article metadescription
-        //        string metaDescription = row["MetaDescription"].ToString().Trim();
-        //        if (Utility.HasValue(metaDescription))
-        //        {
-        //            searchedContent.AppendFormat("{0}{1}", metaDescription, " ");
-        //        }
+                //article metadescription
+                string metaDescription = row["MetaDescription"].ToString().Trim();
+                if (Utility.HasValue(metaDescription))
+                {
+                    searchedContent.AppendFormat("{0}{1}", metaDescription, " ");
+                }
 
-        //        //article metatitle
-        //        string metaTitle = row["MetaTitle"].ToString().Trim();
-        //        if (Utility.HasValue(metaTitle))
-        //        {
-        //            searchedContent.AppendFormat("{0}{1}", metaTitle, " ");
-        //        }
+                //article metatitle
+                string metaTitle = row["MetaTitle"].ToString().Trim();
+                if (Utility.HasValue(metaTitle))
+                {
+                    searchedContent.AppendFormat("{0}{1}", metaTitle, " ");
+                }
 
-        //        string itemId = row["ItemId"].ToString();
-        //        var item = new SearchItemInfo
-        //                       {
-        //                           Title = name,
-        //                           Description = HtmlUtils.Clean(description, false),
-        //                           Author = Convert.ToInt32(row["AuthorUserId"], CultureInfo.InvariantCulture),
-        //                           PubDate = Convert.ToDateTime(row["LastUpdated"], CultureInfo.InvariantCulture),
-        //                           ModuleId = modInfo.ModuleID,
-        //                           SearchKey = "Article-" + itemId,
-        //                           Content =
-        //                                   HtmlUtils.StripWhiteSpace(
-        //                                   HtmlUtils.Clean(searchedContent.ToString(), false), true),
-        //                           GUID = "itemid=" + itemId
-        //                       };
+                string itemId = row["ItemId"].ToString();
+                var item = new SearchItemInfo
+                {
+                    Title = name,
+                    Description = HtmlUtils.Clean(description, false),
+                    Author = Convert.ToInt32(row["AuthorUserId"], CultureInfo.InvariantCulture),
+                    PubDate = Convert.ToDateTime(row["LastUpdated"], CultureInfo.InvariantCulture),
+                    ModuleId = modInfo.ModuleID,
+                    SearchKey = "Article-" + itemId,
+                    Content =
+                                           HtmlUtils.StripWhiteSpace(
+                                           HtmlUtils.Clean(searchedContent.ToString(), false), true),
+                    GUID = "itemid=" + itemId
+                };
 
-        //        items.Add(item);
+                items.Add(item);
 
-        //        //Check if the Portal is setup to enable venexus indexing
-        
-        //        //}
-        //    }
-        // }
+                //Check if the Portal is setup to enable venexus indexing
+
+                //}
+            }
+        }
 
     }
 }

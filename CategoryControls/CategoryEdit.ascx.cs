@@ -27,6 +27,7 @@ namespace Engage.Dnn.Publish.CategoryControls
     using Controls;
     using Security;
     using Util;
+    using System.Web;
 
     public partial class CategoryEdit : ModuleBase
     {
@@ -401,7 +402,11 @@ namespace Engage.Dnn.Publish.CategoryControls
                 }
 
                 string returnUrl = Server.UrlDecode(Request.QueryString["returnUrl"]);
-                if (!Utility.HasValue(returnUrl))
+
+                //check if localurl 
+                                             
+
+                if (!Utility.HasValue(returnUrl) || !Utility.IsLocalURL(returnUrl))
                 {
                     Response.Redirect(Globals.NavigateURL(TabId, "", "", "ctl=" + Utility.AdminContainer, "mid=" + ModuleId, "adminType=itemCreated",
                         "itemId=" + VersionInfoObject.ItemId), true);
