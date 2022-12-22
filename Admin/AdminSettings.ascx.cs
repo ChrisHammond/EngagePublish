@@ -148,7 +148,7 @@ namespace Engage.Dnn.Publish.Admin
                 //HostController.Instance.Update(Utility.PublishCommentAutoApprove + PortalId.ToString(CultureInfo.InvariantCulture), chkCommentAutoApprove.Checked.ToString(CultureInfo.InvariantCulture));
 
                 string returnUrl = Server.UrlDecode(Request.QueryString["returnUrl"]);
-                if (!Utility.HasValue(returnUrl))
+                if (!Utility.HasValue(returnUrl) || !Utility.IsLocalURL(returnUrl))
                 {
                     Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(TabId, Utility.AdminContainer, "&mid=" + ModuleId.ToString(CultureInfo.InvariantCulture)));
                 }

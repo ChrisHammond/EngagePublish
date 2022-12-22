@@ -450,7 +450,9 @@ namespace Engage.Dnn.Publish.ArticleControls
         private void CmdCancelClick(object sender, EventArgs e)
         {
             string returnUrl = Server.UrlDecode(Request.QueryString["returnUrl"]);
-            if (!Utility.HasValue(returnUrl))
+
+
+            if (!Utility.HasValue(returnUrl) || !Utility.IsLocalURL(returnUrl))
             {
                 Response.Redirect(BuildCategoryListUrl(ItemType.Article), true);
             }
@@ -590,7 +592,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                 VersionInfoObject.Save(UserId);
 
                 string returnUrl = Server.UrlDecode(Request.QueryString["returnUrl"]);
-                if (!Utility.HasValue(returnUrl))
+                if (!Utility.HasValue(returnUrl) || !Utility.IsLocalURL(returnUrl))
                 {
                     Response.Redirect(Globals.NavigateURL(TabId, "", "", "ctl=" + Utility.AdminContainer, "mid=" + ModuleId.ToString(CultureInfo.InvariantCulture),
                         "adminType=itemCreated", "itemId=" + VersionInfoObject.ItemId.ToString(CultureInfo.InvariantCulture)), true);

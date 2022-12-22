@@ -425,7 +425,7 @@ namespace Engage.Dnn.Publish.CategoryControls
         private void CmdCancelClick(object sender, EventArgs e)
         {
             string returnUrl = Server.UrlDecode(Request.QueryString["returnUrl"]);
-            if (!Utility.HasValue(returnUrl))
+            if (!Utility.HasValue(returnUrl) || !Utility.IsLocalURL(returnUrl))
             {
                 Response.Redirect(BuildCategoryListUrl(ItemType.Category), true);
             }
