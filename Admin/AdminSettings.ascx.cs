@@ -154,7 +154,14 @@ namespace Engage.Dnn.Publish.Admin
                 }
                 else
                 {
-                    Response.Redirect(returnUrl, true);
+                    if (Utility.IsLocalURL(returnUrl))
+                    {
+                        Response.Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        Response.Redirect("/");
+                    }
                 }
             }
         }

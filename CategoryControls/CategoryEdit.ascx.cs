@@ -431,7 +431,14 @@ namespace Engage.Dnn.Publish.CategoryControls
             }
             else
             {
-                Response.Redirect(returnUrl, true);
+                if (Utility.IsLocalURL(returnUrl))
+                {
+                    Response.Redirect(returnUrl);
+                }
+                else
+                {
+                    Response.Redirect("/");
+                }
             }
         }
 

@@ -599,7 +599,14 @@ namespace Engage.Dnn.Publish.ArticleControls
                 }
                 else
                 {
-                    Response.Redirect(returnUrl);
+                    if(Utility.IsLocalURL(returnUrl))
+                    { 
+                        Response.Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        Response.Redirect("/");
+                    }
                 }
             }
 
