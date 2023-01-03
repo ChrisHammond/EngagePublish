@@ -17,6 +17,8 @@ namespace Engage.Dnn.Publish.Admin
     using System.Collections.Generic;
     using System.Data;
     using System.Globalization;
+    using System.Net;
+    using System.Runtime.Remoting.Contexts;
     using System.Web.UI.WebControls;
     using DotNetNuke.Entities.Modules;
     using DotNetNuke.Entities.Tabs;
@@ -156,11 +158,19 @@ namespace Engage.Dnn.Publish.Admin
                 {
                     if (Utility.IsLocalURL(returnUrl))
                     {
-                        Response.Redirect(returnUrl);
+
+                        var response = Response;
+                        response.StatusCode = Int32.Parse(HttpStatusCode.OK.ToString());
+                        response.Headers["Location"] = returnUrl;
+
+                        //response.Redirect(returnUrl);
                     }
                     else
                     {
-                        Response.Redirect("/");
+                        var response = Response;
+                        response.StatusCode = Int32.Parse(HttpStatusCode.OK.ToString());
+                        response.Headers["Location"] = "/";
+                        //Response.Redirect("/");
                     }
                 }
             }
