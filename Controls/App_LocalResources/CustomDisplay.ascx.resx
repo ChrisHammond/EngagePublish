@@ -121,10 +121,10 @@
     <value>Edit</value>
   </data>
   <data name="lnkNext.Text" xml:space="preserve">
-    <value>Next</value>
+    <value>Next Page</value>
   </data>
   <data name="lnkPrevious.Text" xml:space="preserve">
-    <value>Previous</value>
+    <value>Previous Page</value>
   </data>
   <data name="lnkReadMore.Text" xml:space="preserve">
     <value>Read More...</value>

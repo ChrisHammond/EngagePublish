@@ -28,6 +28,7 @@ namespace Engage.Dnn.Publish.CategoryControls
     using Security;
     using Util;
     using System.Web;
+    using System.Net;
 
     public partial class CategoryEdit : ModuleBase
     {
@@ -433,11 +434,19 @@ namespace Engage.Dnn.Publish.CategoryControls
             {
                 if (Utility.IsLocalURL(returnUrl))
                 {
-                    Response.Redirect(returnUrl);
+
+                    var response = Response;
+                    response.StatusCode = Int32.Parse(HttpStatusCode.OK.ToString());
+                    response.Headers["Location"] = returnUrl;
+
+                    //response.Redirect(returnUrl);
                 }
                 else
                 {
-                    Response.Redirect("/");
+                    var response = Response;
+                    response.StatusCode = Int32.Parse(HttpStatusCode.OK.ToString());
+                    response.Headers["Location"] = "/";
+                    //Response.Redirect("/");
                 }
             }
         }
