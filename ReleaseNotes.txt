@@ -2,6 +2,10 @@
 Release notes
 
 
+06.00.09
+-OG:Title and OG:Type cleanup
+
+
 06.00.07
 -General cleanup
 

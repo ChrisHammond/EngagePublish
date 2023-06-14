@@ -1009,8 +1009,6 @@ namespace Engage.Dnn.Publish
             //TODO: should we also allow for setting the module title here?
             var tp = (CDefault)Page;
 
-
-
             if (AllowTitleUpdate && (tp.Title != versionInfoObject.MetaTitle && tp.Title!= versionInfoObject.Name))
             {
                 
@@ -1021,6 +1019,14 @@ namespace Engage.Dnn.Publish
                 ogTitle.Attributes["content"] = tp.Title;
                 if (Page.Header.Controls.IndexOf(ogTitle) < 1)
                     Page.Header.Controls.Add(ogTitle);
+
+
+                var ogType = new HtmlGenericControl("meta");
+                ogType.Attributes["property"] = "og:type";
+                ogType.Attributes["content"] = "article";
+
+                if (Page.Header.Controls.IndexOf(ogType) < 1)
+                    Page.Header.Controls.Add(ogType);
 
                 if (LogBreadcrumb)
                 {
@@ -1050,7 +1056,9 @@ namespace Engage.Dnn.Publish
                 //open graph image using the engage publish thumbnail
                 var ogImage = new HtmlGenericControl("meta");
                 ogImage.Attributes["property"] = "og:image";
-                ogImage.Attributes["content"] = VersionInfoObject.Thumbnail;
+                ogImage.Attributes["content"] = GetThumbnailUrl(VersionInfoObject.Thumbnail);
+                //build the full URL
+
                 if (Page.Header.Controls.IndexOf(ogImage) < 1)
                     Page.Header.Controls.Add(ogImage);
                 
@@ -1062,7 +1070,8 @@ namespace Engage.Dnn.Publish
                     Page.Header.Controls.Add(ogSiteName);
 
                 //TODO: need to have a setting for facebook app id
-                //TODO: set the og url
+
+                //set the og url
                 var ogUrl = new HtmlGenericControl("meta");
                 ogUrl.Attributes["property"] = "og:url";
                 ogUrl.Attributes["content"] = GetItemLinkUrl(VersionInfoObject.ItemId);
