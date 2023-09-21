@@ -18,6 +18,7 @@ namespace Engage.Dnn.Publish.Util
     using System.Globalization;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Text;
     using System.Web;
     using System.Xml.XPath;
@@ -229,8 +230,9 @@ namespace Engage.Dnn.Publish.Util
                     Body = content,  // the long form of your content
                     ModifiedTimeUtc = Convert.ToDateTime(row["LastUpdated"]).ToUniversalTime(),  // a time stamp for the search results page
                     CultureCode = moduleInfo.CultureCode, // the current culture code
-                    IsActive = true  // allows you to remove the item from the search index (great for soft deletes)
-                };
+                    IsActive = true, // allows you to remove the item from the search index (great for soft deletes)
+                    Url = Utility.GetItemLinkUrl(Convert.ToInt32(row["itemId"], CultureInfo.InvariantCulture), moduleInfo.PortalID)
+            };
 
                 searchDocuments.Add(searchDocumnet);
             }
