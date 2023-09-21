@@ -13,22 +13,26 @@
 namespace Engage.Dnn.Publish.Util
 {
     using System;
+    using System.Collections.Generic;
     using System.Data;
     using System.Globalization;
     using System.IO;
+    using System.Linq;
     using System.Text;
     using System.Web;
     using System.Xml.XPath;
     using DotNetNuke.Common.Utilities;
     using DotNetNuke.Entities.Modules;
     using DotNetNuke.Services.Exceptions;
+    using DotNetNuke.Services.Log.EventLog;
     using DotNetNuke.Services.Search;
+    using DotNetNuke.Services.Search.Entities;
     using Portability;
 
     /// <summary>
     /// Features Controller Class supports IPortable currently.
     /// </summary>
-    public class FeaturesController : IPortable, ISearchable
+    public class FeaturesController : ModuleSearchBase, IPortable //, ISearchable
     {
         #region IPortable Members
 
@@ -201,5 +205,39 @@ namespace Engage.Dnn.Publish.Util
             }
         }
 
+        public override IList<SearchDocument> GetModifiedSearchDocuments(ModuleInfo moduleInfo, DateTime beginDate)
+        {
+            var searchDocuments = new List<SearchDocument>();
+            DataTable dt = Article.GetArticlesByModuleId(moduleInfo.ModuleID, true);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                if (Convert.ToDateTime(row["LastUpdated"]).ToUniversalTime() <= beginDate.ToUniversalTime() ||
+                    Convert.ToDateTime(row["LastUpdated"]).ToUniversalTime() >= DateTime.UtcNow)
+                    continue;
+
+                var content = string.Format("{0}<br />{1}", HtmlUtils.Clean(row["Name"].ToString().Trim(), false), row["Description"].ToString().Trim());
+
+                var searchDocumnet = new SearchDocument
+                {
+                    UniqueKey = string.Format("Articles:{0}:{1}", moduleInfo.ModuleID, row["itemId"].ToString()),  // any unique identifier to be able to query for your individual record
+                    PortalId = moduleInfo.PortalID,  // the PortalID
+                    TabId = moduleInfo.TabID, // the TabID
+                    AuthorUserId = (int)row["AuthorUserId"], // the person who created the content
+                    Title = row["Name"].ToString().Trim(),  // the title of the content, but should be the module title
+                    Description = row["Description"].ToString().Trim(),  // the description or summary of the content
+                    Body = content,  // the long form of your content
+                    ModifiedTimeUtc = Convert.ToDateTime(row["LastUpdated"]).ToUniversalTime(),  // a time stamp for the search results page
+                    CultureCode = moduleInfo.CultureCode, // the current culture code
+                    IsActive = true  // allows you to remove the item from the search index (great for soft deletes)
+                };
+
+                searchDocuments.Add(searchDocumnet);
+            }
+
+            return searchDocuments;
+        }
+
+       
     }
 }
