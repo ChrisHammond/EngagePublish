@@ -1020,7 +1020,6 @@ namespace Engage.Dnn.Publish
                 if (Page.Header.Controls.IndexOf(ogTitle) < 1)
                     Page.Header.Controls.Add(ogTitle);
 
-
                 var ogType = new HtmlGenericControl("meta");
                 ogType.Attributes["property"] = "og:type";
                 ogType.Attributes["content"] = "article";
@@ -1077,8 +1076,31 @@ namespace Engage.Dnn.Publish
                 ogUrl.Attributes["content"] = GetItemLinkUrl(VersionInfoObject.ItemId);
                 if (Page.Header.Controls.IndexOf(ogUrl) < 1)
                     Page.Header.Controls.Add(ogUrl);
-                
+
+
+                //set canonical tag call
+                SetCanonicalTag(GetItemLinkUrl(VersionInfoObject.ItemId));
+
             }
+        }
+
+        private void SetCanonicalTag(string canonicalUrl)
+        {
+            if (string.IsNullOrEmpty(canonicalUrl))
+                return;
+
+            // Check if a canonical tag already exists
+            var canonicalTag = Page.Header.FindControl("canonicalTag") as System.Web.UI.HtmlControls.HtmlLink;
+
+            if (canonicalTag == null)
+            {
+                canonicalTag = new System.Web.UI.HtmlControls.HtmlLink();
+                canonicalTag.ID = "canonicalTag";
+                canonicalTag.Attributes.Add("rel", "canonical");
+                Page.Header.Controls.Add(canonicalTag);
+            }
+
+            canonicalTag.Attributes.Add("href", canonicalUrl);
         }
 
         public void SetWlwSupport()
