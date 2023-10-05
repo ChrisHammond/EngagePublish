@@ -30,7 +30,7 @@
             <asp:DropDownList ID="ApprovalStatusDropDownList" runat="server" CssClass="Normal" />
         </div>
         <asp:LinkButton ID="lnkSaveApprovalStatus" runat="server" resourcekey="lnkSaveApprovalStatus" OnClick="lnkSaveApprovalStatus_Click" CssClass="btn btn-primary"></asp:LinkButton>
-        <asp:LinkButton ID="lnkSaveApprovalStatusCancel" runat="server" resourcekey="lnkSaveApprovalStatusCancel" OnClick="lnkSaveApprovalStatusCancel_Click" CssClass="btn btn-primary"></asp:LinkButton>
+        <asp:LinkButton ID="lnkSaveApprovalStatusCancel" runat="server" resourcekey="lnkSaveApprovalStatusCancel" OnClick="lnkSaveApprovalStatusCancel_Click" CssClass="btn btn-secondary"></asp:LinkButton>
     </div>
 
     <asp:Label ID="lblApprovalResults" runat="server" Visible="false" CssClass="lblApprovalResults"></asp:Label>

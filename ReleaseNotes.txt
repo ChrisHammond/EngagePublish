@@ -5,6 +5,8 @@ Release notes
 06.00.09
 -OG:Title and OG:Type cleanup
 -Added ModuleSearchBase to feature controller
+-Better BTN styling on the admin nav area
+-Added canonical URLs for articles
 
 
 06.00.07

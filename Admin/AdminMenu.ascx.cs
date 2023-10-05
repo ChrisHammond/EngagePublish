@@ -214,17 +214,17 @@ namespace Engage.Dnn.Publish.Admin
             string localizedItemTypeName = Localization.GetString(currentItemType, LocalResourceFile);
 
             // the following dynamicly builds the Admin Menu for an item when viewing the item display control.
-            AddMenuLink(Localization.GetString("AddNew", LocalResourceFile) + " " + Localization.GetString("Article", LocalResourceFile), BuildAddArticleUrl());
+            AddMenuLink(Localization.GetString("AddNew", LocalResourceFile) + " " + Localization.GetString("Article", LocalResourceFile), BuildAddArticleUrl(),false);
 
             //Article List and Add New should load even if there isn't a valid item.
-            AddMenuLink(Localization.GetString("ArticleList", LocalResourceFile), BuildCategoryListUrl());
+            AddMenuLink(Localization.GetString("ArticleList", LocalResourceFile), BuildCategoryListUrl(), false);
 
 
             if (!currentItemType.Equals("TOPLEVELCATEGORY", StringComparison.OrdinalIgnoreCase))
             {
                 if (currentItemType.Equals("ARTICLE", StringComparison.OrdinalIgnoreCase) || !isAuthorOnly || AllowAuthorEditCategory(PortalId))
                 {
-                    AddMenuLink(Localization.GetString("Edit", LocalResourceFile) + " " + localizedItemTypeName, BuildEditUrl(currentItemType));
+                    AddMenuLink(Localization.GetString("Edit", LocalResourceFile) + " " + localizedItemTypeName, BuildEditUrl(currentItemType), true);
                 }
 
                 if (currentItemType.Equals("CATEGORY", StringComparison.OrdinalIgnoreCase))
@@ -232,18 +232,34 @@ namespace Engage.Dnn.Publish.Admin
                     lnkUpdateStatus.Visible = false;
                 }
 
-                AddMenuLink(localizedItemTypeName + " " + Localization.GetString("Versions", LocalSharedResourceFile), BuildVersionsUrl());
+                AddMenuLink(localizedItemTypeName + " " + Localization.GetString("Versions", LocalSharedResourceFile), BuildVersionsUrl(), false);
             }
         }
 
         private void AddMenuLink(string text, string navigateUrl)
         {
+            AddMenuLink(text, navigateUrl, true);
+        }
+
+        private void AddMenuLink(string text, string navigateUrl, bool primary=false)
+        {
             phLink.Controls.Add(new LiteralControl("<li>"));
+            if (primary)
+            {
+                var menuLink = new HyperLink { NavigateUrl = navigateUrl, Text = text, CssClass = "btn btn-primary" };
+                phLink.Controls.Add(menuLink);
 
-            var menuLink = new HyperLink {NavigateUrl = navigateUrl, Text = text, CssClass="btn btn-primary"};
-            phLink.Controls.Add(menuLink);
+                phLink.Controls.Add(new LiteralControl("</li>"));
 
-            phLink.Controls.Add(new LiteralControl("</li>"));
+            }
+            else
+            {
+                var menuLink = new HyperLink { NavigateUrl = navigateUrl, Text = text, CssClass = "btn btn-secondary" };
+                phLink.Controls.Add(menuLink);
+
+                phLink.Controls.Add(new LiteralControl("</li>"));
+
+            }
         }
 
         protected void lnkSaveApprovalStatus_Click(object sender, EventArgs e)
