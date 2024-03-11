@@ -133,7 +133,7 @@ namespace Engage.Dnn.Publish.Tags
                         sb.Append("</span>");
                         */
                         sb.Append("<a href=\"");
-                        sb.Append(BuildTagLink(tagName, true, string.Empty));
+                        sb.Append(BuildTagLink(tagName, false, string.Empty)); //3-11-2024 - changed true to false, all links go to a unique tag, no filtering subtags anymore for performance reasons
                         sb.Append("\" class=\"tag\">");
                         sb.Append(HttpUtility.HtmlEncode(tagName));
                         sb.Append("</a> </li>");
