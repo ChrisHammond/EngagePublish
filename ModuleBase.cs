@@ -26,6 +26,7 @@ namespace Engage.Dnn.Publish
     using DotNetNuke.Framework;
     using DotNetNuke.Security;
     using Util;
+    using static System.Net.WebRequestMethods;
 
     /// <summary>
     /// 
@@ -1020,6 +1021,19 @@ namespace Engage.Dnn.Publish
                 if (Page.Header.Controls.IndexOf(ogTitle) < 1)
                     Page.Header.Controls.Add(ogTitle);
 
+
+                var twitterTitle = new HtmlGenericControl("meta");
+                twitterTitle.Attributes["property"] = "twitter:title";
+                twitterTitle.Attributes["content"] = tp.Title;
+                if (Page.Header.Controls.IndexOf(twitterTitle) < 1)
+                    Page.Header.Controls.Add(twitterTitle);
+
+                var twitterCard = new HtmlGenericControl("meta");
+                twitterCard.Attributes["property"] = "twitter:card";
+                twitterCard.Attributes["content"] = "summary";
+                if (Page.Header.Controls.IndexOf(twitterCard) < 1)
+                    Page.Header.Controls.Add(twitterCard);
+
                 var ogType = new HtmlGenericControl("meta");
                 ogType.Attributes["property"] = "og:type";
                 ogType.Attributes["content"] = "article";
@@ -1042,6 +1056,13 @@ namespace Engage.Dnn.Publish
                     ogDescription.Attributes["content"] = VersionInfoObject.MetaDescription;
                     if (Page.Header.Controls.IndexOf(ogDescription) < 1)
                         Page.Header.Controls.Add(ogDescription);
+
+                    //twitter description
+                    var twitterDescription = new HtmlGenericControl("meta");
+                    twitterDescription.Attributes["property"] = "twitter:description";
+                    twitterDescription.Attributes["content"] = VersionInfoObject.MetaDescription;
+                    if (Page.Header.Controls.IndexOf(twitterDescription) < 1)
+                        Page.Header.Controls.Add(twitterDescription);
                 }
 
                 if (!String.IsNullOrEmpty(VersionInfoObject.MetaKeywords))
@@ -1060,13 +1081,36 @@ namespace Engage.Dnn.Publish
 
                 if (Page.Header.Controls.IndexOf(ogImage) < 1)
                     Page.Header.Controls.Add(ogImage);
-                
+
+                var twitterImage = new HtmlGenericControl("meta");
+                twitterImage.Attributes["property"] = "twitter:image";
+                twitterImage.Attributes["content"] = GetThumbnailUrl(VersionInfoObject.Thumbnail);
+                //build the full URL
+
+                if (Page.Header.Controls.IndexOf(twitterImage) < 1)
+                    Page.Header.Controls.Add(twitterImage);
+
                 //set the open graph site name
                 var ogSiteName = new HtmlGenericControl("meta");
                 ogSiteName.Attributes["property"] = "og:site_name";
                 ogSiteName.Attributes["content"] = PortalSettings.PortalName;
                 if (Page.Header.Controls.IndexOf(ogSiteName) < 1)
                     Page.Header.Controls.Add(ogSiteName);
+
+
+                //set the twitter site name
+                //TODO: need to save the twitterid of an author somewhere... 
+                var twitterSiteName = new HtmlGenericControl("meta");
+                twitterSiteName.Attributes["property"] = "twitter:site";
+                twitterSiteName.Attributes["content"] = PortalSettings.PortalName;
+                if (Page.Header.Controls.IndexOf(twitterSiteName) < 1)
+                    Page.Header.Controls.Add(twitterSiteName);
+
+                var twitterCreator = new HtmlGenericControl("meta");
+                twitterCreator.Attributes["property"] = "twitter:creator";
+                twitterCreator.Attributes["content"] = PortalSettings.PortalName;
+                if (Page.Header.Controls.IndexOf(twitterCreator) < 1)
+                    Page.Header.Controls.Add(twitterCreator);
 
                 //TODO: need to have a setting for facebook app id
 
@@ -1077,14 +1121,13 @@ namespace Engage.Dnn.Publish
                 if (Page.Header.Controls.IndexOf(ogUrl) < 1)
                     Page.Header.Controls.Add(ogUrl);
 
-
-                //set canonical tag call
-                SetCanonicalTag(GetItemLinkUrl(VersionInfoObject.ItemId));
-
             }
+            //set canonical tag call
+            SetCanonicalTag(GetItemLinkUrl(VersionInfoObject.ItemId));
+
         }
 
-        private void SetCanonicalTag(string canonicalUrl)
+        public void SetCanonicalTag(string canonicalUrl)
         {
             if (string.IsNullOrEmpty(canonicalUrl))
                 return;
@@ -1101,6 +1144,25 @@ namespace Engage.Dnn.Publish
             }
 
             canonicalTag.Attributes.Add("href", canonicalUrl);
+
+            // if the canonical url doesn't match the current URL let's send them to canonical
+            // Normalize and compare URLs without the scheme and query strings
+            string currentUrlWithoutSchemeAndQuery = PortalSettings.PortalAlias.HTTPAlias.TrimEnd('/') + Request.RawUrl.Split('?')[0].ToLower();
+            string canonicalUrlWithoutScheme = canonicalUrl.Replace("https://", "").Replace("http://", "").Split('?')[0].ToLower();
+
+            if (currentUrlWithoutSchemeAndQuery == canonicalUrlWithoutScheme)
+            {
+                // The URLs match (ignoring scheme and query strings), no action needed
+            }
+            else
+            {
+                // The URLs differ, redirect to the canonical URL
+                Response.Status = "301 Moved Permanently";
+                Response.Redirect(canonicalUrl);
+            }
+
+
+            //TODO: add twitter:card info 
         }
 
         public void SetWlwSupport()
@@ -1117,7 +1179,7 @@ namespace Engage.Dnn.Publish
                     var sb = new StringBuilder(400);
                     sb.Append("<link rel=\"wlwmanifest\" type=\"application/wlwmanifest+xml\" href=\"");
                     //manifesturl
-                    string manifestUrl = "http://" + PortalSettings.PortalAlias.HTTPAlias + DesktopModuleFolderName + "services/wlwmanifest.xml";
+                    string manifestUrl = "https://" + PortalSettings.PortalAlias.HTTPAlias + DesktopModuleFolderName + "services/wlwmanifest.xml";
 
                     sb.Append(manifestUrl);
                     sb.Append("\" />");
@@ -1128,7 +1190,7 @@ namespace Engage.Dnn.Publish
                     var rsd = new StringBuilder(400);
                     rsd.Append("<link rel=\"EditURI\" type=\"application/rsd+xml\" title=\"RSD\" href=\"");
 
-                    string rsdUrl = "http://" + PortalSettings.PortalAlias.HTTPAlias +
+                    string rsdUrl = "https://" + PortalSettings.PortalAlias.HTTPAlias +
                         DesktopModuleFolderName + "services/Publishrsd.aspx?portalid=" + PortalId + "&amp;HomePageUrl=" + HttpUtility.UrlEncode(Request.Url.Scheme + "://" + Request.Url.Host + Request.RawUrl);
 
                     rsd.Append(rsdUrl);

@@ -1196,7 +1196,7 @@ namespace Engage.Dnn.Publish.Util
                 }
             }
 
-            friendlyParameters.Insert(0,"/default.aspx");
+            friendlyParameters.Insert(0,"/default.aspx");//TODO: remove? "/default.aspx");
 
             return friendlyParameters.ToString();
         }

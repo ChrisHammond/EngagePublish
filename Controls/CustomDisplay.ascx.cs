@@ -106,6 +106,8 @@ namespace Engage.Dnn.Publish.Controls
             RecordView();
 
             //SetPageTitle();
+            //TODO: need to figure out a way to set a canonical url on a paged category, problems right now are the moduleid and page name get passed in, and paging doesn't work if you enable 
+            //SetCanonicalTag(GetItemLinkUrl(VersionInfoObject.ItemId));
             _categoryId = ItemId;
             _customDisplaySettings = new CustomDisplaySettings(Settings, TabModuleId);
 

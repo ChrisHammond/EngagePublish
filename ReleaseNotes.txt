@@ -2,6 +2,11 @@
 Release notes
 
 
+06.01.00
+-Added redirect logic into the CanonicalURL writer, if you're on a page that has a canonical url and it isn't the current url (ignoring querystring params) it'll redirect.
+-TODO: need to write twitter card info 
+
+
 06.00.09
 -OG:Title and OG:Type cleanup
 -Added ModuleSearchBase to feature controller

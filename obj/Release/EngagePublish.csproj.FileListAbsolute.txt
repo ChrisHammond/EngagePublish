@@ -25,8 +25,8 @@ C:\websites\dnndev.me\DesktopModules\Engage-Publish\obj\Release\EngagePublish.pd
 C:\websites\dnndev.me\DesktopModules\Engage-Publish\obj\Release\EngagePublish.csprojAssemblyReference.cache
 C:\websites\dnndev.me\bin\EngagePublish.dll
 C:\websites\dnndev.me\bin\EngagePublish.pdb
-C:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.csproj.CopyComplete
 C:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.dll
 C:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.pdb
 C:\websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.csproj.CoreCompileInputs.cache
 C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePublish.csproj.AssemblyReference.cache
+C:\Websites\dnndev.me\DesktopModules\EngagePublish\obj\Release\EngagePu.83AD2A76.Up2Date
