@@ -1124,10 +1124,10 @@ namespace Engage.Dnn.Publish.Util
                     tabInfo = tabController.GetTab(tabId, item.PortalId, false);
 
                     // check if there is a ModuleID passed in the querystring, if so then send it in the querystring as well
-                    if (moduleId > 0)
-                    {
-                        queryStringModuleId = moduleId;
-                    }
+                    //if (moduleId > 0)
+                    //{
+                    //    queryStringModuleId = moduleId;
+                    //}
                 }
             }
             else

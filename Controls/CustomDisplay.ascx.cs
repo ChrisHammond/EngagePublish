@@ -31,6 +31,7 @@ namespace Engage.Dnn.Publish.Controls
     using DotNetNuke.Services.Localization;
     using Data;
     using Util;
+    using DotNetNuke.Entities.Tabs;
 
     public partial class CustomDisplay : ModuleBase, IActionable
     {
@@ -106,8 +107,7 @@ namespace Engage.Dnn.Publish.Controls
             RecordView();
 
             //SetPageTitle();
-            //TODO: need to figure out a way to set a canonical url on a paged category, problems right now are the moduleid and page name get passed in, and paging doesn't work if you enable 
-            //SetCanonicalTag(GetItemLinkUrl(VersionInfoObject.ItemId));
+            
             _categoryId = ItemId;
             _customDisplaySettings = new CustomDisplaySettings(Settings, TabModuleId);
 
@@ -372,12 +372,22 @@ namespace Engage.Dnn.Publish.Controls
             //intNumberOfPages++;
 
             NameValueCollection queryString = Request.QueryString;
-            SetPagingLink(queryString, lnkNext, PageId < intNumberOfPages, PageId + 1, TabId);
-            SetPagingLink(queryString, lnkPrevious, PageId - 1 > 0, PageId - 1, TabId);
+
+
+            if(PageId>1)
+                SetCanonicalTag(SetPagingLink(queryString, lnkNext, PageId < intNumberOfPages, PageId, TabId));
+            else
+            {
+                SetCanonicalTag(Globals.NavigateURL(TabId));
+            }
+            var nothing = SetPagingLink(queryString, lnkNext, PageId < intNumberOfPages, PageId + 1, TabId);
+            var nothing2 = SetPagingLink(queryString, lnkPrevious, PageId - 1 > 0, PageId - 1, TabId);
+            //TODO: need to figure out a way to set a canonical url on a paged category, problems right now are the moduleid and page name get passed in, and paging doesn't work if you enable 
+            //SetCanonicalTag(SetPagingLink(queryString, null, PageId < intNumberOfPages, PageId, TabId));
         }
 
         // ReSharper disable SuggestBaseTypeForParameter
-        private static void SetPagingLink(NameValueCollection queryString, HyperLink link, bool showLink, int linkedPageId, int tabId)
+        private static string SetPagingLink(NameValueCollection queryString, HyperLink link, bool showLink, int linkedPageId, int tabId)
         // ReSharper restore SuggestBaseTypeForParameter
         {
             if (showLink)
@@ -407,11 +417,12 @@ namespace Engage.Dnn.Publish.Controls
                 //TODO: look into INavigationManager
 
                 link.NavigateUrl = Globals.NavigateURL(tabId, string.Empty, additionalParameters.ToArray());
-                
+                return Globals.NavigateURL(tabId, string.Empty, additionalParameters.ToArray());
             }
             else
             {
                 link.Visible = false;
+                return string.Empty;
             }
         }
 
