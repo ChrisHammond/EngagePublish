@@ -375,7 +375,7 @@ namespace Engage.Dnn.Publish.Controls
 
 
             if(PageId>1)
-                SetCanonicalTag(SetPagingLink(queryString, lnkNext, PageId < intNumberOfPages, PageId, TabId));
+                SetCanonicalTag(SetPagingLink(queryString, lnkNext, PageId < intNumberOfPages+1, PageId, TabId)); //this is a hack to build our canonical url 3-11-2024
             else
             {
                 SetCanonicalTag(Globals.NavigateURL(TabId));
