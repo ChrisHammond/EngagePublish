@@ -6,6 +6,7 @@ Release notes
 -Added redirect logic into the CanonicalURL writer, if you're on a page that has a canonical url and it isn't the current url (ignoring querystring params) it'll redirect.
 -Added Twitter:Card info 
 -Modified TagCloud to only link to a single tag, not continue to add tags into the URL to further filter.
+-Added canonical url for category paging 
 
 
 06.00.09

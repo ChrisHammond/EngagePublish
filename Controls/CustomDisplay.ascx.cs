@@ -373,7 +373,7 @@ namespace Engage.Dnn.Publish.Controls
 
             NameValueCollection queryString = Request.QueryString;
 
-
+            //TODO: still need to strip out bad querystring parameters 
             if(PageId>1)
                 SetCanonicalTag(SetPagingLink(queryString, lnkNext, PageId < intNumberOfPages+1, PageId, TabId)); //this is a hack to build our canonical url 3-11-2024
             else
