@@ -375,7 +375,7 @@ namespace Engage.Dnn.Publish.Controls
 
             //TODO: still need to strip out bad querystring parameters 
             if(PageId>1)
-                SetCanonicalTag(SetPagingLink(queryString, lnkNext, PageId < intNumberOfPages+1, PageId, TabId)); //this is a hack to build our canonical url 3-11-2024
+                SetCanonicalTag(SetPagingLink(queryString, lnkNext, PageId < intNumberOfPages+1, PageId, TabId)); //this is a hack to build our canonical url 3-11-2024. It happens first because the function needs a hyperlink object to set, so we run it first using lnkNext but run again later where the real next link gets set
             else
             {
                 SetCanonicalTag(Globals.NavigateURL(TabId));
@@ -398,6 +398,13 @@ namespace Engage.Dnn.Publish.Controls
                 queryString["catpageid"] = linkedPageId.ToString(CultureInfo.InvariantCulture);
                 var additionalParameters = new List<string>(queryString.Count);
 
+
+                //list of querystring parameters we care to keep?
+                // TABID
+                // catpageid 
+                // itemid
+                // 
+
                 for (int i = 0; i < queryString.Count; i++)
                 {
                     if (string.Equals(queryString.GetKey(i), "TABID", StringComparison.OrdinalIgnoreCase))
@@ -408,10 +415,19 @@ namespace Engage.Dnn.Publish.Controls
                             tabId = newTabId;
                         }
                     }
-                    else if (!string.Equals(queryString.GetKey(i), "LANGUAGE", StringComparison.OrdinalIgnoreCase))
+                    else if(string.Equals(queryString.GetKey(i), "itemid", StringComparison.OrdinalIgnoreCase))
                     {
                         additionalParameters.Add(queryString.GetKey(i) + "=" + queryString[i]);
                     }
+                    else if (string.Equals(queryString.GetKey(i), "catpageid", StringComparison.OrdinalIgnoreCase))
+                    {
+                        additionalParameters.Add(queryString.GetKey(i) + "=" + queryString[i]);
+                    }
+                    //ignore anything else for now, this will bite me some day
+                    //else if (!string.Equals(queryString.GetKey(i), "LANGUAGE", StringComparison.OrdinalIgnoreCase))
+                    //{
+                    //    additionalParameters.Add(queryString.GetKey(i) + "=" + queryString[i]);
+                    //}
                 }
 
                 //TODO: look into INavigationManager
