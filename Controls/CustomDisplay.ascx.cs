@@ -155,7 +155,7 @@ namespace Engage.Dnn.Publish.Controls
 
                 if (AllowTags && _tagQuery != null && _tagQuery.Count > 0)
                 {
-                    lnkRss.NavigateUrl = GetRssLinkUrl(PortalId, "TagFeed", _qsTags);
+                    lnkRss.NavigateUrl = GetRssLinkUrl(PortalId, "TagFeed", _qsTags).ToLower();
                     SetRssUrl(lnkRss.NavigateUrl, Localization.GetString("rssAlt", LocalResourceFile));
                 }
                 else
@@ -171,7 +171,7 @@ namespace Engage.Dnn.Publish.Controls
                     else
                     {
                         //TODO: configure the # of items for an RSS feed
-                        lnkRss.NavigateUrl = GetRssLinkUrl(_categoryId, 25, ItemType.Article.GetId(), PortalId, "ItemListing");
+                        lnkRss.NavigateUrl = GetRssLinkUrl(_categoryId, 25, ItemType.Article.GetId(), PortalId, "ItemListing").ToLower();
                         SetRssUrl(lnkRss.NavigateUrl, Localization.GetString("rssAlt", LocalResourceFile));
                     }
 
@@ -432,8 +432,8 @@ namespace Engage.Dnn.Publish.Controls
 
                 //TODO: look into INavigationManager
 
-                link.NavigateUrl = Globals.NavigateURL(tabId, string.Empty, additionalParameters.ToArray());
-                return Globals.NavigateURL(tabId, string.Empty, additionalParameters.ToArray());
+                link.NavigateUrl = Globals.NavigateURL(tabId, string.Empty, additionalParameters.ToArray()).ToLower();
+                return Globals.NavigateURL(tabId, string.Empty, additionalParameters.ToArray()).ToLower();
             }
             else
             {
