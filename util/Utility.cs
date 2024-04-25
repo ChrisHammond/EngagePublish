@@ -816,7 +816,7 @@ namespace Engage.Dnn.Publish.Util
                 "mid=" + moduleId.ToString(CultureInfo.InvariantCulture),
                 "adminType=" + type.Name + "Edit",
                 "versionId=" + i.ItemVersionId.ToString(CultureInfo.InvariantCulture),
-                returnUrl).ToLower();
+                returnUrl);
         }
 
         public static string BuildEditUrl(int itemId, int tabId, int moduleId, int portalId)
@@ -1014,7 +1014,7 @@ namespace Engage.Dnn.Publish.Util
 
         public static string GetItemVersionLinkUrl(Item item)
         {
-            string returnUrl = Globals.NavigateURL(item.DisplayTabId, "", "VersionId=" + item.ItemVersionId.ToString(CultureInfo.InvariantCulture) + "&modid=" + item.ModuleId).ToLower();
+            string returnUrl = Globals.NavigateURL(item.DisplayTabId, "", "VersionId=" + item.ItemVersionId.ToString(CultureInfo.InvariantCulture) + "&modid=" + item.ModuleId);
 
             return returnUrl;
         }
@@ -1071,11 +1071,11 @@ namespace Engage.Dnn.Publish.Util
             // if the tab doesn't have an overrideable module on it redirect them to the page without Publish querystring parameters, assuming it is force display on page
             if (item.ForceDisplayOnPage() && !IsPageOverrideable(item.PortalId, tabInfo.TabID))
             {
-                return Globals.NavigateURL(tabInfo.TabID).ToLower();
+                return Globals.NavigateURL(tabInfo.TabID);
             }
 
             string[] queryStringParameters = ConvertParametersToNonFriendly(CreateParametersForQueryString(item.ItemId, null, queryStringModuleId, pageId, portalId, String.Empty));
-            return Globals.NavigateURL(tabInfo.TabID, portalSettings, String.Empty, queryStringParameters).ToLower();
+            return Globals.NavigateURL(tabInfo.TabID, portalSettings, String.Empty, queryStringParameters);
 
             ////below is the original version of this
             ////int displayTabId = item.DisplayTabId;
@@ -1143,11 +1143,11 @@ namespace Engage.Dnn.Publish.Util
             // if the tab doesn't have an overrideable module on it redirect them to the page without Publish querystring parameters, assuming it is force display on page
             if (item.ForceDisplayOnPage() && !IsPageOverrideable(item.PortalId, tabInfo.TabID))
             {
-                return Globals.NavigateURL(tabInfo.TabID).ToLower();
+                return Globals.NavigateURL(tabInfo.TabID);
             }
 
             
-            return Globals.FriendlyUrl(tabInfo, ConvertParametersToFriendly(CreateParametersForQueryString(item.ItemId, tabInfo.TabID, queryStringModuleId, pageId, portalId, cultureName)), pageName, GetPortalSettings(item.PortalId)).ToLower();
+            return Globals.FriendlyUrl(tabInfo, ConvertParametersToFriendly(CreateParametersForQueryString(item.ItemId, tabInfo.TabID, queryStringModuleId, pageId, portalId, cultureName)), pageName, GetPortalSettings(item.PortalId));
         }
 
         /// <summary>

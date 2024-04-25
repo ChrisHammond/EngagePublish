@@ -22,7 +22,7 @@
 		        <asp:Hyperlink ID="lnkPortalLogo" Runat="server"/>
 		    </div>
 		    <div id="divArticleTitle" class="Head">
-			    <asp:label ID="lblArticleTitle" Runat="server"/>
+			    <h1><asp:label ID="lblArticleTitle" Runat="server"/></h1>
 		    </div>
 		    <div id="divArticleContent" class="Normal">
 			    <asp:label ID="lblArticleText" Runat="server"/>

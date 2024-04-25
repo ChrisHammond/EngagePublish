@@ -152,7 +152,7 @@ namespace Engage.Dnn.Publish.Admin
                 string returnUrl = Server.UrlDecode(Request.QueryString["returnUrl"]);
                 if (!Utility.HasValue(returnUrl) || !Utility.IsLocalURL(returnUrl))
                 {
-                    Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(TabId, Utility.AdminContainer, "&mid=" + ModuleId.ToString(CultureInfo.InvariantCulture))).ToLower();
+                    Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(TabId, Utility.AdminContainer, "&mid=" + ModuleId.ToString(CultureInfo.InvariantCulture)));
                 }
                 else
                 {

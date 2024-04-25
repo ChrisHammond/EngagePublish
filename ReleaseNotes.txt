@@ -7,6 +7,7 @@ Release notes
 -Added Twitter:Card info 
 -Modified TagCloud to only link to a single tag, not continue to add tags into the URL to further filter.
 -Added canonical url for category paging 
+-Fix to h1/h1 tags on CustomDisplay if parent category isn't shown
 
 
 06.00.09

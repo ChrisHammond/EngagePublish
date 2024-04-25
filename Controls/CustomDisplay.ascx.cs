@@ -217,6 +217,10 @@ namespace Engage.Dnn.Publish.Controls
                         divParentCategoryName.Visible = true;
                         lblCategory.Text = parentCategory.Name;
                     }
+                    else
+                    {
+                        divParentCategoryName.Visible = false;
+                    }
 
                     //show the category description if enabled.
                     if (_customDisplaySettings.ShowParentDescription)
@@ -224,11 +228,14 @@ namespace Engage.Dnn.Publish.Controls
                         divParentCategoryDescription.Visible = true;
                         lblCategoryDescription.Text = Utility.ReplaceTokens(parentCategory.Description);
                     }
+                    else { divParentCategoryDescription.Visible = false; }
 
                 }
                 else
                 {
                     lblCategory.Visible = false;
+                    divParentCategoryName.Visible = false;
+                    divParentCategoryDescription.Visible = false;
                 }
             }
             catch (Exception exc)

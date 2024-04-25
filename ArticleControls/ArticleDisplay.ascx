@@ -156,10 +156,10 @@
     $("#<%=btnSubmitComment.ClientID %>").click(function (e) {
         var txt = $("#<%=txtHumanTest.ClientID %>");
         var txtval = txt.val().toLowerCase();
-        if (txtval == 'human2') {
+        if (txtval == 'DNNRocks') {
             $("#<%=btnSubmitComment.ClientID %>").removeAttr('disabled');
 
-            _gaq.push(['_trackEvent', 'Human2 Comment Validated', 'Submitted', '<%=GetItemName()%>']);
+            _gaq.push(['_trackEvent', 'DNNRocks Comment Validated', 'Submitted', '<%=GetItemName()%>']);
         } else {
             e.preventDefault();
             alert('<%=Localization.GetString("HumanTestResult.Text",LocalResourceFile)%>');

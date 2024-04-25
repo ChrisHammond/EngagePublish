@@ -886,7 +886,7 @@ namespace Engage.Dnn.Publish
 
         public string BuildLinkUrl(string qsParameters)
         {
-            return Globals.NavigateURL(TabId, string.Empty, qsParameters).ToLower();
+            return Globals.NavigateURL(TabId, string.Empty, qsParameters);
         }
 
         public string GetItemLinkUrl(object itemId)
@@ -955,7 +955,7 @@ namespace Engage.Dnn.Publish
 
         public string GetItemLinkUrl(object itemId, int portalId)
         {
-            return Utility.IsDisabled(Convert.ToInt32(itemId, CultureInfo.InvariantCulture), portalId) ? string.Empty : GetItemLinkUrl((itemId)).ToLower();
+            return Utility.IsDisabled(Convert.ToInt32(itemId, CultureInfo.InvariantCulture), portalId) ? string.Empty : GetItemLinkUrl((itemId));
         }
 
         public string GetItemLinkUrlExternal(object itemId)
@@ -965,7 +965,7 @@ namespace Engage.Dnn.Publish
             //    return "http://" + this.PortalAlias.HTTPAlias + "/itemlink.aspx?itemId=" + itemId;
             //}
             //return "http://" + this.PortalAlias.HTTPAlias + DesktopModuleFolderName + "itemlink.aspx?itemId=" + itemId;
-            return Utility.GetItemLinkUrl(itemId, PortalId).ToLower();
+            return Utility.GetItemLinkUrl(itemId, PortalId);
         }
 
         public static string GetRssLinkUrl(object itemId, int maxDisplayItems, int itemTypeId, int portalId, string displayType)
@@ -1143,12 +1143,12 @@ namespace Engage.Dnn.Publish
                 Page.Header.Controls.Add(canonicalTag);
             }
 
-            canonicalTag.Attributes.Add("href", canonicalUrl.ToLower());
+            canonicalTag.Attributes.Add("href", canonicalUrl);
 
             // if the canonical url doesn't match the current URL let's send them to canonical
             // Normalize and compare URLs without the scheme and query strings
             
-            string currentUrlWithoutSchemeAndQuery = PortalSettings.PortalAlias.HTTPAlias.TrimEnd('/') + Request.RawUrl.Split('?')[0]; //3-28-2024 removed ToLower() if it isn't lower, it doesn't match, redirect them
+            string currentUrlWithoutSchemeAndQuery = PortalSettings.PortalAlias.HTTPAlias.TrimEnd('/') + Request.RawUrl.Split('?')[0].ToLower();
             string canonicalUrlWithoutScheme = canonicalUrl.Replace("https://", "").Replace("http://", "").Split('?')[0].ToLower();
 
             if (currentUrlWithoutSchemeAndQuery == canonicalUrlWithoutScheme)
@@ -1159,7 +1159,7 @@ namespace Engage.Dnn.Publish
             {
                 // The URLs differ, redirect to the canonical URL
                 Response.Status = "301 Moved Permanently";
-                Response.Redirect(canonicalUrl.ToLower());
+                Response.Redirect(canonicalUrl);
             }
 
 

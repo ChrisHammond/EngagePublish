@@ -256,10 +256,10 @@ Body: {5}</value>
     <value>Enter your first name for display with the comment</value>
   </data>
   <data name="lblHumanTest.Help" xml:space="preserve">
-    <value>If you can't type Human2 in, you can't post, plain and simple.</value>
+    <value>If you can't type DNNRocks in, you can't post, plain and simple.</value>
   </data>
   <data name="lblHumanTest.Text" xml:space="preserve">
-    <value>Type the word Human2</value>
+    <value>Type the word DNNRocks</value>
   </data>
   <data name="lblLastNameComment.Help" xml:space="preserve">
     <value>Enter your last name for display with the comment.</value>

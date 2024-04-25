@@ -370,7 +370,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                 //TODO: we're allowing anonymous comments, we should have a setting for this.
                 var objSecurity = new DotNetNuke.Security.PortalSecurity();
 
-                if (txtHumanTest.Text.Trim().ToLower() == "human2")
+                if (txtHumanTest.Text.Trim().ToLower() == "dnnrocks")
                 {
                     string urlText = txtUrlComment.Text;
                     if (urlText.Trim().Length > 0 && !urlText.StartsWith("http://", StringComparison.OrdinalIgnoreCase) && !urlText.StartsWith("https://", StringComparison.OrdinalIgnoreCase))

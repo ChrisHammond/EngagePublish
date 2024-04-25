@@ -3,8 +3,7 @@
 <div class="Normal">
     <%--<div class="<%= DataDisplayFormat %>">--%>
     <div class="CustomList_ParentCategoryName" id="divParentCategoryName" runat="server">
-        <h1>
-            <asp:Literal runat="server" ID="lblCategory" /></h1>
+        <h1><asp:Literal runat="server" ID="lblCategory" /></h1>
     </div>
     <div class="CustomList_ParentCategoryDescription" id="divParentCategoryDescription" runat="server">
         <asp:Label runat="server" ID="lblCategoryDescription" />
