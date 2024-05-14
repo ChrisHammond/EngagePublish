@@ -32,6 +32,8 @@ namespace Engage.Dnn.Publish.Controls
     using Data;
     using Util;
     using DotNetNuke.Entities.Tabs;
+    using Microsoft.Security.Application;
+
 
     public partial class CustomDisplay : ModuleBase, IActionable
     {
@@ -80,19 +82,19 @@ namespace Engage.Dnn.Publish.Controls
                 string tags = Request.QueryString["Tags"];
                 if (tags != null)
                 {
-                    _qsTags = tags;
-                    char[] seperator = { '-' };
-                    ArrayList tagList = Tag.ParseTags(_qsTags, PortalId, seperator, false);
+                    _qsTags = Sanitizer.GetSafeHtmlFragment(tags); // Modified line 77
+                    char[] separator = { '-' };
+                    ArrayList tagList = Tag.ParseTags(_qsTags, PortalId, separator, false);
                     _tagQuery = new ArrayList(tagList.Count);
                     foreach (Tag tg in tagList)
                     {
                         if (_tagQuery.Count < 1)
                         {
-                            //create a list of tagids to query the database
                             _tagQuery.Add(tg.TagId);
                         }
                     }
                 }
+
             }
         }
 
@@ -215,7 +217,7 @@ namespace Engage.Dnn.Publish.Controls
                     if (_customDisplaySettings.ShowParent)
                     {
                         divParentCategoryName.Visible = true;
-                        lblCategory.Text = parentCategory.Name;
+                        lblCategory.Text = HttpUtility.HtmlEncode(parentCategory.Name); // Modified line 178
                     }
                     else
                     {
@@ -226,7 +228,8 @@ namespace Engage.Dnn.Publish.Controls
                     if (_customDisplaySettings.ShowParentDescription)
                     {
                         divParentCategoryDescription.Visible = true;
-                        lblCategoryDescription.Text = Utility.ReplaceTokens(parentCategory.Description);
+                        lblCategoryDescription.Text = HttpUtility.HtmlEncode(Utility.ReplaceTokens(parentCategory.Description)); // Modified line 185
+
                     }
                     else { divParentCategoryDescription.Visible = false; }
 

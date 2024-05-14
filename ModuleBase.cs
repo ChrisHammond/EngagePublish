@@ -1253,7 +1253,8 @@ namespace Engage.Dnn.Publish
             string fileName = objFileName as string ?? string.Empty;
             if (!Utility.HasValue(fileName))
             {
-                return ApplicationUrl + "/images/spacer.gif";
+                return ApplicationUrl + "/images/defaultimage.jpg";
+                //return ApplicationUrl + "/images/spacer.gif";
             }
             //check if we're storing another URL, if it doesn't start with a / then we have trouble brewing
             if (fileName.StartsWith(ThumbnailSubdirectory, StringComparison.OrdinalIgnoreCase)

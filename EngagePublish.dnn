@@ -591,7 +591,12 @@
             <assembly>
               <name>Engage.Dnn.UserFeedback.dll</name>
             </assembly>
-            
+            <assembly>
+              <name>AntiXssLibrary.dll</name>
+            </assembly>
+            <assembly>
+              <name>HtmlSanitizationLibrary.dll</name>
+            </assembly>            
           </assemblies>
         </component>
 

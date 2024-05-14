@@ -23,6 +23,8 @@ namespace Engage.Dnn.Publish.Tags
     using DotNetNuke.Services.Exceptions;
     using DotNetNuke.Services.Localization;
     using Util;
+    using Microsoft.Security.Application; // Line 35
+
 
     public partial class TagCloud : ModuleBase
     {
@@ -79,41 +81,20 @@ namespace Engage.Dnn.Publish.Tags
         {
             if (_popularTagsTotal > 0)
             {
-                //string tagCacheKey = Utility.CacheKeyPublishTag + PortalId.ToString(CultureInfo.InvariantCulture) + _qsTags + UsePopularTags.ToString(CultureInfo.InvariantCulture); // +"PageId";
-                //DataTable dt = DataCache.GetCache(tagCacheKey) as DataTable ?? Tag.GetPopularTags(PortalId, _tagQuery, UsePopularTags);
-
                 DataTable dt = Tag.GetPopularTags(PortalId, _tagQuery, UsePopularTags);
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
-                    //this doesn't work
                     dt.DefaultView.Sort = "TotalItems";
 
                     var totalItemsSort = dt.Select(null, "TotalItems asc");
                     DataRow leastPop = totalItemsSort[0];
-                    DataRow mostPop = totalItemsSort[totalItemsSort.Length-1];
-
-                    //Utility.SortDataTableSingleParam(dt, "TotalItems desc");
-                    //Get the most popular and lease popular tag totals
-                    //_mostPopularTagCount = Convert.ToInt32(dt.Rows[0]["TotalItems"].ToString());
-                    //_leastPopularTagCount = Convert.ToInt32(dt.Rows[dt.Rows.Count - 1]["TotalItems"].ToString());
-
-                    //_mostPopularTagCount = Convert.ToInt32(dt.Rows[dt.Rows.Count - 1]["TotalItems"].ToString());
-                    //_leastPopularTagCount = Convert.ToInt32(dt.Rows[0]["TotalItems"].ToString()); 
+                    DataRow mostPop = totalItemsSort[totalItemsSort.Length - 1];
 
                     _mostPopularTagCount = Convert.ToInt32(mostPop["TotalItems"].ToString());
-                    _leastPopularTagCount = Convert.ToInt32(leastPop["TotalItems"].ToString()); 
-                                       
-                    
-                    //this doesn't work
-                    //dt.DefaultView.Sort = "Name";
-                    
-                    //Utility.SortDataTableSingleParam(dt, "name asc");
-                    
+                    _leastPopularTagCount = Convert.ToInt32(leastPop["TotalItems"].ToString());
+
                     var drs = dt.Select(null, "name asc");
-                    
-                    //DataCache.SetCache(tagCacheKey, dt, DateTime.Now.AddMinutes(CacheTime));
-                    //Utility.AddCacheKey(tagCacheKey, PortalId);
                     phTagCloud.Controls.Clear();
                     string itemsWithTag = Localization.GetString("ItemsWithTag", LocalResourceFile);
                     foreach (DataRow dr in drs)
@@ -125,17 +106,10 @@ namespace Engage.Dnn.Publish.Tags
                         sb.Append("<li class=\"");
                         sb.Append(GetTagSizeClass(totalItems));
                         sb.Append("\">");
-                        /*
-                         * //Commented out 10/20/2011
-                        sb.Append("<span>");
-                        sb.Append(totalItems.ToString(CultureInfo.CurrentCulture));
-                        sb.Append(itemsWithTag);
-                        sb.Append("</span>");
-                        */
                         sb.Append("<a href=\"");
-                        sb.Append(BuildTagLink(tagName, false, string.Empty)); //3-11-2024 - changed true to false, all links go to a unique tag, no filtering subtags anymore for performance reasons
+                        sb.Append(BuildTagLink(tagName, false, string.Empty));
                         sb.Append("\" class=\"tag\">");
-                        sb.Append(HttpUtility.HtmlEncode(tagName));
+                        sb.Append(HttpUtility.HtmlEncode(tagName)); // Modified line 106
                         sb.Append("</a> </li>");
                         lnkTag.Text = sb.ToString();
                         phTagCloud.Controls.Add(lnkTag);
@@ -143,16 +117,15 @@ namespace Engage.Dnn.Publish.Tags
                 }
                 else
                 {
-                    //display a message about tags not found
                     phTagCloud.Controls.Add(new LiteralControl(Localization.GetString("NoTags.Text", LocalResourceFile)));
                 }
             }
             else
             {
-                //display a message about tags not found
                 phTagCloud.Controls.Add(new LiteralControl(Localization.GetString("NoTags.Text", LocalResourceFile)));
             }
         }
+
 
         private string GetTagSizeClass(int itemCount)
         {
@@ -209,20 +182,18 @@ namespace Engage.Dnn.Publish.Tags
                 string tags = Request.QueryString["Tags"];
                 if (tags != null)
                 {
-                    _qsTags = tags;
-
-                    char[] seperator = { '-' };
-                    ArrayList tagList = Tag.ParseTags(_qsTags, PortalId, seperator, false);
+                    _qsTags = Sanitizer.GetSafeHtmlFragment(tags); // Modified line 145
+                    char[] separator = { '-' };
+                    ArrayList tagList = Tag.ParseTags(_qsTags, PortalId, separator, false);
                     _tagQuery = new ArrayList(tagList.Count);
                     string useOthers = string.Empty;
 
-                    //create a list of tagids to query the database
+                    // Create a list of tagids to query the database
                     foreach (Tag tg in tagList)
                     {
-                        //Add the tag to the filtered list
                         _tagQuery.Add(tg.TagId);
 
-                        //add the seperator in first
+                        // Add the separator in first
                         phTagFilters.Controls.Add(new LiteralControl(Localization.GetString("TagSeperator.Text", LocalResourceFile)));
 
                         var sb = new StringBuilder(255);
@@ -231,7 +202,7 @@ namespace Engage.Dnn.Publish.Tags
                         sb.Append("<a href=\"");
                         sb.Append(BuildTagLink(tg.Name, false, useOthers));
                         sb.Append("\" class=\"tag\">");
-                        sb.Append(HttpUtility.HtmlEncode(tg.Name));
+                        sb.Append(HttpUtility.HtmlEncode(tg.Name)); // Modified line 162
                         sb.Append("</a> ");
 
                         phTagFilters.Controls.Add(new LiteralControl(sb.ToString()));
@@ -242,6 +213,7 @@ namespace Engage.Dnn.Publish.Tags
                 _popularTagsTotal = Tag.GetPopularTagsCount(PortalId, _tagQuery, true);
             }
         }
+
     }
 }
 

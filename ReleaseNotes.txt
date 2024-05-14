@@ -8,6 +8,7 @@ Release notes
 -Modified TagCloud to only link to a single tag, not continue to add tags into the URL to further filter.
 -Added canonical url for category paging 
 -Fix to h1/h1 tags on CustomDisplay if parent category isn't shown
+-Fixed XSS issue on Tags listing in CustomDisplay
 
 
 06.00.09
