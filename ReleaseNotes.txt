@@ -9,6 +9,7 @@ Release notes
 - Added canonical url for category paging 
 - Fix to h1/h1 tags on CustomDisplay if parent category isn't shown
 - Fixed XSS issue on Tags listing in CustomDisplay reported by PINKY PRAJAPATI https://www.openbugbounty.org/reports/3927782/
+- Created a new default image for og:image tags. Uses /images/defaultimage.jpg but that is not something distributed with the module, you would create this image and put it in your /images/ directory in the Root of DNN
 
 
 06.00.09
