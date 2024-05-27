@@ -3,6 +3,7 @@
     using System;
     using System.Globalization;
     using System.Text;
+    using System.Web;
     using DotNetNuke.Entities.Portals;
     using Util;
 
@@ -26,38 +27,36 @@
             }
         }
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            
             this.Response.Clear();
             this.Response.ContentType = "text/xml";
-
 
             PortalSettings ps = Utility.GetPortalSettings(this.PortalId);
 
             object o = Request.QueryString["HomePageUrl"];
-            if(o!=null)
+            if (o != null)
             {
                 EngineName = "EngagePublish";
-                EngineUrl = "https://engagesoftware.com/about/products";
+                EngineUrl = "https://github.com/chrishammond/engagepublish";
 
-                //TODO: how to determine if we should use HTTP or HTTPS here? Right now, I'm assuming use of HTTP
-                ApiLink = "https://" + ps.PortalAlias.HTTPAlias  + ModuleBase.DesktopModuleFolderName + "services/Metaweblog.ashx";
-                
-                HomePageUrl = o.ToString();
+                // Assume HTTPS for ApiLink
+                ApiLink = "https://" + HttpUtility.HtmlEncode(ps.PortalAlias.HTTPAlias) + HttpUtility.HtmlEncode(ModuleBase.DesktopModuleFolderName) + "services/Metaweblog.ashx";
+
+                // Sanitize HomePageUrl
+                HomePageUrl = HttpUtility.HtmlEncode(o.ToString());
             }
+
             var responseStream = new StringBuilder(1000);
-            responseStream.Append("<?xml version=\"1.0\"  encoding=\"utf-8\" ?><rsd version=\"1.0\" xmlns=\"http://archipelago.phrasewise.com/rsd\">");
+            responseStream.Append("<?xml version=\"1.0\" encoding=\"utf-8\" ?><rsd version=\"1.0\" xmlns=\"http://archipelago.phrasewise.com/rsd\">");
             responseStream.Append("<service><engineName>");
-            responseStream.Append(EngineName);
+            responseStream.Append(HttpUtility.HtmlEncode(EngineName));
             responseStream.Append("</engineName><engineLink>");
-            responseStream.Append(EngineUrl);
+            responseStream.Append(HttpUtility.HtmlEncode(EngineUrl));
             responseStream.Append("</engineLink><homePageLink>");
-            responseStream.Append(HomePageUrl);
+            responseStream.Append(HttpUtility.HtmlEncode(HomePageUrl));
             responseStream.Append("</homePageLink><apis><api name=\"MetaWeblog\" preferred=\"true\" apiLink=\"");
-            responseStream.Append(ApiLink);
+            responseStream.Append(HttpUtility.HtmlEncode(ApiLink));
             responseStream.Append("\" blogID=\"0\" /></apis></service></rsd>");
             Response.Write(responseStream.ToString());
         }

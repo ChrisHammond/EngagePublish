@@ -26,7 +26,7 @@ namespace Engage.Dnn.Publish.Services
     /// <summary>
     /// A web service that provides access to the Engage: Publish module on this site
     /// </summary>
-    [WebService(Namespace = "http://www.engagesoftware.com/")]
+    [WebService(Namespace = "https://www.engagesoftware.com/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [ScriptService]
     public class PublishServices : WebService
