@@ -11,5 +11,5 @@ Added a "Human" check for comment display, basically users have to type the word
 Removed comment functionality from modal popup and displaying inline on the page
 Migrating layout to Bootstrap
 
-//Chris Hammond
-http://www.chrishammond.com/ 
+ - [Chris Hammond](https://www.chrishammond.com/)
+	- 
