@@ -110,7 +110,7 @@ namespace Engage.Dnn.Publish
                     //}
 
 
-                    lnkPortalLogo.NavigateUrl = "http://" + PortalSettings.PortalAlias.HTTPAlias;
+                    lnkPortalLogo.NavigateUrl = "https://" + PortalSettings.PortalAlias.HTTPAlias;
                     lnkPortalLogo.ImageUrl = PortalSettings.HomeDirectory + PortalSettings.LogoFile;
 
                     CssStyle = PortalSettings.ActiveTab.SkinPath + "skin.css";

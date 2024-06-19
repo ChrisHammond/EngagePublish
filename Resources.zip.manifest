@@ -1,12 +1,1100 @@
 ﻿<dotnetnuke type="ResourceFile" version="5.0">
   <files>
     <file>
-      <path>Tags/App_LocalResources/</path>
-      <name>TagCloud.ascx.resx</name>
+      <path>packages/System.ValueTuple.4.5.0/ref/xamarinwatchos10/</path>
+      <name>_._</name>
     </file>
     <file>
-      <path>Tags/App_LocalResources/</path>
-      <name>TagCloudOptions.ascx.resx</name>
+      <path>packages/System.ValueTuple.4.5.0/ref/xamarintvos10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/ref/xamarinmac20/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/ref/xamarinios10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/ref/uap10.0.16299/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/ref/portable-net40+sl4+win8+wp8/</path>
+      <name>System.ValueTuple.dll</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/ref/netstandard2.0/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/ref/netcoreapp2.0/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/ref/net47/</path>
+      <name>System.ValueTuple.dll</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/ref/net461/</path>
+      <name>System.ValueTuple.dll</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/ref/MonoTouch10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/ref/MonoAndroid10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/xamarinwatchos10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/xamarintvos10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/xamarinmac20/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/xamarinios10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/uap10.0.16299/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/portable-net40+sl4+win8+wp8/</path>
+      <name>System.ValueTuple.dll</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/portable-net40+sl4+win8+wp8/</path>
+      <name>System.ValueTuple.xml</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/netstandard2.0/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/netstandard1.0/</path>
+      <name>System.ValueTuple.dll</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/netstandard1.0/</path>
+      <name>System.ValueTuple.xml</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/netcoreapp2.0/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/net47/</path>
+      <name>System.ValueTuple.dll</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/net47/</path>
+      <name>System.ValueTuple.xml</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/net461/</path>
+      <name>System.ValueTuple.dll</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/net461/</path>
+      <name>System.ValueTuple.xml</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/MonoTouch10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/lib/MonoAndroid10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/</path>
+      <name>.signature.p7s</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/</path>
+      <name>LICENSE.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/</path>
+      <name>System.ValueTuple.4.5.0.nupkg</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/</path>
+      <name>THIRD-PARTY-NOTICES.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/</path>
+      <name>useSharedDesignerContext.txt</name>
+    </file>
+    <file>
+      <path>packages/System.ValueTuple.4.5.0/</path>
+      <name>version.txt</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/ref/xamarinwatchos10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/ref/xamarintvos10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/ref/xamarinmac20/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/ref/xamarinios10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/ref/netcoreapp2.1/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/ref/MonoTouch10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/ref/MonoAndroid10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/xamarinwatchos10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/xamarintvos10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/xamarinmac20/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/xamarinios10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/portable-net45+win8+wp8+wpa81/</path>
+      <name>System.Threading.Tasks.Extensions.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/portable-net45+win8+wp8+wpa81/</path>
+      <name>System.Threading.Tasks.Extensions.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/netstandard2.0/</path>
+      <name>System.Threading.Tasks.Extensions.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/netstandard2.0/</path>
+      <name>System.Threading.Tasks.Extensions.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/netstandard1.0/</path>
+      <name>System.Threading.Tasks.Extensions.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/netstandard1.0/</path>
+      <name>System.Threading.Tasks.Extensions.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/netcoreapp2.1/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/net461/</path>
+      <name>System.Threading.Tasks.Extensions.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/net461/</path>
+      <name>System.Threading.Tasks.Extensions.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/MonoTouch10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/lib/MonoAndroid10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/</path>
+      <name>.signature.p7s</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/</path>
+      <name>LICENSE.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/</path>
+      <name>System.Threading.Tasks.Extensions.4.5.4.nupkg</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/</path>
+      <name>THIRD-PARTY-NOTICES.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/</path>
+      <name>useSharedDesignerContext.txt</name>
+    </file>
+    <file>
+      <path>packages/System.Threading.Tasks.Extensions.4.5.4/</path>
+      <name>version.txt</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/lib/netstandard2.0/</path>
+      <name>System.Text.Json.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/lib/netstandard2.0/</path>
+      <name>System.Text.Json.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/lib/net8.0/</path>
+      <name>System.Text.Json.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/lib/net8.0/</path>
+      <name>System.Text.Json.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/lib/net7.0/</path>
+      <name>System.Text.Json.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/lib/net7.0/</path>
+      <name>System.Text.Json.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/lib/net6.0/</path>
+      <name>System.Text.Json.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/lib/net6.0/</path>
+      <name>System.Text.Json.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/lib/net462/</path>
+      <name>System.Text.Json.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/lib/net462/</path>
+      <name>System.Text.Json.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/buildTransitive/netstandard2.0/</path>
+      <name>System.Text.Json.targets</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/buildTransitive/netcoreapp2.0/</path>
+      <name>System.Text.Json.targets</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/buildTransitive/net6.0/</path>
+      <name>System.Text.Json.targets</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/buildTransitive/net462/</path>
+      <name>System.Text.Json.targets</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/buildTransitive/net461/</path>
+      <name>System.Text.Json.targets</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/zh-Hant/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/zh-Hans/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/tr/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/ru/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/pt-BR/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/pl/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/ko/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/ja/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/it/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/fr/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/es/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/de/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/cs/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.4/cs/</path>
+      <name>System.Text.Json.SourceGeneration.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/zh-Hant/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/zh-Hans/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/tr/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/ru/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/pt-BR/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/pl/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/ko/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/ja/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/it/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/fr/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/es/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/de/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/cs/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn4.0/cs/</path>
+      <name>System.Text.Json.SourceGeneration.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/zh-Hant/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/zh-Hans/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/tr/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/ru/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/pt-BR/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/pl/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/ko/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/ja/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/it/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/fr/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/es/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/de/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/cs/</path>
+      <name>System.Text.Json.SourceGeneration.resources.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/analyzers/dotnet/roslyn3.11/cs/</path>
+      <name>System.Text.Json.SourceGeneration.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/</path>
+      <name>.signature.p7s</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/</path>
+      <name>Icon.png</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/</path>
+      <name>LICENSE.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/</path>
+      <name>PACKAGE.md</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/</path>
+      <name>System.Text.Json.8.0.3.nupkg</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/</path>
+      <name>THIRD-PARTY-NOTICES.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Json.8.0.3/</path>
+      <name>useSharedDesignerContext.txt</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/runtimes/browser/lib/net8.0/</path>
+      <name>System.Text.Encodings.Web.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/runtimes/browser/lib/net8.0/</path>
+      <name>System.Text.Encodings.Web.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/runtimes/browser/lib/net7.0/</path>
+      <name>System.Text.Encodings.Web.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/runtimes/browser/lib/net7.0/</path>
+      <name>System.Text.Encodings.Web.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/runtimes/browser/lib/net6.0/</path>
+      <name>System.Text.Encodings.Web.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/runtimes/browser/lib/net6.0/</path>
+      <name>System.Text.Encodings.Web.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/lib/netstandard2.0/</path>
+      <name>System.Text.Encodings.Web.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/lib/netstandard2.0/</path>
+      <name>System.Text.Encodings.Web.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/lib/net8.0/</path>
+      <name>System.Text.Encodings.Web.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/lib/net8.0/</path>
+      <name>System.Text.Encodings.Web.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/lib/net7.0/</path>
+      <name>System.Text.Encodings.Web.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/lib/net7.0/</path>
+      <name>System.Text.Encodings.Web.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/lib/net6.0/</path>
+      <name>System.Text.Encodings.Web.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/lib/net6.0/</path>
+      <name>System.Text.Encodings.Web.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/lib/net462/</path>
+      <name>System.Text.Encodings.Web.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/lib/net462/</path>
+      <name>System.Text.Encodings.Web.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/buildTransitive/netcoreapp2.0/</path>
+      <name>System.Text.Encodings.Web.targets</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/buildTransitive/net6.0/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/buildTransitive/net462/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/buildTransitive/net461/</path>
+      <name>System.Text.Encodings.Web.targets</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/</path>
+      <name>.signature.p7s</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/</path>
+      <name>Icon.png</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/</path>
+      <name>LICENSE.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/</path>
+      <name>System.Text.Encodings.Web.8.0.0.nupkg</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/</path>
+      <name>THIRD-PARTY-NOTICES.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Text.Encodings.Web.8.0.0/</path>
+      <name>useSharedDesignerContext.txt</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netstandard2.0/</path>
+      <name>System.Runtime.CompilerServices.Unsafe.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netstandard2.0/</path>
+      <name>System.Runtime.CompilerServices.Unsafe.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netcoreapp3.1/</path>
+      <name>System.Runtime.CompilerServices.Unsafe.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netcoreapp3.1/</path>
+      <name>System.Runtime.CompilerServices.Unsafe.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/net6.0/</path>
+      <name>System.Runtime.CompilerServices.Unsafe.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/net6.0/</path>
+      <name>System.Runtime.CompilerServices.Unsafe.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/net461/</path>
+      <name>System.Runtime.CompilerServices.Unsafe.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/net461/</path>
+      <name>System.Runtime.CompilerServices.Unsafe.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/buildTransitive/netcoreapp3.1/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/buildTransitive/netcoreapp2.0/</path>
+      <name>System.Runtime.CompilerServices.Unsafe.targets</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/</path>
+      <name>.signature.p7s</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/</path>
+      <name>Icon.png</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/</path>
+      <name>LICENSE.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/</path>
+      <name>System.Runtime.CompilerServices.Unsafe.6.0.0.nupkg</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/</path>
+      <name>THIRD-PARTY-NOTICES.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Runtime.CompilerServices.Unsafe.6.0.0/</path>
+      <name>useSharedDesignerContext.txt</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/xamarinwatchos10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/xamarintvos10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/xamarinmac20/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/xamarinios10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/uap10.0.16299/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/netstandard2.0/</path>
+      <name>System.Numerics.Vectors.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/netstandard2.0/</path>
+      <name>System.Numerics.Vectors.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/netstandard1.0/</path>
+      <name>System.Numerics.Vectors.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/netstandard1.0/</path>
+      <name>System.Numerics.Vectors.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/netcoreapp2.0/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/net46/</path>
+      <name>System.Numerics.Vectors.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/net46/</path>
+      <name>System.Numerics.Vectors.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/net45/</path>
+      <name>System.Numerics.Vectors.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/net45/</path>
+      <name>System.Numerics.Vectors.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/MonoTouch10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/ref/MonoAndroid10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/xamarinwatchos10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/xamarintvos10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/xamarinmac20/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/xamarinios10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/uap10.0.16299/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/portable-net45+win8+wp8+wpa81/</path>
+      <name>System.Numerics.Vectors.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/portable-net45+win8+wp8+wpa81/</path>
+      <name>System.Numerics.Vectors.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/netstandard2.0/</path>
+      <name>System.Numerics.Vectors.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/netstandard2.0/</path>
+      <name>System.Numerics.Vectors.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/netstandard1.0/</path>
+      <name>System.Numerics.Vectors.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/netstandard1.0/</path>
+      <name>System.Numerics.Vectors.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/netcoreapp2.0/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/net46/</path>
+      <name>System.Numerics.Vectors.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/net46/</path>
+      <name>System.Numerics.Vectors.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/MonoTouch10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/lib/MonoAndroid10/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/</path>
+      <name>.signature.p7s</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/</path>
+      <name>LICENSE.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/</path>
+      <name>System.Numerics.Vectors.4.5.0.nupkg</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/</path>
+      <name>THIRD-PARTY-NOTICES.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/</path>
+      <name>useSharedDesignerContext.txt</name>
+    </file>
+    <file>
+      <path>packages/System.Numerics.Vectors.4.5.0/</path>
+      <name>version.txt</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/ref/netcoreapp2.1/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/lib/netstandard2.0/</path>
+      <name>System.Memory.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/lib/netstandard2.0/</path>
+      <name>System.Memory.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/lib/netstandard1.1/</path>
+      <name>System.Memory.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/lib/netstandard1.1/</path>
+      <name>System.Memory.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/lib/netcoreapp2.1/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/lib/net461/</path>
+      <name>System.Memory.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/lib/net461/</path>
+      <name>System.Memory.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/</path>
+      <name>.signature.p7s</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/</path>
+      <name>LICENSE.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/</path>
+      <name>System.Memory.4.5.5.nupkg</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/</path>
+      <name>THIRD-PARTY-NOTICES.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/</path>
+      <name>useSharedDesignerContext.txt</name>
+    </file>
+    <file>
+      <path>packages/System.Memory.4.5.5/</path>
+      <name>version.txt</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/ref/uap10.0.16299/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/ref/netstandard2.0/</path>
+      <name>System.Buffers.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/ref/netstandard2.0/</path>
+      <name>System.Buffers.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/ref/netstandard1.1/</path>
+      <name>System.Buffers.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/ref/netstandard1.1/</path>
+      <name>System.Buffers.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/ref/netcoreapp2.0/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/ref/net45/</path>
+      <name>System.Buffers.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/ref/net45/</path>
+      <name>System.Buffers.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/lib/uap10.0.16299/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/lib/netstandard2.0/</path>
+      <name>System.Buffers.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/lib/netstandard2.0/</path>
+      <name>System.Buffers.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/lib/netstandard1.1/</path>
+      <name>System.Buffers.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/lib/netstandard1.1/</path>
+      <name>System.Buffers.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/lib/netcoreapp2.0/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/lib/net461/</path>
+      <name>System.Buffers.dll</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/lib/net461/</path>
+      <name>System.Buffers.xml</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/</path>
+      <name>.signature.p7s</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/</path>
+      <name>LICENSE.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/</path>
+      <name>System.Buffers.4.5.1.nupkg</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/</path>
+      <name>THIRD-PARTY-NOTICES.TXT</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/</path>
+      <name>useSharedDesignerContext.txt</name>
+    </file>
+    <file>
+      <path>packages/System.Buffers.4.5.1/</path>
+      <name>version.txt</name>
+    </file>
+    <file>
+      <path>packages/MSBuildTasks.1.4.0.65/tools/</path>
+      <name>Build.proj</name>
+    </file>
+    <file>
+      <path>packages/MSBuildTasks.1.4.0.65/tools/</path>
+      <name>Install.ps1</name>
+    </file>
+    <file>
+      <path>packages/MSBuildTasks.1.4.0.65/tools/</path>
+      <name>MSBuild.Community.Tasks.dll</name>
+    </file>
+    <file>
+      <path>packages/MSBuildTasks.1.4.0.65/tools/</path>
+      <name>MSBuild.Community.Tasks.Targets</name>
+    </file>
+    <file>
+      <path>packages/MSBuildTasks.1.4.0.65/tools/</path>
+      <name>MSBuild.Community.Tasks.xml</name>
+    </file>
+    <file>
+      <path>packages/MSBuildTasks.1.4.0.65/tools/</path>
+      <name>MSBuild.psm1</name>
+    </file>
+    <file>
+      <path>packages/MSBuildTasks.1.4.0.65/content/</path>
+      <name>MSBuild.Community.Tasks.ReadMe.md</name>
+    </file>
+    <file>
+      <path>packages/MSBuildTasks.1.4.0.65/</path>
+      <name>MSBuildTasks.1.4.0.65.nupkg</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/lib/netstandard2.1/</path>
+      <name>Microsoft.Bcl.AsyncInterfaces.dll</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/lib/netstandard2.1/</path>
+      <name>Microsoft.Bcl.AsyncInterfaces.xml</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/lib/netstandard2.0/</path>
+      <name>Microsoft.Bcl.AsyncInterfaces.dll</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/lib/netstandard2.0/</path>
+      <name>Microsoft.Bcl.AsyncInterfaces.xml</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/lib/net462/</path>
+      <name>Microsoft.Bcl.AsyncInterfaces.dll</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/lib/net462/</path>
+      <name>Microsoft.Bcl.AsyncInterfaces.xml</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/buildTransitive/net462/</path>
+      <name>_._</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/buildTransitive/net461/</path>
+      <name>Microsoft.Bcl.AsyncInterfaces.targets</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/</path>
+      <name>.signature.p7s</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/</path>
+      <name>Icon.png</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/</path>
+      <name>LICENSE.TXT</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/</path>
+      <name>Microsoft.Bcl.AsyncInterfaces.8.0.0.nupkg</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/</path>
+      <name>PACKAGE.md</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/</path>
+      <name>THIRD-PARTY-NOTICES.TXT</name>
+    </file>
+    <file>
+      <path>packages/Microsoft.Bcl.AsyncInterfaces.8.0.0/</path>
+      <name>useSharedDesignerContext.txt</name>
+    </file>
+    <file>
+      <path>packages/AntiXSS.4.3.0/lib/net40/</path>
+      <name>AntiXssLibrary.dll</name>
+    </file>
+    <file>
+      <path>packages/AntiXSS.4.3.0/lib/net40/</path>
+      <name>AntiXssLibrary.xml</name>
+    </file>
+    <file>
+      <path>packages/AntiXSS.4.3.0/lib/net40/</path>
+      <name>HtmlSanitizationLibrary.dll</name>
+    </file>
+    <file>
+      <path>packages/AntiXSS.4.3.0/lib/net40/</path>
+      <name>HtmlSanitizationLibrary.xml</name>
+    </file>
+    <file>
+      <path>packages/AntiXSS.4.3.0/lib/net35/</path>
+      <name>AntiXssLibrary.dll</name>
+    </file>
+    <file>
+      <path>packages/AntiXSS.4.3.0/lib/net35/</path>
+      <name>AntiXssLibrary.xml</name>
+    </file>
+    <file>
+      <path>packages/AntiXSS.4.3.0/lib/net35/</path>
+      <name>HtmlSanitizationLibrary.dll</name>
+    </file>
+    <file>
+      <path>packages/AntiXSS.4.3.0/lib/net35/</path>
+      <name>HtmlSanitizationLibrary.xml</name>
     </file>
     <file>
       <path>ArticleControls/App_LocalResources/</path>
@@ -33,8 +1121,40 @@
       <name>ItemApproval.ascx.resx</name>
     </file>
     <file>
+      <path>packages/AntiXSS.4.3.0/lib/net20/</path>
+      <name>AntiXssLibrary.dll</name>
+    </file>
+    <file>
+      <path>packages/AntiXSS.4.3.0/lib/net20/</path>
+      <name>AntiXssLibrary.xml</name>
+    </file>
+    <file>
+      <path>Portability/</path>
+      <name>TransportableElement.cs</name>
+    </file>
+    <file>
+      <path>Portability/</path>
+      <name>TransportableXmlValidator.cs</name>
+    </file>
+    <file>
+      <path>Portability/</path>
+      <name>XmlDirector.cs</name>
+    </file>
+    <file>
+      <path>Portability/</path>
+      <name>XmlTransporter.cs</name>
+    </file>
+    <file>
       <path>ArticleControls/</path>
       <name>ArticleCategoryListing.ascx</name>
+    </file>
+    <file>
+      <path>ArticleControls/</path>
+      <name>ArticleCategoryListing.ascx.cs</name>
+    </file>
+    <file>
+      <path>ArticleControls/</path>
+      <name>ArticleCategoryListing.ascx.designer.cs</name>
     </file>
     <file>
       <path>ArticleControls/</path>
@@ -42,7 +1162,23 @@
     </file>
     <file>
       <path>ArticleControls/</path>
+      <name>ArticleDisplay.ascx.cs</name>
+    </file>
+    <file>
+      <path>ArticleControls/</path>
+      <name>ArticleDisplay.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>ArticleControls/</path>
       <name>ArticleDisplayOptions.ascx</name>
+    </file>
+    <file>
+      <path>ArticleControls/</path>
+      <name>ArticleDisplayOptions.ascx.cs</name>
+    </file>
+    <file>
+      <path>ArticleControls/</path>
+      <name>ArticleDisplayOptions.ascx.designer.cs</name>
     </file>
     <file>
       <path>ArticleControls/</path>
@@ -50,11 +1186,43 @@
     </file>
     <file>
       <path>ArticleControls/</path>
+      <name>ArticleEdit.ascx.cs</name>
+    </file>
+    <file>
+      <path>ArticleControls/</path>
+      <name>ArticleEdit.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>ArticleControls/</path>
       <name>ArticleList.ascx</name>
     </file>
     <file>
       <path>ArticleControls/</path>
+      <name>ArticleList.ascx.cs</name>
+    </file>
+    <file>
+      <path>ArticleControls/</path>
+      <name>ArticleList.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>ArticleControls/</path>
       <name>AuthorToken.ascx</name>
+    </file>
+    <file>
+      <path>ArticleControls/</path>
+      <name>AuthorToken.ascx.cs</name>
+    </file>
+    <file>
+      <path>ArticleControls/</path>
+      <name>AuthorToken.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>BuildScripts/</path>
+      <name>ModulePackage.targets</name>
+    </file>
+    <file>
+      <path>BuildScripts/</path>
+      <name>MSBuild.Community.Tasks.Targets</name>
     </file>
     <file>
       <path>App_LocalResources/</path>
@@ -85,6 +1253,74 @@
       <name>SharedResources.resx</name>
     </file>
     <file>
+      <path>util/App_LocalResources/</path>
+      <name>BreadCrumb.cs.resx</name>
+    </file>
+    <file>
+      <path>packages/AntiXSS.4.3.0/</path>
+      <name>.signature.p7s</name>
+    </file>
+    <file>
+      <path>packages/AntiXSS.4.3.0/</path>
+      <name>AntiXSS.4.3.0.nupkg</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>ApprovalStatus.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>Breadcrumb.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>CommunityController.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>FeaturesController.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>ItemType.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>NewBreadcrumb.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>Ping.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>QueryStringParameters.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>RelationshipType.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>TabInfoNameComparer.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>TopLevelCategoryItemType.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>UserRoleInfoComparer.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>Utility.cs</name>
+    </file>
+    <file>
+      <path>util/</path>
+      <name>Version.cs</name>
+    </file>
+    <file>
       <path>Admin/Tools/App_LocalResources/</path>
       <name>Dashboard.ascx.resx</name>
     </file>
@@ -113,8 +1349,72 @@
       <name>TagSearch.ascx.resx</name>
     </file>
     <file>
-      <path>util/App_LocalResources/</path>
-      <name>BreadCrumb.cs.resx</name>
+      <path>packages/</path>
+      <name>repositories.config</name>
+    </file>
+    <file>
+      <path>Tags/App_LocalResources/</path>
+      <name>TagCloud.ascx.resx</name>
+    </file>
+    <file>
+      <path>Tags/App_LocalResources/</path>
+      <name>TagCloudOptions.ascx.resx</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>Module.css</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>TagCloud.ascx</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>TagCloud.ascx.cs</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>TagCloud.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>TagCloudOptions.ascx</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>TagCloudOptions.ascx.cs</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>TagCloudOptions.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>TagEntry.ascx</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>TagEntry.ascx.cs</name>
+    </file>
+    <file>
+      <path>Tags/</path>
+      <name>TagEntry.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>obj/Release/</path>
+      <name>.NETFramework,Version=v4.7.2.AssemblyAttributes.cs</name>
+    </file>
+    <file>
+      <path>obj/Release/</path>
+      <name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
+    </file>
+    <file>
+      <path>obj/Release/</path>
+      <name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
+    </file>
+    <file>
+      <path>obj/Release/</path>
+      <name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
     </file>
     <file>
       <path>Admin/Tools/</path>
@@ -122,7 +1422,23 @@
     </file>
     <file>
       <path>Admin/Tools/</path>
+      <name>Dashboard.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>Dashboard.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
       <name>DescriptionReplace.ascx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>DescriptionReplace.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>DescriptionReplace.ascx.designer.cs</name>
     </file>
     <file>
       <path>Admin/Tools/</path>
@@ -130,7 +1446,23 @@
     </file>
     <file>
       <path>Admin/Tools/</path>
+      <name>ItemViewReport.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>ItemViewReport.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
       <name>Recategorize.ascx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>Recategorize.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>Recategorize.ascx.designer.cs</name>
     </file>
     <file>
       <path>Admin/Tools/</path>
@@ -138,11 +1470,39 @@
     </file>
     <file>
       <path>Admin/Tools/</path>
+      <name>ResetDisplayPage.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>ResetDisplayPage.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
       <name>ResetItemStatistics.ascx</name>
     </file>
     <file>
       <path>Admin/Tools/</path>
+      <name>ResetItemStatistics.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>ResetItemStatistics.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
       <name>TagSearch.ascx</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>TagSearch.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/Tools/</path>
+      <name>TagSearch.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Services/App_LocalResources/</path>
+      <name>MetaWeblog.ashx.resx</name>
     </file>
     <file>
       <path>Admin/Images/</path>
@@ -221,24 +1581,284 @@
       <name>syndication_sel.gif</name>
     </file>
     <file>
-      <path>Resources/</path>
-      <name>default.css</name>
+      <path>obj/Debug/</path>
+      <name>.NETFramework,Version=v4.7.2.AssemblyAttributes.cs</name>
     </file>
     <file>
-      <path>Tags/</path>
-      <name>Module.css</name>
+      <path>obj/Debug/</path>
+      <name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
     </file>
     <file>
-      <path>Tags/</path>
-      <name>TagCloud.ascx</name>
+      <path>obj/Debug/</path>
+      <name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
     </file>
     <file>
-      <path>Tags/</path>
-      <name>TagCloudOptions.ascx</name>
+      <path>obj/Debug/</path>
+      <name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
     </file>
     <file>
-      <path>Tags/</path>
-      <name>TagEntry.ascx</name>
+      <path>Services/</path>
+      <name>IMetaWeblog.cs</name>
+    </file>
+    <file>
+      <path>Services/</path>
+      <name>MetaWeblog.cs</name>
+    </file>
+    <file>
+      <path>Services/</path>
+      <name>publishrsd.aspx</name>
+    </file>
+    <file>
+      <path>Services/</path>
+      <name>publishrsd.aspx.cs</name>
+    </file>
+    <file>
+      <path>Services/</path>
+      <name>publishrsd.aspx.designer.cs</name>
+    </file>
+    <file>
+      <path>Services/</path>
+      <name>PublishScheduledTasks.cs</name>
+    </file>
+    <file>
+      <path>Services/</path>
+      <name>PublishServices.asmx</name>
+    </file>
+    <file>
+      <path>Services/</path>
+      <name>PublishServices.asmx.cs</name>
+    </file>
+    <file>
+      <path>Services/</path>
+      <name>Structs.cs</name>
+    </file>
+    <file>
+      <path>Services/</path>
+      <name>wlwmanifest.xml</name>
+    </file>
+    <file>
+      <path>Security/</path>
+      <name>NullSecurityFilter.cs</name>
+    </file>
+    <file>
+      <path>Security/</path>
+      <name>PermissionType.cs</name>
+    </file>
+    <file>
+      <path>Security/</path>
+      <name>RoleBasedSecurityFilter.cs</name>
+    </file>
+    <file>
+      <path>Security/</path>
+      <name>SecureSearchDataStore.cs</name>
+    </file>
+    <file>
+      <path>Security/</path>
+      <name>SecurityFilter.cs</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminInstructions.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminItemList.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminItemSearch.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminItemSearchOptions.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminMain.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminMenu.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminSettings.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>AdminTools.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>CommentEdit.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>CommentList.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>DeleteItem.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>ItemCreated.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>QuickStats.ascx.resx</name>
+    </file>
+    <file>
+      <path>Admin/App_LocalResources/</path>
+      <name>Syndication.ascx.resx</name>
+    </file>
+    <file>
+      <path>install/MSBuildTasks.1.4.0.65/tools/</path>
+      <name>MSBuild.Community.Tasks.Targets</name>
+    </file>
+    <file>
+      <path>install/MSBuildTasks.1.4.0.65/tools/</path>
+      <name>MSBuild.Community.Tasks.xml</name>
+    </file>
+    <file>
+      <path>Search/</path>
+      <name>SearchProvider.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminInstructions.ascx</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminInstructions.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminInstructions.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminMain.ascx</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminMain.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminMain.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminMenu.ascx</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminMenu.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminMenu.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminSettings.ascx</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminSettings.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminSettings.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminTools.ascx</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminTools.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>AdminTools.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>CommentEdit.ascx</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>CommentEdit.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>CommentEdit.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>CommentList.ascx</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>CommentList.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>CommentList.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>DeleteItem.ascx</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>DeleteItem.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>DeleteItem.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>ItemCreated.ascx</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>ItemCreated.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>ItemCreated.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>QuickStats.ascx</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>QuickStats.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>QuickStats.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>Syndication.ascx</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>Syndication.ascx.cs</name>
+    </file>
+    <file>
+      <path>Admin/</path>
+      <name>Syndication.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Scripts/</path>
+      <name>ArticleSelector.js</name>
     </file>
     <file>
       <path>Images/</path>
@@ -301,8 +1921,16 @@
       <name>up.gif</name>
     </file>
     <file>
-      <path>Services/App_LocalResources/</path>
-      <name>MetaWeblog.ashx.resx</name>
+      <path>.vs/EngagePublish/v17/</path>
+      <name>HierarchyCache.v1.txt</name>
+    </file>
+    <file>
+      <path>Resources/</path>
+      <name>default.css</name>
+    </file>
+    <file>
+      <path>Data/</path>
+      <name>DataProvider.cs</name>
     </file>
     <file>
       <path>Controls/App_LocalResources/</path>
@@ -361,68 +1989,12 @@
       <name>ThumbnailSelector.ascx.resx</name>
     </file>
     <file>
-      <path>Services/</path>
-      <name>publishrsd.aspx</name>
+      <path>Providers/Sitemap/</path>
+      <name>Sitemap.cs</name>
     </file>
     <file>
-      <path>Services/</path>
-      <name>PublishServices.asmx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminInstructions.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminItemList.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminItemSearch.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminItemSearchOptions.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminMain.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminMenu.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminSettings.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>AdminTools.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>CommentEdit.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>CommentList.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>DeleteItem.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>ItemCreated.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>QuickStats.ascx.resx</name>
-    </file>
-    <file>
-      <path>Admin/App_LocalResources/</path>
-      <name>Syndication.ascx.resx</name>
+      <path>Providers/DataProviders/SqlDataProvider/</path>
+      <name>SqlDataProvider.cs</name>
     </file>
     <file>
       <path>Controls/</path>
@@ -430,7 +2002,23 @@
     </file>
     <file>
       <path>Controls/</path>
+      <name>ArticleSelector.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>ArticleSelector.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
       <name>Breadcrumb.ascx</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>Breadcrumb.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>Breadcrumb.ascx.designer.cs</name>
     </file>
     <file>
       <path>Controls/</path>
@@ -438,7 +2026,27 @@
     </file>
     <file>
       <path>Controls/</path>
+      <name>CommentDisplay.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>CommentDisplay.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>CommentDisplayBase.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
       <name>CustomDisplay.ascx</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>CustomDisplay.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>CustomDisplay.ascx.designer.cs</name>
     </file>
     <file>
       <path>Controls/</path>
@@ -446,7 +2054,27 @@
     </file>
     <file>
       <path>Controls/</path>
+      <name>CustomDisplayOptions.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>CustomDisplayOptions.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>CustomDisplaySettings.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
       <name>EmailAFriend.ascx</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>EmailAFriend.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>EmailAFriend.ascx.designer.cs</name>
     </file>
     <file>
       <path>Controls/</path>
@@ -454,7 +2082,23 @@
     </file>
     <file>
       <path>Controls/</path>
+      <name>ItemApproval.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>ItemApproval.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
       <name>ItemEdit.ascx</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>ItemEdit.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>ItemEdit.ascx.designer.cs</name>
     </file>
     <file>
       <path>Controls/</path>
@@ -462,7 +2106,23 @@
     </file>
     <file>
       <path>Controls/</path>
+      <name>ItemListing.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>ItemListing.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
       <name>ItemListingOptions.ascx</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>ItemListingOptions.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>ItemListingOptions.ascx.designer.cs</name>
     </file>
     <file>
       <path>Controls/</path>
@@ -470,7 +2130,23 @@
     </file>
     <file>
       <path>Controls/</path>
+      <name>ItemRelationships.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>ItemRelationships.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
       <name>ItemSearch.ascx</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>ItemSearch.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>ItemSearch.ascx.designer.cs</name>
     </file>
     <file>
       <path>Controls/</path>
@@ -478,7 +2154,23 @@
     </file>
     <file>
       <path>Controls/</path>
+      <name>ItemVersions.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>ItemVersions.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
       <name>PrinterFriendlyButton.ascx</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>PrinterFriendlyButton.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>PrinterFriendlyButton.ascx.designer.cs</name>
     </file>
     <file>
       <path>Controls/</path>
@@ -486,59 +2178,39 @@
     </file>
     <file>
       <path>Controls/</path>
+      <name>RelatedArticleLinks.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>RelatedArticleLinks.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>RelatedArticleLinksBase.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
       <name>SearchRedirector.ascx</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>SearchRedirector.ascx.cs</name>
+    </file>
+    <file>
+      <path>Controls/</path>
+      <name>SearchRedirector.ascx.designer.cs</name>
     </file>
     <file>
       <path>Controls/</path>
       <name>ThumbnailSelector.ascx</name>
     </file>
     <file>
-      <path>Admin/</path>
-      <name>AdminInstructions.ascx</name>
+      <path>Controls/</path>
+      <name>ThumbnailSelector.ascx.cs</name>
     </file>
     <file>
-      <path>Admin/</path>
-      <name>AdminMain.ascx</name>
-    </file>
-    <file>
-      <path>Admin/</path>
-      <name>AdminMenu.ascx</name>
-    </file>
-    <file>
-      <path>Admin/</path>
-      <name>AdminSettings.ascx</name>
-    </file>
-    <file>
-      <path>Admin/</path>
-      <name>AdminTools.ascx</name>
-    </file>
-    <file>
-      <path>Admin/</path>
-      <name>CommentEdit.ascx</name>
-    </file>
-    <file>
-      <path>Admin/</path>
-      <name>CommentList.ascx</name>
-    </file>
-    <file>
-      <path>Admin/</path>
-      <name>DeleteItem.ascx</name>
-    </file>
-    <file>
-      <path>Admin/</path>
-      <name>ItemCreated.ascx</name>
-    </file>
-    <file>
-      <path>Admin/</path>
-      <name>QuickStats.ascx</name>
-    </file>
-    <file>
-      <path>Admin/</path>
-      <name>Syndication.ascx</name>
-    </file>
-    <file>
-      <path>.vs/EngagePublish/v17/</path>
-      <name>HierarchyCache.v1.txt</name>
+      <path>Controls/</path>
+      <name>ThumbnailSelector.ascx.designer.cs</name>
     </file>
     <file>
       <path>CategoryControls/App_LocalResources/</path>
@@ -597,8 +2269,24 @@
       <name>ItemCategoryDisplay.ascx.resx</name>
     </file>
     <file>
+      <path>.nuget/</path>
+      <name>NuGet.targets</name>
+    </file>
+    <file>
+      <path>.git/</path>
+      <name>ms-persist.xml</name>
+    </file>
+    <file>
       <path>CategoryControls/</path>
       <name>CategoryDisplay.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryDisplay.ascx.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryDisplay.ascx.designer.cs</name>
     </file>
     <file>
       <path>CategoryControls/</path>
@@ -606,7 +2294,23 @@
     </file>
     <file>
       <path>CategoryControls/</path>
+      <name>CategoryDisplayOptions.ascx.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryDisplayOptions.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
       <name>CategoryEdit.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryEdit.ascx.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryEdit.ascx.designer.cs</name>
     </file>
     <file>
       <path>CategoryControls/</path>
@@ -614,7 +2318,23 @@
     </file>
     <file>
       <path>CategoryControls/</path>
+      <name>CategoryFeature.ascx.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryFeature.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
       <name>CategoryFeatureOptions.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryFeatureOptions.ascx.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryFeatureOptions.ascx.designer.cs</name>
     </file>
     <file>
       <path>CategoryControls/</path>
@@ -622,7 +2342,23 @@
     </file>
     <file>
       <path>CategoryControls/</path>
+      <name>CategoryList.ascx.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryList.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
       <name>CategoryNLevels.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryNLevels.ascx.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryNLevels.ascx.designer.cs</name>
     </file>
     <file>
       <path>CategoryControls/</path>
@@ -630,7 +2366,23 @@
     </file>
     <file>
       <path>CategoryControls/</path>
+      <name>CategoryNLevelsOptions.ascx.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryNLevelsOptions.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
       <name>CategoryPermissions.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryPermissions.ascx.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategoryPermissions.ascx.designer.cs</name>
     </file>
     <file>
       <path>CategoryControls/</path>
@@ -638,7 +2390,23 @@
     </file>
     <file>
       <path>CategoryControls/</path>
+      <name>CategorySearch.ascx.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategorySearch.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
       <name>CategorySearchOptions.ascx</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategorySearchOptions.ascx.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategorySearchOptions.ascx.designer.cs</name>
     </file>
     <file>
       <path>CategoryControls/</path>
@@ -646,11 +2414,23 @@
     </file>
     <file>
       <path>CategoryControls/</path>
+      <name>CategorySort.ascx.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
+      <name>CategorySort.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path>CategoryControls/</path>
       <name>main.js</name>
     </file>
     <file>
-      <path>Scripts/</path>
-      <name>ArticleSelector.js</name>
+      <path>Properties/</path>
+      <name>AssemblyInfo.cs</name>
+    </file>
+    <file>
+      <path>.build/</path>
+      <name>MSBuild.Community.Tasks.targets</name>
     </file>
     <file>
       <path />
@@ -658,7 +2438,51 @@
     </file>
     <file>
       <path />
+      <name>AdminLoader.ascx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>AdminLoader.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Article.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Category.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Comment.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>EngagePublish.csproj</name>
+    </file>
+    <file>
+      <path />
+      <name>EngagePublish.sln</name>
+    </file>
+    <file>
+      <path />
       <name>EPRss.aspx</name>
+    </file>
+    <file>
+      <path />
+      <name>EPRss.aspx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>EPRss.aspx.designer.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>GlobalSuppressions.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Item.cs</name>
     </file>
     <file>
       <path />
@@ -666,7 +2490,23 @@
     </file>
     <file>
       <path />
+      <name>ItemDisplay.ascx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemDisplay.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path />
       <name>ItemDisplayOptions.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemDisplayOptions.ascx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemDisplayOptions.ascx.designer.cs</name>
     </file>
     <file>
       <path />
@@ -674,7 +2514,55 @@
     </file>
     <file>
       <path />
+      <name>ItemLink.aspx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemLink.aspx.designer.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemManager.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemNameComparer.cs</name>
+    </file>
+    <file>
+      <path />
       <name>ItemPreview.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemPreview.ascx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemPreview.ascx.designer.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemRelationship.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemRelationshipCollection.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemTag.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemTagCollection.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemVersionSetting.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>ItemVersionSettingCollection.cs</name>
     </file>
     <file>
       <path />
@@ -686,7 +2574,23 @@
     </file>
     <file>
       <path />
+      <name>ModuleBase.cs</name>
+    </file>
+    <file>
+      <path />
       <name>PrinterFriendly.aspx</name>
+    </file>
+    <file>
+      <path />
+      <name>PrinterFriendly.aspx.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>PrinterFriendly.aspx.designer.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Rating.cs</name>
     </file>
     <file>
       <path />
@@ -695,6 +2599,18 @@
     <file>
       <path />
       <name>Rss.aspx</name>
+    </file>
+    <file>
+      <path />
+      <name>Setting.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>SettingsBase.cs</name>
+    </file>
+    <file>
+      <path />
+      <name>Tag.cs</name>
     </file>
   </files>
 </dotnetnuke>

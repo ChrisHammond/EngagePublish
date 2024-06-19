@@ -11,7 +11,7 @@ Release notes
 - Fixed XSS issue on Tags listing in CustomDisplay reported by PINKY PRAJAPATI https://www.openbugbounty.org/reports/3927782/
 - Created a new default image for og:image tags. Uses /images/defaultimage.jpg but that is not something distributed with the module, you would create this image and put it in your /images/ directory in the Root of DNN
 - Fixed XSS issue on publishrsd.aspx where you could pass in javascript through the URL reported by Gal Bodiroza
- 
+- Added ld+json to article display, some of this is hard coded for ChrisHammond.com feel free to adjust
 
 06.00.09
 -OG:Title and OG:Type cleanup

@@ -10,17 +10,22 @@
 
 using System.Web.UI.HtmlControls;
 using DotNetNuke.Entities.Controllers;
+using Newtonsoft.Json;
 
 namespace Engage.Dnn.Publish
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using System.Globalization;
+    using System.Security.Policy;
     using System.Text;
     using System.Web;
     using System.Web.UI;
+    using System.Xml;
     using DotNetNuke.Common;
+    using DotNetNuke.Common.Utilities;
     using DotNetNuke.Entities.Host;
     using DotNetNuke.Entities.Modules;
     using DotNetNuke.Framework;
@@ -276,7 +281,7 @@ namespace Engage.Dnn.Publish
             get { return AllowArticlePagingForPortal(PortalId); }
         }
 
-        
+
 
         public bool EnableDisplayNameAsHyperlink
         {
@@ -1010,9 +1015,9 @@ namespace Engage.Dnn.Publish
             //TODO: should we also allow for setting the module title here?
             var tp = (CDefault)Page;
 
-            if (AllowTitleUpdate && (tp.Title != versionInfoObject.MetaTitle && tp.Title!= versionInfoObject.Name))
+            if (AllowTitleUpdate && (tp.Title != versionInfoObject.MetaTitle && tp.Title != versionInfoObject.Name))
             {
-                
+
                 tp.Title = Utility.HasValue(VersionInfoObject.MetaTitle) ? versionInfoObject.MetaTitle : versionInfoObject.Name;
                 //open graph title
                 var ogTitle = new HtmlGenericControl("meta");
@@ -1127,6 +1132,113 @@ namespace Engage.Dnn.Publish
 
         }
 
+        public void GenerateJsonLd(
+    string headline,
+    string imageUrl,
+    string authorName,
+    string authorUrl,
+    string publisherName,
+    string publisherLogoUrl,
+    DateTime datePublished,
+    DateTime dateModified,
+    string description,
+    string articleBody)
+        {
+            // Set default image if imageUrl is empty
+            if (string.IsNullOrEmpty(imageUrl))
+            {
+                imageUrl = "/portals/0/defaultimage.jpg"; // Specify the path to your default image, this is currently hardcoded
+            }
+
+            var jsonLd = new Dictionary<string, object>
+    {
+        { "@context", "https://schema.org" },
+        { "@type", "BlogPosting" },
+        { "name", headline },
+        { "headline", headline },
+        { "image", imageUrl },
+        { "author", new Dictionary<string, string>
+            {
+                { "@type", "Person" },
+                { "name", authorName },
+                { "url", authorUrl }
+            }
+        },
+        { "publisher", new Dictionary<string, object>
+            {
+                { "@type", "Organization" },
+                { "name", publisherName },
+                { "logo", new Dictionary<string, string>
+                    {
+                        { "@type", "ImageObject" },
+                        { "url", publisherLogoUrl }
+                    }
+                }
+            }
+        },
+        { "datePublished", datePublished.ToString("yyyy-MM-ddTHH:mm:ssZ") },
+        { "dateModified", dateModified.ToString("yyyy-MM-ddTHH:mm:ssZ") },
+        { "description", HttpUtility.HtmlDecode(HtmlUtils.StripTags(description, true)).Replace("\n", "").Replace("\r", "") },
+        { "articleBody", HttpUtility.HtmlDecode(HtmlUtils.StripTags(articleBody, true).Replace("\n", "").Replace("\r", "")) }
+    };
+
+            // Create an HtmlGenericControl to hold the script tag
+            HtmlGenericControl scriptTag = new HtmlGenericControl("script");
+            scriptTag.Attributes["type"] = "application/ld+json";
+            scriptTag.InnerHtml = JsonConvert.SerializeObject(jsonLd, Newtonsoft.Json.Formatting.Indented);
+
+            // Check if the script tag is already present in the header
+            bool scriptExists = false;
+            foreach (Control control in Page.Header.Controls)
+            {
+                if (control is HtmlGenericControl existingScript && existingScript.Attributes["type"] == "application/ld+json")
+                {
+                    if (existingScript.InnerHtml == scriptTag.InnerHtml)
+                    {
+                        scriptExists = true;
+                        break;
+                    }
+                }
+            }
+
+            // Add the script tag only if it doesn't already exist
+            if (!scriptExists)
+            {
+                Page.Header.Controls.Add(scriptTag);
+            }
+        }
+
+
+        public void SetJsonLd()
+        {
+            //< !--JSON - LD Structured Data -->
+            //< script type = "application/ld+json" >
+            //{
+            //    "@context": "https://schema.org",
+            //"@type": "BlogPosting",
+            //"headline": "My Survivor TV Show application from the first season... Fall 1999",
+            //"image": "https://www.chrishammond.com/Portals/0/survivor.jpg",
+            //"author": {
+            //        "@type": "Person",
+            //"name": "Chris Hammond",
+            //"url": "https://www.chrishammond.com/about"
+            //},
+            //"publisher": {
+            //        "@type": "Organization",
+            //"name": "Chris Hammond",
+            //"logo": {
+            //            "@type": "ImageObject",
+            //    "url": "https://www.chrishammond.com/Portals/0/cjh_logo2014.png"
+            //}
+            //    },
+            //"datePublished": "2024-05-29T00:00:00Z",
+            //"dateModified": "2024-05-29T00:00:00Z",
+            //"description": "I hoard things, lots of things, especially digital things. Check out this post to see the application to be on Survivor, the CBS TV Show which first aired in May 2000.",
+            //"articleBody": "I hoard things, lots of things, especially digital things. Apparently back in the fall of 1999 I decided to start filling out the application form for the CBS TV Show called Survivor, which was prepping for it's first season which ended up airing in May 2000. I found this in a word document entitled 'Survivor.doc' on my computer while playing around with NVIDIA's ChatRTX application. Some funny things inside of this document..."
+            //}
+            //</ script >
+        }
+
         public void SetCanonicalTag(string canonicalUrl)
         {
             if (string.IsNullOrEmpty(canonicalUrl))
@@ -1147,7 +1259,7 @@ namespace Engage.Dnn.Publish
 
             // if the canonical url doesn't match the current URL let's send them to canonical
             // Normalize and compare URLs without the scheme and query strings
-            
+
             string currentUrlWithoutSchemeAndQuery = PortalSettings.PortalAlias.HTTPAlias.TrimEnd('/') + Request.RawUrl.Split('?')[0].ToLower();
             string canonicalUrlWithoutScheme = canonicalUrl.Replace("https://", "").Replace("http://", "").Split('?')[0].ToLower();
 

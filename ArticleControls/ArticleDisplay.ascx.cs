@@ -681,6 +681,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                 {
                     SetPageTitle();
                     lblArticleTitle.Text = article.Name;
+
                     //divArticleTitle.Visible = true;
                     //divLastUpdated.Visible = true;
                 }
@@ -767,6 +768,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                     pnlComments.Visible = Convert.ToBoolean(ctSetting.PropertyValue, CultureInfo.InvariantCulture);
                 }
 
+                GenerateJsonLd(article.Name, GetThumbnailUrl(article.Thumbnail), article.Author, "https://www.chrishammond.com", PortalSettings.PortalName, PortalSettings.HomeDirectory + PortalSettings.LogoFile, DateTime.Parse(article.CreatedDate), DateTime.Parse(article.LastUpdated), article.Description, article.ArticleText);
 
                 DisplayReturnToList(article);
             }
