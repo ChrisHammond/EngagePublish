@@ -1,6 +1,6 @@
-//Engage: Publish - http://www.engagesoftware.com
+//Engage: Publish - https://www.engagesoftware.com
 //Copyright (c) 2004-2010
-//by Engage Software ( http://www.engagesoftware.com )
+//by Engage Software ( https://www.engagesoftware.com )
 
 //THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED 
 //TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
@@ -25,6 +25,7 @@ namespace Engage.Dnn.Publish
     using DotNetNuke.UI.Utilities;
     using Util;
     using DotNetNuke.Services.FileSystem;
+    using System.Runtime.Remoting.Channels;
 
     public partial class EpRss : PageBase
     {
@@ -172,16 +173,16 @@ namespace Engage.Dnn.Publish
 
             wr.WriteStartElement("rss");
             wr.WriteAttributeString("version", "2.0");
-            wr.WriteAttributeString("xmlns:wfw", "http://wellformedweb.org/CommentAPI/");
-            wr.WriteAttributeString("xmlns:slash", "http://purl.org/rss/1.0/modules/slash/");
-            wr.WriteAttributeString("xmlns:dc", "http://purl.org/dc/elements/1.1/");
-            wr.WriteAttributeString("xmlns:trackback", "http://madskills.com/public/xml/rss/module/trackback/");
+            wr.WriteAttributeString("xmlns:dc", "https://purl.org/dc/elements/1.1/");
+            wr.WriteAttributeString("xmlns:content", "https://purl.org/rss/1.0/modules/content/");
+            wr.WriteAttributeString("xmlns:atom", "https://www.w3.org/2005/Atom");
+  
 
             wr.WriteStartElement("channel");
             wr.WriteElementString("title", ps.PortalName);
-            if (ps.PortalAlias.HTTPAlias.IndexOf("http://", StringComparison.OrdinalIgnoreCase) == -1)
+            if (ps.PortalAlias.HTTPAlias.IndexOf("httsp://", StringComparison.OrdinalIgnoreCase) == -1)
             {
-                wr.WriteElementString("link", "http://" + ps.PortalAlias.HTTPAlias);
+                wr.WriteElementString("link", "https://" + ps.PortalAlias.HTTPAlias);
             }
             else
             {
@@ -240,8 +241,8 @@ namespace Engage.Dnn.Publish
                     wr.WriteStartElement("item");
 
                     //				wr.WriteElementString("slash:comments", objArticle.CommentCount.ToString());
-                    //                wr.WriteElementString("wfw:commentRss", "http://" & Request.Url.Host & Me.ResolveUrl("RssComments.aspx?TabID=" & m_tabID & "&ModuleID=" & m_moduleID & "&ArticleID=" & objArticle.ArticleID.ToString()).Replace(" ", "%20"));
-                    //                wr.WriteElementString("trackback:ping", "http://" & Request.Url.Host & Me.ResolveUrl("Tracking/Trackback.aspx?ArticleID=" & objArticle.ArticleID.ToString() & "&PortalID=" & _portalSettings.PortalId.ToString() & "&TabID=" & _portalSettings.ActiveTab.TabID.ToString()).Replace(" ", "%20"));
+                    //                wr.WriteElementString("wfw:commentRss", "https://" & Request.Url.Host & Me.ResolveUrl("RssComments.aspx?TabID=" & m_tabID & "&ModuleID=" & m_moduleID & "&ArticleID=" & objArticle.ArticleID.ToString()).Replace(" ", "%20"));
+                    //                wr.WriteElementString("trackback:ping", "https://" & Request.Url.Host & Me.ResolveUrl("Tracking/Trackback.aspx?ArticleID=" & objArticle.ArticleID.ToString() & "&PortalID=" & _portalSettings.PortalId.ToString() & "&TabID=" & _portalSettings.ActiveTab.TabID.ToString()).Replace(" ", "%20"));
 
                     string title = String.Empty,
                            description = String.Empty,
@@ -319,7 +320,7 @@ namespace Engage.Dnn.Publish
                             int fileId = Convert.ToInt32(attachmentSetting.PropertyValue.Substring(7));
 
                             var fi = fileManager.GetFile(fileId); //fileController.GetFileById(fileId, PortalId);
-                            string fileurl = "http://" + PortalSettings.PortalAlias.HTTPAlias + PortalSettings.HomeDirectory + fi.Folder + fi.FileName;
+                            string fileurl = "https://" + PortalSettings.PortalAlias.HTTPAlias + PortalSettings.HomeDirectory + fi.Folder + fi.FileName;
                             wr.WriteStartElement("enclosure");
                             wr.WriteAttributeString("url", fileurl);
                             wr.WriteAttributeString("length", fi.Size.ToString());

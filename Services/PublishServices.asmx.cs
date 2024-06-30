@@ -1,7 +1,7 @@
 // <copyright file="PublishServices.asmx.cs" company="Engage Software">
-// Engage: Publish - http://www.engagesoftware.com
+// Engage: Publish - https://www.engagesoftware.com
 //Copyright (c) 2004-2010
-// by Engage Software ( http://www.engagesoftware.com )
+// by Engage Software ( https://www.engagesoftware.com )
 // </copyright>
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED 
 // TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 

@@ -1,6 +1,6 @@
-//Engage: Publish - http://www.engagesoftware.com
+//Engage: Publish - https://www.engagesoftware.com
 //Copyright (c) 2004-2010
-//by Engage Software ( http://www.engagesoftware.com )
+//by Engage Software ( https://www.engagesoftware.com )
 
 //THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED 
 //TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
@@ -41,9 +41,12 @@ namespace Engage.Dnn.Publish.Util
                 }
                 else
                 {
-                    listToPing.Add("http://rpc.technorati.com/rpc/ping");
-                    listToPing.Add("http://rpc.pingomatic.com");
-                    listToPing.Add("http://blogsearch.google.com/ping/RPC2");
+                    listToPing.Add("https://rpc.technorati.com/rpc/ping");
+                    listToPing.Add("https://rpc.pingomatic.com");
+                    //listToPing.Add("https://blogsearch.google.com/ping/RPC2");
+                    listToPing.Add("http://rpc.weblogs.com/RPC2");
+                    listToPing.Add("https://rpc.twingly.com");
+
                 }
 
                 for (int i = 0; i < listToPing.Count; i++)

@@ -1,6 +1,6 @@
-//Engage: Publish - http://www.engagesoftware.com
+//Engage: Publish - https://www.engagesoftware.com
 //Copyright (c) 2004-2010
-//by Engage Software ( http://www.engagesoftware.com )
+//by Engage Software ( https://www.engagesoftware.com )
 
 //THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED 
 //TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
@@ -375,7 +375,7 @@ namespace Engage.Dnn.Publish.ArticleControls
                     string urlText = txtUrlComment.Text;
                     if (urlText.Trim().Length > 0 && !urlText.StartsWith("http://", StringComparison.OrdinalIgnoreCase) && !urlText.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
                     {
-                        urlText = "http://" + urlText;
+                        urlText = "https://" + urlText;
                     }
 
                     int approvalStatusId = ApprovalStatus.Waiting.GetId();
@@ -705,11 +705,20 @@ namespace Engage.Dnn.Publish.ArticleControls
 
                 DateTime dateCreated = Convert.ToDateTime(article.CreatedDate, CultureInfo.InvariantCulture);
 
-                lblDateCreated.Text = String.Format(Localization.GetString("DateCreated", LocalResourceFile), dateCreated.ToLongDateString());
+                //lblDateCreated.Text = String.Format(Localization.GetString("DateCreated", LocalResourceFile), dateCreated.ToLongDateString());
+
+                // Assuming dateCreated is of type DateTime
+                string formattedDateCreated = dateCreated.ToString("yyyy-MM-ddTHH:mm:ssZ");
+                lblDateCreated.Text = $"<time itemprop=\"datePublished\" datetime=\"{formattedDateCreated}\">{dateCreated.ToLongDateString()}</time>";
+
 
                 if (lastUpdated.Date > dateCreated.Date)
                 {
-                    lblLastUpdated.Text = String.Format(Localization.GetString("LastUpdated", LocalResourceFile), lastUpdated.ToShortDateString());
+                    //lblLastUpdated.Text = String.Format(Localization.GetString("LastUpdated", LocalResourceFile), lastUpdated.ToShortDateString());
+                    // Assuming lastUpdated is of type DateTime
+                    string formattedLastUpdated = lastUpdated.ToString("yyyy-MM-ddTHH:mm:ssZ");
+                    lblLastUpdated.Text = $"<time itemprop=\"dateModified\" datetime=\"{formattedLastUpdated}\">{lastUpdated.ToShortDateString()}</time>";
+
                     lblLastUpdated.Visible = true;
                 }
                 else
@@ -727,8 +736,17 @@ namespace Engage.Dnn.Publish.ArticleControls
                 if (ShowAuthor)
                 {
                     //pnlAuthor.Visible = true;
-                    lblAuthor.Text = article.Author;
+                    //lblAuthor.Text = article.Author;
+
+                    // Assuming article.Author is a string containing the author's name
+                    lblAuthor.Text = $"<span itemprop=\"name\">{article.Author}</span>";
+
+                    //TODO: add the author's URL
+
                     lblAuthorInfo.Visible = true;
+
+                    
+
                     if (lblAuthor.Text.Trim().Length < 1)
                     {
                         var uc = new UserController();

@@ -1,6 +1,6 @@
-//Engage: Publish - http://www.engagesoftware.com
+//Engage: Publish - https://www.engagesoftware.com
 //Copyright (c) 2004-2010
-//by Engage Software ( http://www.engagesoftware.com )
+//by Engage Software ( https://www.engagesoftware.com )
 
 //THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED 
 //TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
@@ -1578,7 +1578,7 @@ namespace Engage.Dnn.Publish.Util
 
                 //string youTubeEmbed = "<span class=\"Publish_Video\"><object type=\"application/x-shockwave-flash\" width=\"560\" height=\"340\" data=\"http://www.youtube.com/v/" + youTubeId + "&hd=1\"><param name=\"movie\" value=\"http://www.youtube.com/v/" + youTubeId + "&hd=1\" />" + Localization.GetString("NoFlash", LocalSharedResourceFile) + "</object></span>";
 
-                string youTubeEmbed = "<span class=\"Publish_Video\"><iframe width=\"640\" height=\"480\" src=\"http://www.youtube.com/embed/" + youTubeId + "?HD=1&amp;wmode=opaque\" style=\"border: none\"></iframe></span>";
+                string youTubeEmbed = "<span class=\"Publish_Video\"><iframe width=\"640\" height=\"480\" src=\"https://www.youtube.com/embed/" + youTubeId + "?HD=1&amp;wmode=opaque\" style=\"border: none\"></iframe></span>";
                 //<object type=\"application/x-shockwave-flash\" data=\"CONTENTHERE\" width=\"300\" height=\"120\"><param name=\"movie\" value=\"CONTENTHERE\" /><p>flash disabled</p></object>
                 string fullArticleText = replaceText.Substring(0, youTubeLocation);
                 fullArticleText += youTubeEmbed;
@@ -1594,7 +1594,7 @@ namespace Engage.Dnn.Publish.Util
                 int flickrFinishLocation = afterToken.IndexOf("]", StringComparison.Ordinal);
                 string flickrId = afterToken.Substring(0, flickrFinishLocation);
 
-                string flickrEmbed = string.Format(CultureInfo.InvariantCulture, "<object type=\"application/x-shockwave-flash\" width=\"499\" height=\"333\" data=\"http://www.flickr.com/apps/video/stewart.swf?v=1.173\" classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\"> <param name=\"flashvars\" value=\"intl_lang=en-us&amp;photo_secret=d70f929acb&amp;photo_id={0}&amp;show_info_box=true\"></param> <param name=\"movie\" value=\"http://www.flickr.com/apps/video/stewart.swf?v=1.173\"></param> <param name=\"bgcolor\" value=\"#000000\"></param> <param name=\"allowFullScreen\" value=\"true\"></param><embed type=\"application/x-shockwave-flash\" src=\"http://www.flickr.com/apps/video/stewart.swf?v=1.173\" bgcolor=\"#000000\" allowfullscreen=\"true\" flashvars=\"intl_lang=en-us&amp;photo_secret=d70f929acb&amp;photo_id={0}&amp;flickr_show_info_box=true\" height=\"333\" width=\"499\"></embed></object>", flickrId);
+                string flickrEmbed = string.Format(CultureInfo.InvariantCulture, "<object type=\"application/x-shockwave-flash\" width=\"499\" height=\"333\" data=\"https://www.flickr.com/apps/video/stewart.swf?v=1.173\" classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\"> <param name=\"flashvars\" value=\"intl_lang=en-us&amp;photo_secret=d70f929acb&amp;photo_id={0}&amp;show_info_box=true\"></param> <param name=\"movie\" value=\"http://www.flickr.com/apps/video/stewart.swf?v=1.173\"></param> <param name=\"bgcolor\" value=\"#000000\"></param> <param name=\"allowFullScreen\" value=\"true\"></param><embed type=\"application/x-shockwave-flash\" src=\"http://www.flickr.com/apps/video/stewart.swf?v=1.173\" bgcolor=\"#000000\" allowfullscreen=\"true\" flashvars=\"intl_lang=en-us&amp;photo_secret=d70f929acb&amp;photo_id={0}&amp;flickr_show_info_box=true\" height=\"333\" width=\"499\"></embed></object>", flickrId);
                 string fullArticleText = replaceText.Substring(0, flickrLocation);
                 fullArticleText += flickrEmbed;
                 fullArticleText += replaceText.Substring(flickrLocation + flickrId.Length + flickrFinishLocation - 1);
