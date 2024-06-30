@@ -2,7 +2,7 @@
 
 <%@ Register TagPrefix="dnn" TagName="label" Src="~/controls/labelControl.ascx" %>
 <div id="articleDisplay" class="Normal">
-
+    
     <div id="divArticleTitle" runat="server" visible="false">
     </div>
     <h1 class="Head" id="publishTitle">

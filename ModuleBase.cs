@@ -21,6 +21,7 @@ namespace Engage.Dnn.Publish
     using System.Globalization;
     using System.Security.Policy;
     using System.Text;
+    using System.Text.RegularExpressions;
     using System.Web;
     using System.Web.UI;
     using System.Xml;
@@ -1144,6 +1145,15 @@ namespace Engage.Dnn.Publish
     string description,
     string articleBody)
         {
+            // Remove all HTML tags
+            string noHtml = Regex.Replace(articleBody, "<.*?>", string.Empty);
+
+            // Decode HTML entities
+            string decoded = HttpUtility.HtmlDecode(noHtml);
+
+            // Remove any remaining newline characters
+            string cleaned = decoded.Replace("\n", "").Replace("\r", "").Trim();
+            articleBody = cleaned;
             // Set default image if imageUrl is empty
             if (string.IsNullOrEmpty(imageUrl))
             {
@@ -1209,36 +1219,6 @@ namespace Engage.Dnn.Publish
         }
 
 
-        public void SetJsonLd()
-        {
-            //< !--JSON - LD Structured Data -->
-            //< script type = "application/ld+json" >
-            //{
-            //    "@context": "https://schema.org",
-            //"@type": "BlogPosting",
-            //"headline": "My Survivor TV Show application from the first season... Fall 1999",
-            //"image": "https://www.chrishammond.com/Portals/0/survivor.jpg",
-            //"author": {
-            //        "@type": "Person",
-            //"name": "Chris Hammond",
-            //"url": "https://www.chrishammond.com/about"
-            //},
-            //"publisher": {
-            //        "@type": "Organization",
-            //"name": "Chris Hammond",
-            //"logo": {
-            //            "@type": "ImageObject",
-            //    "url": "https://www.chrishammond.com/Portals/0/cjh_logo2014.png"
-            //}
-            //    },
-            //"datePublished": "2024-05-29T00:00:00Z",
-            //"dateModified": "2024-05-29T00:00:00Z",
-            //"description": "I hoard things, lots of things, especially digital things. Check out this post to see the application to be on Survivor, the CBS TV Show which first aired in May 2000.",
-            //"articleBody": "I hoard things, lots of things, especially digital things. Apparently back in the fall of 1999 I decided to start filling out the application form for the CBS TV Show called Survivor, which was prepping for it's first season which ended up airing in May 2000. I found this in a word document entitled 'Survivor.doc' on my computer while playing around with NVIDIA's ChatRTX application. Some funny things inside of this document..."
-            //}
-            //</ script >
-        }
-
         public void SetCanonicalTag(string canonicalUrl)
         {
             if (string.IsNullOrEmpty(canonicalUrl))
@@ -1273,7 +1253,6 @@ namespace Engage.Dnn.Publish
                 Response.Status = "301 Moved Permanently";
                 Response.Redirect(canonicalUrl);
             }
-
 
             //TODO: add twitter:card info 
         }
