@@ -31,6 +31,12 @@
             </div>
 
         </header>
+
+        <div id="divArticleImage" class="publishArticleImage" runat="server">
+            <asp:Image runat="server" ID="imgArticleImage" />
+
+        </div>
+
         <div id="divArticleContent" class="Normal dnnClear" itemprop="articleBody">
             <asp:Literal ID="lblArticleText" runat="server"></asp:Literal>
         </div>

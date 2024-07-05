@@ -1360,3 +1360,11 @@ div.blog-post {
 
 .blog-post p {
 }
+
+.publishArticleImage {
+    margin: 0 auto;
+    text-align:center;
+}
+.publishArticleImage img{
+    width:50%;
+}

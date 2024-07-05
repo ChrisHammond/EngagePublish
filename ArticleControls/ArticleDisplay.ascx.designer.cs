@@ -105,6 +105,24 @@ namespace Engage.Dnn.Publish.ArticleControls
         protected global::System.Web.UI.WebControls.PlaceHolder phRelatedArticle;
 
         /// <summary>
+        /// divArticleImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divArticleImage;
+
+        /// <summary>
+        /// imgArticleImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgArticleImage;
+
+        /// <summary>
         /// lblArticleText control.
         /// </summary>
         /// <remarks>

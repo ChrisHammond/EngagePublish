@@ -686,6 +686,19 @@ namespace Engage.Dnn.Publish.ArticleControls
                     //divLastUpdated.Visible = true;
                 }
 
+
+                if(article.Thumbnail != null)
+                {
+                    imgArticleImage.Attributes.Add("itemprop", "image");
+                    imgArticleImage.ImageUrl = GetThumbnailUrl(article.Thumbnail);
+                    imgArticleImage.AlternateText = article.Name;
+                }
+                else
+                {
+                    divArticleImage.Visible = false;
+                }
+
+
                 article.ArticleText = Utility.ReplaceTokens(article.ArticleText);
                 DisplayArticlePaging(article);
 
@@ -739,13 +752,12 @@ namespace Engage.Dnn.Publish.ArticleControls
                     //lblAuthor.Text = article.Author;
 
                     // Assuming article.Author is a string containing the author's name
-                    lblAuthor.Text = $"<span itemprop=\"name\">{article.Author}</span>";
+                    lblAuthor.Text = $"<span itemprop=\"name\"><a itemprop=\"url\" href=\"https://www.chrishammond.com\">{article.Author}</a></span>";
 
-                    //TODO: add the author's URL
+                    //TODO: get the author's URL from somewhere
 
                     lblAuthorInfo.Visible = true;
-
-                    
+                                        
 
                     if (lblAuthor.Text.Trim().Length < 1)
                     {
