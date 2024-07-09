@@ -13,6 +13,7 @@ Release notes
 - Fixed XSS issue on publishrsd.aspx where you could pass in javascript through the URL reported by Gal Bodiroza
 - Added ld+json to article display, some of this is hard coded for ChrisHammond.com feel free to adjust
 - Added article thumbnail display to articledisplay
+- Fixed EPRSS feed that was having problems with lowercase urls
 
 
 06.00.09

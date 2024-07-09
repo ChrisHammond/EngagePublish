@@ -193,16 +193,16 @@ namespace Engage.Dnn.Publish
 
             //TODO: look into options for how to display the "Title" of the RSS feed
             var dt = new DataTable { Locale = CultureInfo.InvariantCulture };
-            if (DisplayType == "ItemListing" || DisplayType == null)
+            if (string.Equals(DisplayType, "ItemListing", StringComparison.OrdinalIgnoreCase) || DisplayType == null)
             {
                 dt = ItemId == -1 ? DataProvider.Instance().GetMostRecent(ItemTypeId, NumberOfItems, PortalId) : DataProvider.Instance().GetMostRecentByCategoryId(ItemId, ItemTypeId, NumberOfItems, PortalId);
             }
-            else if (DisplayType == "CategoryFeature")
+            else if (string.Equals(DisplayType, "CategoryFeature", StringComparison.OrdinalIgnoreCase))
             {
                 DataSet ds = DataProvider.Instance().GetParentItems(ItemId, PortalId, RelationshipTypeId);
                 dt = ds.Tables[0];
             }
-            else if (DisplayType == "TagFeed")
+            else if (string.Equals(DisplayType, "TagFeed", StringComparison.OrdinalIgnoreCase))
             {
                 if (AllowTags && _tagQuery != null && _tagQuery.Count > 0)
                 {
