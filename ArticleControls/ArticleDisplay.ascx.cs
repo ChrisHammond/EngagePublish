@@ -680,6 +680,9 @@ namespace Engage.Dnn.Publish.ArticleControls
                 if (DisplayTitle)
                 {
                     SetPageTitle();
+                    //set canonical tag call
+                    SetCanonicalTag(GetItemLinkUrl(VersionInfoObject.ItemId));
+
                     lblArticleTitle.Text = article.Name;
 
                     //divArticleTitle.Visible = true;
@@ -727,11 +730,13 @@ namespace Engage.Dnn.Publish.ArticleControls
 
                 if (lastUpdated.Date > dateCreated.Date)
                 {
-                    //lblLastUpdated.Text = String.Format(Localization.GetString("LastUpdated", LocalResourceFile), lastUpdated.ToShortDateString());
+                    
                     // Assuming lastUpdated is of type DateTime
                     string formattedLastUpdated = lastUpdated.ToString("yyyy-MM-ddTHH:mm:ssZ");
-                    lblLastUpdated.Text = $"<time itemprop=\"dateModified\" datetime=\"{formattedLastUpdated}\">{lastUpdated.ToShortDateString()}</time>";
 
+
+                    //lblLastUpdated.Text = $"<time itemprop=\"dateModified\" datetime=\"{formattedLastUpdated}\">{lastUpdated.ToShortDateString()}</time>";
+                    lblLastUpdated.Text = String.Format(Localization.GetString("LastUpdated", LocalResourceFile), $"<time itemprop=\"dateModified\" datetime=\"{formattedLastUpdated}\">{lastUpdated.ToShortDateString()}</time>");
                     lblLastUpdated.Visible = true;
                 }
                 else

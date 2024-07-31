@@ -8,8 +8,6 @@
 //CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 //DEALINGS IN THE SOFTWARE.
 
-
-
 namespace Engage.Dnn.Publish
 {
     using System;
@@ -40,12 +38,12 @@ namespace Engage.Dnn.Publish
         {
             get
             {
-                object i = Request.Params["itemId"];
-                if (i != null)
+                string itemIdStr = Request.QueryString["itemId"];
+                if (int.TryParse(itemIdStr, NumberStyles.Integer, CultureInfo.InvariantCulture, out int itemId))
                 {
                     // look up the itemType if ItemId passed in.
-                    ItemType = Item.GetItemType(Convert.ToInt32(i, CultureInfo.InvariantCulture)).ToUpperInvariant();
-                    return Convert.ToInt32(i, CultureInfo.InvariantCulture);
+                    ItemType = Item.GetItemType(itemId).ToUpperInvariant();
+                    return itemId;
                 }
                 return -1;
             }
@@ -55,10 +53,10 @@ namespace Engage.Dnn.Publish
         {
             get
             {
-                object i = Request.Params["portalId"];
-                if (i != null)
+                string portalIdStr = Request.QueryString["portalId"];
+                if (int.TryParse(portalIdStr, NumberStyles.Integer, CultureInfo.InvariantCulture, out int portalId))
                 {
-                    return Convert.ToInt32(i, CultureInfo.InvariantCulture);
+                    return portalId;
                 }
                 return -1;
             }
@@ -69,8 +67,7 @@ namespace Engage.Dnn.Publish
             get
             {
                 string value = Request.QueryString["TabId"];
-                int tabId;
-                if (int.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out tabId))
+                if (int.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out int tabId))
                 {
                     return tabId;
                 }
@@ -78,13 +75,9 @@ namespace Engage.Dnn.Publish
             }
         }
 
-        public string ItemType
-        {
-            get;
-            set;
-        }
+        public string ItemType { get; set; }
 
-        override protected void OnInit(EventArgs e)
+        protected override void OnInit(EventArgs e)
         {
             Load += Page_Load;
             base.OnInit(e);
@@ -108,7 +101,6 @@ namespace Engage.Dnn.Publish
                     //{
                     //    ShowAuthor = Convert.ToBoolean(auSetting.PropertyValue, CultureInfo.InvariantCulture);
                     //}
-
 
                     lnkPortalLogo.NavigateUrl = "https://" + PortalSettings.PortalAlias.HTTPAlias;
                     lnkPortalLogo.ImageUrl = PortalSettings.HomeDirectory + PortalSettings.LogoFile;
@@ -139,10 +131,8 @@ namespace Engage.Dnn.Publish
                     object overrideableObj = module.TabModuleSettings["Overrideable"];
                     if (overrideableObj != null && bool.TryParse(overrideableObj.ToString(), out overrideable) && overrideable)
                     {
-                        //keep checking until there is an overrideable module that the user is authorized to see.  BD
-                        //if (PortalSecurity.HasNecessaryPermission(SecurityAccessLevel.View, PortalSettings, module))
-                        if (ModulePermissionController.HasModuleAccess(SecurityAccessLevel.View,string.Empty, module))
-                            {
+                        if (ModulePermissionController.HasModuleAccess(SecurityAccessLevel.View, string.Empty, module))
+                        {
                             return true;
                         }
                     }

@@ -108,7 +108,7 @@ namespace Engage.Dnn.Publish.Controls
             //store the "view" for this item
             RecordView();
 
-            //SetPageTitle();
+            //don't set the page title if we're at the root of the website? 
             
             _categoryId = ItemId;
             _customDisplaySettings = new CustomDisplaySettings(Settings, TabModuleId);
@@ -385,7 +385,11 @@ namespace Engage.Dnn.Publish.Controls
 
             //TODO: still need to strip out bad querystring parameters 
             if(PageId>1)
+            { 
                 SetCanonicalTag(SetPagingLink(queryString, lnkNext, PageId < intNumberOfPages+1, PageId, TabId)); //this is a hack to build our canonical url 3-11-2024. It happens first because the function needs a hyperlink object to set, so we run it first using lnkNext but run again later where the real next link gets set
+                //TODO: let's adjust the page title?
+                SetPageTitle();
+            }
             else
             {
                 SetCanonicalTag(Globals.NavigateURL(TabId));

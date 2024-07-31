@@ -48,7 +48,7 @@
             }
 
             var responseStream = new StringBuilder(1000);
-            responseStream.Append("<?xml version=\"1.0\" encoding=\"utf-8\" ?><rsd version=\"1.0\" xmlns=\"http://archipelago.phrasewise.com/rsd\">");
+            responseStream.Append("<?xml version=\"1.0\" encoding=\"utf-8\" ?><rsd version=\"1.0\" xmlns=\"https://github.com/danielberlinger/rsd\">");
             responseStream.Append("<service><engineName>");
             responseStream.Append(HttpUtility.HtmlEncode(EngineName));
             responseStream.Append("</engineName><engineLink>");

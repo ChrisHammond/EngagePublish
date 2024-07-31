@@ -1128,8 +1128,12 @@ namespace Engage.Dnn.Publish
                     Page.Header.Controls.Add(ogUrl);
 
             }
-            //set canonical tag call
-            SetCanonicalTag(GetItemLinkUrl(VersionInfoObject.ItemId));
+      
+            //if we're using paging, and we're not on the first page, let's add Page (#) to the page title
+            if(pageId> 1)
+            {
+                tp.Title = tp.Title + " - Page (" + pageId + ")";
+            }
 
         }
 
@@ -1254,7 +1258,7 @@ namespace Engage.Dnn.Publish
                 Response.Redirect(canonicalUrl);
             }
 
-            //TODO: add twitter:card info 
+
         }
 
         public void SetWlwSupport()
