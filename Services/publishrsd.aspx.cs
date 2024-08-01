@@ -9,19 +9,19 @@
 
     public partial class Publishrsd : System.Web.UI.Page
     {
-        public string EngineName;
-        public string EngineUrl;
-        public string HomePageUrl;
-        public string ApiLink;
+        public string EngineName { get; private set; }
+        public string EngineUrl { get; private set; }
+        public string HomePageUrl { get; private set; }
+        public string ApiLink { get; private set; }
 
         public int PortalId
         {
             get
             {
-                string i = this.Request.Params["portalId"];
-                if (i != null)
+                string portalIdStr = this.Request.QueryString["portalId"];
+                if (int.TryParse(portalIdStr, NumberStyles.Integer, CultureInfo.InvariantCulture, out int portalId))
                 {
-                    return Convert.ToInt32(i, CultureInfo.InvariantCulture);
+                    return portalId;
                 }
                 return -1;
             }
@@ -34,17 +34,19 @@
 
             PortalSettings ps = Utility.GetPortalSettings(this.PortalId);
 
-            object o = Request.QueryString["HomePageUrl"];
-            if (o != null)
+            string homePageUrlParam = Request.QueryString["HomePageUrl"];
+            if (!string.IsNullOrEmpty(homePageUrlParam))
             {
                 EngineName = "EngagePublish";
                 EngineUrl = "https://github.com/chrishammond/engagepublish";
 
-                // Assume HTTPS for ApiLink
-                ApiLink = "https://" + HttpUtility.HtmlEncode(ps.PortalAlias.HTTPAlias) + HttpUtility.HtmlEncode(ModuleBase.DesktopModuleFolderName) + "services/Metaweblog.ashx";
+                // Assume HTTPS for ApiLink and sanitize inputs
+                string portalAlias = HttpUtility.HtmlEncode(ps.PortalAlias.HTTPAlias);
+                string moduleFolder = HttpUtility.HtmlEncode(ModuleBase.DesktopModuleFolderName);
+                ApiLink = $"https://{portalAlias}{moduleFolder}services/Metaweblog.ashx";
 
                 // Sanitize HomePageUrl
-                HomePageUrl = HttpUtility.HtmlEncode(o.ToString());
+                HomePageUrl = HttpUtility.HtmlEncode(homePageUrlParam);
             }
 
             var responseStream = new StringBuilder(1000);
