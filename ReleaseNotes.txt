@@ -14,6 +14,7 @@ Release notes
 - Added ld+json to article display, some of this is hard coded for ChrisHammond.com feel free to adjust
 - Added article thumbnail display to articledisplay
 - Fixed EPRSS feed that was having problems with lowercase urls
+- Fixed problem where Tags weren't loading on article edit
 
 
 06.00.09

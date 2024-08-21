@@ -420,7 +420,16 @@ namespace Engage.Dnn.Publish
                     if (a != null)
                     {
                         a.CorrectDates();
+
+                        if (ModuleBase.AllowTagsForPortal(portalId))
+                        {
+                            a.LoadTags();
+                        }
+
                     }
+
+
+
                     DataCache.SetCache(cacheKey, a, DateTime.Now.AddMinutes(ModuleBase.CacheTimePortal(portalId)));
                     //Utility.AddCacheKey(cacheKey, portalId);
                     Utility.AddCacheKey(cacheKey, portalId);
@@ -432,6 +441,10 @@ namespace Engage.Dnn.Publish
                 if (a != null)
                 {
                     a.CorrectDates();
+                    if (ModuleBase.AllowTagsForPortal(portalId))
+                    {
+                        a.LoadTags();
+                    }
                 }
             }
             return a;
